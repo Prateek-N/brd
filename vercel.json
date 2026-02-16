@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/:name", "destination": "/interns/:name" },
+    { "source": "/", "destination": "/interns/aadharsh.html" }
+  ]
+}
