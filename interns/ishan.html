@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishan Maini - DataForge | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">DataForge</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">DataForge</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Ishan Maini</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Data Engineer</strong> on
+                <strong>DataForge</strong>, a data pipeline and ETL orchestration platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the DataForge project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>DataForge in one line</h3>
+            <p>A <strong>data platform</strong> for <strong>ETL pipelines</strong>, <strong>data lake
+                    management</strong>, and <strong>real-time streaming</strong>.</p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & Pipeline Review</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Clone <code>github.com/ipeople/dataforge</code> — set up Python,
+                                Spark, Airflow</li>
+                            <li><strong>Mon:</strong> Configure AWS access — S3, Glue, Redshift, EMR</li>
+                            <li><strong>Tue:</strong> Review existing 45 Airflow DAGs — dependencies, schedules, SLAs
+                            </li>
+                            <li><strong>Wed:</strong> Study data lake architecture — Bronze/Silver/Gold layers</li>
+                            <li><strong>Thu:</strong> Bug #67: Fix incremental load logic for customer events</li>
+                            <li><strong>Fri:</strong> Write 4 data quality tests for fix</li>
+                            <li><strong>Fri:</strong> Submit PR with documentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>ETL Pipeline Development</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #38: Order analytics pipeline — ingest from PostgreSQL to
+                                data lake</li>
+                            <li><strong>Tue:</strong> Build extraction layer — CDC with Debezium, daily snapshots</li>
+                            <li><strong>Wed:</strong> Create transformation layer — PySpark for data cleansing,
+                                enrichment</li>
+                            <li><strong>Thu:</strong> Build aggregation layer — daily/weekly/monthly rollups</li>
+                            <li><strong>Fri:</strong> Write data quality checks — completeness, consistency, freshness
+                            </li>
+                            <li><strong>Fri:</strong> Demo pipeline to Sarah</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Real-Time Streaming Pipeline</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #45: Event streaming — Kafka to data lake integration</li>
+                            <li><strong>Tue:</strong> Set up Kafka consumers for clickstream events</li>
+                            <li><strong>Wed:</strong> Build Spark Streaming job — micro-batch processing every 5 min
+                            </li>
+                            <li><strong>Thu:</strong> Add exactly-once semantics — checkpoint management, idempotency
+                            </li>
+                            <li><strong>Fri:</strong> Create real-time dashboard data feed</li>
+                            <li><strong>Fri:</strong> Document streaming architecture</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Data Quality & Observability</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #52: Great Expectations integration — automated data
+                                validation</li>
+                            <li><strong>Tue:</strong> Build 50 expectation suites for critical datasets</li>
+                            <li><strong>Wed:</strong> Create data quality dashboard — pass/fail trends, alerts</li>
+                            <li><strong>Thu:</strong> Add pipeline observability — OpenTelemetry traces, metrics</li>
+                            <li><strong>Fri:</strong> Present observability to Emily — data handling compliance</li>
+                            <li><strong>Fri:</strong> Document monitoring and alerting setup</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Performance Optimization</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Profile slow pipelines — identify bottlenecks in 5 DAGs</li>
+                            <li><strong>Tue:</strong> Optimize Spark jobs — partitioning, caching, broadcast joins</li>
+                            <li><strong>Wed:</strong> Implement data lake compaction — reduce small files overhead</li>
+                            <li><strong>Thu:</strong> UAT with analytics team — test data freshness, query performance
+                            </li>
+                            <li><strong>Fri:</strong> Fix P1 issues — target 30% latency reduction</li>
+                            <li><strong>Fri:</strong> Document optimization techniques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete pipeline documentation — DAGs, schemas, SLAs</li>
+                            <li><strong>Tue:</strong> Write data engineering runbook</li>
+                            <li><strong>Wed:</strong> Record training videos (15 min total)</li>
+                            <li><strong>Thu:</strong> Present final project to Amanda (30 min)</li>
+                            <li><strong>Fri:</strong> Knowledge transfer to data team</li>
+                            <li><strong>Fri:</strong> Submit final report and celebrate! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span class="contact-role">Data
+                    Governance</span></div>
+            <div class="contact-item"><span class="contact-name">Amanda Johnson</span> — <span class="contact-role">Project
+                    Lead</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+            <div class="footer-signature">
+                <div class="name">Amanda Johnson</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (617) 428-7361 � Slack: @amanda.johnson</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Data pipeline and ETL orchestration platform</li>
+                        <li><strong>Problem:</strong> 45 DAGs processing 10TB+ daily with SLA gaps and quality issues
+                        </li>
+                        <li><strong>Goal:</strong> 99.5% pipeline SLA, <5 min real-time latency,>95% data quality score
+                        </li>
+                        <li><strong>Users:</strong> Analytics team, data scientists, business intelligence</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Build ETL pipelines for order analytics</li>
+                        <li>Implement Kafka real-time streaming</li>
+                        <li>Create data quality framework with Great Expectations</li>
+                        <li>Optimize Spark job performance</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Python · PySpark · Airflow · AWS (S3, Glue, Redshift, EMR) · Kafka · Debezium · Great
+                            Expectations</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup & pipeline review</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>ETL pipeline development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Real-time streaming pipeline</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Data quality & observability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Performance optimization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

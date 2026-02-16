@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasanti Vasireddy - FeatureVault | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">FeatureVault</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">FeatureVault</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Vasanti Vasireddy</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Product Manager</strong> on
+                <strong>FeatureVault</strong>, a product roadmap and feature management platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the FeatureVault project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>FeatureVault in one line</h3>
+            <p>A <strong>product platform</strong> for <strong>roadmap management</strong>, <strong>user
+                    feedback</strong>, and <strong>feature prioritization</strong>.</p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Onboarding & Product Discovery</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Access product tools — Productboard, Figma, Analytics</li>
+                            <li><strong>Mon:</strong> Meet with Andrew — understand product vision and OKRs</li>
+                            <li><strong>Tue:</strong> Review existing roadmap — 25 features across 3 quarters</li>
+                            <li><strong>Wed:</strong> Analyze user feedback backlog — 150+ feature requests</li>
+                            <li><strong>Thu:</strong> Shadow customer calls — understand pain points</li>
+                            <li><strong>Fri:</strong> Create <code>product_discovery_findings.md</code></li>
+                            <li><strong>Fri:</strong> Present initial observations to Andrew</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>User Research & Personas</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Design user interview guide — 10 questions, 30 min sessions</li>
+                            <li><strong>Tue:</strong> Conduct 4 user interviews with key customers</li>
+                            <li><strong>Wed:</strong> Synthesize interview insights — themes, pain points, opportunities
+                            </li>
+                            <li><strong>Thu:</strong> Create 3 user personas with jobs-to-be-done</li>
+                            <li><strong>Fri:</strong> Build customer journey maps for each persona</li>
+                            <li><strong>Fri:</strong> Present personas to Sarah and design team</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Feature Prioritization Framework</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Design prioritization framework — RICE scoring model</li>
+                            <li><strong>Tue:</strong> Score existing backlog — 150 features with RICE scores</li>
+                            <li><strong>Wed:</strong> Create priority matrix — effort vs. impact visualization</li>
+                            <li><strong>Thu:</strong> Identify top 10 high-impact features for next quarter</li>
+                            <li><strong>Fri:</strong> Review prioritization with Emily for compliance requirements</li>
+                            <li><strong>Fri:</strong> Document prioritization process</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Roadmap & PRD Development</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Build Q2 roadmap in Productboard — themes, milestones,
+                                dependencies</li>
+                            <li><strong>Tue:</strong> Write PRD for top feature — problem, solution, success metrics
+                            </li>
+                            <li><strong>Wed:</strong> Create wireframes with design team in Figma</li>
+                            <li><strong>Thu:</strong> Define acceptance criteria and edge cases</li>
+                            <li><strong>Fri:</strong> Present roadmap to stakeholders for alignment</li>
+                            <li><strong>Fri:</strong> Collect and incorporate feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Launch Planning & Metrics</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Create feature launch plan — GTM checklist, timeline</li>
+                            <li><strong>Tue:</strong> Define success metrics — adoption, engagement, retention</li>
+                            <li><strong>Wed:</strong> Build analytics dashboard for feature tracking</li>
+                            <li><strong>Thu:</strong> UAT roadmap with engineering and design leads</li>
+                            <li><strong>Fri:</strong> Adjust roadmap based on feedback</li>
+                            <li><strong>Fri:</strong> Document launch playbook</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete product management playbook</li>
+                            <li><strong>Tue:</strong> Create PRD template and examples</li>
+                            <li><strong>Wed:</strong> Record training videos (18 min total)</li>
+                            <li><strong>Thu:</strong> Present final deliverables to Andrew (30 min)</li>
+                            <li><strong>Fri:</strong> Knowledge transfer to product team</li>
+                            <li><strong>Fri:</strong> Submit final report and celebrate! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Andrew Clark</span> — <span class="contact-role">Head of
+                    Product</span></div>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Compliance/Legal</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Analytics/Data</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+            <div class="footer-signature">
+                <div class="name">Andrew Clark</div>
+                <div class="title">Head of Product · Ipeople Career</div>
+                <div class="contact">+1 (653) 298-1388  Slack: @andrew.clark</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Product roadmap and feature management platform</li>
+                        <li><strong>Problem:</strong> 150+ unscored feature requests, no prioritization framework</li>
+                        <li><strong>Goal:</strong> 100% backlog RICE-scored, 3 user personas, Q2 roadmap approved</li>
+                        <li><strong>Users:</strong> Product team, stakeholders, engineering leads</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Conduct user research and create personas</li>
+                        <li>Design RICE prioritization framework</li>
+                        <li>Build Q2 roadmap and write PRDs</li>
+                        <li>Create launch planning and success metrics</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Productboard · Figma · Amplitude · Confluence</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Onboarding & product discovery</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>User research & personas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Feature prioritization framework</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Roadmap & PRD development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Launch planning & metrics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

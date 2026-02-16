@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrey Jain - DataLens | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">DataLens</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">DataLens</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Shrey Jain</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Data Analyst (DA)</strong> on
+                <strong>DataLens</strong>, a customer analytics platform for behavior insights and segmentation.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the DataLens project. You'll receive your weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>DataLens in one line</h3>
+            <p>A <strong>customer analytics platform</strong> that provides <strong>behavior analysis</strong>,
+                <strong>segmentation</strong>, <strong>cohort tracking</strong>, and <strong>churn prediction</strong>
+                for data-driven customer strategies.
+            </p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & Customer Data Discovery</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Set up SQL IDE (DBeaver), connect to
+                                <code>datalens_warehouse</code> — get credentials from James by 10 AM IST
+                            </li>
+                            <li><strong>Mon:</strong> Review customer data sources — <code>customers</code>,
+                                <code>events</code>, <code>transactions</code>, <code>support_tickets</code> (2.5M
+                                customers)
+                            </li>
+                            <li><strong>Tue:</strong> Analyze <code>customer_events</code> table — identify 45 event
+                                types (logins, purchases, page_views, feature_usage)</li>
+                            <li><strong>Wed:</strong> Profile customer base — create <code>customer_profiling.sql</code>
+                                with demographics, tenure, activity distributions</li>
+                            <li><strong>Thu:</strong> Map customer journey touchpoints — create flowchart from signup →
+                                activation → retention in Lucidchart</li>
+                            <li><strong>Fri:</strong> Present data discovery to Sarah (20 min) — highlight data quality
+                                issues and segmentation opportunities</li>
+                            <li><strong>Fri:</strong> Submit Week 1 status report in #datalens Slack channel by 5 PM IST
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Customer Segmentation Development</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Build <code>rfm_analysis.sql</code> — calculate Recency,
+                                Frequency, Monetary scores for all customers</li>
+                            <li><strong>Mon:</strong> Create RFM segments — Champions, Loyal, At Risk, Lost (5-point
+                                scale for each dimension)</li>
+                            <li><strong>Tue:</strong> Develop <code>behavioral_segments.py</code> — K-means clustering
+                                on product usage patterns (target: 6-8 segments)</li>
+                            <li><strong>Wed:</strong> Build <code>customer_360.sql</code> view — unified customer
+                                profile with segment assignments, lifetime metrics</li>
+                            <li><strong>Thu:</strong> Create <code>segment_profiles.pdf</code> — detailed description of
+                                each segment with size, value, characteristics</li>
+                            <li><strong>Fri:</strong> Validate segments with Marketing team — confirm business
+                                relevance, adjust criteria based on feedback</li>
+                            <li><strong>Fri:</strong> Document segmentation methodology in
+                                <code>segmentation_doc.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Customer Analytics Dashboard</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Set up Power BI workspace <code>DataLens-Analytics</code> —
+                                connect to customer warehouse</li>
+                            <li><strong>Mon:</strong> Build <strong>Customer Overview</strong> page — KPI cards: Total
+                                Customers, Active %, LTV, Churn Rate</li>
+                            <li><strong>Tue:</strong> Create <strong>Segment Explorer</strong> dashboard — treemap of
+                                segments, drill-through to customer lists</li>
+                            <li><strong>Wed:</strong> Build <strong>Cohort Analysis</strong> page — retention heatmap by
+                                signup month, revenue cohort curves</li>
+                            <li><strong>Thu:</strong> Create <strong>Customer Journey</strong> funnel — Signup →
+                                Activation → First Purchase → Repeat → Advocate</li>
+                            <li><strong>Fri:</strong> Implement segment filtering across all dashboards — select segment
+                                to see filtered metrics</li>
+                            <li><strong>Fri:</strong> Demo dashboards to Sarah and Marketing lead — collect feedback in
+                                <code>dashboard_feedback_v1.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Churn Prediction & Prevention</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Extract churn training data — 12 months history with 50+ features
+                                (activity, support, payments)</li>
+                            <li><strong>Mon:</strong> Build <code>churn_model.py</code> — Random Forest classifier for
+                                30-day churn prediction (target AUC > 0.80)</li>
+                            <li><strong>Tue:</strong> Identify churn drivers — SHAP analysis to find top 10 factors
+                                influencing churn risk</li>
+                            <li><strong>Wed:</strong> Create <strong>Churn Risk</strong> dashboard page — at-risk
+                                customer list with risk scores, intervention suggestions</li>
+                            <li><strong>Thu:</strong> Build <code>early_warning_alerts.py</code> — identify customers
+                                showing churn signals in last 7 days</li>
+                            <li><strong>Fri:</strong> Create <code>churn_prevention_playbook.md</code> — recommended
+                                actions per risk segment</li>
+                            <li><strong>Fri:</strong> Present churn model to Emily — ensure PII handling compliance,
+                                document in review notes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Automation & Campaign Integration</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Create <code>segment_refresh_dag.py</code> — Airflow pipeline for
+                                daily segment recalculation (run at 4 AM IST)</li>
+                            <li><strong>Mon:</strong> Build <code>churn_score_dag.py</code> — daily churn risk scoring
+                                for all active customers</li>
+                            <li><strong>Tue:</strong> Export segments to <code>marketing_automation_export.csv</code> —
+                                weekly sync to campaign tool</li>
+                            <li><strong>Wed:</strong> Create automated alerts — notify Customer Success when high-value
+                                customer risk > 0.7</li>
+                            <li><strong>Thu:</strong> Conduct UAT with Marketing and CS teams — test segment accuracy,
+                                alert relevance</li>
+                            <li><strong>Fri:</strong> Fix P1 issues from UAT — target: all critical bugs resolved by EOD
+                            </li>
+                            <li><strong>Fri:</strong> Document integrations in <code>integration_architecture.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete <code>datalens_technical_doc.md</code> — data model,
+                                segmentation logic, churn model details</li>
+                            <li><strong>Mon:</strong> Create <code>marketing_user_guide.pdf</code> — how to use segments
+                                for targeting, interpret churn scores</li>
+                            <li><strong>Tue:</strong> Record training videos — Segment Explorer (5 min), Cohort Analysis
+                                (4 min), Churn Dashboard (5 min)</li>
+                            <li><strong>Wed:</strong> Conduct training for Marketing team (8 attendees) — 1-hour
+                                walkthrough with hands-on exercises</li>
+                            <li><strong>Thu:</strong> Present final project to Stephanie and CMO — 30 min demo with campaign
+                                ROI projections</li>
+                            <li><strong>Thu:</strong> Create <code>maintenance_runbook.md</code> — model retraining
+                                schedule, segment monitoring</li>
+                            <li><strong>Fri:</strong> Complete knowledge transfer to Sarah — 1-hour deep dive on models
+                                and automation</li>
+                            <li><strong>Fri:</strong> Submit final internship report and celebrate completion! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span> — <span class="contact-desc">segmentation reviews, model
+                    validation, daily standups</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span> — <span class="contact-desc">database access, Airflow
+                    setup, infrastructure</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span> — <span class="contact-desc">customer data policies, PII
+                    handling, GDPR compliance</span></div>
+            <div class="contact-item"><span class="contact-name">Stephanie Moore</span> — <span class="contact-role">Project
+                    Lead</span> — <span class="contact-desc">escalations, stakeholder alignment, final
+                    presentations</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your
+                <strong>Monday task list</strong> in your inbox/Slack at the start of each week (IST).
+            </p>
+            <div class="footer-signature">
+                <div class="name">Stephanie Moore</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (752) 244-2574 · Slack: @stephanie.moore</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Customer analytics platform for segmentation and churn prediction
+                        </li>
+                        <li><strong>Problem:</strong> 2.5M customers with no unified analytics or churn visibility</li>
+                        <li><strong>Goal:</strong> Churn model AUC >0.80, 100% segment coverage, daily scoring</li>
+                        <li><strong>Users:</strong> Marketing team, Customer Success, Product managers</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Build RFM and behavioral segmentation</li>
+                        <li>Create customer analytics dashboards</li>
+                        <li>Develop churn prediction model</li>
+                        <li>Automate segment scoring and campaign exports</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>SQL (PostgreSQL) · Python (scikit-learn, SHAP) · Power BI · Airflow</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup, customer data discovery</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Customer segmentation development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Customer analytics dashboard</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Churn prediction & prevention</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Automation & campaign integration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

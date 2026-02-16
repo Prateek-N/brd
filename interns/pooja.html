@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Sangle - NeuroML | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">NeuroML</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">NeuroML</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Pooja Sangle</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>AI/ML Engineer</strong> on
+                <strong>NeuroML</strong>, an intelligent document processing and NLP platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the NeuroML project. You'll receive your weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>NeuroML in one line</h3>
+            <p>An <strong>AI platform</strong> for <strong>document extraction</strong>, <strong>text
+                    classification</strong>, and <strong>semantic search</strong> using LLMs.</p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & Model Exploration</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Clone <code>github.com/ipeople/neuroml</code> — set up Python
+                                3.11, PyTorch, CUDA</li>
+                            <li><strong>Mon:</strong> Configure GPU access — NVIDIA A100 via cloud compute</li>
+                            <li><strong>Tue:</strong> Review existing ML pipeline — data preprocessing, model training,
+                                inference</li>
+                            <li><strong>Wed:</strong> Study deployed models — BERT classifier, GPT extraction,
+                                embeddings</li>
+                            <li><strong>Thu:</strong> Bug #78: Fix tokenization edge case for non-English characters
+                            </li>
+                            <li><strong>Fri:</strong> Write 5 tests for multilingual tokenization</li>
+                            <li><strong>Fri:</strong> Submit PR with documentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Document Extraction Pipeline</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #45: Invoice extraction — key-value pair extraction from
+                                PDFs</li>
+                            <li><strong>Tue:</strong> Build OCR preprocessing — PyTesseract + layout detection</li>
+                            <li><strong>Wed:</strong> Fine-tune LayoutLM for invoice fields (vendor, amount, date)</li>
+                            <li><strong>Thu:</strong> Evaluate model — F1 score >0.92 on test set (500 invoices)</li>
+                            <li><strong>Fri:</strong> Create extraction API endpoint</li>
+                            <li><strong>Fri:</strong> Demo extraction to Sarah with sample invoices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Semantic Search Implementation</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #52: Semantic search — vector embeddings for document
+                                corpus</li>
+                            <li><strong>Tue:</strong> Set up Pinecone vector database — index 50K documents</li>
+                            <li><strong>Wed:</strong> Fine-tune sentence-transformers for domain-specific embeddings
+                            </li>
+                            <li><strong>Thu:</strong> Build search API — query expansion, reranking, filtering</li>
+                            <li><strong>Fri:</strong> Evaluate search quality — MRR@10 >0.85</li>
+                            <li><strong>Fri:</strong> Document embedding strategy</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>LLM Integration & RAG</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #58: RAG pipeline — retrieval-augmented generation for Q&A
+                            </li>
+                            <li><strong>Tue:</strong> Integrate OpenAI/Claude API with context injection</li>
+                            <li><strong>Wed:</strong> Build prompt templates for document Q&A</li>
+                            <li><strong>Thu:</strong> Add hallucination detection — confidence scoring, source
+                                attribution</li>
+                            <li><strong>Fri:</strong> Present RAG system to Emily — review data privacy considerations
+                            </li>
+                            <li><strong>Fri:</strong> Document prompt engineering patterns</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Model Optimization & Deployment</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Optimize inference — quantization, batching, caching</li>
+                            <li><strong>Tue:</strong> Build model serving with FastAPI + async processing</li>
+                            <li><strong>Wed:</strong> Add monitoring — latency, throughput, error rates</li>
+                            <li><strong>Thu:</strong> UAT with document processing team</li>
+                            <li><strong>Fri:</strong> Fix P1 issues — target <500ms p99 latency</li>
+                            <li><strong>Fri:</strong> Document deployment architecture</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete model documentation — architecture, training, evaluation
+                            </li>
+                            <li><strong>Tue:</strong> Write ML ops guide for retraining and monitoring</li>
+                            <li><strong>Wed:</strong> Record demo videos (15 min total)</li>
+                            <li><strong>Thu:</strong> Present final project to Daniel (30 min)</li>
+                            <li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+                            <li><strong>Fri:</strong> Submit final report and celebrate! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span></div>
+            <div class="contact-item"><span class="contact-name">Daniel Garcia</span> — <span class="contact-role">Project
+                    Lead</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+            <div class="footer-signature">
+                <div class="name">Daniel Garcia</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (832) 756-2948 � Slack: @daniel.garcia</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> AI platform for document extraction, semantic search, and RAG-based
+                            Q&A</li>
+                        <li><strong>Problem:</strong> Manual document processing, no semantic search, no Q&A capability
+                        </li>
+                        <li><strong>Goal:</strong> F1 >0.92 extraction, MRR@10 >0.85 search, <500ms p99 latency</li>
+                        <li><strong>Users:</strong> Document processing team, analysts, business users</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Build invoice extraction with LayoutLM fine-tuning</li>
+                        <li>Implement semantic search with Pinecone vectors</li>
+                        <li>Create RAG pipeline with LLM integration</li>
+                        <li>Optimize model inference for production</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Python 3.11 · PyTorch · CUDA · LayoutLM · sentence-transformers · OpenAI · Pinecone ·
+                            FastAPI</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup & model exploration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Document extraction pipeline</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Semantic search implementation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>LLM integration & RAG</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Model optimization & deployment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durga Phani Vikas Telu - MetricPro | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">MetricPro</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">MetricPro</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Durga Phani Vikas Telu</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Data Analyst (DA)</strong> on
+                <strong>MetricPro</strong>, a business intelligence platform for executive KPI tracking and performance
+                analytics.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the MetricPro project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>MetricPro in one line</h3>
+            <p>A <strong>business intelligence platform</strong> that provides <strong>executive dashboards</strong>,
+                <strong>KPI tracking</strong>, <strong>trend analysis</strong>, and <strong>automated reporting</strong>
+                for C-suite decision making.
+            </p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & KPI Discovery</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Set up SQL IDE (DBeaver), connect to
+                                <code>metricpro_warehouse</code> — get credentials from James by 10 AM IST
+                            </li>
+                            <li><strong>Mon:</strong> Review existing KPI catalog — 85 metrics across Revenue,
+                                Operations, Customer, Employee domains</li>
+                            <li><strong>Tue:</strong> Analyze <code>kpi_definitions</code> table — document calculation
+                                logic, data sources, refresh frequency for top 20 KPIs</li>
+                            <li><strong>Wed:</strong> Map executive reporting requirements — interview notes from CFO,
+                                COO, CMO (provided in SharePoint)</li>
+                            <li><strong>Thu:</strong> Create <code>kpi_gaps_analysis.xlsx</code> — identify 12 missing
+                                metrics requested by executives</li>
+                            <li><strong>Fri:</strong> Present discovery findings to Sarah (20 min) — prioritize KPI gaps
+                                by business impact</li>
+                            <li><strong>Fri:</strong> Submit Week 1 status report in #metricpro Slack channel by 5 PM
+                                IST</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>KPI Calculation & Data Modeling</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Create <code>revenue_kpis.sql</code> — MRR, ARR, Churn Rate, LTV,
+                                CAC calculations with YoY/MoM comparisons</li>
+                            <li><strong>Mon:</strong> Build <code>dim_date</code> table — fiscal calendar with quarters,
+                                weeks, holidays for proper period comparisons</li>
+                            <li><strong>Tue:</strong> Create <code>operations_kpis.sql</code> — Cycle Time, Throughput,
+                                Utilization, Defect Rate, OEE calculations</li>
+                            <li><strong>Wed:</strong> Build <code>customer_kpis.sql</code> — NPS, CSAT, CES, First
+                                Contact Resolution, Ticket Volume trending</li>
+                            <li><strong>Thu:</strong> Create <code>fact_kpi_daily</code> table — store daily snapshots
+                                for all 85+ KPIs with targets and thresholds</li>
+                            <li><strong>Fri:</strong> Validate calculations against Finance team's Excel reports —
+                                document variances in <code>validation_log.md</code></li>
+                            <li><strong>Fri:</strong> Create <code>kpi_data_model.pdf</code> — ERD with all
+                                fact/dimension relationships</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Executive Dashboard Development</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Set up Power BI workspace <code>MetricPro-Executive</code> —
+                                connect to KPI warehouse with DirectQuery</li>
+                            <li><strong>Mon:</strong> Build <strong>CEO Overview</strong> page — 8 KPI cards (Revenue,
+                                Margin, Customers, Employees) with spark trends</li>
+                            <li><strong>Tue:</strong> Create <strong>CFO Financial</strong> dashboard — P&L waterfall,
+                                Cash Flow trend, Budget vs Actual variance</li>
+                            <li><strong>Wed:</strong> Build <strong>COO Operations</strong> page — Production metrics,
+                                Supply Chain health, Quality indicators</li>
+                            <li><strong>Thu:</strong> Create <strong>CMO Marketing</strong> dashboard — Campaign ROI,
+                                Pipeline velocity, Channel attribution</li>
+                            <li><strong>Fri:</strong> Implement executive drill-down — click KPI card to see trend
+                                chart, dimension breakdown, root cause analysis</li>
+                            <li><strong>Fri:</strong> Demo dashboards to Sarah and Jessica — collect feedback in
+                                <code>dashboard_feedback_v1.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Trend Analysis & Insights</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Build <code>trend_analysis.py</code> — detect significant changes
+                                in KPIs (>2 std dev from 30-day average)</li>
+                            <li><strong>Mon:</strong> Create <strong>Insights</strong> page — AI-generated narrative
+                                summaries of weekly KPI movements</li>
+                            <li><strong>Tue:</strong> Implement YoY/QoQ comparison views — side-by-side period analysis
+                                with % change indicators</li>
+                            <li><strong>Wed:</strong> Build <code>correlation_analysis.py</code> — identify
+                                relationships between KPIs (e.g., Marketing Spend vs Revenue)</li>
+                            <li><strong>Thu:</strong> Create <strong>What-If Scenario</strong> tool — sliders to model
+                                impact of metric changes on overall performance</li>
+                            <li><strong>Fri:</strong> Build automated insight generation — weekly email with top 5
+                                notable changes and recommendations</li>
+                            <li><strong>Fri:</strong> Present analysis capabilities to Emily — ensure no PII in automated
+                                insights</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Automation & Mobile Access</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Create <code>kpi_refresh_dag.py</code> — Airflow pipeline for
+                                daily KPI calculations (run at 5 AM IST)</li>
+                            <li><strong>Mon:</strong> Configure threshold alerts — email executives when KPI breaches
+                                target (Red/Yellow thresholds)</li>
+                            <li><strong>Tue:</strong> Optimize dashboard for Power BI Mobile — responsive layout for
+                                C-suite on-the-go access</li>
+                            <li><strong>Wed:</strong> Build weekly automated report — PDF export with KPI summary,
+                                trends, commentary (sent Monday 8 AM)</li>
+                            <li><strong>Thu:</strong> Conduct UAT with executive assistants — test mobile access, report
+                                readability, alert relevance</li>
+                            <li><strong>Fri:</strong> Fix P1 issues from UAT — target: all critical bugs resolved by EOD
+                            </li>
+                            <li><strong>Fri:</strong> Document automation in <code>automation_architecture.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete <code>metricpro_technical_doc.md</code> — KPI
+                                calculations, data model, refresh schedules</li>
+                            <li><strong>Mon:</strong> Create <code>executive_user_guide.pdf</code> — 10-page guide with
+                                screenshots for C-suite users</li>
+                            <li><strong>Tue:</strong> Record training videos — Dashboard Navigation (5 min), Mobile
+                                Access (3 min), Interpreting Insights (4 min)</li>
+                            <li><strong>Wed:</strong> Conduct training for executive assistants (6 attendees) — 45 min
+                                session + Q&A</li>
+                            <li><strong>Thu:</strong> Present final project to Jessica and CFO — 30 min demo with business
+                                value demonstration</li>
+                            <li><strong>Thu:</strong> Create <code>maintenance_runbook.md</code> — KPI refresh
+                                monitoring, threshold updates, new metric addition</li>
+                            <li><strong>Fri:</strong> Complete knowledge transfer to Sarah — 1-hour session on
+                                calculations, dashboards, automation</li>
+                            <li><strong>Fri:</strong> Submit final internship report and celebrate completion! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span> — <span class="contact-desc">KPI definitions, dashboard
+                    reviews, daily standups</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span> — <span class="contact-desc">database access, Airflow
+                    setup, infrastructure</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span> — <span class="contact-desc">executive data access
+                    policies, PII handling</span></div>
+            <div class="contact-item"><span class="contact-name">Jessica Williams</span> — <span class="contact-role">Project
+                    Lead</span> — <span class="contact-desc">executive stakeholder alignment, final presentations</span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your
+                <strong>Monday task list</strong> in your inbox/Slack at the start of each week (IST).
+            </p>
+            <div class="footer-signature">
+                <div class="name">Jessica Williams</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (899) 960-6380 · Slack: @jessica.williams</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Executive BI platform for C-suite KPI tracking and insights</li>
+                        <li><strong>Problem:</strong> 85 KPIs across 5 domains with no unified executive view</li>
+                        <li><strong>Goal:</strong> Dashboard adoption by all C-suite, daily automated refresh</li>
+                        <li><strong>Users:</strong> CEO, CFO, COO, CMO, executive assistants</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Build KPI calculation models</li>
+                        <li>Create executive dashboards per C-level role</li>
+                        <li>Implement trend analysis and insights</li>
+                        <li>Automate weekly reports and alerts</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>SQL (Snowflake) · Python (pandas, scipy) · Power BI · Airflow</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup, KPI discovery</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>KPI calculation & data modeling</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Executive dashboard development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Trend analysis & insights</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Automation & mobile access</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepinder Dhillon - LaunchPad | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">LaunchPad</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">LaunchPad</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Deepinder Dhillon</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Project Manager (PM)</strong> on
+                <strong>LaunchPad</strong>, a project portfolio and delivery management platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the LaunchPad project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>LaunchPad in one line</h3>
+            <p>A <strong>delivery platform</strong> for <strong>project tracking</strong>, <strong>resource
+                    planning</strong>, and <strong>stakeholder reporting</strong>.</p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Onboarding & Portfolio Assessment</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Access Jira, Confluence, Slack — review existing project boards
+                            </li>
+                            <li><strong>Mon:</strong> Meet with Emily — understand portfolio priorities, pain points
+                            </li>
+                            <li><strong>Tue:</strong> Review 8 active projects — status, risks, dependencies</li>
+                            <li><strong>Wed:</strong> Create <code>portfolio_health_assessment.xlsx</code> — RAG status
+                                by project</li>
+                            <li><strong>Thu:</strong> Shadow existing PM ceremonies — standups, sprint planning</li>
+                            <li><strong>Fri:</strong> Identify top 3 process improvement opportunities</li>
+                            <li><strong>Fri:</strong> Present assessment findings to Emily</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Project Governance Framework</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Design project lifecycle stages — Initiation, Planning, Execution,
+                                Closure</li>
+                            <li><strong>Tue:</strong> Create stage-gate criteria — entry/exit requirements</li>
+                            <li><strong>Wed:</strong> Build RACI matrix template for cross-functional projects</li>
+                            <li><strong>Thu:</strong> Design risk management process — identification, assessment,
+                                mitigation</li>
+                            <li><strong>Fri:</strong> Document governance framework in Confluence</li>
+                            <li><strong>Fri:</strong> Review framework with Emily for compliance alignment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Resource Planning System</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Analyze current resource allocation — capacity vs. demand by team
+                            </li>
+                            <li><strong>Tue:</strong> Create resource planning spreadsheet with capacity forecasting
+                            </li>
+                            <li><strong>Wed:</strong> Design skill matrix — map team capabilities to project needs</li>
+                            <li><strong>Thu:</strong> Build resource request workflow — intake, approval, assignment
+                            </li>
+                            <li><strong>Fri:</strong> Present resource plan to Sarah and tech leads</li>
+                            <li><strong>Fri:</strong> Document resource management process</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Stakeholder Reporting</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Design executive dashboard — portfolio status, budget, timeline
+                            </li>
+                            <li><strong>Tue:</strong> Create weekly status report template — accomplishments, plans,
+                                risks</li>
+                            <li><strong>Wed:</strong> Build project health metrics — velocity, burndown, predictability
+                            </li>
+                            <li><strong>Thu:</strong> Automate report generation from Jira data</li>
+                            <li><strong>Fri:</strong> Pilot executive report with Emily</li>
+                            <li><strong>Fri:</strong> Collect feedback and iterate on reporting format</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Process Improvement</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Lead retrospective sessions across 3 project teams</li>
+                            <li><strong>Tue:</strong> Analyze retrospective themes — identify systemic issues</li>
+                            <li><strong>Wed:</strong> Design improvement initiatives — process changes, tooling</li>
+                            <li><strong>Thu:</strong> Implement quick wins — meeting efficiency, documentation standards
+                            </li>
+                            <li><strong>Fri:</strong> UAT governance framework with project leads</li>
+                            <li><strong>Fri:</strong> Adjust processes based on feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete PM playbook — processes, templates, best practices</li>
+                            <li><strong>Tue:</strong> Create onboarding guide for new PMs</li>
+                            <li><strong>Wed:</strong> Record training videos (20 min total)</li>
+                            <li><strong>Thu:</strong> Present final deliverables to Emily (30 min)</li>
+                            <li><strong>Fri:</strong> Knowledge transfer to existing PM team</li>
+                            <li><strong>Fri:</strong> Submit final report and celebrate! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span class="contact-role">Program
+                    Director</span></div>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Compliance/Governance</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/Tooling</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+            <div class="footer-signature">
+                <div class="name">Emily Carter</div>
+                <div class="title">Program Director · Ipeople Career</div>
+                <div class="contact">+1 (720) 391-4582  Slack: @emily.carter</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Project portfolio and delivery management platform</li>
+                        <li><strong>Problem:</strong> 8 projects, 45 team members with inconsistent governance and
+                            reporting</li>
+                        <li><strong>Goal:</strong> 100% RAG status tracking, weekly executive reports, >80% resource
+                            utilization</li>
+                        <li><strong>Users:</strong> Project leads, executives, resource managers</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Design project governance framework with stage-gates</li>
+                        <li>Create resource planning and capacity forecasting</li>
+                        <li>Build executive reporting dashboards</li>
+                        <li>Lead process improvement initiatives</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Jira · Confluence · Excel/Sheets · Slack</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Onboarding & portfolio assessment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Project governance framework</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Resource planning system</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Stakeholder reporting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Process improvement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

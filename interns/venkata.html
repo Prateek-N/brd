@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkata Ratna Kumar Mandalapu - CodeNexus | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">CodeNexus</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">CodeNexus</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Venkata Ratna Kumar Mandalapu</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Software Engineer (SE)</strong> on
+                <strong>CodeNexus</strong>, a microservices API gateway and service mesh platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the CodeNexus project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>CodeNexus in one line</h3>
+            <p>A <strong>microservices platform</strong> that provides <strong>API gateway</strong>, <strong>service
+                    discovery</strong>, <strong>load balancing</strong>, and <strong>distributed tracing</strong> for
+                cloud-native applications.</p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & Codebase Exploration</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Clone repo <code>github.com/ipeople/codenexus</code> — set up VS
+                                Code with Go extensions, ESLint, Prettier</li>
+                            <li><strong>Mon:</strong> Install Docker Desktop, kubectl, and Helm — configure local
+                                Kubernetes cluster (minikube or kind)</li>
+                            <li><strong>Tue:</strong> Review architecture docs — <code>docs/architecture.md</code>
+                                covering 12 microservices, message queues, databases</li>
+                            <li><strong>Wed:</strong> Run full stack locally — <code>docker-compose up</code> with all
+                                services, verify health endpoints</li>
+                            <li><strong>Thu:</strong> Complete first bug fix — Issue #234: Fix rate limiter token bucket
+                                reset (estimated 4 hrs)</li>
+                            <li><strong>Fri:</strong> Write unit tests for bug fix — 3 test cases covering edge cases,
+                                run <code>go test -cover</code></li>
+                            <li><strong>Fri:</strong> Submit PR, respond to code review feedback — target merge by EOD
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>API Gateway Feature Development</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #78: Request validation middleware — parse OpenAPI
+                                spec, validate request body/params</li>
+                            <li><strong>Mon:</strong> Design middleware chain — <code>validation_middleware.go</code>
+                                with configurable schema loading</li>
+                            <li><strong>Tue:</strong> Implement JSON Schema validation — support for string, number,
+                                array, object types with constraints</li>
+                            <li><strong>Wed:</strong> Add path parameter validation — regex patterns, enum values,
+                                required fields</li>
+                            <li><strong>Thu:</strong> Write comprehensive tests — 15 test cases covering valid/invalid
+                                payloads, edge cases</li>
+                            <li><strong>Fri:</strong> Integrate with gateway router — add middleware to
+                                <code>cmd/gateway/main.go</code>, test end-to-end
+                            </li>
+                            <li><strong>Fri:</strong> Submit PR with documentation — update
+                                <code>docs/middleware.md</code> with usage examples
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Service Discovery Integration</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #82: Consul service discovery — integrate
+                                <code>hashicorp/consul/api</code> client library
+                            </li>
+                            <li><strong>Mon:</strong> Implement service registration — auto-register gateway instances
+                                with health checks</li>
+                            <li><strong>Tue:</strong> Build service resolver — <code>resolver/consul.go</code> for
+                                dynamic backend discovery</li>
+                            <li><strong>Wed:</strong> Add load balancing — round-robin, least-connections, weighted
+                                algorithms</li>
+                            <li><strong>Thu:</strong> Implement health check aggregation — query Consul for backend
+                                health, circuit break unhealthy</li>
+                            <li><strong>Fri:</strong> Write integration tests — spin up Consul in Docker, test discovery
+                                flow end-to-end</li>
+                            <li><strong>Fri:</strong> Demo to Sarah — show live service registration, failover behavior
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Distributed Tracing Implementation</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #85: OpenTelemetry tracing — integrate
+                                <code>go.opentelemetry.io/otel</code> SDK
+                            </li>
+                            <li><strong>Mon:</strong> Configure Jaeger exporter — send traces to
+                                <code>jaeger:14268</code> in Docker Compose
+                            </li>
+                            <li><strong>Tue:</strong> Instrument HTTP handlers — add spans for incoming requests with
+                                method, path, status</li>
+                            <li><strong>Wed:</strong> Propagate trace context — inject/extract headers for downstream
+                                service calls</li>
+                            <li><strong>Thu:</strong> Add custom attributes — user_id, request_id, service_version to
+                                spans</li>
+                            <li><strong>Fri:</strong> Create tracing dashboard — Grafana panels showing latency
+                                percentiles, error rates</li>
+                            <li><strong>Fri:</strong> Present tracing setup to Emily — ensure no PII in trace data,
+                                document data retention</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Performance Testing & Optimization</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Set up load testing — <code>k6</code> scripts for gateway
+                                endpoints (1000 RPS target)</li>
+                            <li><strong>Mon:</strong> Run baseline benchmark — measure p50, p95, p99 latencies, error
+                                rate under load</li>
+                            <li><strong>Tue:</strong> Profile CPU hotspots — use <code>pprof</code> to identify
+                                bottlenecks in hot paths</li>
+                            <li><strong>Wed:</strong> Optimize validation middleware — cache compiled schemas, reduce
+                                allocations</li>
+                            <li><strong>Thu:</strong> Deploy to staging Kubernetes —
+                                <code>helm upgrade codenexus ./charts/codenexus -n staging</code>
+                            </li>
+                            <li><strong>Fri:</strong> Run staging load test — validate performance at 80% of production
+                                capacity</li>
+                            <li><strong>Fri:</strong> Document optimizations in <code>perf_improvements_v1.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete API documentation — OpenAPI spec for gateway endpoints in
+                                <code>api/openapi.yaml</code>
+                            </li>
+                            <li><strong>Mon:</strong> Update architecture docs — add new components (validation,
+                                discovery, tracing) to diagrams</li>
+                            <li><strong>Tue:</strong> Write runbook — <code>docs/runbook.md</code> for operational
+                                procedures, troubleshooting</li>
+                            <li><strong>Wed:</strong> Create onboarding guide — <code>docs/onboarding.md</code> for
+                                future developers</li>
+                            <li><strong>Thu:</strong> Present final project to Megan and Platform team — 30 min demo
+                                with performance metrics</li>
+                            <li><strong>Thu:</strong> Conduct code walkthrough with James — 1-hour session covering key
+                                modules</li>
+                            <li><strong>Fri:</strong> Complete knowledge transfer to Sarah — review open PRs, pending
+                                issues</li>
+                            <li><strong>Fri:</strong> Submit final internship report and celebrate completion! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span> — <span class="contact-desc">code reviews, architecture
+                    decisions, daily standups</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span> — <span class="contact-desc">Kubernetes, Helm,
+                    infrastructure, monitoring</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span> — <span class="contact-desc">API security,
+                    authentication, data handling</span></div>
+            <div class="contact-item"><span class="contact-name">Megan Lewis</span> — <span class="contact-role">Project
+                    Lead</span> — <span class="contact-desc">sprint planning, escalations, final presentations</span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your
+                <strong>Monday task list</strong> in your inbox/Slack at the start of each week (IST).
+            </p>
+            <div class="footer-signature">
+                <div class="name">Megan Lewis</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (274) 795-7620 · Slack: @megan.lewis</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Microservices API gateway and service mesh platform</li>
+                        <li><strong>Problem:</strong> 12 backend services with no unified gateway, tracing, or discovery
+                        </li>
+                        <li><strong>Goal:</strong> 1000 RPS, P95 <50ms latency, 99.9% uptime</li>
+                        <li><strong>Users:</strong> Platform team, backend developers, SREs</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Build request validation middleware</li>
+                        <li>Integrate Consul service discovery</li>
+                        <li>Implement OpenTelemetry distributed tracing</li>
+                        <li>Optimize gateway performance</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Go · Chi Router · gRPC · HashiCorp Consul · OpenTelemetry · Docker · K8s</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup & codebase exploration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>API gateway feature development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Service discovery integration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Distributed tracing implementation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Performance testing & optimization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

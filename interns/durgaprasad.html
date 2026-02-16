@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durgaprasad Budhihal - AuthGuard | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">AuthGuard</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">AuthGuard</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Durgaprasad Budhihal</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Software Engineer (SE)</strong> on
+                <strong>AuthGuard</strong>, an identity and access management platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the AuthGuard project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>AuthGuard in one line</h3>
+            <p>An <strong>identity platform</strong> that provides <strong>SSO</strong>, <strong>MFA</strong>,
+                <strong>RBAC</strong>, and <strong>OAuth/OIDC</strong> for secure authentication across enterprise
+                applications.
+            </p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & Auth Flow Study</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Clone repo <code>github.com/ipeople/authguard</code> — set up VS
+                                Code with TypeScript, ESLint</li>
+                            <li><strong>Mon:</strong> Install dependencies — Node.js 20, PostgreSQL, Redis for session
+                                storage</li>
+                            <li><strong>Tue:</strong> Review OAuth 2.0 / OIDC specs — RFC 6749, RFC 7519 (JWT), OpenID
+                                Connect Core</li>
+                            <li><strong>Wed:</strong> Study existing auth flows — Authorization Code, Client
+                                Credentials, Refresh Token flows</li>
+                            <li><strong>Thu:</strong> Complete first bug fix — Issue #89: Fix token refresh race
+                                condition on concurrent requests</li>
+                            <li><strong>Fri:</strong> Write unit tests for fix — 5 test cases covering token refresh
+                                edge cases</li>
+                            <li><strong>Fri:</strong> Submit PR, respond to security-focused code review</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>MFA Implementation</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #34: TOTP MFA — implement Google Authenticator
+                                support</li>
+                            <li><strong>Mon:</strong> Design MFA enrollment flow — QR code generation, backup codes,
+                                recovery options</li>
+                            <li><strong>Tue:</strong> Build TOTP verification — <code>speakeasy</code> library for
+                                time-based OTP validation</li>
+                            <li><strong>Wed:</strong> Create enrollment UI — QR scan page, manual entry fallback, backup
+                                codes display</li>
+                            <li><strong>Thu:</strong> Implement MFA challenge screen — integrate into login flow after
+                                password verification</li>
+                            <li><strong>Fri:</strong> Add remember device option — trusted device token with 30-day
+                                expiry</li>
+                            <li><strong>Fri:</strong> Write security tests — 8 test cases for MFA bypass attempts,
+                                timing attacks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>SSO Integration</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #41: SAML 2.0 SSO — implement IdP-initiated and
+                                SP-initiated flows</li>
+                            <li><strong>Mon:</strong> Configure SAML metadata — entity ID, assertion consumer service,
+                                signing certificates</li>
+                            <li><strong>Tue:</strong> Build SAML assertion parser — validate signatures, extract user
+                                attributes</li>
+                            <li><strong>Wed:</strong> Implement user provisioning — JIT (Just-In-Time) user creation
+                                from SAML attributes</li>
+                            <li><strong>Thu:</strong> Create SSO admin UI — IdP configuration, attribute mapping, test
+                                connection</li>
+                            <li><strong>Fri:</strong> Test with Okta sandbox — end-to-end SSO flow validation</li>
+                            <li><strong>Fri:</strong> Demo SSO to Sarah — show complete IdP integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>RBAC Enhancement</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #48: Hierarchical RBAC — implement role inheritance
+                                and permission aggregation</li>
+                            <li><strong>Mon:</strong> Design role hierarchy schema — parent-child relationships,
+                                permission override rules</li>
+                            <li><strong>Tue:</strong> Build permission resolver — traverse hierarchy to compute
+                                effective permissions</li>
+                            <li><strong>Wed:</strong> Create role management UI — tree view of hierarchy, drag-drop role
+                                assignment</li>
+                            <li><strong>Thu:</strong> Add permission audit logging — track who granted/revoked
+                                permissions when</li>
+                            <li><strong>Fri:</strong> Implement permission check API —
+                                <code>POST /permissions/check</code> for app-level authorization
+                            </li>
+                            <li><strong>Fri:</strong> Present RBAC to Emily — security review of permission model</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Security Audit & Hardening</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Run OWASP ZAP scan — identify vulnerabilities in auth endpoints
+                            </li>
+                            <li><strong>Mon:</strong> Fix identified issues — XSS, CSRF, insecure headers, session
+                                fixation</li>
+                            <li><strong>Tue:</strong> Implement rate limiting — brute force protection on login, token
+                                endpoints</li>
+                            <li><strong>Wed:</strong> Add security headers — CSP, HSTS, X-Frame-Options,
+                                X-Content-Type-Options</li>
+                            <li><strong>Thu:</strong> Conduct UAT with app teams — test SSO, MFA, RBAC integration</li>
+                            <li><strong>Fri:</strong> Fix P1 security issues from UAT — target: zero critical
+                                vulnerabilities</li>
+                            <li><strong>Fri:</strong> Document security controls in <code>security_controls.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete API documentation — OAuth endpoints, MFA APIs, RBAC
+                                endpoints</li>
+                            <li><strong>Mon:</strong> Update security architecture docs — add MFA, SSO, RBAC to diagrams
+                            </li>
+                            <li><strong>Tue:</strong> Write integration guide — <code>docs/integration.md</code> for app
+                                developers</li>
+                            <li><strong>Wed:</strong> Record demo videos — MFA Setup (4 min), SSO Config (5 min), RBAC
+                                Admin (4 min)</li>
+                            <li><strong>Thu:</strong> Present final project to Robert and Security team — 30 min demo
+                                with security metrics</li>
+                            <li><strong>Thu:</strong> Create incident response runbook —
+                                <code>docs/security_runbook.md</code>
+                            </li>
+                            <li><strong>Fri:</strong> Complete knowledge transfer to Sarah — review all features and
+                                security considerations</li>
+                            <li><strong>Fri:</strong> Submit final internship report and celebrate completion! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span> — <span class="contact-desc">code reviews, architecture
+                    decisions, daily standups</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span> — <span class="contact-desc">infrastructure, Redis,
+                    certificate management</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span> — <span class="contact-desc">security reviews,
+                    compliance, penetration testing</span></div>
+            <div class="contact-item"><span class="contact-name">Robert Martinez</span> — <span class="contact-role">Project
+                    Lead</span> — <span class="contact-desc">sprint planning, escalations, final presentations</span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your
+                <strong>Monday task list</strong> in your inbox/Slack at the start of each week (IST).
+            </p>
+            <div class="footer-signature">
+                <div class="name">Robert Martinez</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (641) 241-3065 · Slack: @robert.martinez</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Identity and access management platform (SSO, MFA, RBAC)</li>
+                        <li><strong>Problem:</strong> 15 apps, 5000+ users with no unified auth or MFA</li>
+                        <li><strong>Goal:</strong> OWASP compliance, SOC2 controls, 99.99% uptime SLA</li>
+                        <li><strong>Users:</strong> Enterprise users, app developers, security team</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Implement TOTP multi-factor authentication</li>
+                        <li>Build SAML 2.0 SSO integration</li>
+                        <li>Create hierarchical RBAC system</li>
+                        <li>Conduct security audit and hardening</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Node.js · TypeScript · PostgreSQL · Redis · OAuth 2.0 · SAML · TOTP</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup & auth flow study</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>MFA implementation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>SSO integration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>RBAC enhancement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Security audit & hardening</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

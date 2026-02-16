@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary Shreeja Thumma - DataVault | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">DataVault</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">DataVault</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Mary Shreeja Thumma</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Data Analyst (DA)</strong> on
+                <strong>DataVault</strong>, a centralized data governance and quality management platform for enterprise
+                data assets.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the DataVault project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>DataVault in one line</h3>
+            <p>A <strong>data governance platform</strong> that provides <strong>data cataloging</strong>,
+                <strong>quality monitoring</strong>, <strong>lineage tracking</strong>, and <strong>compliance
+                    reporting</strong> for enterprise data assets.
+            </p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & Data Catalog Review</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li>Set up SQL IDE and connect to catalog database</li>
+                            <li>Review existing data catalog structure across domains</li>
+                            <li>Analyze metadata registry for completeness</li>
+                            <li>Identify datasets missing documentation or owners</li>
+                            <li>Map data lineage for key datasets</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Data Quality Rules Development</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li>Define data quality dimensions per domain</li>
+                            <li>Create validation rules for customer and financial data</li>
+                            <li>Develop quality scoring model</li>
+                            <li>Run baseline quality assessment</li>
+                            <li>Document quality rules and review with stakeholders</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Governance Dashboard Development</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li>Set up Power BI workspace and data connections</li>
+                            <li>Build Data Quality Scorecard dashboard</li>
+                            <li>Create Catalog Coverage and Lineage Explorer views</li>
+                            <li>Build Compliance Status page</li>
+                            <li>Implement drill-through functionality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Anomaly Detection & Alerting</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li>Analyze historical quality trends</li>
+                            <li>Create anomaly detection model</li>
+                            <li>Build alert thresholds and automation</li>
+                            <li>Create Issue Tracker dashboard page</li>
+                            <li>Document remediation playbook</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Automation & Integration</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li>Create automated daily quality pipeline</li>
+                            <li>Configure Slack integration for alerts</li>
+                            <li>Build catalog sync and lineage auto-detection</li>
+                            <li>Conduct UAT with data stewards</li>
+                            <li>Fix priority issues and document architecture</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li>Complete technical documentation</li>
+                            <li>Create data steward guide</li>
+                            <li>Record training videos</li>
+                            <li>Conduct training session for end users</li>
+                            <li>Present final project and complete knowledge transfer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span> — <span class="contact-desc">quality rules review,
+                    dashboard feedback, daily standups</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span> — <span class="contact-desc">database access, Airflow
+                    setup, infrastructure</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span> — <span class="contact-desc">compliance requirements,
+                    data classification, PII handling</span></div>
+            <div class="contact-item"><span class="contact-name">Lauren Wilson</span> — <span class="contact-role">Project
+                    Lead</span> — <span class="contact-desc">escalations, stakeholder alignment, final
+                    presentations</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your
+                <strong>Monday task list</strong> in your inbox/Slack at the start of each week (IST).
+            </p>
+            <div class="footer-signature">
+                <div class="name">Lauren Wilson</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (610) 801-1061 · Slack: @lauren.wilson</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Data governance platform for centralized cataloging and quality
+                            monitoring</li>
+                        <li><strong>Problem:</strong> 156 datasets across 8 domains with inconsistent ownership and
+                            quality</li>
+                        <li><strong>Goal:</strong> 100% catalog coverage, >90% quality scores, zero compliance gaps</li>
+                        <li><strong>Users:</strong> Data stewards, compliance team, business domain owners</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Build data quality rules and scoring models</li>
+                        <li>Create governance dashboards</li>
+                        <li>Implement anomaly detection for quality drops</li>
+                        <li>Automate daily quality checks</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>SQL (DBeaver) · Python (Great Expectations) · Power BI · Airflow</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup, data catalog review</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Data quality rules development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Governance dashboard development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Anomaly detection & alerting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Automation & integration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>
