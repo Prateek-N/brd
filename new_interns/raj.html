@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj Ingale - TestBench | iPeople Career</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="logo">Ipeople Career</div><div class="project-badge">TestBench</div></header>
+<main class="container">
+<section class="welcome-card">
+<h1>Welcome to <span class="highlight">TestBench</span> &#8212; kickoff details &amp; Monday task cadence</h1>
+<p class="greeting">Hi <span class="name">Raj Ingale</span>,</p>
+<p>Welcome aboard! We're excited to have you join as our <strong>DFT Engineer</strong> on <strong>TestBench</strong>, a DFT test pattern management and coverage analysis tool.</p>
+<p>You're starting on <strong>February 23, 2026</strong>, marking the beginning of your first week focused on onboarding and understanding the foundational setup for the TestBench project. You'll receive your weekly task list every <strong>Monday (IST)</strong>.</p>
+<div class="btn-group"><button class="btn btn-primary" onclick="openModal()">Open BRD</button></div>
+</section>
+<section class="project-summary"><h3>TestBench in one line</h3><p>A <strong>DFT management tool</strong> for <strong>test pattern generation</strong>, <strong>fault coverage analysis</strong>, and <strong>design testability</strong>.</p></section>
+<section class="week-section"><h2>Weekly Task Breakdown</h2><div class="accordion"><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 1</span><span>Setup & Design Review</span><span class="dates">(Feb 23 - Mar 1)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up DFT tool environment and license access</li>
+<li><strong>Mon:</strong> Review RTL design blocks and existing DFT architecture</li>
+<li><strong>Tue:</strong> Study scan chain insertion and ATPG flow</li>
+<li><strong>Wed:</strong> Analyze current test coverage reports and identify gaps</li>
+<li><strong>Thu:</strong> Bug #1: Fix scan chain stitching order violation in Block A</li>
+<li><strong>Fri:</strong> Document design block DFT status</li>
+<li><strong>Fri:</strong> Submit coverage gap analysis for review</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 2</span><span>Scan Insertion & ATPG</span><span class="dates">(Mar 2 - Mar 8)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Insert scan chains for 3 design blocks using DFT Compiler</li>
+<li><strong>Tue:</strong> Run ATPG to generate stuck-at fault test patterns</li>
+<li><strong>Wed:</strong> Analyze pattern count vs coverage tradeoff</li>
+<li><strong>Thu:</strong> Add transition fault patterns for delay testing</li>
+<li><strong>Fri:</strong> Write 4 coverage comparison scripts in Python</li>
+<li><strong>Fri:</strong> Demo ATPG results to Sarah</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 3</span><span>BIST & Memory Testing</span><span class="dates">(Mar 9 - Mar 15)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Implement MBIST for on-chip memory blocks</li>
+<li><strong>Tue:</strong> Configure MBIST controller with march algorithm</li>
+<li><strong>Wed:</strong> Add LBIST logic for core-level self-test</li>
+<li><strong>Thu:</strong> Validate BIST results against expected fault coverage</li>
+<li><strong>Fri:</strong> Write 5 test validation scripts</li>
+<li><strong>Fri:</strong> Document BIST configuration</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 4</span><span>Coverage Analysis & Optimization</span><span class="dates">(Mar 16 - Mar 22)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build Python tool to parse and compare coverage reports</li>
+<li><strong>Tue:</strong> Identify hard-to-detect faults and add test points</li>
+<li><strong>Wed:</strong> Re-run ATPG after test point insertion &mdash; measure improvement</li>
+<li><strong>Thu:</strong> Create coverage trend chart across design iterations</li>
+<li><strong>Fri:</strong> Present coverage improvement to James</li>
+<li><strong>Fri:</strong> Document test point insertion rationale</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 5</span><span>Validation & Sign-off</span><span class="dates">(Mar 23 - Mar 29)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Run final ATPG with target coverage metrics</li>
+<li><strong>Tue:</strong> Validate test patterns on gate-level simulation</li>
+<li><strong>Wed:</strong> Create DFT rule check report and fix violations</li>
+<li><strong>Thu:</strong> UAT &mdash; verify pattern application on test bench</li>
+<li><strong>Fri:</strong> Fix P1 issues from validation</li>
+<li><strong>Fri:</strong> Document final coverage numbers</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 6</span><span>Documentation & Handoff</span><span class="dates">(Mar 30 - Apr 5)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Complete DFT architecture documentation</li>
+<li><strong>Tue:</strong> Write test pattern generation guide</li>
+<li><strong>Wed:</strong> Record walkthrough video (10 min)</li>
+<li><strong>Thu:</strong> Present final project to James (30 min)</li>
+<li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+<li><strong>Fri:</strong> Submit final report and celebrate! &#127881;</li>
+</ul></div>
+</div></div></section>
+<section class="contacts-section">
+<h3>Points of contact</h3>
+<div class="contact-item"><span class="contact-name">Sarah Mitchell</span> &#8212; <span class="contact-role">Technical Lead</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Platform/SRE</span></div>
+<div class="contact-item"><span class="contact-name">Emily Carter</span> &#8212; <span class="contact-role">Security/Policy</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Project Lead</span></div>
+</section>
+<footer class="footer">
+<p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+<div class="footer-signature"><div class="name">James Anderson</div><div class="title">Project Lead &middot; Ipeople Career</div><div class="contact">+1 (469) 532-8174 &middot; Slack: @james.anderson</div></div>
+</footer>
+</main>
+<div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+<div class="modal">
+<div class="modal-header"><h2>&#128196; Business Requirements Document</h2><button class="modal-close" onclick="closeModal()">&times;</button></div>
+<div class="modal-body">
+<div class="brd-section"><h3>1. Project Overview</h3><ul>
+<li><strong>What:</strong> DFT test pattern management and fault coverage analysis tool</li>
+<li><strong>Problem:</strong> Test coverage gaps, manual pattern analysis, no trend tracking</li>
+<li><strong>Goal:</strong> Achieve 95%+ stuck-at coverage, automate ATPG reports, track coverage trends</li>
+<li><strong>Users:</strong> DFT engineers, verification team, silicon test engineers</li>
+</ul></div>
+<div class="brd-section"><h3>2. Your Role</h3><ul><li>Insert scan chains and run ATPG for fault patterns</li><li>Implement MBIST and LBIST for memory/logic test</li><li>Build Python coverage analysis and reporting tool</li><li>Optimize coverage with test point insertion</li></ul></div>
+<div class="brd-section"><h3>3. Tools</h3><ul><li>Synopsys DFT Compiler &middot; TetraMAX &middot; Verilog &middot; Python &middot; TCL &middot; Excel</li></ul></div>
+<div class="brd-section"><h3>4. Weekly Milestones</h3><table class="milestone-table"><tr><td><strong>W1</strong></td><td>Setup & Design Review</td></tr><tr><td><strong>W2</strong></td><td>Scan Insertion & ATPG</td></tr><tr><td><strong>W3</strong></td><td>BIST & Memory Testing</td></tr><tr><td><strong>W4</strong></td><td>Coverage Analysis & Optimization</td></tr><tr><td><strong>W5</strong></td><td>Validation & Sign-off</td></tr><tr><td><strong>W6</strong></td><td>Documentation & Handoff</td></tr></table></div>
+</div></div></div>
+<script>
+function openModal(){document.getElementById('brdModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('brdModal').classList.remove('active');document.body.style.overflow='auto';}
+function closeModalOutside(event){if(event.target.classList.contains('modal-overlay'))closeModal();}
+function toggleAccordion(header){const item=header.parentElement;const isActive=item.classList.contains('active');document.querySelectorAll('.accordion-item').forEach(acc=>acc.classList.remove('active'));if(!isActive)item.classList.add('active');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>

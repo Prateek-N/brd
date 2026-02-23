@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uday Kiran Peddineni - CloudDeploy | iPeople Career</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="logo">Ipeople Career</div><div class="project-badge">CloudDeploy</div></header>
+<main class="container">
+<section class="welcome-card">
+<h1>Welcome to <span class="highlight">CloudDeploy</span> &#8212; kickoff details &amp; Monday task cadence</h1>
+<p class="greeting">Hi <span class="name">Uday Kiran Peddineni</span>,</p>
+<p>Welcome aboard! We're excited to have you join as our <strong>Cloud Engineer</strong> on <strong>CloudDeploy</strong>, a cloud infrastructure provisioning and monitoring platform.</p>
+<p>You're starting on <strong>February 23, 2026</strong>, marking the beginning of your first week focused on onboarding and understanding the foundational setup for the CloudDeploy project. You'll receive your weekly task list every <strong>Monday (IST)</strong>.</p>
+<div class="btn-group"><button class="btn btn-primary" onclick="openModal()">Open BRD</button></div>
+</section>
+<section class="project-summary"><h3>CloudDeploy in one line</h3><p>A <strong>cloud management platform</strong> to <strong>provision resources</strong>, <strong>monitor uptime</strong>, and <strong>automate deployments</strong>.</p></section>
+<section class="week-section"><h2>Weekly Task Breakdown</h2><div class="accordion"><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 1</span><span>Environment Setup & Cloud Basics</span><span class="dates">(Feb 23 - Mar 1)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up AWS account, IAM roles, and CLI access</li>
+<li><strong>Mon:</strong> Clone repo and review project architecture docs</li>
+<li><strong>Tue:</strong> Study Terraform basics &mdash; providers, resources, state files</li>
+<li><strong>Wed:</strong> Write first Terraform script to provision an EC2 instance</li>
+<li><strong>Thu:</strong> Bug #12: Fix SSH key attachment issue in existing scripts</li>
+<li><strong>Fri:</strong> Write 3 tests for EC2 provisioning logic</li>
+<li><strong>Fri:</strong> Submit PR with setup notes and bug fix</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 2</span><span>S3 Storage & IAM Automation</span><span class="dates">(Mar 2 - Mar 8)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Automate S3 bucket creation with versioning enabled</li>
+<li><strong>Tue:</strong> Add lifecycle policies for cost optimization</li>
+<li><strong>Wed:</strong> Build IAM role assignment automation via Boto3</li>
+<li><strong>Thu:</strong> Add input validation and error handling to scripts</li>
+<li><strong>Fri:</strong> Write 5 tests for S3 and IAM modules</li>
+<li><strong>Fri:</strong> Demo storage automation to Sarah</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 3</span><span>Monitoring & Alerting</span><span class="dates">(Mar 9 - Mar 15)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Integrate CloudWatch for CPU, memory, disk alerts</li>
+<li><strong>Tue:</strong> Build Node.js dashboard to display uptime metrics</li>
+<li><strong>Wed:</strong> Add SNS email alerts for threshold breaches</li>
+<li><strong>Thu:</strong> Feature: Log aggregation pipeline using CloudWatch Logs</li>
+<li><strong>Fri:</strong> Write 6 tests for alerting conditions</li>
+<li><strong>Fri:</strong> Document monitoring setup</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 4</span><span>CI/CD Pipeline Integration</span><span class="dates">(Mar 16 - Mar 22)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up GitHub Actions workflow for auto-deploy on merge</li>
+<li><strong>Tue:</strong> Add staging environment with separate Terraform workspace</li>
+<li><strong>Wed:</strong> Implement rollback mechanism on deployment failure</li>
+<li><strong>Thu:</strong> Security scan: check security groups for open ports</li>
+<li><strong>Fri:</strong> Present CI/CD flow to James</li>
+<li><strong>Fri:</strong> Document pipeline stages</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 5</span><span>Cost Optimization & Security</span><span class="dates">(Mar 23 - Mar 29)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build cost dashboard &mdash; monthly spend by service</li>
+<li><strong>Tue:</strong> Add auto-stop for idle instances after business hours</li>
+<li><strong>Wed:</strong> Enforce encryption at rest for all S3 buckets</li>
+<li><strong>Thu:</strong> UAT with Emily &mdash; test access control and compliance</li>
+<li><strong>Fri:</strong> Fix P1 issues from UAT</li>
+<li><strong>Fri:</strong> Document cost-saving strategies</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 6</span><span>Documentation & Handoff</span><span class="dates">(Mar 30 - Apr 5)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Complete Terraform module documentation</li>
+<li><strong>Tue:</strong> Write cloud architecture runbook</li>
+<li><strong>Wed:</strong> Record walkthrough video (10 min)</li>
+<li><strong>Thu:</strong> Present final platform to James (30 min)</li>
+<li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+<li><strong>Fri:</strong> Submit final report and celebrate! &#127881;</li>
+</ul></div>
+</div></div></section>
+<section class="contacts-section">
+<h3>Points of contact</h3>
+<div class="contact-item"><span class="contact-name">Sarah Mitchell</span> &#8212; <span class="contact-role">Technical Lead</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Platform/SRE</span></div>
+<div class="contact-item"><span class="contact-name">Emily Carter</span> &#8212; <span class="contact-role">Security/Policy</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Project Lead</span></div>
+</section>
+<footer class="footer">
+<p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+<div class="footer-signature"><div class="name">James Anderson</div><div class="title">Project Lead &middot; Ipeople Career</div><div class="contact">+1 (469) 532-8174 &middot; Slack: @james.anderson</div></div>
+</footer>
+</main>
+<div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+<div class="modal">
+<div class="modal-header"><h2>&#128196; Business Requirements Document</h2><button class="modal-close" onclick="closeModal()">&times;</button></div>
+<div class="modal-body">
+<div class="brd-section"><h3>1. Project Overview</h3><ul>
+<li><strong>What:</strong> Cloud resource provisioning and monitoring dashboard</li>
+<li><strong>Problem:</strong> Manual resource creation is error-prone and lacks central monitoring</li>
+<li><strong>Goal:</strong> Automate EC2/S3 provisioning, add live monitoring, reduce idle costs by 30%</li>
+<li><strong>Users:</strong> DevOps team, cloud admins, engineering leads</li>
+</ul></div>
+<div class="brd-section"><h3>2. Your Role</h3><ul><li>Write Terraform scripts for EC2 and S3 provisioning</li><li>Build monitoring dashboard with CloudWatch</li><li>Implement CI/CD pipeline with GitHub Actions</li><li>Add cost tracking and security compliance</li></ul></div>
+<div class="brd-section"><h3>3. Tools</h3><ul><li>AWS EC2 &middot; S3 &middot; Terraform &middot; Python &middot; Node.js &middot; MongoDB</li></ul></div>
+<div class="brd-section"><h3>4. Weekly Milestones</h3><table class="milestone-table"><tr><td><strong>W1</strong></td><td>Environment Setup & Cloud Basics</td></tr><tr><td><strong>W2</strong></td><td>S3 Storage & IAM Automation</td></tr><tr><td><strong>W3</strong></td><td>Monitoring & Alerting</td></tr><tr><td><strong>W4</strong></td><td>CI/CD Pipeline Integration</td></tr><tr><td><strong>W5</strong></td><td>Cost Optimization & Security</td></tr><tr><td><strong>W6</strong></td><td>Documentation & Handoff</td></tr></table></div>
+</div></div></div>
+<script>
+function openModal(){document.getElementById('brdModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('brdModal').classList.remove('active');document.body.style.overflow='auto';}
+function closeModalOutside(event){if(event.target.classList.contains('modal-overlay'))closeModal();}
+function toggleAccordion(header){const item=header.parentElement;const isActive=item.classList.contains('active');document.querySelectorAll('.accordion-item').forEach(acc=>acc.classList.remove('active'));if(!isActive)item.classList.add('active');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
