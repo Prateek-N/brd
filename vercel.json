@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/stem/:name",
-      "destination": "/new_interns/:name"
-    },
-    {
       "source": "/:name",
       "destination": "/interns/:name"
     },

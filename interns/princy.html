@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Princy Palli - PipelineBot | iPeople Career</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="logo">Ipeople Career</div><div class="project-badge">PipelineBot</div></header>
+<main class="container">
+<section class="welcome-card">
+<h1>Welcome to <span class="highlight">PipelineBot</span> &#8212; kickoff details &amp; Monday task cadence</h1>
+<p class="greeting">Hi <span class="name">Princy Palli</span>,</p>
+<p>Welcome aboard! We're excited to have you join as our <strong>DevOps Engineer</strong> on <strong>PipelineBot</strong>, a CI/CD pipeline builder and deployment automation tool.</p>
+<p>You're starting on <strong>February 23, 2026</strong>, marking the beginning of your first week focused on onboarding and understanding the foundational setup for the PipelineBot project. You'll receive your weekly task list every <strong>Monday (IST)</strong>.</p>
+<div class="btn-group"><button class="btn btn-primary" onclick="openModal()">Open BRD</button></div>
+</section>
+<section class="project-summary"><h3>PipelineBot in one line</h3><p>A <strong>DevOps automation platform</strong> for <strong>building CI/CD pipelines</strong>, <strong>container orchestration</strong>, and <strong>deployment monitoring</strong>.</p></section>
+<section class="week-section"><h2>Weekly Task Breakdown</h2><div class="accordion"><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 1</span><span>Environment Setup & Docker Basics</span><span class="dates">(Feb 23 - Mar 1)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up local dev environment with Docker Desktop</li>
+<li><strong>Mon:</strong> Clone repo and review existing deployment scripts</li>
+<li><strong>Tue:</strong> Study Dockerfile best practices &mdash; multi-stage builds, caching</li>
+<li><strong>Wed:</strong> Containerize sample Node.js app with optimized Dockerfile</li>
+<li><strong>Thu:</strong> Bug #15: Fix container port binding conflict in docker-compose</li>
+<li><strong>Fri:</strong> Write 3 tests for container health checks</li>
+<li><strong>Fri:</strong> Submit PR with containerization setup</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 2</span><span>CI Pipeline with GitHub Actions</span><span class="dates">(Mar 2 - Mar 8)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build GitHub Actions workflow &mdash; lint, test, build stages</li>
+<li><strong>Tue:</strong> Add automated test runner with coverage reporting</li>
+<li><strong>Wed:</strong> Implement Docker image build and push to registry</li>
+<li><strong>Thu:</strong> Add branch protection rules and PR checks</li>
+<li><strong>Fri:</strong> Write 5 tests for pipeline trigger conditions</li>
+<li><strong>Fri:</strong> Demo CI pipeline to Sarah</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 3</span><span>Kubernetes Deployment</span><span class="dates">(Mar 9 - Mar 15)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up local Kubernetes cluster with minikube</li>
+<li><strong>Tue:</strong> Write deployment and service YAML manifests</li>
+<li><strong>Wed:</strong> Add ConfigMaps and Secrets for environment config</li>
+<li><strong>Thu:</strong> Implement rolling update strategy with health checks</li>
+<li><strong>Fri:</strong> Write 6 tests for deployment rollout scenarios</li>
+<li><strong>Fri:</strong> Document K8s deployment architecture</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 4</span><span>Monitoring & Alerting</span><span class="dates">(Mar 16 - Mar 22)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Deploy Prometheus for metrics collection</li>
+<li><strong>Tue:</strong> Build Grafana dashboard &mdash; CPU, memory, request rate</li>
+<li><strong>Wed:</strong> Add alert rules for pod restarts and high latency</li>
+<li><strong>Thu:</strong> Implement Slack notifications for critical alerts</li>
+<li><strong>Fri:</strong> Present monitoring setup to James</li>
+<li><strong>Fri:</strong> Document alert runbooks</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 5</span><span>Infrastructure as Code & Security</span><span class="dates">(Mar 23 - Mar 29)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Write Terraform modules for staging environment</li>
+<li><strong>Tue:</strong> Add automated security scanning in CI pipeline</li>
+<li><strong>Wed:</strong> Implement secrets management with vault integration</li>
+<li><strong>Thu:</strong> UAT &mdash; test full deploy cycle end-to-end</li>
+<li><strong>Fri:</strong> Fix P1 issues from UAT</li>
+<li><strong>Fri:</strong> Document IaC modules and security policies</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 6</span><span>Documentation & Handoff</span><span class="dates">(Mar 30 - Apr 5)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Complete pipeline configuration docs</li>
+<li><strong>Tue:</strong> Write deployment runbook for ops team</li>
+<li><strong>Wed:</strong> Record walkthrough video (10 min)</li>
+<li><strong>Thu:</strong> Present final platform to James (30 min)</li>
+<li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+<li><strong>Fri:</strong> Submit final report and celebrate! &#127881;</li>
+</ul></div>
+</div></div></section>
+<section class="contacts-section">
+<h3>Points of contact</h3>
+<div class="contact-item"><span class="contact-name">Sarah Mitchell</span> &#8212; <span class="contact-role">Technical Lead</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Platform/SRE</span></div>
+<div class="contact-item"><span class="contact-name">Emily Carter</span> &#8212; <span class="contact-role">Security/Policy</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Project Lead</span></div>
+</section>
+<footer class="footer">
+<p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+<div class="footer-signature"><div class="name">James Anderson</div><div class="title">Project Lead &middot; Ipeople Career</div><div class="contact">+1 (469) 532-8174 &middot; Slack: @james.anderson</div></div>
+</footer>
+</main>
+<div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+<div class="modal">
+<div class="modal-header"><h2>&#128196; Business Requirements Document</h2><button class="modal-close" onclick="closeModal()">&times;</button></div>
+<div class="modal-body">
+<div class="brd-section"><h3>1. Project Overview</h3><ul>
+<li><strong>What:</strong> CI/CD pipeline builder with container orchestration and monitoring</li>
+<li><strong>Problem:</strong> Manual deployments are slow, error-prone, and lack visibility</li>
+<li><strong>Goal:</strong> Automate build-test-deploy cycle, achieve zero-downtime deployments, 99.9% uptime</li>
+<li><strong>Users:</strong> Development team, SRE/ops engineers, engineering leads</li>
+</ul></div>
+<div class="brd-section"><h3>2. Your Role</h3><ul><li>Containerize apps with Docker and Kubernetes</li><li>Build CI/CD pipelines with GitHub Actions</li><li>Deploy Prometheus/Grafana monitoring stack</li><li>Implement IaC with Terraform for staging</li></ul></div>
+<div class="brd-section"><h3>3. Tools</h3><ul><li>Docker &middot; Kubernetes &middot; Jenkins &middot; GitHub Actions &middot; Terraform &middot; Prometheus &middot; Grafana</li></ul></div>
+<div class="brd-section"><h3>4. Weekly Milestones</h3><table class="milestone-table"><tr><td><strong>W1</strong></td><td>Environment Setup & Docker Basics</td></tr><tr><td><strong>W2</strong></td><td>CI Pipeline with GitHub Actions</td></tr><tr><td><strong>W3</strong></td><td>Kubernetes Deployment</td></tr><tr><td><strong>W4</strong></td><td>Monitoring & Alerting</td></tr><tr><td><strong>W5</strong></td><td>Infrastructure as Code & Security</td></tr><tr><td><strong>W6</strong></td><td>Documentation & Handoff</td></tr></table></div>
+</div></div></div>
+<script>
+function openModal(){document.getElementById('brdModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('brdModal').classList.remove('active');document.body.style.overflow='auto';}
+function closeModalOutside(event){if(event.target.classList.contains('modal-overlay'))closeModal();}
+function toggleAccordion(header){const item=header.parentElement;const isActive=item.classList.contains('active');document.querySelectorAll('.accordion-item').forEach(acc=>acc.classList.remove('active'));if(!isActive)item.classList.add('active');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>

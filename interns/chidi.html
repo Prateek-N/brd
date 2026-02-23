@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chidi Okeke - DataPulse | iPeople Career</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="logo">Ipeople Career</div><div class="project-badge">DataPulse</div></header>
+<main class="container">
+<section class="welcome-card">
+<h1>Welcome to <span class="highlight">DataPulse</span> &#8212; kickoff details &amp; Monday task cadence</h1>
+<p class="greeting">Hi <span class="name">Chidi Okeke</span>,</p>
+<p>Welcome aboard! We're excited to have you join as our <strong>Data Analyst</strong> on <strong>DataPulse</strong>, a sales data analytics dashboard with KPI tracking.</p>
+<p>You're starting on <strong>February 23, 2026</strong>, marking the beginning of your first week focused on onboarding and understanding the foundational setup for the DataPulse project. You'll receive your weekly task list every <strong>Monday (IST)</strong>.</p>
+<div class="btn-group"><button class="btn btn-primary" onclick="openModal()">Open BRD</button></div>
+</section>
+<section class="project-summary"><h3>DataPulse in one line</h3><p>A <strong>data analytics dashboard</strong> for <strong>sales KPI tracking</strong>, <strong>trend analysis</strong>, and <strong>business insights</strong>.</p></section>
+<section class="week-section"><h2>Weekly Task Breakdown</h2><div class="accordion"><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 1</span><span>Setup & Data Exploration</span><span class="dates">(Feb 23 - Mar 1)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up Python/Pandas environment and connect to database</li>
+<li><strong>Mon:</strong> Explore raw sales datasets &mdash; identify columns, types, nulls</li>
+<li><strong>Tue:</strong> Write SQL queries to extract sales data by region and product</li>
+<li><strong>Wed:</strong> Clean data &mdash; handle missing values, duplicates, outliers</li>
+<li><strong>Thu:</strong> Bug #5: Fix date format inconsistencies in Q3 sales data</li>
+<li><strong>Fri:</strong> Document data dictionary and cleaning steps</li>
+<li><strong>Fri:</strong> Submit cleaned dataset to shared drive</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 2</span><span>KPI Framework & Metrics</span><span class="dates">(Mar 2 - Mar 8)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Define 8 core KPIs &mdash; revenue, growth rate, conversion, AOV</li>
+<li><strong>Tue:</strong> Write SQL views for each KPI with date range filters</li>
+<li><strong>Wed:</strong> Build monthly revenue trend analysis in Pandas</li>
+<li><strong>Thu:</strong> Add YoY comparison calculations for all KPIs</li>
+<li><strong>Fri:</strong> Validate KPI accuracy against finance team numbers</li>
+<li><strong>Fri:</strong> Demo KPI queries to Sarah</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 3</span><span>Dashboard Design</span><span class="dates">(Mar 9 - Mar 15)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Design Power BI dashboard layout &mdash; 4 pages, 12 visuals</li>
+<li><strong>Tue:</strong> Build revenue overview page with bar and line charts</li>
+<li><strong>Wed:</strong> Add product performance page with drill-through filters</li>
+<li><strong>Thu:</strong> Create regional heatmap and top performers table</li>
+<li><strong>Fri:</strong> Add date slicer and category filters across all pages</li>
+<li><strong>Fri:</strong> Document dashboard design decisions</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 4</span><span>Advanced Analysis</span><span class="dates">(Mar 16 - Mar 22)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Perform customer segmentation analysis using RFM model</li>
+<li><strong>Tue:</strong> Build cohort analysis &mdash; retention rates by signup month</li>
+<li><strong>Wed:</strong> Create sales forecast using 3-month moving average</li>
+<li><strong>Thu:</strong> Identify top 5 underperforming products with action items</li>
+<li><strong>Fri:</strong> Present analysis findings to James</li>
+<li><strong>Fri:</strong> Document methodology and assumptions</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 5</span><span>Reporting & Validation</span><span class="dates">(Mar 23 - Mar 29)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build automated weekly sales report (Excel export)</li>
+<li><strong>Tue:</strong> Add executive summary page with key takeaways</li>
+<li><strong>Wed:</strong> Create ad-hoc query templates for common requests</li>
+<li><strong>Thu:</strong> UAT with stakeholders &mdash; validate data accuracy</li>
+<li><strong>Fri:</strong> Fix P1 data issues from UAT</li>
+<li><strong>Fri:</strong> Document report generation schedule</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 6</span><span>Documentation & Handoff</span><span class="dates">(Mar 30 - Apr 5)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Complete data dictionary and query documentation</li>
+<li><strong>Tue:</strong> Write dashboard user guide</li>
+<li><strong>Wed:</strong> Record walkthrough video (10 min)</li>
+<li><strong>Thu:</strong> Present final dashboard to James (30 min)</li>
+<li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+<li><strong>Fri:</strong> Submit final report and celebrate! &#127881;</li>
+</ul></div>
+</div></div></section>
+<section class="contacts-section">
+<h3>Points of contact</h3>
+<div class="contact-item"><span class="contact-name">Sarah Mitchell</span> &#8212; <span class="contact-role">Technical Lead</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Platform/SRE</span></div>
+<div class="contact-item"><span class="contact-name">Emily Carter</span> &#8212; <span class="contact-role">Security/Policy</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Project Lead</span></div>
+</section>
+<footer class="footer">
+<p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+<div class="footer-signature"><div class="name">James Anderson</div><div class="title">Project Lead &middot; Ipeople Career</div><div class="contact">+1 (469) 532-8174 &middot; Slack: @james.anderson</div></div>
+</footer>
+</main>
+<div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+<div class="modal">
+<div class="modal-header"><h2>&#128196; Business Requirements Document</h2><button class="modal-close" onclick="closeModal()">&times;</button></div>
+<div class="modal-body">
+<div class="brd-section"><h3>1. Project Overview</h3><ul>
+<li><strong>What:</strong> Sales data analytics dashboard with KPI tracking and trend analysis</li>
+<li><strong>Problem:</strong> Sales data scattered across spreadsheets, no centralized KPI view, manual reporting</li>
+<li><strong>Goal:</strong> Centralize KPIs in real-time dashboard, automate weekly reports, identify growth areas</li>
+<li><strong>Users:</strong> Sales managers, business analysts, executive team</li>
+</ul></div>
+<div class="brd-section"><h3>2. Your Role</h3><ul><li>Clean and transform raw sales data using Pandas</li><li>Define and validate 8 core business KPIs</li><li>Build interactive Power BI dashboard with drill-throughs</li><li>Create automated Excel reporting pipeline</li></ul></div>
+<div class="brd-section"><h3>3. Tools</h3><ul><li>Python &middot; Pandas &middot; SQL &middot; Power BI &middot; PostgreSQL &middot; Jupyter</li></ul></div>
+<div class="brd-section"><h3>4. Weekly Milestones</h3><table class="milestone-table"><tr><td><strong>W1</strong></td><td>Setup & Data Exploration</td></tr><tr><td><strong>W2</strong></td><td>KPI Framework & Metrics</td></tr><tr><td><strong>W3</strong></td><td>Dashboard Design</td></tr><tr><td><strong>W4</strong></td><td>Advanced Analysis</td></tr><tr><td><strong>W5</strong></td><td>Reporting & Validation</td></tr><tr><td><strong>W6</strong></td><td>Documentation & Handoff</td></tr></table></div>
+</div></div></div>
+<script>
+function openModal(){document.getElementById('brdModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('brdModal').classList.remove('active');document.body.style.overflow='auto';}
+function closeModalOutside(event){if(event.target.classList.contains('modal-overlay'))closeModal();}
+function toggleAccordion(header){const item=header.parentElement;const isActive=item.classList.contains('active');document.querySelectorAll('.accordion-item').forEach(acc=>acc.classList.remove('active'));if(!isActive)item.classList.add('active');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
