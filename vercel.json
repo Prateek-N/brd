@@ -1,6 +1,16 @@
 {
   "rewrites": [
-    { "source": "/:name", "destination": "/interns/:name" },
-    { "source": "/", "destination": "/interns/aadharsh.html" }
+    {
+      "source": "/stem/:name",
+      "destination": "/new_interns/:name"
+    },
+    {
+      "source": "/:name",
+      "destination": "/interns/:name"
+    },
+    {
+      "source": "/",
+      "destination": "/interns/aadharsh.html"
+    }
   ]
 }
