@@ -25,7 +25,9 @@
 <h1>3-Month Sample Project Cycle</h1>
 <p>Use this page to review roles/responsibilities and send weekly task assignments by email. Click any week to open a detailed task modal and copy the content in an email-friendly format.</p>
 <div class="cta-row">
-<a class="btn btn-outline" href="#roles">View Roles</a>
+<a class="btn btn-outline" href="#roles" id="viewAllBtn">View Roles</a>
+<a class="btn btn-outline" href="#roles" id="ipeopleBtn">IPeople Career LLC</a>
+<a class="btn btn-outline" href="#roles" id="bridgepointBtn">Bridgepoint Careers LLC</a>
 </div>
 </section>
 <section class="section" id="roles">
@@ -258,12 +260,21 @@ function buildWeekTasksForPerson({ projectId, phase, person }) {
   return tasks;
 }
 
-function renderRoles() {
+let currentCompanyFilter = null;
+
+function renderRoles(companyFilter = null) {
+  currentCompanyFilter = companyFilter;
   const container = document.getElementById("rolesGrid");
   const countEl = document.getElementById("peopleCount");
-  countEl.textContent = String(PEOPLE.length);
+  
+  let filteredPeople = PEOPLE;
+  if (companyFilter) {
+    filteredPeople = PEOPLE.filter(p => p.company === companyFilter);
+  }
+  
+  countEl.textContent = String(filteredPeople.length);
 
-  const sorted = [...PEOPLE].sort((a,b) => a.name.localeCompare(b.name));
+  const sorted = [...filteredPeople].sort((a,b) => a.name.localeCompare(b.name));
   container.innerHTML = sorted.map(p => {
     const profileHref = `profiles/${slugify(p.name)}.html`;
     const preview = (p.responsibilitiesPreview || []).map(item => `<li>${escapeHtml(item)}</li>`).join("");
@@ -655,8 +666,41 @@ copyBtn.addEventListener("click", async () => {
   }
 });
 
+function updateFilterButtons(activeId) {
+  const allBtn = document.getElementById("viewAllBtn");
+  const ipeopleBtn = document.getElementById("ipeopleBtn");
+  const bridgeBtn = document.getElementById("bridgepointBtn");
+  
+  allBtn.className = "btn btn-outline";
+  ipeopleBtn.className = "btn btn-outline";
+  bridgeBtn.className = "btn btn-outline";
+  
+  if (activeId === "all") allBtn.className = "btn btn-primary";
+  else if (activeId === "ipeople") ipeopleBtn.className = "btn btn-primary";
+  else if (activeId === "bridge") bridgeBtn.className = "btn btn-primary";
+}
+
+document.getElementById("viewAllBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  renderRoles(null);
+  updateFilterButtons("all");
+});
+
+document.getElementById("ipeopleBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  renderRoles("IPEOPLE CAREER LLC");
+  updateFilterButtons("ipeople");
+});
+
+document.getElementById("bridgepointBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  renderRoles("BRIDGEPOINT CAREERS LLC");
+  updateFilterButtons("bridge");
+});
+
 renderRoles();
 renderWeeks();
+updateFilterButtons("all");
 </script>
 </body>
 </html>
