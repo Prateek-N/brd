@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3-Month Project Plan</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="brand-mark"></div>
+<div class="brand-title">Project Plan</div>
+<div class="brand-sub">Jun 1–Aug 31, 2026</div>
+</div>
+<div class="cta-row">
+<a class="btn btn-outline" href="#roles">Roles</a>
+<a class="btn btn-outline" href="#weeks">Weeks</a>
+</div>
+</div>
+</div>
+<div class="wrap">
+<section class="hero">
+<h1>3-Month Sample Project Cycle</h1>
+<p>Use this page to review roles/responsibilities and send weekly task assignments by email. Click any week to open a detailed task modal and copy the content in an email-friendly format.</p>
+<div class="cta-row">
+<a class="btn btn-outline" href="#roles">View Roles</a>
+</div>
+</section>
+<section class="section" id="roles">
+<div class="section-head">
+<div>
+<p class="section-label">Team</p>
+<h2 class="section-title">Roles & Responsibilities</h2>
+</div>
+<div class="section-meta"><span id="peopleCount"></span> team members</div>
+</div>
+<div class="role-grid" id="rolesGrid" aria-label="Team members and responsibilities"></div>
+</section>
+<section class="section" id="weeks">
+<div class="section-head">
+<div>
+<h2 class="section-title">Week 1–Week 12</h2>
+</div>
+</div>
+<div class="week-grid" id="weekGrid" aria-label="Weekly task navigation"></div>
+</section>
+<footer class="footer">Generated from the Stem Task Sheet.</footer>
+</div>
+
+<dialog class="modal" id="weekDialog" aria-labelledby="weekTitle" aria-describedby="weekMeta">
+  <div class="modal-inner">
+    <div class="modal-header">
+      <div class="modal-headings">
+        <p class="modal-label" id="weekMeta"></p>
+        <h2 class="modal-title" id="weekTitle"></h2>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">Copy to Clipboard</button>
+        <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-status" id="modalStatus" aria-live="polite"></div>
+  </div>
+</dialog>
+
+<script>
+const PEOPLE = [{"name": "Aadharsh Jaya Bharath", "jobTitle": "Supply Chain Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Monitor, track, and report on inventory levels, order fulfillment, and shipment performance to ensureoperational efficiency.", "Collaborate with procurement, logistics, and warehouse teams to optimize supply chain processes andreduce lead times.", "Support demand and supply planning by analyzing historical data, market trends, and customerrequirements.", "Collect, clean, and transform supply chain data from multiple systems for reporting and analysis.", "Develop and maintain interactive dashboards and visualizations to track supply chain performancetrends.", "Perform advanced data analysis (e.g., forecasting, cost analysis, risk assessment) to support decision-making."], "responsibilityCount": 6}, {"name": "Venkata Ratna Kumar Mandalapu", "jobTitle": "Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop, test, and maintain web and software applications according to project requirements.", "Write clean, optimized, and well-documented code using modern programming languages and frameworks.", "Collaborate with cross-functional teams to define, design, and implement new features.", "Participate in software design discussions and contribute to architectural decisions.", "Perform code reviews to ensure code quality, scalability, and adherence to best practices.", "Identify, troubleshoot, and resolve bugs and performance issues in existing systems."], "responsibilityCount": 7}, {"name": "Mary Shreeja Thumma", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain web applications using .NET technologies such as ASP.NET", "and .NET Core.", "Design and implement front-end components using HTML, CSS, JavaScript, and", "frameworks like Angular or React.", "Build and maintain RESTful APIs and backend services using C#.", "Develop and manage databases, queries, and stored procedures using SQL Server."], "responsibilityCount": 11}, {"name": "Durga Phani Vikas Telu", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect, clean, and analyze large datasets from multiple sources to identify trends,", "patterns, and actionable insights that support business decision-making.", "Develop and maintain interactive dashboards and reports using tools such as Power BI,", "Tableau, or Excel.", "Perform exploratory data analysis (EDA) to evaluate data quality, identify anomalies,", "and ensure accuracy of insights."], "responsibilityCount": 12}, {"name": "Kanishka Singh", "jobTitle": "Business Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Gather, analyze, and document business requirements by collaborating with stakeholders, end users, and cross-functional teams.", "Translate business needs into clear functional and technical specifications for development teams.", "Conduct process mapping, gap analysis, and feasibility studies to identify opportunities for improvement.\\", "Support the design and implementation of efficient business processes and system enhancements.", "Coordinate with developers, QA teams, and project managers to ensure requirements are understood and delivered accurately.", "Perform data analysis, generate insights, and prepare reports to support decision-making."], "responsibilityCount": 6}, {"name": "Pooja Nigam", "jobTitle": "AI Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and train machine learning and AI models based on project requirements.", "Prepare, clean, and analyze data to ensure high-quality input for models.", "Deploy and integrate AI models into applications, APIs, or production systems.", "Evaluate and optimize model performance using appropriate metrics and tuning", "methods.", "Write clean, efficient, and maintainable code following software engineering best"], "responsibilityCount": 11}, {"name": "Deepinder Singh", "jobTitle": "Junior Project Manager", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Assist in project planning by helping prepare schedules, timelines, and resource allocation plans.", "Coordinate with team members to ensure tasks are understood, assigned, and progressing as planned.", "Monitor project progress and report updates, risks, and delays to the Project Manager or senior stakeholders.", "Support documentation efforts, including maintaining project reports, meeting minutes, and status trackers.", "Facilitate meetings, including scheduling, preparing agendas, and following up on action items.", "Ensure adherence to project processes by helping enforce standards, quality checks, and compliance requirements"], "responsibilityCount": 6}, {"name": "Shrey Sandeep Jain", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect and clean raw data from various sources.", "Analyze datasets to identify trends, patterns, and insights.", "Create reports and dashboards to visualize findings.", "Interpret data to support business decisions.", "Perform data validation to ensure accuracy and consistency.", "Collaborate with cross-functional teams such as product managers and designers."], "responsibilityCount": 11}, {"name": "Disha Revandkar", "jobTitle": "Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design and develop software solutions based on user and business requirements.", "Write clean, efficient, and maintainable code using appropriate languages and frameworks.", "Debug, troubleshoot, and fix issues across the software lifecycle.", "Evaluate and optimize model performance using appropriate metrics and tuning methods.", "Create and execute tests (unit, integration, automated) to ensure software quality.", "Collaborate with cross-functional teams such as product managers and designers."], "responsibilityCount": 9}, {"name": "Ashish Kasam", "jobTitle": "Supply Chain Specialist", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Plan, coordinate, and monitor end-to-end supply chain activities.", "Manage procurement of materials, goods, and services from suppliers.", "Ensure timely delivery of products while minimizing costs.", "Monitor inventory levels and optimize stock management.", "Analyze supply chain data to improve efficiency and performance.", "Collaborate with vendors, logistics providers, and internal teams."], "responsibilityCount": 12}, {"name": "Uday Kiran Peddineni", "jobTitle": "Cloud Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design cloud architecture to meet scalability, security, and performance requirements.", "Deploy and manage cloud infrastructure (servers, storage, networking) on platforms", "like AWS, Azure, or GCP.", "Automate provisioning and deployments using Infrastructure as Code (e.g.,Terraform,", "CloudFormation).", "Monitor system performance and availability, ensuring high uptime and reliability."], "responsibilityCount": 12}, {"name": "Chidi Okeke", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect and clean data from multiple sources to ensure accuracy and consistency.", "Analyze datasets to identify trends, patterns, and insights.", "Create reports and dashboards using tools like Excel, SQL, Power BI, or Tableau.", "Interpret data results and translate them into actionable business insights.", "Support decision-making by providing data-driven recommendations.", "Collaborate with stakeholders to understand business requirements."], "responsibilityCount": 12}, {"name": "Princy Palli", "jobTitle": "Devops Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collaborate with development and operations teams to streamline software delivery.", "Build, manage, and optimize CI/CD pipelines for automated deployments.", "Provision and manage cloud infrastructure and services.", "Monitor system performance, availability, and reliability.", "Implement security, compliance, and best practices across environments.", "Automate infrastructure and configuration management."], "responsibilityCount": 12}, {"name": "Lakshmi Prasanna Tanikonda", "jobTitle": "Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain software applications by writing clean, efficient, and scalable", "code.", "Analyze user requirements and translate them into effective technical solutions.", "Design system architecture and software modules for robustness and maintainability.", "Debug and troubleshoot issues by identifying root causes and implementing fixes.", "Conduct code reviews to ensure quality, readability, and adherence to standards."], "responsibilityCount": 12}, {"name": "Prince Paneliya", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect, clean, and validate data from multiple sources", "Analyze large datasets to identify trends and patterns", "Develop and maintain dashboards and reports", "Translate data insights into actionable business recommendations", "Work with stakeholders to understand data requirements", "Ensure data accuracy, consistency, and integrity"], "responsibilityCount": 12}, {"name": "Bhoomika Reddy Muralidhar", "jobTitle": "Full Stack Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain front-end and back-end components", "Build responsive user interfaces using HTML, CSS, JavaScript", "Implement server-side logic and APIs", "Design and manage databases", "Ensure application performance, security, and scalability", "Write, test, and debug clean, efficient code"], "responsibilityCount": 12}, {"name": "Sri Ram Varma Budhraju", "jobTitle": "Software Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design, develop, test, and maintain software applications", "Write clean, efficient, and well-documented code", "Analyze user requirements and translate them into technical solutions", "Debug, troubleshoot, and resolve software defects", "Collaborate with cross-functional teams (QA, UI/UX, Product)", "Participate in code reviews to ensure quality and best practices"], "responsibilityCount": 12}, {"name": "Haindavi Krishna Kothireddy", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect, clean, and validate data from multiple sources", "Analyze large datasets to identify trends and patterns", "Develop and maintain dashboards and reports", "Translate data insights into actionable business recommendations", "Work with stakeholders to understand data requirements", "Ensure data accuracy, consistency, and integrity"], "responsibilityCount": 12}, {"name": "Hemanth Ranga Tummala", "jobTitle": "BIM Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Facilitate problem-solving using technology and collaboration with internal and external project teams.", "Ensure modeling efforts and deliverables are completed on time, meeting all required specifications.", "Conduct quality reviews of modeled scope and confirm compliance with contract documents.", "Prepare BIM documentation, including drawings, schedules, and reports.", "Collaborate with multidisciplinary engineering teams to integrate all design elements into a coordinated model to resolve construction issues.", "Identify and resolve coordination conflicts using clash detection in Navisworks."], "responsibilityCount": 8}, {"name": "Suman Chandra Musthyala", "jobTitle": "Design Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and implement RTL designs using Verilog and/or SystemVerilog for AI chip development.", "Define and design micro-architecture aligned with CPU and system requirements.", "Integrate CPU architecture components into the overall chip design.", "Perform RTL coding, simulation, and functional verification using tools like VCS or equivalent.", "Run linting and design rule checks to ensure code quality and compliance.", "Debug and resolve design issues identified during simulation and validation."], "responsibilityCount": 9}, {"name": "Praveen Kumar Borra", "jobTitle": ".Net Full Stack Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain web applications using .NET technologies such as ASP.NET", "and .NET Core.", "Design and implement front-end components using HTML, CSS, JavaScript, and", "frameworks like Angular or React.", "Build and maintain RESTful APIs and backend services using C#.", "Develop and manage databases, queries, and stored procedures using SQL Server."], "responsibilityCount": 11}, {"name": "Sai Anuhya Bandi", "jobTitle": "Data Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design, build, and maintain scalable data pipelines and data architectures.", "Develop and optimize ETL/ELT processes for efficient data extraction, transformation,", "and loading.", "Ensure data quality, integrity, and security across all data systems.", "Collaborate with data analysts, data scientists, and stakeholders to understand data", "requirements."], "responsibilityCount": 11}, {"name": "Gouthami Gowni", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect, clean, and validate data from multiple sources to ensure accuracy and", "consistency", "Analyze large datasets to identify trends, patterns, and actionable insights", "Develop and maintain dashboards, reports, and visualizations for business", "stakeholders", "Interpret data and present findings in a clear and structured manner"], "responsibilityCount": 11}, {"name": "Harshitha Kakumanu", "jobTitle": "Front End Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain user-facing web applications using modern front-end", "technologies.", "Translate UI/UX designs into responsive, high-quality code.", "Ensure cross-browser compatibility and optimize applications for maximum speed", "and scalability.", "Collaborate with designers, back-end developers, and other stakeholders to deliver"], "responsibilityCount": 11}, {"name": "Karthik Kalyan Kakumanu", "jobTitle": "Software Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design, develop, test, and maintain software applications", "Write clean, efficient, and well-documented code", "Analyze user requirements and translate them into technical solutions", "Debug, troubleshoot, and resolve software defects", "Collaborate with cross-functional teams (QA, UI/UX, Product)", "Participate in code reviews to ensure quality and best practices"], "responsibilityCount": 12}, {"name": "Shashank Dubey", "jobTitle": "Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design, develop, test, and maintain software applications as per business", "requirements.", "Write clean, efficient, and scalable code following coding standards and best", "practices.", "Collaborate with cross-functional teams to analyze requirements and implement", "solutions."], "responsibilityCount": 11}, {"name": "Alma Babydasan", "jobTitle": "Software Developer", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, develop, and implement software applications and systems.", "Write clean, efficient, maintainable, and well-documented code.", "Analyze user requirements and translate them into technical solutions.", "Debug, troubleshoot, and resolve software defects and performance issues.", "Conduct code reviews and ensure adherence to coding standards.", "Collaborate with cross-functional teams (QA, UX/UI, product, DevOps)."], "responsibilityCount": 11}, {"name": "Saboura Salari Rad", "jobTitle": "Data Finance", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Collect, clean, validate, and analyze large volumes of financial and operational data to ensure accuracy andconsistency.", "Develop and maintain financial dashboards, MIS reports, and KPIs to support management and businessstakeholders.", "Perform financial analysis including variance analysis, trend analysis, forecasting, and budgeting support.", "Collaborate with Finance, Accounting, Business, and IT teams to translate business requirements into datadriven insights.", "Support month end, quarter end, and year end financial reporting activities through data validation andreconciliation.", "Identify patterns, risks, and opportunities in financial data to improve profitability and cost efficiency."], "responsibilityCount": 8}, {"name": "Yash Sodvadiya", "jobTitle": "Cloud engineer", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, implement, and manage scalable cloud infrastructure solutions.", "Deploy, configure, and maintain cloud services (compute, storage, networking).", "Monitor system performance, availability, and security of cloud environments.", "Automate infrastructure provisioning using Infrastructure as Code (IaC) tools.", "Ensure data backup, disaster recovery, and business continuity strategies.", "Optimize cloud resources to improve performance and reduce costs."], "responsibilityCount": 11}, {"name": "Akhila Jangam", "jobTitle": "Data Analyst", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Collect, clean, and validate data from various sources to ensure accuracy and reliability.", "Analyze large datasets to identify trends, patterns, and actionable insights.", "Develop and maintain dashboards and reports using tools like Excel, SQL, Power BI, or Tableau.", "Interpret data and present findings to stakeholders in a clear and concise manner.", "Work closely with cross-functional teams to understand business requirements and support decision-making.", "Perform data validation, quality checks, and troubleshooting to resolve data discrepancies."], "responsibilityCount": 9}, {"name": "Heny Patel", "jobTitle": "Business System Analyst", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Gather, analyze, and document business and system requirements from stakeholders.", "Collaborate with technical teams to translate business needs into functional specifications.", "Conduct system testing, validation, and user acceptance testing (UAT) to ensure qualitydeliverables.", "Prepare detailed reports, process flows, and technical documentation for system implementations.", "Support system integration, deployment, and post-implementation activities.", "Identify and troubleshoot system issues while coordinating with relevant teams for resolution."], "responsibilityCount": 8}, {"name": "Rutujeet Falmare", "jobTitle": "Software Engineer", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, develop, test, and maintain software applications and systems.", "Write clean, efficient, and scalable code following industry best practices.", "Collaborate with cross-functional teams to gather and analyze business requirements.", "Troubleshoot, debug, and resolve software defects and technical issues.", "Participate in code reviews to ensure code quality and maintainability.", "Develop and integrate APIs, databases, and third-party services as required."], "responsibilityCount": 10}, {"name": "Anvitha Gaddam", "jobTitle": "Data analyst", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Collect, organize, and analyze large datasets to identify trends and business insights.", "Develop and maintain dashboards, reports, and data visualizations using tools such as Excel, Power", "BI, or Tableau.", "Interpret data findings and provide actionable recommendations to support business decisions.", "Perform data cleaning, validation, and quality checks to ensure accuracy and consistency.", "Write and optimize SQL queries to extract and manage data from databases."], "responsibilityCount": 10}, {"name": "Mihir Pandya", "jobTitle": "AI/ML enginner", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, develop, test, and deploy AI/ML models and intelligent applications.", "Analyze, clean, and preprocess large datasets for machine learning solutions.", "Build and optimize predictive models, algorithms, and data pipelines.", "Collaborate with software engineers, analysts, and business teams to implement AI-driven solutions.", "Monitor, evaluate, and improve model performance, scalability, and accuracy.", "Develop automation solutions and support data-driven decision-making processes."], "responsibilityCount": 9}];
+
+function slugify(value) {
+  return value.trim().toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/-{2,}/g, "-").replace(/^-|-$/g, "") || "profile";
+}
+
+const PROJECTS = {
+  june: {
+    id: "june",
+    name: "Career Directory Microsite (Static Web)",
+    monthLabel: "June 2026",
+    goal: "Ship a fast, responsive static directory site (home → profiles) with clear navigation and polished UI.",
+    freeTools: ["HTML/CSS/JS", "Local browser", "VS Code", "Git (optional)"],
+    uniqueness: "Static site build (no dashboards, no automation CLI).",
+    guardrails: ["No backend required", "No paid hosting/tools", "Keep scope to browsing + profile pages + simple search/filter only if time allows."],
+    deliverablesByPhase: {
+      1: ["Requirements summary", "Page map + navigation plan", "UI style baseline", "Content inventory (who/what pages exist)"],
+      2: ["Working MVP pages", "Navigation and routing via links", "Content populated and readable", "Basic responsive layout"],
+      3: ["Bug fixes + cross-browser checks", "Accessibility pass (keyboard + labels)", "Content cleanup and consistency"],
+      4: ["Release package ready to share", "Short runbook (how to open/share)", "Demo script + retrospective notes"]
+    },
+    successByPhase: {
+      1: ["All stakeholders agree on scope", "Every page has an owner", "No ambiguous requirements remaining for MVP"],
+      2: ["A new user can find any profile in under 30 seconds", "No broken links", "Layout works on mobile and desktop"],
+      3: ["No P0/P1 bugs left", "Keyboard navigation works for key interactions", "Content is consistent and complete"],
+      4: ["Deliverable can be shared by email with clear instructions", "Demo is smooth end-to-end", "Lessons learned documented"]
+    }
+  },
+  july: {
+    id: "july",
+    name: "KPI Dashboard Pack (Data + Reporting)",
+    monthLabel: "July 2026",
+    goal: "Build a lightweight analytics workflow: ingest → clean → validate → dashboard → weekly KPI report.",
+    freeTools: ["Python (pandas) or Power BI Desktop (free)", "CSV/Excel", "SQLite (optional)", "VS Code"],
+    uniqueness: "Data pipeline + dashboard pack (not a website directory; not an automation gate).",
+    guardrails: ["Use a small sample dataset", "Keep KPIs to a short list (5–10)", "Prefer repeatable refresh over fancy visuals."],
+    deliverablesByPhase: {
+      1: ["KPI definitions + data dictionary", "Sample dataset selected", "Validation rules and acceptance thresholds"],
+      2: ["Ingest/clean pipeline runs end-to-end", "Dashboard v1 with KPIs", "Draft KPI report template"],
+      3: ["Automated data quality checks", "Anomaly notes + fixes", "Dashboard refinement"],
+      4: ["Final dashboard pack", "Refresh/runbook steps", "Final KPI report example + demo"]
+    },
+    successByPhase: {
+      1: ["Everyone uses the same KPI definitions", "Inputs and outputs are clearly defined"],
+      2: ["Dashboard refresh is repeatable", "KPIs match the definitions", "No manual data edits required"],
+      3: ["Bad data is detected early", "Checks are documented and rerunnable", "Dashboard is stable"],
+      4: ["A new user can refresh and reproduce results", "Report reads clearly for stakeholders", "Demo tells a complete story"]
+    }
+  },
+  aug: {
+    id: "aug",
+    name: "Automation Quality Gate Toolkit (Local CLI + Report)",
+    monthLabel: "August 2026",
+    goal: "Create a local runner that executes checks and outputs a single summary report for fast review.",
+    freeTools: ["Python", "Local execution", "Open-source linters/test tools", "VS Code"],
+    uniqueness: "Automation runner + report (not dashboard; not static directory).",
+    guardrails: ["Local-only execution", "Small number of high-signal checks", "Report must be readable and actionable."],
+    deliverablesByPhase: {
+      1: ["Check list + inputs/outputs", "Report format definition", "Sample inputs for testing"],
+      2: ["CLI runs end-to-end", "Report generated in one command", "Clear pass/fail output"],
+      3: ["Stronger validation + better error messages", "Reliability improvements", "Regression checks"],
+      4: ["Final runbook", "Demo script", "Retrospective + next-steps backlog"]
+    },
+    successByPhase: {
+      1: ["Checks are measurable and testable", "No ambiguous pass/fail conditions"],
+      2: ["One command produces a report", "Failures are easy to understand and reproduce"],
+      3: ["No flaky checks", "Errors include actionable next steps", "Tool works on different machines/browsers"],
+      4: ["Team can use it without help", "Demo is smooth", "Clear handoff and documentation exist"]
+    }
+  }
+};
+
+const WEEK_DEFS = [
+  { week: 1, project: "june", phase: 1, dateRange: "Jun 1–Jun 7, 2026" },
+  { week: 2, project: "june", phase: 2, dateRange: "Jun 8–Jun 14, 2026" },
+  { week: 3, project: "june", phase: 3, dateRange: "Jun 15–Jun 21, 2026" },
+  { week: 4, project: "june", phase: 4, dateRange: "Jun 22–Jun 30, 2026" },
+  { week: 5, project: "july", phase: 1, dateRange: "Jul 1–Jul 7, 2026" },
+  { week: 6, project: "july", phase: 2, dateRange: "Jul 8–Jul 14, 2026" },
+  { week: 7, project: "july", phase: 3, dateRange: "Jul 15–Jul 21, 2026" },
+  { week: 8, project: "july", phase: 4, dateRange: "Jul 22–Jul 31, 2026" },
+  { week: 9, project: "aug", phase: 1, dateRange: "Aug 1–Aug 7, 2026" },
+  { week: 10, project: "aug", phase: 2, dateRange: "Aug 8–Aug 14, 2026" },
+  { week: 11, project: "aug", phase: 3, dateRange: "Aug 15–Aug 21, 2026" },
+  { week: 12, project: "aug", phase: 4, dateRange: "Aug 22–Aug 31, 2026" }
+];
+
+const ASSIGNMENTS = {
+  june: {
+    1: ["Deepinder Singh", "Kanishka Singh", "Heny Patel", "Harshitha Kakumanu", "Bhoomika Reddy Muralidhar", "Venkata Ratna Kumar Mandalapu", "Alma Babydasan"],
+    2: ["Harshitha Kakumanu", "Bhoomika Reddy Muralidhar", "Praveen Kumar Borra", "Sri Ram Varma Budhraju", "Karthik Kalyan Kakumanu", "Venkata Ratna Kumar Mandalapu", "Disha Revandkar", "Shashank Dubey", "Rutujeet Falmare"],
+    3: ["Disha Revandkar", "Shashank Dubey", "Alma Babydasan", "Rutujeet Falmare", "Chidi Okeke", "Shrey Sandeep Jain"],
+    4: ["Deepinder Singh", "Princy Palli", "Uday Kiran Peddineni", "Yash Sodvadiya", "Kanishka Singh", "Heny Patel"]
+  },
+  july: {
+    1: ["Deepinder Singh", "Kanishka Singh", "Heny Patel", "Saboura Salari Rad", "Ashish Kasam", "Aadharsh Jaya Bharath"],
+    2: ["Durga Phani Vikas Telu", "Shrey Sandeep Jain", "Chidi Okeke", "Prince Paneliya", "Haindavi Krishna Kothireddy", "Gouthami Gowni", "Akhila Jangam", "Anvitha Gaddam", "Sai Anuhya Bandi"],
+    3: ["Durga Phani Vikas Telu", "Shrey Sandeep Jain", "Chidi Okeke", "Akhila Jangam", "Anvitha Gaddam", "Saboura Salari Rad"],
+    4: ["Deepinder Singh", "Kanishka Singh", "Heny Patel", "Saboura Salari Rad", "Shrey Sandeep Jain"]
+  },
+  aug: {
+    1: ["Deepinder Singh", "Kanishka Singh", "Princy Palli", "Uday Kiran Peddineni", "Yash Sodvadiya", "Pooja Nigam", "Mihir Pandya"],
+    2: ["Alma Babydasan", "Rutujeet Falmare", "Venkata Ratna Kumar Mandalapu", "Disha Revandkar", "Shashank Dubey", "Sri Ram Varma Budhraju", "Karthik Kalyan Kakumanu"],
+    3: ["Princy Palli", "Uday Kiran Peddineni", "Yash Sodvadiya", "Alma Babydasan", "Rutujeet Falmare"],
+    4: ["Deepinder Singh", "Kanishka Singh", "Suman Chandra Musthyala", "Hemanth Ranga Tummala", "Pooja Nigam", "Mihir Pandya"]
+  }
+};
+
+function findPerson(name) {
+  return PEOPLE.find(p => p.name === name);
+}
+
+function roleCategory(jobTitle) {
+  const jt = (jobTitle || "").toLowerCase();
+  if (jt.includes("project manager")) return "pm";
+  if (jt.includes("business analyst")) return "ba";
+  if (jt.includes("system analyst")) return "bsa";
+  if (jt.includes("devops")) return "devops";
+  if (jt.includes("cloud")) return "cloud";
+  if (jt.includes("data engineer")) return "dataeng";
+  if (jt.includes("data")) return "data";
+  if (jt.includes("ai")) return "ai";
+  if (jt.includes("front end")) return "frontend";
+  if (jt.includes("full stack")) return "fullstack";
+  if (jt.includes("software")) return "software";
+  if (jt.includes("bim")) return "bim";
+  if (jt.includes("design engineer")) return "designeng";
+  if (jt.includes("supply chain")) return "supply";
+  return "other";
+}
+
+function weekFocusLabel(phase) {
+  if (phase === 1) return "Week 1 (Scope + requirements + plan)";
+  if (phase === 2) return "Week 2 (Build MVP)";
+  if (phase === 3) return "Week 3 (QA + validation + fixes)";
+  return "Week 4 (Release + reporting + handoff)";
+}
+
+function buildWeekTasksForPerson({ projectId, phase, person }) {
+  const cat = roleCategory(person.jobTitle);
+  const p = PROJECTS[projectId];
+  const base = [];
+
+  if (phase === 1) {
+    if (cat === "pm") base.push("Create the weekly plan, define owners, and confirm the scope guardrails for this project.");
+    if (cat === "ba" || cat === "bsa") base.push("Gather and document requirements; produce clear acceptance criteria for MVP scope.");
+    if (cat === "data" || cat === "dataeng" || cat === "supply") base.push("Define the data inputs/outputs needed for the week; identify quality risks and assumptions early.");
+    if (cat === "software" || cat === "fullstack" || cat === "frontend") base.push("Draft the architecture and implementation approach; identify key risks and define the MVP slice.");
+    if (cat === "devops" || cat === "cloud") base.push("Define the deployment/packaging approach using only free tools; list the release steps and expected outputs.");
+    if (cat === "ai" || cat === "designeng" || cat === "bim") base.push("Define the simplified approach that fits zero-cost tools and low complexity; clarify what is in/out of scope.");
+  }
+
+  if (phase === 2) {
+    if (cat === "software" || cat === "fullstack" || cat === "frontend") base.push("Implement the MVP features for this week and ensure they work end-to-end.");
+    if (cat === "data" || cat === "dataeng") base.push("Build the core dataset/pipeline and produce the first dashboard/report output for review.");
+    if (cat === "devops" || cat === "cloud") base.push("Set up the simplest reliable run/deploy workflow; ensure others can run it locally.");
+    if (cat === "pm" || cat === "ba" || cat === "bsa") base.push("Keep scope controlled; track decisions and clarify acceptance criteria for the MVP demonstration.");
+    if (cat === "ai") base.push("Implement a minimal AI/ML component only if required; otherwise provide evaluation criteria and lightweight checks.");
+  }
+
+  if (phase === 3) {
+    if (cat === "software" || cat === "fullstack" || cat === "frontend") base.push("Run testing, fix defects, and improve reliability and performance for the MVP.");
+    if (cat === "data" || cat === "dataeng" || cat === "supply") base.push("Validate data quality, investigate anomalies, and confirm KPIs/outputs match definitions.");
+    if (cat === "devops" || cat === "cloud") base.push("Add monitoring/logging outputs and harden the run steps so failures are obvious and recoverable.");
+    if (cat === "pm") base.push("Drive bug triage and release readiness; ensure blockers are resolved.");
+    if (cat === "ba" || cat === "bsa") base.push("Run UAT-style checks against requirements; document gaps and required fixes.");
+    if (cat === "ai" || cat === "designeng" || cat === "bim") base.push("Validate results against expected outputs; strengthen validation checks and error reporting.");
+  }
+
+  if (phase === 4) {
+    if (cat === "pm") base.push("Coordinate the final release, demo, and retrospective; ensure a clear handoff package exists.");
+    if (cat === "ba" || cat === "bsa") base.push("Finalize documentation and acceptance sign-off; ensure stakeholders can understand how to use the deliverable.");
+    if (cat === "software" || cat === "fullstack" || cat === "frontend") base.push("Finalize polish and documentation; ensure no broken flows and produce a clean demo path.");
+    if (cat === "data" || cat === "dataeng" || cat === "supply") base.push("Deliver final report/dashboard outputs and a repeatable refresh process; document assumptions and limitations.");
+    if (cat === "devops" || cat === "cloud") base.push("Ensure release steps are documented, repeatable, and safe; provide rollback/recovery notes where relevant.");
+    if (cat === "ai" || cat === "designeng" || cat === "bim") base.push("Provide final validation summary, constraints, and next steps; ensure outputs are reproducible.");
+  }
+
+  const extracted = person.responsibilitiesPreview || [];
+  const tasks = [];
+  tasks.push(...base.map(t => `Applied to ${p.name}: ${t}`));
+  if (extracted.length) {
+    tasks.push("Role responsibilities reference (from sheet):");
+    tasks.push(...extracted.map(r => `- ${r}`));
+    if (person.responsibilityCount && person.responsibilityCount > extracted.length) {
+      tasks.push(`(See full profile for all responsibilities: profiles/${slugify(person.name)}.html)`);
+    }
+  }
+  return tasks;
+}
+
+function renderRoles() {
+  const container = document.getElementById("rolesGrid");
+  const countEl = document.getElementById("peopleCount");
+  countEl.textContent = String(PEOPLE.length);
+
+  const sorted = [...PEOPLE].sort((a,b) => a.name.localeCompare(b.name));
+  container.innerHTML = sorted.map(p => {
+    const profileHref = `profiles/${slugify(p.name)}.html`;
+    const preview = (p.responsibilitiesPreview || []).map(item => `<li>${escapeHtml(item)}</li>`).join("");
+    const remaining = Math.max(0, (p.responsibilityCount || 0) - (p.responsibilitiesPreview || []).length);
+    const summary = remaining > 0 ? `View responsibilities (showing ${p.responsibilitiesPreview.length} of ${p.responsibilityCount})` : `View responsibilities (${p.responsibilitiesPreview.length})`;
+    return `
+      <article class="role-card">
+        <div class="role-head">
+          <div class="role-main">
+            <h3 class="role-name">${escapeHtml(p.name)}</h3>
+            <p class="role-title">${escapeHtml(p.jobTitle || "—")}</p>
+          </div>
+          <div class="role-side">
+            <div class="badge"><span class="dot"></span>${escapeHtml(p.company)}</div>
+            <a class="btn btn-outline role-link" href="${profileHref}">Open Profile</a>
+          </div>
+        </div>
+        <details class="role-details">
+          <summary class="role-summary">${escapeHtml(summary)}</summary>
+          <ul class="list">${preview}</ul>
+          ${remaining > 0 ? `<p class="role-more">More responsibilities available in the profile page.</p>` : ``}
+        </details>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderWeeks() {
+  const container = document.getElementById("weekGrid");
+  container.innerHTML = WEEK_DEFS.map(w => {
+    const p = PROJECTS[w.project];
+    return `
+      <button class="week-btn" type="button" data-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
+        <div class="week-num">Week ${w.week}</div>
+        <div class="week-tag">${escapeHtml(p.monthLabel)} · ${escapeHtml(weekFocusLabel(w.phase))}</div>
+        <div class="week-sub">${escapeHtml(w.dateRange)}</div>
+        <div class="week-project">${escapeHtml(p.name)}</div>
+      </button>
+    `;
+  }).join("");
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#039;");
+}
+
+function buildModalContent(weekDef) {
+  const project = PROJECTS[weekDef.project];
+  const assignedNames = (ASSIGNMENTS[weekDef.project] && ASSIGNMENTS[weekDef.project][weekDef.phase]) ? ASSIGNMENTS[weekDef.project][weekDef.phase] : [];
+  const assignedPeople = assignedNames.map(n => findPerson(n)).filter(Boolean);
+
+  const peopleBlocks = assignedPeople.map(person => {
+    const tasks = buildWeekTasksForPerson({ projectId: weekDef.project, phase: weekDef.phase, person });
+    const taskHtml = tasks.map(t => t.startsWith("- ") ? `<li>${escapeHtml(t.slice(2))}</li>` : `<li>${escapeHtml(t)}</li>`).join("");
+    const profileHref = `profiles/${slugify(person.name)}.html`;
+    return `
+      <section class="modal-card">
+        <div class="modal-card-head">
+          <div>
+            <h3 class="modal-card-title">${escapeHtml(person.name)}</h3>
+            <p class="modal-card-sub">${escapeHtml(person.jobTitle || "—")} · ${escapeHtml(person.company)}</p>
+          </div>
+          <a class="btn btn-outline modal-card-link" href="${profileHref}">Open Profile</a>
+        </div>
+        <ul class="modal-list">${taskHtml}</ul>
+      </section>
+    `;
+  }).join("");
+
+  const deliverables = (project.deliverablesByPhase[weekDef.phase] || []).map(d => `<li>${escapeHtml(d)}</li>`).join("");
+  const success = (project.successByPhase[weekDef.phase] || []).map(s => `<li>${escapeHtml(s)}</li>`).join("");
+  const tools = project.freeTools.map(t => `<li>${escapeHtml(t)}</li>`).join("");
+  const guardrails = project.guardrails.map(g => `<li>${escapeHtml(g)}</li>`).join("");
+
+  return `
+    <section class="modal-section">
+      <p class="section-label">Project</p>
+      <h3 class="modal-h3">${escapeHtml(project.name)}</h3>
+      <p class="modal-p">${escapeHtml(project.goal)}</p>
+      <div class="modal-split">
+        <div>
+          <p class="modal-k">Zero-cost tools</p>
+          <ul class="modal-list">${tools}</ul>
+        </div>
+        <div>
+          <p class="modal-k">Uniqueness</p>
+          <p class="modal-p">${escapeHtml(project.uniqueness)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="modal-section">
+      <p class="section-label">Focus</p>
+      <h3 class="modal-h3">${escapeHtml(weekFocusLabel(weekDef.phase))}</h3>
+      <div class="modal-split">
+        <div>
+          <p class="modal-k">Scope guardrails</p>
+          <ul class="modal-list">${guardrails}</ul>
+        </div>
+        <div>
+          <p class="modal-k">Assigned team members</p>
+          <ul class="modal-list">${assignedPeople.map(p => `<li>${escapeHtml(p.name)} — ${escapeHtml(p.jobTitle || "—")}</li>`).join("")}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="modal-section">
+      <p class="section-label">Tasks</p>
+      ${peopleBlocks || `<p class="empty">No assignments configured for this week.</p>`}
+    </section>
+
+    <section class="modal-section">
+      <p class="section-label">Deliverables</p>
+      <ul class="modal-list">${deliverables}</ul>
+    </section>
+
+    <section class="modal-section">
+      <p class="section-label">Success Criteria</p>
+      <ul class="modal-list">${success}</ul>
+    </section>
+  `;
+}
+
+function buildEmailText(weekDef) {
+  const project = PROJECTS[weekDef.project];
+  const assignedNames = (ASSIGNMENTS[weekDef.project] && ASSIGNMENTS[weekDef.project][weekDef.phase]) ? ASSIGNMENTS[weekDef.project][weekDef.phase] : [];
+  const assignedPeople = assignedNames.map(n => findPerson(n)).filter(Boolean);
+
+  const lines = [];
+  lines.push(`Subject: Week ${weekDef.week} Tasks — ${project.name} (${weekDef.dateRange})`);
+  lines.push("");
+  lines.push(`Week ${weekDef.week}: ${weekDef.dateRange}`);
+  lines.push(`Project: ${project.name} (${project.monthLabel})`);
+  lines.push(`Focus: ${weekFocusLabel(weekDef.phase)}`);
+  lines.push("");
+  lines.push("Project goal:");
+  lines.push(`- ${project.goal}`);
+  lines.push("");
+  lines.push("Zero-cost tools:");
+  project.freeTools.forEach(t => lines.push(`- ${t}`));
+  lines.push("");
+  lines.push("Scope guardrails:");
+  project.guardrails.forEach(g => lines.push(`- ${g}`));
+  lines.push("");
+  lines.push("Assigned team members:");
+  assignedPeople.forEach(p => lines.push(`- ${p.name} — ${p.jobTitle || "—"} (${p.company})`));
+  lines.push("");
+  lines.push("Tasks (by team member):");
+  assignedPeople.forEach(p => {
+    lines.push("");
+    lines.push(`${p.name} — ${p.jobTitle || "—"}`);
+    const tasks = buildWeekTasksForPerson({ projectId: weekDef.project, phase: weekDef.phase, person: p });
+    tasks.forEach(t => {
+      if (t.startsWith("- ")) lines.push(`  ${t}`);
+      else lines.push(`- ${t}`);
+    });
+  });
+  lines.push("");
+  lines.push("Deliverables:");
+  (project.deliverablesByPhase[weekDef.phase] || []).forEach(d => lines.push(`- ${d}`));
+  lines.push("");
+  lines.push("Success criteria:");
+  (project.successByPhase[weekDef.phase] || []).forEach(s => lines.push(`- ${s}`));
+  lines.push("");
+  lines.push("Signature:");
+  lines.push("- Rajeev Gupta");
+  lines.push("- Project Lead");
+  lines.push("- mohan.gupta@ipeople-career.com");
+  return lines.join("\n");
+}
+
+function buildEmailHtml(weekDef) {
+  const project = PROJECTS[weekDef.project];
+  const assignedNames = (ASSIGNMENTS[weekDef.project] && ASSIGNMENTS[weekDef.project][weekDef.phase]) ? ASSIGNMENTS[weekDef.project][weekDef.phase] : [];
+  const assignedPeople = assignedNames.map(n => findPerson(n)).filter(Boolean);
+
+  const subject = `Week ${weekDef.week} Tasks — ${project.name} (${weekDef.dateRange})`;
+
+  function bulletTable(items) {
+    if (!items || !items.length) return `<div style="font-size:13px;color:#64748b;margin-top:8px;">No items for this section.</div>`;
+    const rows = items.map(item => (
+      `<tr>` +
+        `<td width="18" valign="top" style="padding:2px 0;color:#05ba46;font-weight:800;">•</td>` +
+        `<td valign="top" style="padding:2px 0;color:#334155;font-size:14px;">${escapeHtml(item)}</td>` +
+      `</tr>`
+    )).join("");
+    return (
+      `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;">` +
+        rows +
+      `</table>`
+    );
+  }
+
+  function section(title, bodyHtml) {
+    return (
+      `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border:1px solid #d1d5db;margin-top:12px;">` +
+        `<tr>` +
+          `<td width="6" style="background:#046bd2;font-size:0;line-height:0;">&nbsp;</td>` +
+          `<td style="padding:12px 14px;">` +
+            `<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#046bd2;font-weight:800;">${escapeHtml(title)}</div>` +
+            bodyHtml +
+          `</td>` +
+        `</tr>` +
+      `</table>`
+    );
+  }
+
+  const assignees = assignedPeople.length
+    ? assignedPeople.map(p => `${p.name} — ${p.jobTitle || "—"} (${p.company})`)
+    : [];
+
+  const tools = project.freeTools || [];
+  const guardrails = project.guardrails || [];
+  const deliverables = project.deliverablesByPhase[weekDef.phase] || [];
+  const success = project.successByPhase[weekDef.phase] || [];
+  const signature = { name: "Rajeev Gupta", title: "Project Lead", email: "mohan.gupta@ipeople-career.com" };
+
+  const summaryBlock = (
+    `<div style="font-size:14px;color:#334155;">` +
+      `<div><strong style="color:#111111;">Project:</strong> ${escapeHtml(project.name)}</div>` +
+      `<div style="margin-top:6px;"><strong style="color:#111111;">Goal:</strong> ${escapeHtml(project.goal)}</div>` +
+      `<div style="margin-top:6px;"><strong style="color:#111111;">Focus:</strong> ${escapeHtml(weekFocusLabel(weekDef.phase))}</div>` +
+    `</div>`
+  );
+
+  const signatureBlock = (
+    `<div style="margin-top:18px;">` +
+      `<div style="font-size:13px;color:#64748b;margin:0 0 8px;">Regards,</div>` +
+      `<div style="font-size:14px;font-weight:800;color:#111111;margin:0;">${escapeHtml(signature.name)}</div>` +
+      `<div style="font-size:13px;color:#64748b;margin-top:2px;">${escapeHtml(signature.title)}</div>` +
+      `<div style="margin-top:6px;">` +
+        `<a href="mailto:${escapeHtml(signature.email)}" style="color:#046bd2;text-decoration:underline;font-size:13px;">${escapeHtml(signature.email)}</a>` +
+      `</div>` +
+    `</div>`
+  );
+
+  return (
+    `<div style="font-family:Segoe UI,Arial,sans-serif;line-height:1.45;color:#111111;">` +
+      `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f0f5fa;padding:18px;">` +
+        `<tr><td align="left">` +
+          `<table role="presentation" align="left" cellpadding="0" cellspacing="0" border="0" width="640" style="max-width:640px;width:100%;margin:0;background:#ffffff;border:1px solid #d1d5db;">` +
+            `<tr><td style="background:#046bd2;color:#ffffff;padding:18px 18px 16px;">` +
+              `<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.92;">Project Plan</div>` +
+              `<div style="font-size:22px;font-weight:800;margin-top:6px;">${escapeHtml(subject)}</div>` +
+              `<div style="font-size:13px;opacity:.92;margin-top:8px;">${escapeHtml(project.monthLabel)} · ${escapeHtml(weekDef.dateRange)}</div>` +
+            `</td></tr>` +
+            `<tr><td style="padding:18px;">` +
+              summaryBlock +
+              section("Assigned Team Members", bulletTable(assignees)) +
+              section("Zero‑Cost Tools", bulletTable(tools)) +
+              section("Scope Guardrails", bulletTable(guardrails)) +
+              section("Deliverables", bulletTable(deliverables)) +
+              section("Success Criteria", bulletTable(success)) +
+              signatureBlock +
+            `</td></tr>` +
+            
+          `</table>` +
+        `</td></tr>` +
+      `</table>` +
+    `</div>`
+  );
+}
+
+const dialog = document.getElementById("weekDialog");
+const modalBody = document.getElementById("modalBody");
+const weekTitle = document.getElementById("weekTitle");
+const weekMeta = document.getElementById("weekMeta");
+const modalStatus = document.getElementById("modalStatus");
+const copyBtn = document.getElementById("copyBtn");
+const closeBtn = document.getElementById("closeBtn");
+let activeWeek = null;
+let closeTimer = null;
+
+function openWeek(weekNumber) {
+  const weekDef = WEEK_DEFS.find(w => w.week === weekNumber);
+  if (!weekDef) return;
+  activeWeek = weekDef;
+  const project = PROJECTS[weekDef.project];
+  modalStatus.textContent = "";
+  weekMeta.textContent = `${project.monthLabel} · ${weekDef.dateRange}`;
+  weekTitle.textContent = `Week ${weekDef.week} Tasks`;
+  modalBody.innerHTML = buildModalContent(weekDef);
+  if (typeof dialog.showModal === "function") {
+    if (!dialog.open) dialog.showModal();
+    dialog.classList.remove("is-closing");
+    dialog.classList.add("is-open");
+    closeBtn.focus();
+  } else {
+    modalStatus.textContent = "Your browser does not support modals. Please use a modern browser.";
+  }
+}
+
+function closeWeek() {
+  if (!dialog.open) return;
+  dialog.classList.add("is-closing");
+  dialog.classList.remove("is-open");
+  if (closeTimer) window.clearTimeout(closeTimer);
+  closeTimer = window.setTimeout(() => {
+    dialog.close();
+    dialog.classList.remove("is-closing");
+  }, 160);
+}
+
+document.getElementById("weekGrid").addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-week]");
+  if (!btn) return;
+  const week = Number(btn.getAttribute("data-week"));
+  openWeek(week);
+});
+
+closeBtn.addEventListener("click", closeWeek);
+dialog.addEventListener("cancel", (e) => {
+  e.preventDefault();
+  closeWeek();
+});
+dialog.addEventListener("click", (e) => {
+  const rect = dialog.getBoundingClientRect();
+  const inDialog = rect.top <= e.clientY && e.clientY <= rect.bottom && rect.left <= e.clientX && e.clientX <= rect.right;
+  if (!inDialog) closeWeek();
+});
+
+async function copyTextToClipboard(text) {
+  return copyRichToClipboard({ text, html: "" });
+}
+
+async function copyRichToClipboard({ text, html }) {
+  const plain = String(text || "");
+  const rich = String(html || "");
+
+  if (navigator.clipboard && typeof navigator.clipboard.write === "function" && window.ClipboardItem && rich) {
+    const item = new ClipboardItem({
+      "text/plain": new Blob([plain], { type: "text/plain" }),
+      "text/html": new Blob([rich], { type: "text/html" })
+    });
+    await navigator.clipboard.write([item]);
+    return;
+  }
+
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+    await navigator.clipboard.writeText(plain);
+    return;
+  }
+
+  if (rich) {
+    const container = document.createElement("div");
+    container.setAttribute("contenteditable", "true");
+    container.style.position = "fixed";
+    container.style.left = "-9999px";
+    container.style.top = "0";
+    container.style.opacity = "0";
+    container.innerHTML = rich;
+    document.body.appendChild(container);
+
+    const range = document.createRange();
+    range.selectNodeContents(container);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    const ok = document.execCommand("copy");
+    sel.removeAllRanges();
+    document.body.removeChild(container);
+    if (ok) return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = plain;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.top = "0";
+  textarea.style.left = "0";
+  textarea.style.width = "1px";
+  textarea.style.height = "1px";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+  const ok = document.execCommand("copy");
+  document.body.removeChild(textarea);
+  if (!ok) throw new Error("Clipboard copy failed");
+}
+
+copyBtn.addEventListener("click", async () => {
+  if (!activeWeek) return;
+  try {
+    await copyRichToClipboard({ text: buildEmailText(activeWeek), html: buildEmailHtml(activeWeek) });
+    modalStatus.textContent = "Copied to clipboard.";
+  } catch (err) {
+    modalStatus.textContent = "Copy failed. Your browser may block clipboard access. Try selecting the text and copying manually.";
+  }
+});
+
+renderRoles();
+renderWeeks();
+</script>
+</body>
+</html>
