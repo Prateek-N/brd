@@ -3,12 +3,74 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>3-Month Project Plan</title>
+<title>3-Month Project Plans · Sep 14–Dec 6, 2026</title>
 <link rel="stylesheet" href="styles.css" />
 <style>
-.tab-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
-@media(max-width:1100px){.tab-row .btn{font-size:11px;padding:10px 16px;height:40px;letter-spacing:.9px}}
-@media(max-width:700px){.tab-row .btn{font-size:10px;padding:8px 10px;height:36px;letter-spacing:.6px}}
+.tab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.search-box {
+  width: 100%;
+  max-width: 360px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(15,23,42,0.6);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-box:focus {
+  border-color: #38bdf8;
+}
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.filter-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #cbd5e1;
+  transition: all 0.2s;
+}
+.filter-btn.active {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #38bdf8;
+}
+.project-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(56,189,248,0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56,189,248,0.3);
+  margin-bottom: 8px;
+}
+@media(max-width:1100px){.tab-row .btn{font-size:11px;padding:10px 14px;height:38px}}
+@media(max-width:700px){.tab-row .btn{font-size:10px;padding:6px 10px;height:34px}}
 </style>
 </head>
 <body>
@@ -17,76 +79,68 @@
 <div class="brand">
 <div class="brand-mark"></div>
 <div class="brand-title">Project Plan</div>
-<div class="brand-sub">September 2026</div>
+<div class="brand-sub">Sep 14, 2026 – Dec 6, 2026</div>
 </div>
 <div class="tab-row" id="tabRow">
-  <button class="tab-btn btn btn-primary" data-tab="septnew" type="button" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;border-color:transparent;">🆕 SEPT NEW</button>
+  <button class="tab-btn btn btn-primary" data-tab="all" type="button">All Projects (27)</button>
+  <button class="tab-btn btn btn-outline" data-tab="ipeople" type="button">IPEOPLE (13)</button>
+  <button class="tab-btn btn btn-outline" data-tab="bridgepoint" type="button">BRIDGEPOINT (14)</button>
+  <button class="tab-btn btn btn-outline" data-tab="septnew" type="button" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;border-color:transparent;">🆕 SEPT NEW (3)</button>
 </div>
 </div>
 </div>
+
 <div class="wrap">
 <section class="hero">
-<h1>September 2026 Starters</h1>
-<p>Bridgepoint Careers LLC — Team roles, responsibilities, and profiles.</p>
+<h1>3-Month Sample Projects &amp; Weekly Plans</h1>
+<p>Individual 12-week project assignments starting <strong>September 14, 2026</strong>. Review project scopes, tools, weekly milestones, and email-ready task assignments for all team members.</p>
 <div class="cta-row">
-<a class="btn btn-primary" href="#roles-septnew" style="text-decoration:none;">View Roles</a>
+<a class="btn btn-primary" href="#projects-section" style="text-decoration:none;">Browse Projects</a>
+<a class="btn btn-outline" href="#weeks-section" style="text-decoration:none;">Weekly Schedule (W1–W12)</a>
 </div>
 </section>
 
-<!-- EXISTING CONTENT (IPEOPLE + BRIDGEPOINT tabs) -->
-<div id="existing-content" hidden>
-  <section class="section" id="roles">
+<!-- 27 CANDIDATES PROJECT SECTION -->
+<div id="main-content">
+  <section class="section" id="projects-section">
     <div class="section-head">
       <div>
-        <p class="section-label" id="rolesLabel">Team</p>
-        <h2 class="section-title">Roles &amp; Responsibilities</h2>
+        <p class="section-label">Sep 14 – Dec 6, 2026 Cohort</p>
+        <h2 class="section-title">Team Members &amp; Sample Projects</h2>
       </div>
-      <div class="section-meta"><span id="peopleCount"></span> team members</div>
+      <div class="section-meta"><span id="candidateCount">27</span> Projects</div>
     </div>
-    <div class="role-grid" id="rolesGrid" aria-label="Team members and responsibilities"></div>
+
+    <div class="filter-bar">
+      <input type="text" id="searchInput" class="search-box" placeholder="Search by name, role, or project..." aria-label="Search candidates" />
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="all">All (27)</button>
+        <button class="filter-btn" data-filter="IPEOPLE CAREER LLC">IPEOPLE (13)</button>
+        <button class="filter-btn" data-filter="BRIDGEPOINT CAREERS LLC">BRIDGEPOINT (14)</button>
+      </div>
+    </div>
+
+    <div class="role-grid" id="projectsGrid" aria-label="Team member project cards"></div>
   </section>
-  <section class="section" id="weeks">
+
+  <section class="section" id="weeks-section">
     <div class="section-head">
       <div>
-        <p class="section-label">Schedule</p>
-        <h2 class="section-title">Week 1–Week 12</h2>
+        <p class="section-label">Schedule · 12-Week Milestones</p>
+        <h2 class="section-title">Week 1–Week 12 Tasks</h2>
       </div>
-      <div class="section-meta">Click a week to open tasks</div>
+      <div class="section-meta">Click any week to open all individual assignments</div>
     </div>
-    <div class="week-grid" id="weekGrid" aria-label="Weekly task navigation"></div>
+    <div class="week-grid" id="weekGrid" aria-label="Weekly tasks grid"></div>
   </section>
 </div>
 
-<!-- NEW BRIDGEPOINT CONTENT -->
-<div id="newbp-content" hidden>
-  <section class="section" id="roles-newbp">
-    <div class="section-head">
-      <div>
-        <p class="section-label">Team · New Bridgepoint Careers LLC</p>
-        <h2 class="section-title">Roles &amp; Responsibilities</h2>
-      </div>
-      <div class="section-meta"><span id="newbpPeopleCount"></span> team members</div>
-    </div>
-    <div class="role-grid" id="rolesGridNewbp" aria-label="New Bridgepoint team members"></div>
-  </section>
-  <section class="section" id="weeks-newbp">
-    <div class="section-head">
-      <div>
-        <p class="section-label">Schedule · Jun 29–Sep 20, 2026</p>
-        <h2 class="section-title">Week 1–Week 12</h2>
-      </div>
-      <div class="section-meta">Click a week to open individual tasks</div>
-    </div>
-    <div class="week-grid" id="weekGridNewbp" aria-label="New Bridgepoint weekly tasks"></div>
-  </section>
-</div>
-
-<!-- SEPT NEW CONTENT -->
-<div id="septnew-content">
+<!-- SEPT NEW STARTERS SECTION -->
+<div id="septnew-content" hidden>
   <section class="section" id="roles-septnew">
     <div class="section-head">
       <div>
-        <p class="section-label">Team · September 2026 New Starters</p>
+        <p class="section-label">Team · September 2026 Starters</p>
         <h2 class="section-title">Roles &amp; Responsibilities</h2>
       </div>
       <div class="section-meta">3 team members</div>
@@ -95,8 +149,7 @@
   </section>
 </div>
 
-
-<footer class="footer">Generated from the Stem Task Sheet.</footer>
+<footer class="footer">Generated from the Stem Task Sheet. Plan duration: Sep 14, 2026 – Dec 6, 2026.</footer>
 </div>
 
 <dialog class="modal" id="weekDialog" aria-labelledby="weekTitle" aria-describedby="weekMeta">
@@ -117,715 +170,984 @@
 </dialog>
 
 <script>
-// ── EXISTING DATA ─────────────────────────────────────────────────────────────
-const PEOPLE = [{"name": "Aadharsh Jaya Bharath", "jobTitle": "Supply Chain Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Monitor, track, and report on inventory levels, order fulfillment, and shipment performance to ensure operational efficiency.", "Collaborate with procurement, logistics, and warehouse teams to optimize supply chain processes and reduce lead times.", "Support demand and supply planning by analyzing historical data, market trends, and customer requirements.", "Collect, clean, and transform supply chain data from multiple systems for reporting and analysis.", "Develop and maintain interactive dashboards and visualizations to track supply chain performance trends.", "Perform advanced data analysis (e.g., forecasting, cost analysis, risk assessment) to support decision-making."], "responsibilityCount": 6}, {"name": "Venkata Ratna Kumar Mandalapu", "jobTitle": "Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop, test, and maintain web and software applications according to project requirements.", "Write clean, optimized, and well-documented code using modern programming languages and frameworks.", "Collaborate with cross-functional teams to define, design, and implement new features.", "Participate in software design discussions and contribute to architectural decisions.", "Perform code reviews to ensure code quality, scalability, and adherence to best practices.", "Identify, troubleshoot, and resolve bugs and performance issues in existing systems."], "responsibilityCount": 7}, {"name": "Mary Shreeja Thumma", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain web applications using .NET technologies such as ASP.NET and .NET Core.", "Design and implement front-end components using HTML, CSS, JavaScript, and frameworks like Angular or React.", "Build and maintain RESTful APIs and backend services using C#.", "Develop and manage databases, queries, and stored procedures using SQL Server."], "responsibilityCount": 11}, {"name": "Durga Phani Vikas Telu", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect, clean, and analyze large datasets from multiple sources to identify trends, patterns, and actionable insights that support business decision-making.", "Develop and maintain interactive dashboards and reports using tools such as Power BI, Tableau, or Excel.", "Perform exploratory data analysis (EDA) to evaluate data quality, identify anomalies, and ensure accuracy of insights."], "responsibilityCount": 12}, {"name": "Kanishka Singh", "jobTitle": "Business Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Gather, analyze, and document business requirements by collaborating with stakeholders, end users, and cross-functional teams.", "Translate business needs into clear functional and technical specifications for development teams.", "Conduct process mapping, gap analysis, and feasibility studies to identify opportunities for improvement.", "Support the design and implementation of efficient business processes and system enhancements.", "Coordinate with developers, QA teams, and project managers to ensure requirements are understood and delivered accurately.", "Perform data analysis, generate insights, and prepare reports to support decision-making."], "responsibilityCount": 6}, {"name": "Pooja Nigam", "jobTitle": "AI Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and train machine learning and AI models based on project requirements.", "Prepare, clean, and analyze data to ensure high-quality input for models.", "Deploy and integrate AI models into applications, APIs, or production systems.", "Evaluate and optimize model performance using appropriate metrics and tuning methods.", "Write clean, efficient, and maintainable code following software engineering best practices."], "responsibilityCount": 11}, {"name": "Deepinder Singh", "jobTitle": "Junior Project Manager", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Assist in project planning by helping prepare schedules, timelines, and resource allocation plans.", "Coordinate with team members to ensure tasks are understood, assigned, and progressing as planned.", "Monitor project progress and report updates, risks, and delays to the Project Manager or senior stakeholders.", "Support documentation efforts, including maintaining project reports, meeting minutes, and status trackers.", "Facilitate meetings, including scheduling, preparing agendas, and following up on action items.", "Ensure adherence to project processes by helping enforce standards, quality checks, and compliance requirements."], "responsibilityCount": 6}, {"name": "Shrey Sandeep Jain", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect and clean raw data from various sources.", "Analyze datasets to identify trends, patterns, and insights.", "Create reports and dashboards to visualize findings.", "Interpret data to support business decisions.", "Perform data validation to ensure accuracy and consistency.", "Collaborate with cross-functional teams such as product managers and designers."], "responsibilityCount": 11}, {"name": "Disha Revandkar", "jobTitle": "Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design and develop software solutions based on user and business requirements.", "Write clean, efficient, and maintainable code using appropriate languages and frameworks.", "Debug, troubleshoot, and fix issues across the software lifecycle.", "Evaluate and optimize model performance using appropriate metrics and tuning methods.", "Create and execute tests (unit, integration, automated) to ensure software quality.", "Collaborate with cross-functional teams such as product managers and designers."], "responsibilityCount": 9}, {"name": "Ashish Kasam", "jobTitle": "Supply Chain Specialist", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Plan, coordinate, and monitor end-to-end supply chain activities.", "Manage procurement of materials, goods, and services from suppliers.", "Ensure timely delivery of products while minimizing costs.", "Monitor inventory levels and optimize stock management.", "Analyze supply chain data to improve efficiency and performance.", "Collaborate with vendors, logistics providers, and internal teams."], "responsibilityCount": 12}, {"name": "Uday Kiran Peddineni", "jobTitle": "Cloud Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design cloud architecture to meet scalability, security, and performance requirements.", "Deploy and manage cloud infrastructure (servers, storage, networking) on platforms like AWS, Azure, or GCP.", "Automate provisioning and deployments using Infrastructure as Code (e.g., Terraform, CloudFormation).", "Monitor system performance and availability, ensuring high uptime and reliability."], "responsibilityCount": 12}, {"name": "Chidi Okeke", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect and clean data from multiple sources to ensure accuracy and consistency.", "Analyze datasets to identify trends, patterns, and insights.", "Create reports and dashboards using tools like Excel, SQL, Power BI, or Tableau.", "Interpret data results and translate them into actionable business insights.", "Support decision-making by providing data-driven recommendations.", "Collaborate with stakeholders to understand business requirements."], "responsibilityCount": 12}, {"name": "Princy Palli", "jobTitle": "Devops Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collaborate with development and operations teams to streamline software delivery.", "Build, manage, and optimize CI/CD pipelines for automated deployments.", "Provision and manage cloud infrastructure and services.", "Monitor system performance, availability, and reliability.", "Implement security, compliance, and best practices across environments.", "Automate infrastructure and configuration management."], "responsibilityCount": 12}, {"name": "Lakshmi Prasanna Tanikonda", "jobTitle": "Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain software applications by writing clean, efficient, and scalable code.", "Analyze user requirements and translate them into effective technical solutions.", "Design system architecture and software modules for robustness and maintainability.", "Debug and troubleshoot issues by identifying root causes and implementing fixes.", "Conduct code reviews to ensure quality, readability, and adherence to standards."], "responsibilityCount": 12}, {"name": "Prince Paneliya", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect, clean, and validate data from multiple sources.", "Analyze large datasets to identify trends and patterns.", "Develop and maintain dashboards and reports.", "Translate data insights into actionable business recommendations.", "Work with stakeholders to understand data requirements.", "Ensure data accuracy, consistency, and integrity."], "responsibilityCount": 12}, {"name": "Bhoomika Reddy Muralidhar", "jobTitle": "Full Stack Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain front-end and back-end components.", "Build responsive user interfaces using HTML, CSS, JavaScript.", "Implement server-side logic and APIs.", "Design and manage databases.", "Ensure application performance, security, and scalability.", "Write, test, and debug clean, efficient code."], "responsibilityCount": 12}, {"name": "Sri Ram Varma Budhraju", "jobTitle": "Software Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design, develop, test, and maintain software applications.", "Write clean, efficient, and well-documented code.", "Analyze user requirements and translate them into technical solutions.", "Debug, troubleshoot, and resolve software defects.", "Collaborate with cross-functional teams (QA, UI/UX, Product).", "Participate in code reviews to ensure quality and best practices."], "responsibilityCount": 12}, {"name": "Haindavi Krishna Kothireddy", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect, clean, and validate data from multiple sources.", "Analyze large datasets to identify trends and patterns.", "Develop and maintain dashboards and reports.", "Translate data insights into actionable business recommendations.", "Work with stakeholders to understand data requirements.", "Ensure data accuracy, consistency, and integrity."], "responsibilityCount": 12}, {"name": "Hemanth Ranga Tummala", "jobTitle": "BIM Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Facilitate problem-solving using technology and collaboration with internal and external project teams.", "Ensure modeling efforts and deliverables are completed on time, meeting all required specifications.", "Conduct quality reviews of modeled scope and confirm compliance with contract documents.", "Prepare BIM documentation, including drawings, schedules, and reports.", "Collaborate with multidisciplinary engineering teams to integrate all design elements into a coordinated model to resolve construction issues.", "Identify and resolve coordination conflicts using clash detection in Navisworks."], "responsibilityCount": 8}, {"name": "Suman Chandra Musthyala", "jobTitle": "Design Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and implement RTL designs using Verilog and/or SystemVerilog for AI chip development.", "Define and design micro-architecture aligned with CPU and system requirements.", "Integrate CPU architecture components into the overall chip design.", "Perform RTL coding, simulation, and functional verification using tools like VCS or equivalent.", "Run linting and design rule checks to ensure code quality and compliance.", "Debug and resolve design issues identified during simulation and validation."], "responsibilityCount": 9}, {"name": "Praveen Kumar Borra", "jobTitle": ".Net Full Stack Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain web applications using .NET technologies such as ASP.NET and .NET Core.", "Design and implement front-end components using HTML, CSS, JavaScript, and frameworks like Angular or React.", "Build and maintain RESTful APIs and backend services using C#.", "Develop and manage databases, queries, and stored procedures using SQL Server."], "responsibilityCount": 11}, {"name": "Sai Anuhya Bandi", "jobTitle": "Data Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design, build, and maintain scalable data pipelines and data architectures.", "Develop and optimize ETL/ELT processes for efficient data extraction, transformation, and loading.", "Ensure data quality, integrity, and security across all data systems.", "Collaborate with data analysts, data scientists, and stakeholders to understand data requirements."], "responsibilityCount": 11}, {"name": "Gouthami Gowni", "jobTitle": "Data Analyst", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Collect, clean, and validate data from multiple sources to ensure accuracy and consistency.", "Analyze large datasets to identify trends, patterns, and actionable insights.", "Develop and maintain dashboards, reports, and visualizations for business stakeholders.", "Interpret data and present findings in a clear and structured manner."], "responsibilityCount": 11}, {"name": "Harshitha Kakumanu", "jobTitle": "Front End Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Develop and maintain user-facing web applications using modern front-end technologies.", "Translate UI/UX designs into responsive, high-quality code.", "Ensure cross-browser compatibility and optimize applications for maximum speed and scalability.", "Collaborate with designers, back-end developers, and other stakeholders to deliver features."], "responsibilityCount": 11}, {"name": "Karthik Kalyan Kakumanu", "jobTitle": "Software Developer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design, develop, test, and maintain software applications.", "Write clean, efficient, and well-documented code.", "Analyze user requirements and translate them into technical solutions.", "Debug, troubleshoot, and resolve software defects.", "Collaborate with cross-functional teams (QA, UI/UX, Product).", "Participate in code reviews to ensure quality and best practices."], "responsibilityCount": 12}, {"name": "Shashank Dubey", "jobTitle": "Software Engineer", "company": "IPEOPLE CAREER LLC", "responsibilitiesPreview": ["Design, develop, test, and maintain software applications as per business requirements.", "Write clean, efficient, and scalable code following coding standards and best practices.", "Collaborate with cross-functional teams to analyze requirements and implement solutions."], "responsibilityCount": 11}, {"name": "Alma Babydasan", "jobTitle": "Software Developer", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, develop, and implement software applications and systems.", "Write clean, efficient, maintainable, and well-documented code.", "Analyze user requirements and translate them into technical solutions.", "Debug, troubleshoot, and resolve software defects and performance issues.", "Conduct code reviews and ensure adherence to coding standards.", "Collaborate with cross-functional teams (QA, UX/UI, product, DevOps)."], "responsibilityCount": 11}, {"name": "Saboura Salari Rad", "jobTitle": "Data Finance", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Collect, clean, validate, and analyze large volumes of financial and operational data to ensure accuracy and consistency.", "Develop and maintain financial dashboards, MIS reports, and KPIs to support management and business stakeholders.", "Perform financial analysis including variance analysis, trend analysis, forecasting, and budgeting support.", "Collaborate with Finance, Accounting, Business, and IT teams to translate business requirements into data-driven insights.", "Support month-end, quarter-end, and year-end financial reporting activities through data validation and reconciliation.", "Identify patterns, risks, and opportunities in financial data to improve profitability and cost efficiency."], "responsibilityCount": 8}, {"name": "Yash Sodvadiya", "jobTitle": "Cloud engineer", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, implement, and manage scalable cloud infrastructure solutions.", "Deploy, configure, and maintain cloud services (compute, storage, networking).", "Monitor system performance, availability, and security of cloud environments.", "Automate infrastructure provisioning using Infrastructure as Code (IaC) tools.", "Ensure data backup, disaster recovery, and business continuity strategies.", "Optimize cloud resources to improve performance and reduce costs."], "responsibilityCount": 11}, {"name": "Akhila Jangam", "jobTitle": "Data Analyst", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Collect, clean, and validate data from various sources to ensure accuracy and reliability.", "Analyze large datasets to identify trends, patterns, and actionable insights.", "Develop and maintain dashboards and reports using tools like Excel, SQL, Power BI, or Tableau.", "Interpret data and present findings to stakeholders in a clear and concise manner.", "Work closely with cross-functional teams to understand business requirements and support decision-making.", "Perform data validation, quality checks, and troubleshooting to resolve data discrepancies."], "responsibilityCount": 9}, {"name": "Heny Patel", "jobTitle": "Business System Analyst", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Gather, analyze, and document business and system requirements from stakeholders.", "Collaborate with technical teams to translate business needs into functional specifications.", "Conduct system testing, validation, and user acceptance testing (UAT) to ensure quality deliverables.", "Prepare detailed reports, process flows, and technical documentation for system implementations.", "Support system integration, deployment, and post-implementation activities.", "Identify and troubleshoot system issues while coordinating with relevant teams for resolution."], "responsibilityCount": 8}, {"name": "Rutujeet Falmare", "jobTitle": "Software Engineer", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, develop, test, and maintain software applications and systems.", "Write clean, efficient, and scalable code following industry best practices.", "Collaborate with cross-functional teams to gather and analyze business requirements.", "Troubleshoot, debug, and resolve software defects and technical issues.", "Participate in code reviews to ensure code quality and maintainability.", "Develop and integrate APIs, databases, and third-party services as required."], "responsibilityCount": 10}, {"name": "Anvitha Gaddam", "jobTitle": "Data analyst", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Collect, organize, and analyze large datasets to identify trends and business insights.", "Develop and maintain dashboards, reports, and data visualizations using tools such as Excel, Power BI, or Tableau.", "Interpret data findings and provide actionable recommendations to support business decisions.", "Perform data cleaning, validation, and quality checks to ensure accuracy and consistency.", "Write and optimize SQL queries to extract and manage data from databases."], "responsibilityCount": 10}, {"name": "Mihir Pandya", "jobTitle": "AI/ML enginner", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, develop, test, and deploy AI/ML models and intelligent applications.", "Analyze, clean, and preprocess large datasets for machine learning solutions.", "Build and optimize predictive models, algorithms, and data pipelines.", "Collaborate with software engineers, analysts, and business teams to implement AI-driven solutions.", "Monitor, evaluate, and improve model performance, scalability, and accuracy.", "Develop automation solutions and support data-driven decision-making processes."], "responsibilityCount": 9}, {"name": "Sylvester Rodrigues", "jobTitle": "Senior Business Analyst", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Gather, analyze, and interpret business data to identify trends and operational insights.", "Develop and maintain business dashboards, reports, and performance visualizations for stakeholders.", "Collect, clean, and validate business data for accuracy and consistency across systems.", "Perform business analysis to support decision-making, risk assessment, and strategic planning.", "Collaborate with cross-functional teams to understand business requirements and objectives.", "Identify process improvement opportunities through data-driven analysis and actionable recommendations."], "responsibilityCount": 11}, {"name": "Niyazuddin Shaik", "jobTitle": "Cloud Security Engineer", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Gather, analyze, and interpret cloud security data to identify threats and operational insights.", "Develop and maintain cloud security dashboards, reports, and performance visualizations for stakeholders.", "Collect, clean, and validate security data for accuracy and consistency across systems.", "Perform cloud security analysis to support threat detection, risk assessment, and decisions.", "Collaborate with cross-functional teams to understand cloud security requirements and objectives.", "Identify security improvement opportunities through data-driven analysis and recommendations."], "responsibilityCount": 11}, {"name": "Nevil Jack Denis", "jobTitle": "Product Manager", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Gather, analyze, and interpret market data to identify product opportunities and customer insights.", "Develop and maintain product roadmaps, reports, and performance visualizations for stakeholders.", "Collect, prioritize, and validate product requirements for accuracy and consistency across teams.", "Perform product analysis to support strategic decisions, prioritization, and planning.", "Collaborate with cross-functional teams to understand product requirements and objectives.", "Identify product improvement opportunities through data-driven analysis and recommendations."], "responsibilityCount": 11}, {"name": "Sai Manohar Palevar", "jobTitle": "Java Full Stack Developer", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Design, develop, test and maintain scalable full-stack web applications using Java and modern front-end technologies.", "Integrate frontend applications with backend services and third-party APIs.", "Write clean, efficient, and maintainable code following coding standards and best practices.", "Perform unit testing, debugging, troubleshooting, and application performance optimization.", "Participate in code reviews and contribute to continuous improvement of development processes.", "Work with relational and NoSQL databases to design, develop, and optimize data models and queries."], "responsibilityCount": 9}, {"name": "Shraddha Chandrakant Jathar", "jobTitle": "Data Scientist", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Collect, clean, and analyze large datasets to identify trends, patterns, and business insights.", "Develop, test and deploy statistical models, machine learning algorithms and predictive analytics solutions.", "Design and maintain data pipelines, dashboards and reporting tools to support decision-making.", "Perform exploratory data analysis and present findings to stakeholders in a clear and actionable manner.", "Validate model performance and continuously optimize algorithms for accuracy and efficiency.", "Utilize programming languages such as Python, R, SQL and relevant data science tools and frameworks."], "responsibilityCount": 9}, {"name": "Adarsh Mohanty", "jobTitle": "Business System Analyst", "company": "BRIDGEPOINT CAREERS LLC", "responsibilitiesPreview": ["Gather, analyze and document business requirements by collaborating with stakeholders and end users.", "Translate business needs into functional and technical specifications for development teams.", "Act as a liaison between business stakeholders, development teams, QA, and project managers to ensure successful project delivery.", "Support system design, testing, user acceptance testing (UAT), and implementation activities.", "Analyze data and system performance to identify trends, issues, and opportunities for process optimization.", "Participate in project planning, change management, and continuous improvement initiatives."], "responsibilityCount": 9}];
-
-const PROJECTS = {
-  june: {
-    id: "june",
-    name: "Career Directory Microsite (Static Web)",
-    monthLabel: "June 2026",
-    goal: "Ship a fast, responsive static directory site (home → profiles) with clear navigation and polished UI.",
-    freeTools: ["HTML/CSS/JS", "Local browser", "VS Code", "Git (optional)"],
-    uniqueness: "Static site build (no dashboards, no automation CLI).",
-    guardrails: ["No backend required", "No paid hosting/tools", "Keep scope to browsing + profile pages + simple search/filter only if time allows."],
-    deliverablesByPhase: {
-      1: ["Requirements summary", "Page map + navigation plan", "UI style baseline", "Content inventory (who/what pages exist)"],
-      2: ["Working MVP pages", "Navigation and routing via links", "Content populated and readable", "Basic responsive layout"],
-      3: ["Bug fixes + cross-browser checks", "Accessibility pass (keyboard + labels)", "Content cleanup and consistency"],
-      4: ["Release package ready to share", "Short runbook (how to open/share)", "Demo script + retrospective notes"]
-    },
-    successByPhase: {
-      1: ["All stakeholders agree on scope", "Every page has an owner", "No ambiguous requirements remaining for MVP"],
-      2: ["A new user can find any profile in under 30 seconds", "No broken links", "Layout works on mobile and desktop"],
-      3: ["No P0/P1 bugs left", "Keyboard navigation works for key interactions", "Content is consistent and complete"],
-      4: ["Deliverable can be shared by email with clear instructions", "Demo is smooth end-to-end", "Lessons learned documented"]
-    }
+const CANDIDATES = [
+  {
+    "name": "Aadharsh Jaya Bharath",
+    "jobTitle": "Supply Chain Data Analyst",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "aadharsh-jaya-bharath",
+    "responsibilities": [
+      "Monitor, track, and report on inventory levels, order fulfillment, and shipment performance to ensureoperational efficiency.",
+      "Collaborate with procurement, logistics, and warehouse teams to optimize supply chain processes andreduce lead times.",
+      "Support demand and supply planning by analyzing historical data, market trends, and customerrequirements.",
+      "Collect, clean, and transform supply chain data from multiple systems for reporting and analysis.",
+      "Develop and maintain interactive dashboards and visualizations to track supply chain performancetrends.",
+      "Perform advanced data analysis (e.g., forecasting, cost analysis, risk assessment) to support decision-making."
+    ],
+    "project": "End-to-End Supply Chain Inventory & Fulfillment Optimization",
+    "projectDesc": "Analyze multi-warehouse inventory levels, supplier lead times, and shipping performance using Python and Power BI to build predictive replenishment models and executive KPI dashboards.",
+    "tools": "Python (pandas, scikit-learn), Power BI Desktop (free), Excel, Kaggle Supply Chain Dataset, GitHub",
+    "weekTasks": [
+      "Download Kaggle supply chain shipment and inventory dataset, inspect schema, missing values, and data dictionary.",
+      "Clean and validate inventory records \u2014 standardize SKU naming, resolve date formats, and filter anomalies.",
+      "Conduct exploratory data analysis (EDA) on order fulfillment cycles, carrier transit times, and delayed deliveries.",
+      "Build automated inventory health metrics: stockout rate, days of inventory on hand (DOH), and reorder points.",
+      "Perform supplier lead-time variance and on-time in-full (OTIF) delivery performance analysis.",
+      "Develop demand forecasting model using ARIMA / Random Forest to predict monthly regional SKU demand.",
+      "Build interactive Power BI executive dashboard with drill-downs for stockout risks and fulfillment bottlenecks.",
+      "Conduct root-cause analysis on high-cost freight routes and formulate cost-reduction recommendations.",
+      "Write standard operating procedure (SOP) documentation and business requirements for inventory alerts.",
+      "Perform user acceptance testing (UAT) on dashboard filters, KPI card calculations, and forecast bounds.",
+      "Finalize executive summary report with recommendations for vendor SLAs and inventory rebalancing.",
+      "Package all data transformation scripts, Power BI templates, and documentation; push to GitHub."
+    ]
   },
-  july: {
-    id: "july",
-    name: "KPI Dashboard Pack (Data + Reporting)",
-    monthLabel: "July 2026",
-    goal: "Build a lightweight analytics workflow: ingest → clean → validate → dashboard → weekly KPI report.",
-    freeTools: ["Python (pandas) or Power BI Desktop (free)", "CSV/Excel", "SQLite (optional)", "VS Code"],
-    uniqueness: "Data pipeline + dashboard pack (not a website directory; not an automation gate).",
-    guardrails: ["Use a small sample dataset", "Keep KPIs to a short list (5–10)", "Prefer repeatable refresh over fancy visuals."],
-    deliverablesByPhase: {
-      1: ["KPI definitions + data dictionary", "Sample dataset selected", "Validation rules and acceptance thresholds"],
-      2: ["Ingest/clean pipeline runs end-to-end", "Dashboard v1 with KPIs", "Draft KPI report template"],
-      3: ["Automated data quality checks", "Anomaly notes + fixes", "Dashboard refinement"],
-      4: ["Final dashboard pack", "Refresh/runbook steps", "Final KPI report example + demo"]
-    },
-    successByPhase: {
-      1: ["Everyone uses the same KPI definitions", "Inputs and outputs are clearly defined"],
-      2: ["Dashboard refresh is repeatable", "KPIs match the definitions", "No manual data edits required"],
-      3: ["Bad data is detected early", "Checks are documented and rerunnable", "Dashboard is stable"],
-      4: ["A new user can refresh and reproduce results", "Report reads clearly for stakeholders", "Demo tells a complete story"]
-    }
+  {
+    "name": "Mary Shreeja Thumma",
+    "jobTitle": "Data Analyst",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "mary-shreeja-thumma",
+    "responsibilities": [
+      "Develop and maintain web applications using .NET technologies such as ASP.NET",
+      "and .NET Core.",
+      "Design and implement front-end components using HTML, CSS, JavaScript, and",
+      "frameworks like Angular or React.",
+      "Build and maintain RESTful APIs and backend services using C#.",
+      "Develop and manage databases, queries, and stored procedures using SQL Server.",
+      "Collaborate with UI/UX designers, QA teams, and product managers to deliver highquality applications.",
+      "Ensure application performance, scalability, and security across the full technology",
+      "stack.",
+      "Perform testing, debugging, and troubleshooting to resolve software issues.",
+      "Use version control systems like Git for code management and collaboration."
+    ],
+    "project": "E-Commerce Customer Behavior & Web Traffic Analytics Platform",
+    "projectDesc": "Collect, clean, and analyze digital customer engagement data, build SQL Server analytical queries and create interactive reporting dashboards for business stakeholders.",
+    "tools": "SQL Server / PostgreSQL, Power BI, Python (pandas, matplotlib), REST API client, GitHub",
+    "weekTasks": [
+      "Define project scope, extract web session and customer transaction dataset, review data dictionary.",
+      "Clean, transform, and validate web clickstream and transaction logs to ensure schema integrity.",
+      "Perform exploratory data analysis on user conversion funnels, bounce rates, and session durations.",
+      "Write complex SQL stored procedures and queries to aggregate daily, weekly, and monthly customer metrics.",
+      "Conduct customer cohort retention analysis to identify drop-off patterns across checkout steps.",
+      "Build an interactive Power BI dashboard visualizing conversion rates, product page traffic, and user demographics.",
+      "Perform A/B test analysis on promotional landing pages to quantify conversion lift and revenue impact.",
+      "Establish automated data quality and consistency checks across reporting tables.",
+      "Draft business requirements and analytical documentation for stakeholder self-service reporting.",
+      "Perform validation and regression testing across SQL query outputs and visual dashboards.",
+      "Synthesize business insights and actionable optimization recommendations into an executive slide deck.",
+      "Publish completed dashboard, export SQL scripts, write project README, and commit everything to GitHub."
+    ]
   },
-  aug: {
-    id: "aug",
-    name: "Automation Quality Gate Toolkit (Local CLI + Report)",
-    monthLabel: "August 2026",
-    goal: "Create a local runner that executes checks and outputs a single summary report for fast review.",
-    freeTools: ["Python", "Local execution", "Open-source linters/test tools", "VS Code"],
-    uniqueness: "Automation runner + report (not dashboard; not static directory).",
-    guardrails: ["Local-only execution", "Small number of high-signal checks", "Report must be readable and actionable."],
-    deliverablesByPhase: {
-      1: ["Check list + inputs/outputs", "Report format definition", "Sample inputs for testing"],
-      2: ["CLI runs end-to-end", "Report generated in one command", "Clear pass/fail output"],
-      3: ["Stronger validation + better error messages", "Reliability improvements", "Regression checks"],
-      4: ["Final runbook", "Demo script", "Retrospective + next-steps backlog"]
-    },
-    successByPhase: {
-      1: ["Checks are measurable and testable", "No ambiguous pass/fail conditions"],
-      2: ["One command produces a report", "Failures are easy to understand and reproduce"],
-      3: ["No flaky checks", "Errors include actionable next steps", "Tool works on different machines/browsers"],
-      4: ["Team can use it without help", "Demo is smooth", "Clear handoff and documentation exist"]
-    }
+  {
+    "name": "Durga Phani Vikas Telu",
+    "jobTitle": "Data Analyst",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "durga-phani-vikas-telu",
+    "responsibilities": [
+      "Collect, clean, and analyze large datasets from multiple sources to identify trends,",
+      "patterns, and actionable insights that support business decision-making.",
+      "Develop and maintain interactive dashboards and reports using tools such as Power BI,",
+      "Tableau, or Excel.",
+      "Perform exploratory data analysis (EDA) to evaluate data quality, identify anomalies,",
+      "and ensure accuracy of insights.",
+      "Collaborate with cross-functional teams including business, marketing, finance, and IT",
+      "to understand requirements and translate them into analytical solutions.",
+      "Use SQL and Python/R for data extraction, transformation, and analysis to support",
+      "various business initiatives.",
+      "Generate periodic performance reports and key metrics (KPIs) to track business growth",
+      "and operational efficiency."
+    ],
+    "project": "Enterprise Financial Performance & Operational KPI Analytics",
+    "projectDesc": "Design an automated data pipeline and interactive BI dashboard suite to monitor operational expenses, revenue trends, and departmental KPI variances.",
+    "tools": "Power BI Desktop, Python (pandas, numpy), SQL, Excel, GitHub",
+    "weekTasks": [
+      "Collect enterprise financial and operational datasets, review data governance policies and column schemas.",
+      "Execute exploratory data analysis (EDA) to detect outliers, missing values, and reconcile discrepancies.",
+      "Develop ETL data cleansing pipeline using Python pandas to standardize transactional records.",
+      "Create structured SQL data models with star schema (fact and dimension tables) for reporting.",
+      "Build core financial KPI measures in DAX (Gross Margin, Operating Expense Variance, EBITDA margin).",
+      "Develop interactive Power BI dashboard featuring dynamic department-level filtering and forecasting.",
+      "Perform trend and variance analysis to identify operational cost overruns across business units.",
+      "Build automated data validation scripts to verify nightly data loads and KPI calculations.",
+      "Document analytical methodologies, data dictionary, and metric definitions for business users.",
+      "Conduct stakeholder review session to gather feedback on report usability and layout enhancements.",
+      "Incorporate feedback, optimize DAX query performance, and finalize dashboard views.",
+      "Package final analytical report, presentation deck, and data models for repository handoff on GitHub."
+    ]
+  },
+  {
+    "name": "Pooja Nigam",
+    "jobTitle": "AI Software Engineer",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "pooja-nigam",
+    "responsibilities": [
+      "Develop and train machine learning and AI models based on project requirements.",
+      "Prepare, clean, and analyze data to ensure high-quality input for models.",
+      "Deploy and integrate AI models into applications, APIs, or production systems.",
+      "Evaluate and optimize model performance using appropriate metrics and tuning",
+      "methods.",
+      "Write clean, efficient, and maintainable code following software engineering best",
+      "practices.",
+      "Collaborate with cross-functional teams to translate business needs into AI solutions.",
+      "Monitor and maintain AI systems in production to detect issues like model drift or",
+      "performance drops.",
+      "Ensure ethical, fair, and secure use of AI, addressing bias and data privacy concerns."
+    ],
+    "project": "AI-Powered Customer Feedback Sentiment & Ticket Classification System",
+    "projectDesc": "Develop, train, and deploy an NLP machine learning model to classify customer support tickets, analyze sentiment, and provide real-time severity scoring via a FastAPI service.",
+    "tools": "Python (PyTorch / scikit-learn, HuggingFace, FastAPI), Docker, SQLite, GitHub",
+    "weekTasks": [
+      "Collect customer feedback and support ticket dataset, define classification taxonomy and performance metrics.",
+      "Preprocess and clean text data: tokenization, lemmatization, stop-word removal, and class balancing.",
+      "Perform exploratory data analysis on ticket categories, resolution times, and common complaint themes.",
+      "Train baseline sentiment analysis and multi-class ticket classification models (Logistic Regression, DistilBERT).",
+      "Tune hyperparameters, evaluate precision, recall, and F1-score across all support ticket categories.",
+      "Build a modular REST API using FastAPI to serve model predictions in real time.",
+      "Implement input validation, confidence threshold scoring, and fallback handling for low-confidence texts.",
+      "Package the AI application with Docker and write automated unit tests for API endpoints and model pipelines.",
+      "Create interactive Streamlit demonstration interface for business stakeholders to test live classifications.",
+      "Benchmark model inference latency, optimize memory footprint, and implement logging and error tracking.",
+      "Write comprehensive technical documentation, model card, and deployment runbook.",
+      "Finalize test suite, record demonstration video, and push complete project repository to GitHub."
+    ]
+  },
+  {
+    "name": "Disha Revandkar",
+    "jobTitle": "Software Engineer",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "disha-revandkar",
+    "responsibilities": [
+      "Design and develop software solutions based on user and business requirements.",
+      "Write clean, efficient, and maintainable code using appropriate languages and frameworks.",
+      "Debug, troubleshoot, and fix issues across the software lifecycle.",
+      "Evaluate and optimize model performance using appropriate metrics and tuning methods.",
+      "Create and execute tests (unit, integration, automated) to ensure software quality.",
+      "Collaborate with cross-functional teams such as product managers and designers.",
+      "Review peer code to maintain quality and share best practices.",
+      "Document technical designs and code for maintainability and future reference.",
+      "Monitor and improve system performance, scalability, and security."
+    ],
+    "project": "Full-Stack Task & Project Milestone Management Application",
+    "projectDesc": "Design, build, and test a responsive web application for managing agile sprints, task assignments, and progress tracking with role-based access control and RESTful APIs.",
+    "tools": "Node.js / Express, React or Vanilla JS, SQLite / PostgreSQL, Jest, GitHub Actions",
+    "weekTasks": [
+      "Define functional requirements, user stories, and system architecture for the sprint tracker application.",
+      "Design database relational schema (users, projects, sprints, tasks, comments) with proper indexing.",
+      "Build RESTful backend API endpoints for authentication, CRUD operations on tasks, and sprint status tracking.",
+      "Implement role-based authorization and input validation middleware to secure API endpoints.",
+      "Develop responsive frontend interface featuring interactive Kanban boards and sprint burndown views.",
+      "Integrate front-end components with backend APIs using asynchronous fetch and state management.",
+      "Write comprehensive unit and integration tests using Jest / Supertest covering core business logic.",
+      "Implement error-logging service, audit trails for task updates, and automated schema migrations.",
+      "Perform cross-browser compatibility testing, responsive layout optimization, and accessibility pass.",
+      "Set up CI/CD pipeline using GitHub Actions to automate linting, testing, and build verification.",
+      "Conduct end-to-end user acceptance testing, fix identified edge-case bugs, and optimize load speed.",
+      "Publish project documentation, API reference guide, and release package to GitHub."
+    ]
+  },
+  {
+    "name": "Ashish Kasam",
+    "jobTitle": "Supply Chain Specialist",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "ashish-kasam",
+    "responsibilities": [
+      "Plan, coordinate, and monitor end-to-end supply chain activities.",
+      "Manage procurement of materials, goods, and services from suppliers.",
+      "Ensure timely delivery of products while minimizing costs.",
+      "Monitor inventory levels and optimize stock management.",
+      "Analyze supply chain data to improve efficiency and performance.",
+      "Collaborate with vendors, logistics providers, and internal teams.",
+      "Identify and mitigate supply chain risks and disruptions.",
+      "Ensure compliance with company policies and regulatory requirements.",
+      "Support continuous improvement initiatives across the supply chain.",
+      "Forecast demand and plan supply to meet customer requirements.",
+      "Negotiate contracts and pricing with suppliers to achieve cost savings.",
+      "Resolve supply chain issues quickly and efficiently."
+    ],
+    "project": "Procurement Optimization & Vendor Performance Analytics System",
+    "projectDesc": "Analyze global vendor procurement records, delivery lead times, and purchase pricing trends to build a vendor scoring framework and procurement cost-saving strategy.",
+    "tools": "Excel (Advanced / Power Query), Power BI Desktop, Python (pandas), Kaggle Procurement Data, GitHub",
+    "weekTasks": [
+      "Gather vendor procurement and purchase order datasets, review supplier contract SLAs and metrics.",
+      "Cleanse and consolidate multi-source purchase records, eliminating duplicate supplier entries and currency mismatches.",
+      "Perform exploratory data analysis on procurement spend by category, vendor lead times, and defect rates.",
+      "Build a weighted Vendor Scorecard evaluating quality, price competitiveness, and delivery reliability.",
+      "Analyze historical price fluctuations across raw material categories to identify bulk discount opportunities.",
+      "Develop an interactive Power BI procurement dashboard with vendor performance matrices and risk flags.",
+      "Identify single-source supplier vulnerabilities and propose multi-sourcing contingency strategies.",
+      "Conduct safety stock and economic order quantity (EOQ) simulations to reduce excess holding costs.",
+      "Draft a comprehensive Procurement Policy and Vendor Management SOP with standardized KPIs.",
+      "Validate dashboard data integrity against source purchase orders and conduct user review.",
+      "Synthesize cost-reduction insights into an executive business presentation with projected savings.",
+      "Finalize procurement toolkit, documentation, and reporting files; publish to GitHub."
+    ]
+  },
+  {
+    "name": "Chidi Okeke",
+    "jobTitle": "Data Analyst",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "chidi-okeke",
+    "responsibilities": [
+      "Collect and clean data from multiple sources to ensure accuracy and consistency.",
+      "Analyze datasets to identify trends, patterns, and insights.",
+      "Create reports and dashboards using tools like Excel, SQL, Power BI, or Tableau.",
+      "Interpret data results and translate them into actionable business insights.",
+      "Support decision-making by providing data-driven recommendations.",
+      "Collaborate with stakeholders to understand business requirements.",
+      "Maintain data integrity and ensure data quality standards are met.",
+      "Perform ad-hoc analysis to answer specific business questions.",
+      "Identify data gaps and improvement opportunities to enhance data processes.",
+      "Document processes and findings for transparency and future reference.",
+      "Develop and optimize queries to efficiently retrieve data from databases.",
+      "Monitor key performance indicators (KPIs) to track business performance."
+    ],
+    "project": "Healthcare Operations & Patient Appointment Flow Analytics",
+    "projectDesc": "Analyze patient appointment attendance, wait times, and clinic capacity utilization to build predictive no-show models and operational decision-support dashboards.",
+    "tools": "SQL, Python (pandas, seaborn, scikit-learn), Power BI, Kaggle Healthcare Dataset, GitHub",
+    "weekTasks": [
+      "Obtain healthcare appointment and scheduling dataset, review HIPAA-compliant data masking standards.",
+      "Perform data cleaning: impute missing clinical demographic data, parse timestamps, and handle cancellations.",
+      "Conduct exploratory data analysis to evaluate clinic peak hours, patient wait times, and no-show patterns.",
+      "Write SQL queries to calculate key clinic metrics: capacity utilization, average lead time, and doctor workload.",
+      "Build predictive classification model (Random Forest / Logistic Regression) to forecast appointment no-shows.",
+      "Evaluate model performance metrics (ROC-AUC, Precision-Recall) to establish proactive reminder thresholds.",
+      "Design Power BI clinic operations dashboard with real-time appointment tracking and risk scoring.",
+      "Perform root-cause analysis on scheduling bottlenecks and formulate actionable schedule-buffer guidelines.",
+      "Document analytical process, data flow diagrams, and clinic management KPIs.",
+      "Conduct validation tests on dashboard filters and verify accuracy of patient flow calculations.",
+      "Prepare executive presentation summarizing operational insights and staffing recommendations.",
+      "Package SQL scripts, Python notebooks, dashboard files, and README; upload to GitHub."
+    ]
+  },
+  {
+    "name": "Prince Paneliya",
+    "jobTitle": "Data Analyst",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "prince-paneliya",
+    "responsibilities": [
+      "Collect, clean, and validate data from multiple sources",
+      "Analyze large datasets to identify trends and patterns",
+      "Develop and maintain dashboards and reports",
+      "Translate data insights into actionable business recommendations",
+      "Work with stakeholders to understand data requirements",
+      "Ensure data accuracy, consistency, and integrity",
+      "Perform statistical analysis and data modeling",
+      "Support decision-making with data-driven insights",
+      "Automate data processes and improve reporting efficiency",
+      "Monitor key performance indicators (KPIs) and track business performance",
+      "Identify data quality issues and recommend corrective actions",
+      "Conduct ad-hoc analysis to answer urgent business questions"
+    ],
+    "project": "SaaS Subscription Churn & Customer Lifetime Value (CLV) Analytics",
+    "projectDesc": "Analyze subscriber lifecycle data, churn behavior, and product feature adoption to create predictive churn models and retention dashboards for SaaS leadership.",
+    "tools": "Python (pandas, scikit-learn), Power BI / Tableau, SQL, Kaggle SaaS Churn Dataset, GitHub",
+    "weekTasks": [
+      "Import SaaS customer subscription and usage dataset; map customer journey stages and event logs.",
+      "Clean data: handle billing status nulls, standardize currency, and engineer tenure/activity features.",
+      "Perform EDA on monthly recurring revenue (MRR), churn rate by subscription tier, and support ticket frequency.",
+      "Calculate key SaaS metrics: Customer Acquisition Cost (CAC), Lifetime Value (LTV), and LTV/CAC ratios.",
+      "Build RFM-style engagement scoring model to categorize active, at-risk, and dormant accounts.",
+      "Train machine learning classification model (XGBoost / Random Forest) to identify early churn indicators.",
+      "Create interactive Power BI executive dashboard displaying MRR movements, churn cohorts, and feature adoption.",
+      "Conduct feature importance analysis to reveal top friction points driving customer cancellations.",
+      "Draft comprehensive business report with targeted retention campaigns for high-risk customer tiers.",
+      "Perform QA validation on dashboard KPIs and cross-validate model predictions against historical holdouts.",
+      "Present key findings and strategic retention recommendations in a formal summary deck.",
+      "Organize project files, documentation, and analytical code into a clean GitHub repository."
+    ]
+  },
+  {
+    "name": "Lakshmi Prasanna Tanikonda",
+    "jobTitle": "Software Engineer",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "lakshmi-prasanna-tanikonda",
+    "responsibilities": [
+      "Develop and maintain software applications by writing clean, efficient, and scalable",
+      "code.",
+      "Analyze user requirements and translate them into effective technical solutions.",
+      "Design system architecture and software modules for robustness and maintainability.",
+      "Debug and troubleshoot issues by identifying root causes and implementing fixes.",
+      "Conduct code reviews to ensure quality, readability, and adherence to standards.",
+      "Collaborate with cross-functional teams to deliver high-quality software.",
+      "Create and maintain technical documentation for code, APIs, and processes.",
+      "Stay updated with new technologies and best practices to improve solutions.",
+      "Assist in deployment and provide post-release support to ensure smooth operation.",
+      "Optimize software performance by analyzing system efficiency and implementing",
+      "improvements."
+    ],
+    "project": "Secure Cloud-Ready Microservice API for Customer Account Management",
+    "projectDesc": "Architect, implement, and test a scalable backend service supporting secure customer profile management, JWT authentication, rate limiting, and PostgreSQL integration.",
+    "tools": "Java / Spring Boot or Node.js / Express, PostgreSQL, Docker, JUnit / Jest, Postman, GitHub",
+    "weekTasks": [
+      "Define system requirements, API specifications (OpenAPI / Swagger), and microservice architecture.",
+      "Set up development environment with Docker, linting rules, and PostgreSQL database migrations.",
+      "Design database relational model (users, credentials, roles, audit logs) with foreign keys and indexes.",
+      "Implement secure user registration, password hashing (bcrypt), and JWT-based authentication service.",
+      "Build CRUD endpoints for customer profile management with strict input validation and sanitization.",
+      "Implement middleware for request rate limiting, structured error handling, and security headers.",
+      "Write comprehensive unit tests and integration tests achieving >85% code coverage.",
+      "Integrate Redis caching layer to optimize read-heavy profile lookup endpoints.",
+      "Implement structured JSON application logging and health check / readiness probe endpoints.",
+      "Perform security vulnerability audit (OWASP Top 10) and optimize database query execution plans.",
+      "Conduct end-to-end API testing using Postman collections and automated test runner.",
+      "Document API endpoints with Swagger UI, write deployment runbook, and push codebase to GitHub."
+    ]
+  },
+  {
+    "name": "Praveen Kumar Borra",
+    "jobTitle": ".Net full stack developer",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "praveen-kumar-borra",
+    "responsibilities": [
+      "Develop and maintain web applications using .NET technologies such as ASP.NET",
+      "and .NET Core.",
+      "Design and implement front-end components using HTML, CSS, JavaScript, and",
+      "frameworks like Angular or React.",
+      "Build and maintain RESTful APIs and backend services using C#.",
+      "Develop and manage databases, queries, and stored procedures using SQL Server.",
+      "Collaborate with UI/UX designers, QA teams, and product managers to deliver highquality applications.",
+      "Ensure application performance, scalability, and security across the full technology",
+      "stack.",
+      "Perform testing, debugging, and troubleshooting to resolve software issues.",
+      "Use version control systems like Git for code management and collaboration."
+    ],
+    "project": "Enterprise Inventory & Order Processing Portal (.NET Core & Angular)",
+    "projectDesc": "Build a modern full-stack web application for inventory management, real-time order processing, and supplier invoicing using ASP.NET Core Web API and SQL Server.",
+    "tools": "C#, ASP.NET Core, SQL Server, Entity Framework Core, Angular / TypeScript, Bootstrap, GitHub",
+    "weekTasks": [
+      "Gather business requirements, design software architecture, and create entity relationship diagrams (ERD).",
+      "Set up ASP.NET Core Web API project with clean architecture (Controller, Service, Repository layers).",
+      "Configure Entity Framework Core Code-First migrations and seed initial product and category data in SQL Server.",
+      "Build RESTful API endpoints for inventory stock adjustments, purchase orders, and supplier catalogs.",
+      "Implement repository pattern, dependency injection, and centralized exception handling middleware.",
+      "Develop responsive front-end user interface using Angular/TypeScript with data tables and modal forms.",
+      "Implement JWT authentication and role-based permissions (Admin, Warehouse Manager, Staff).",
+      "Write stored procedures and optimized LINQ queries for high-volume sales order reporting.",
+      "Write unit tests with xUnit / Moq covering business logic in order calculation services.",
+      "Perform cross-browser UI testing, form validation testing, and API load testing.",
+      "Draft complete API documentation, database schema diagrams, and developer setup instructions.",
+      "Finalize build pipeline, publish release package, and commit complete solution to GitHub."
+    ]
+  },
+  {
+    "name": "Sai Anuhya Bandi",
+    "jobTitle": "Data Engineer",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "sai-anuhya-bandi",
+    "responsibilities": [
+      "Design, build, and maintain scalable data pipelines and data architectures.",
+      "Develop and optimize ETL/ELT processes for efficient data extraction, transformation,",
+      "and loading.",
+      "Ensure data quality, integrity, and security across all data systems.",
+      "Collaborate with data analysts, data scientists, and stakeholders to understand data",
+      "requirements.",
+      "Manage and maintain databases, data warehouses, and data lakes.",
+      "Monitor and troubleshoot data pipeline issues, ensuring timely resolution.",
+      "Implement data governance and compliance standards.",
+      "Optimize data systems for performance, scalability, and reliability.",
+      "Document data processes, workflows, and system architecture for future reference."
+    ],
+    "project": "Scalable Cloud Data Pipeline & Lakehouse Ingestion Engine",
+    "projectDesc": "Design and build an automated batch and streaming ETL/ELT pipeline using Python, PySpark, and PostgreSQL to ingest, clean, and model clickstream and transaction data.",
+    "tools": "Python (PySpark, pandas), PostgreSQL / Snowflake, Apache Airflow / Prefect, Docker, GitHub",
+    "weekTasks": [
+      "Define data architecture requirements, ingestion protocols, and data contract specifications.",
+      "Set up containerized local data warehouse environment (PostgreSQL + MinIO/S3 simulation) with Docker.",
+      "Build modular Python ingestion scripts to extract JSON log files and REST API payload streams.",
+      "Develop data transformation and cleansing workflows using PySpark to handle deduplication and typing.",
+      "Implement automated data quality checks (Great Expectations) to enforce schema and completeness rules.",
+      "Design dimensional model (Star Schema: Fact Sales, Dim Customer, Dim Product, Dim Date) in data warehouse.",
+      "Build automated orchestration DAGs in Airflow to schedule nightly pipeline execution and alerting.",
+      "Optimize database indexing, partitioning strategies, and query performance on million-row datasets.",
+      "Implement error-handling, dead-letter queues, and automated retry mechanisms for failed pipeline runs.",
+      "Conduct end-to-end integration tests to verify data reconciliation between source systems and target tables.",
+      "Write technical architecture documentation, data lineage diagrams, and operational runbook.",
+      "Package orchestration workflows, seed scripts, and documentation; push final project to GitHub."
+    ]
+  },
+  {
+    "name": "Harshitha Kakumanu",
+    "jobTitle": "Front end developer",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "harshitha-kakumanu",
+    "responsibilities": [
+      "Develop and maintain user-facing web applications using modern front-end",
+      "technologies.",
+      "Translate UI/UX designs into responsive, high-quality code.",
+      "Ensure cross-browser compatibility and optimize applications for maximum speed",
+      "and scalability.",
+      "Collaborate with designers, back-end developers, and other stakeholders to deliver",
+      "seamless user experiences.",
+      "Write clean, maintainable, and well-documented code following best practices.",
+      "Debug and resolve front-end issues and performance bottlenecks.",
+      "Implement reusable components and front-end libraries for future use.",
+      "Stay updated with the latest industry trends, tools, and technologies."
+    ],
+    "project": "Interactive Analytics & Business Management Dashboard Web App",
+    "projectDesc": "Design and build a high-performance, accessible, and responsive single-page web dashboard featuring dynamic data charts, filtering controls, dark/light mode, and state management.",
+    "tools": "HTML5, CSS3, JavaScript (ES6+), Chart.js, Vite, GitHub Pages",
+    "weekTasks": [
+      "Review UI/UX wireframes, design system specifications, color palettes, and typography tokens.",
+      "Set up project workspace using Vite with modern CSS variables, responsive grid system, and reset styles.",
+      "Build semantic and accessible HTML structure with responsive sidebar navigation and header search.",
+      "Develop reusable UI component library: metric cards, badges, modal dialogs, and toast notifications.",
+      "Integrate Chart.js / ApexCharts to render interactive line, bar, and doughnut charts for KPIs.",
+      "Implement multi-attribute filtering, search sorting, and pagination controls for data tables.",
+      "Build light/dark theme switcher with localStorage persistence and CSS transition animations.",
+      "Implement client-side form validation with accessible ARIA live-region feedback for user inputs.",
+      "Perform cross-browser compatibility testing (Chrome, Safari, Firefox, Edge) and responsive layout checks.",
+      "Optimize web performance: lazy-loading, asset compression, and Lighthouse score >90 across all categories.",
+      "Conduct accessibility audit (WCAG 2.1 AA) ensuring full keyboard navigation and screen reader support.",
+      "Deploy live application to GitHub Pages and publish complete code repository with demo documentation."
+    ]
+  },
+  {
+    "name": "Karthik Kalyan Kakumanu",
+    "jobTitle": "Software Developer",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "karthik-kalyan-kakumanu",
+    "responsibilities": [
+      "Design, develop, test, and maintain software applications",
+      "Write clean, efficient, and well-documented code",
+      "Analyze user requirements and translate them into technical solutions",
+      "Debug, troubleshoot, and resolve software defects",
+      "Collaborate with cross-functional teams (QA, UI/UX, Product)",
+      "Participate in code reviews to ensure quality and best practices",
+      "Optimize application performance and scalability",
+      "Maintain version control and follow development standards",
+      "Stay updated with emerging technologies and industry trends",
+      "Develop and integrate APIs and third-party services",
+      "Ensure application security and data protection standards",
+      "Prepare technical documentation and user guides"
+    ],
+    "project": "Secure Multi-Tenant REST API & User Role Management System",
+    "projectDesc": "Develop a robust backend web application featuring secure user management, RBAC authorization, audit logging, and automated unit/integration testing.",
+    "tools": "Python / FastAPI or Node.js / Express, SQLite / PostgreSQL, PyTest, Docker, Git, GitHub",
+    "weekTasks": [
+      "Analyze software specifications, design API contract (OpenAPI 3.0), and map database entity relations.",
+      "Initialize repository with code formatting (Black / Prettier), linting, and environment configuration.",
+      "Design database relational schema with foreign key constraints, indexes, and audit timestamp triggers.",
+      "Implement user authentication module with password hashing, email format validation, and JWT tokens.",
+      "Develop CRUD API endpoints for managing organization tenants, user profiles, and permission roles.",
+      "Build authorization middleware enforcing least-privilege role-based access control (Admin, Editor, Viewer).",
+      "Write comprehensive unit test suite with PyTest / Mocha covering authentication and authorization flows.",
+      "Implement centralized request logging, request-ID tracing, and structured error responses.",
+      "Conduct API load testing and benchmark response latencies under concurrent user requests.",
+      "Perform security code review, patch input validation vulnerabilities, and sanitize SQL inputs.",
+      "Draft complete API documentation with interactive Swagger UI and developer integration guide.",
+      "Package Docker deployment container, configure GitHub Actions workflow, and push to GitHub."
+    ]
+  },
+  {
+    "name": "Alma Babydasan",
+    "jobTitle": "Software Developer",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "alma-babydasan",
+    "responsibilities": [
+      "Design, develop, and implement software applications and systems.",
+      "Write clean, efficient, maintainable, and well",
+      "documented code.",
+      "Analyze user requirements and translate them into technical solutions.",
+      "Debug, troubleshoot, and resolve software defects and performance issues.",
+      "Conduct code reviews and ensure adherence to coding standards.",
+      "Collaborate with cross",
+      "functional teams (QA, UX/UI, product, DevOps).",
+      "Develop and execute unit, integration, and system tests.",
+      "Maintain and enhance existing applications for performance and scalability.",
+      "Stay updated with emerging technologies and industry best practices.",
+      "Participate in system architecture design and technical decision",
+      "Ensure application security, data protection, and compliance with industry standards"
+    ],
+    "project": "Real-Time Incident Tracking & Service Desk Management System",
+    "projectDesc": "Build a modular web application for creating, prioritizing, assigning, and resolving IT service incidents with status updates, notifications, and audit tracking.",
+    "tools": "JavaScript / Node.js, Express, PostgreSQL / SQLite, Jest, CSS3, GitHub",
+    "weekTasks": [
+      "Define system requirements, incident lifecycle workflows, and database entity relationships.",
+      "Set up backend server architecture with Express, middleware pipeline, and database connection pooling.",
+      "Design database schema for incidents, priority SLAs, user assignments, and status change logs.",
+      "Implement REST API endpoints for incident creation, assignment updates, and resolution timestamps.",
+      "Build responsive front-end interface with incident dashboard, priority color-coding, and status filters.",
+      "Implement SLA breach calculation logic and automated priority escalations based on incident age.",
+      "Write comprehensive unit and integration tests for incident lifecycle state transitions.",
+      "Perform cross-functional code review and refactor codebase to adhere to clean code principles.",
+      "Conduct cross-browser UI testing and optimize page responsiveness for mobile and desktop screens.",
+      "Implement audit logging service to record all user actions and ticket history modifications.",
+      "Conduct end-to-end user acceptance testing and fix edge cases in assignment workflows.",
+      "Package release build, write user guide and API documentation, and publish repository to GitHub."
+    ]
+  },
+  {
+    "name": "Yash Sodvadiya",
+    "jobTitle": "Cloud engineer",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "yash-sodvadiya",
+    "responsibilities": [
+      "Design, implement, and manage scalable cloud infrastructure solutions.",
+      "Deploy, configure, and maintain cloud services (compute, storage, networking).",
+      "Monitor system performance, availability, and security of cloud environments.",
+      "Automate infrastructure provisioning using Infrastructure as Code (IaC) tools.",
+      "Ensure data backup, disaster recovery, and business continuity strategies.",
+      "Optimize cloud resources to improve performance and reduce costs.",
+      "Implement and maintain security best practices and compliance standards.",
+      "Troubleshoot and resolve cloud",
+      "related issues and incidents.",
+      "Collaborate with development and operations teams to support application deployment.",
+      "Manage and monitor cloud access controls, IAM policies, and user permissions.",
+      "Integrate and maintain CI/CD pipelines for seamless application deployment."
+    ],
+    "project": "Automated Cloud Infrastructure Provisioning & Security Baseline (Terraform + AWS/LocalStack)",
+    "projectDesc": "Design and deploy scalable, secure cloud infrastructure using Infrastructure as Code (IaC), automated backup routines, monitoring alarms, and cost optimization policies.",
+    "tools": "Terraform, AWS / LocalStack, Docker, Bash / Python, GitHub Actions",
+    "weekTasks": [
+      "Define cloud architecture requirements: multi-tier VPC, public/private subnets, and security groups.",
+      "Set up LocalStack / AWS sandbox environment and configure Terraform state backend.",
+      "Write modular Terraform code for VPC, Internet Gateway, route tables, and NAT Gateway configurations.",
+      "Deploy auto-scaling compute instances (EC2/ECS) behind an Application Load Balancer (ALB).",
+      "Configure secure IAM policies, least-privilege roles, and enforced multi-factor authentication policies.",
+      "Set up automated S3 storage buckets with lifecycle policies, server-side encryption, and versioning.",
+      "Implement infrastructure monitoring using CloudWatch metrics, custom dashboards, and email alert alarms.",
+      "Develop automated backup and disaster recovery scripts for databases and snapshot retention.",
+      "Perform cloud security audit using tools like tfsec / Checkov and remediate misconfigurations.",
+      "Implement cost optimization policies (resource tagging, auto-stop schedules for dev environments).",
+      "Write comprehensive cloud infrastructure runbook, architecture diagrams, and disaster recovery plan.",
+      "Publish Terraform modules, CI validation workflows, and documentation to GitHub."
+    ]
+  },
+  {
+    "name": "Akhila Jangam",
+    "jobTitle": "Data Analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "akhila-jangam",
+    "responsibilities": [
+      "Collect, clean, and validate data from various sources to ensure accuracy and reliability.",
+      "Analyze large datasets to identify trends, patterns, and actionable insights.",
+      "Develop and maintain dashboards and reports using tools like Excel, SQL, Power BI, or Tableau.",
+      "Interpret data and present findings to stakeholders in a clear and concise manner.",
+      "Work closely with cross",
+      "functional teams to understand business requirements and support decision",
+      "Perform data validation, quality checks, and troubleshooting to resolve data discrepancies.",
+      "Assist in designing data models and improving data collection processes.",
+      "Automate repetitive data tasks and reporting processes where possible.",
+      "Ensure data confidentiality, integrity, and compliance with company policies and standards."
+    ],
+    "project": "E-Commerce Customer Retention & Sales Performance Analytics",
+    "projectDesc": "Clean, validate, and analyze multi-channel retail sales data to build customer segmentation models, track monthly revenue velocity, and deliver interactive Power BI dashboards.",
+    "tools": "Excel (Power Query), SQL, Power BI Desktop, Python (pandas, matplotlib), GitHub",
+    "weekTasks": [
+      "Acquire e-commerce retail dataset, inspect table relationships, and define analysis scope.",
+      "Clean and transform raw transactional data using Power Query and Python, handling missing records.",
+      "Perform exploratory data analysis on sales volume by product category, discount rate, and geography.",
+      "Write advanced SQL queries to calculate customer repurchase rates, churn rates, and average basket sizes.",
+      "Build customer segmentation model (RFM: Recency, Frequency, Monetary) to identify top VIP accounts.",
+      "Design multi-page Power BI dashboard with dynamic KPI cards, time-series forecasting, and segment slicers.",
+      "Conduct discount sensitivity analysis to evaluate profit margins across different promotional campaigns.",
+      "Implement automated data validation checks to identify revenue discrepancies and duplicate orders.",
+      "Draft detailed business analysis report with data-driven recommendations for inventory and sales teams.",
+      "Conduct dashboard usability testing with stakeholders to refine filter interactions and visual clarity.",
+      "Prepare executive presentation deck summarizing findings, retention trends, and revenue opportunities.",
+      "Organize project files, DAX measures dictionary, and documentation into a public GitHub repository."
+    ]
+  },
+  {
+    "name": "Heny Patel",
+    "jobTitle": "Business System Analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "heny-patel",
+    "responsibilities": [
+      "Gather, analyze, and document business and system requirements from stakeholders.",
+      "Collaborate with technical teams to translate business needs into functional specifications.",
+      "Conduct system testing, validation, and user acceptance testing (UAT) to ensure qualitydeliverables.",
+      "Prepare detailed reports, process flows, and technical documentation for system implementations.",
+      "Support system integration, deployment, and post",
+      "implementation activities.",
+      "Identify and troubleshoot system issues while coordinating with relevant teams for resolution.",
+      "Ensure compliance with business standards, policies, and project requirements.",
+      "Communicate effectively with stakeholders to provide project updates, requirement clarifications,and solution recommendations."
+    ],
+    "project": "ERP Order-to-Cash System Enhancement & Process Automation (BRD + UAT)",
+    "projectDesc": "Lead the business analysis for optimizing an enterprise Order-to-Cash (O2C) workflow, preparing comprehensive Business Requirements Documents (BRD), process maps (BPMN), and UAT test suites.",
+    "tools": "Jira / Confluence, Lucidchart / Visio, Excel, Postman, Google Slides, GitHub",
+    "weekTasks": [
+      "Conduct stakeholder interviews to map the current-state ('As-Is') Order-to-Cash workflow and identify pain points.",
+      "Perform gap analysis and create 'To-Be' business process flowcharts using BPMN 2.0 notation in Lucidchart.",
+      "Author comprehensive Business Requirements Document (BRD) and Functional Specifications Document (FSD).",
+      "Translate business needs into detailed User Stories with MoSCoW prioritization and acceptance criteria (Gherkin).",
+      "Collaborate with development team to review technical architecture, API payloads, and database mapping.",
+      "Develop detailed User Acceptance Testing (UAT) test plans, test matrices, and test execution scripts.",
+      "Execute functional system testing and validate API response codes using Postman collections.",
+      "Lead defect triage sessions with QA and engineering teams, tracking resolution status in Jira.",
+      "Conduct end-user training sessions and draft standard operating procedures (SOP) and user quick-guides.",
+      "Perform post-implementation data reconciliation to verify order throughput and billing accuracy.",
+      "Prepare executive project closure report highlighting efficiency gains and process cycle-time reduction.",
+      "Package all BRD templates, process maps, test scripts, and presentations; publish to GitHub."
+    ]
+  },
+  {
+    "name": "Anvitha Gaddam",
+    "jobTitle": "Data analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "anvitha-gaddam",
+    "responsibilities": [
+      "Collect, organize, and analyze large datasets to identify trends and business insights.",
+      "Develop and maintain dashboards, reports, and data visualizations using tools such as Excel, Power BI, or Tableau.",
+      "Interpret data findings and provide actionable recommendations to support business decisions.",
+      "Perform data cleaning, validation, and quality checks to ensure accuracy and consistency.",
+      "Write and optimize SQL queries to extract and manage data from databases.",
+      "Collaborate with cross",
+      "functional teams to understand reporting and analytical requirements.",
+      "Monitor key performance indicators (KPIs) and prepare regular performance reports.",
+      "Identify patterns, anomalies, and opportunities for process improvement through data analysis.",
+      "Assist in developing predictive models and analytical solutions to improve operational efficiency."
+    ],
+    "project": "Marketing Campaign ROI & Lead Conversion Funnel Analytics",
+    "projectDesc": "Analyze multi-channel digital marketing campaigns, customer acquisition costs, and conversion funnel bottlenecks to build predictive lead-scoring models and executive dashboards.",
+    "tools": "SQL, Python (pandas, seaborn), Power BI Desktop, Excel, GitHub",
+    "weekTasks": [
+      "Collect marketing campaign performance and lead generation dataset; inspect attribution channels.",
+      "Clean and merge campaign cost data with CRM lead conversion records, standardizing UTM parameters.",
+      "Perform exploratory data analysis on conversion rates, cost per acquisition (CPA), and click-through rates (CTR).",
+      "Write SQL queries to analyze lead progression through MQL (Marketing Qualified) and SQL (Sales Qualified) stages.",
+      "Build an interactive Power BI marketing analytics dashboard comparing ROI across organic, paid, and email channels.",
+      "Conduct attribution modeling (first-touch vs. last-touch vs. linear) to assess true channel impact on closed revenue.",
+      "Develop a rule-based lead scoring model in Python to prioritize high-intent prospects for sales outreach.",
+      "Perform data quality audits to reconcile tracking discrepancies between Google Analytics and CRM tables.",
+      "Document analytical methodologies, KPI formulas, and data dictionary for marketing stakeholders.",
+      "Conduct stakeholder walkthrough to gather feedback on dashboard usability and filter responsiveness.",
+      "Synthesize strategic recommendations for marketing budget reallocation into an executive presentation.",
+      "Organize SQL scripts, Python notebooks, dashboard files, and README in a GitHub repository."
+    ]
+  },
+  {
+    "name": "Anil Budhathoki",
+    "jobTitle": "Data analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "anil-budhathoki",
+    "responsibilities": [
+      "Collect, organize, and analyze large datasets to identify trends and business insights.",
+      "Develop and maintain dashboards, reports, and data visualizations using tools such as Excel, Power BI, or Tableau.",
+      "Interpret data findings and provide actionable recommendations to support business decisions.",
+      "Perform data cleaning, validation, and quality checks to ensure accuracy and consistency.",
+      "Write and optimize SQL queries to extract and manage data from databases.",
+      "Collaborate with cross",
+      "functional teams to understand reporting and analytical requirements.",
+      "Monitor key performance indicators (KPIs) and prepare regular performance reports.",
+      "Identify patterns, anomalies, and opportunities for process improvement through data analysis.",
+      "Assist in developing predictive models and analytical solutions to improve operational efficiency"
+    ],
+    "project": "Retail Customer Behavior & Basket Association Analysis",
+    "projectDesc": "Analyze large-scale retail point-of-sale transactions to discover item affinities, seasonal purchasing surges, and customer loyalty trends using Python and Power BI.",
+    "tools": "Python (pandas, mlxtend, matplotlib), Power BI Desktop, SQL, Kaggle Retail Data, GitHub",
+    "weekTasks": [
+      "Download Kaggle retail transaction dataset; explore schema, transaction timestamps, and item catalogs.",
+      "Clean data: handle null customer IDs, filter cancelled/refunded transactions, and standardize product codes.",
+      "Perform EDA on top-selling products, revenue distribution by country, and peak shopping hours.",
+      "Build Market Basket Analysis using Apriori algorithm to identify frequently co-purchased item pairings.",
+      "Calculate key association metrics (Support, Confidence, Lift) to inform cross-selling recommendations.",
+      "Perform customer segmentation using RFM analysis to distinguish one-time buyers from repeat loyalists.",
+      "Design an interactive Power BI dashboard featuring product affinity networks and sales KPI cards.",
+      "Write SQL queries for ad-hoc business reporting (top revenue drivers, low-margin inventory items).",
+      "Perform statistical hypothesis testing to evaluate the impact of promotional pricing on total basket size.",
+      "Conduct QA validation across dashboard visualizations and verify calculations against raw data sources.",
+      "Write comprehensive analytical report outlining cross-selling strategies and shelf-placement recommendations.",
+      "Upload Python notebooks, SQL scripts, Power BI dashboard, and project README to GitHub."
+    ]
+  },
+  {
+    "name": "Hrishikesh Hete",
+    "jobTitle": "Data Analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "hrishikesh-hete",
+    "responsibilities": [
+      "Collect, organize, and analyze large datasets to identify trends and business insights.",
+      "Develop and maintain dashboards, reports, and data visualizations using tools such as Excel, Power BI, or Tableau.",
+      "Interpret data findings and provide actionable recommendations to support business decisions.",
+      "Perform data cleaning, validation, and quality checks to ensure accuracy and consistency.",
+      "Write and optimize SQL queries to extract and manage data from databases.",
+      "Collaborate with cross",
+      "functional teams to understand reporting and analytical requirements.",
+      "Monitor key performance indicators (KPIs) and prepare regular performance reports.",
+      "Identify patterns, anomalies, and opportunities for process improvement through data analysis.",
+      "Assist in developing predictive models and analytical solutions to improve operational efficiency."
+    ],
+    "project": "Telecom Customer Churn Prediction & Retention Analytics",
+    "projectDesc": "Evaluate customer usage patterns, contract structures, and service complaints to build machine learning churn prediction models and operational retention dashboards.",
+    "tools": "Python (pandas, scikit-learn, seaborn), Power BI Desktop, SQL, Kaggle Telco Churn Data, GitHub",
+    "weekTasks": [
+      "Acquire Kaggle Telecom customer dataset, inspect feature types, and identify class imbalances.",
+      "Clean data: impute missing total charges, convert categorical variables, and remove duplicate records.",
+      "Perform exploratory data analysis on churn rates across contract types, payment methods, and tenure bands.",
+      "Write SQL queries to segment customer cohorts by monthly charges and customer service call frequency.",
+      "Train and evaluate machine learning models (Logistic Regression, Decision Trees, Random Forest) for churn prediction.",
+      "Analyze feature importance and SHAP values to identify key drivers behind customer churn decisions.",
+      "Build an interactive Power BI dashboard displaying real-time churn risk scores and revenue at risk.",
+      "Develop targeted customer retention strategies for high-risk cohorts based on contract tenure and usage.",
+      "Establish automated data validation rules to verify accuracy of incoming customer telemetry data.",
+      "Perform model calibration and threshold tuning to balance precision and recall for proactive outreach.",
+      "Draft executive summary report and slide presentation with projected ROI of retention initiatives.",
+      "Package all data transformation code, models, and visualization files into a GitHub repository."
+    ]
+  },
+  {
+    "name": "Vivek Kathrotiya",
+    "jobTitle": "Product Manager - Growth & AI experimentation",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "vivek-kathrotiya",
+    "responsibilities": [
+      "Drive product growth through data",
+      "driven strategies and experimentation.",
+      "Plan, execute, and analyze A/B tests and AI",
+      "powered product initiatives.",
+      "Collaborate with cross",
+      "functional teams to define product requirements and priorities",
+      "Monitor key performance metrics and identify opportunities for optimization.",
+      "Translate customer and business needs into actionable product enhancements.",
+      "Leverage analytics and user insights to improve engagement, retention, and growth.",
+      "Stay informed on emerging AI technologies and industry trends to support innovation.",
+      "Define product roadmaps and support the successful delivery of growth",
+      "focused initiatives.",
+      "Evaluate experiment outcomes and provide recommendations based on data",
+      "driven insights."
+    ],
+    "project": "AI-Powered Product Recommendation Engine & Growth Experimentation Framework",
+    "projectDesc": "Define the product vision, experimentation roadmap, PRDs, and user experience for integrating personalized AI recommendations into a SaaS platform to drive user engagement and conversion.",
+    "tools": "Figma (Wireframing), Jira / Notion, Amplitude / Mixpanel (Simulated), Google Analytics, GitHub",
+    "weekTasks": [
+      "Conduct competitive market research and user interviews to identify personalization opportunities in the user journey.",
+      "Define product vision, strategic goals, OKRs, and north-star metrics for the recommendation engine.",
+      "Author comprehensive Product Requirements Document (PRD) detailing user stories, UX flows, and acceptance criteria.",
+      "Design low-fidelity wireframes and interactive user journey maps for recommendation widgets in Figma.",
+      "Formulate hypothesis-driven Growth Experimentation backlog prioritized using the RICE framework.",
+      "Design A/B testing experiment specifications: sample sizing, primary/secondary metrics, and guardrail metrics.",
+      "Collaborate with engineering and data science teams to define API contracts and model evaluation criteria.",
+      "Build interactive analytics dashboard mockups tracking CTR, conversion lift, and session engagement.",
+      "Conduct usability testing sessions with target users to gather qualitative feedback on recommendation relevance.",
+      "Analyze simulated A/B test results, perform statistical significance testing, and determine rollout decisions.",
+      "Create Go-to-Market (GTM) rollout plan, product release notes, and stakeholder presentation.",
+      "Organize all PRDs, experiment blueprints, wireframes, and documentation in a GitHub repository."
+    ]
+  },
+  {
+    "name": "Snehal Ashok Gulve",
+    "jobTitle": "Project Manager",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "snehal-ashok-gulve",
+    "responsibilities": [
+      "Plan, coordinate, and oversee project activities to ensure timely and successful delivery.",
+      "Define project scope, objectives, timelines, and resource requirements.",
+      "Monitor project progress, budgets, and risks, and implement corrective actions when needed.",
+      "Collaborate with cross",
+      "functional teams and stakeholders to ensure alignment on project goals.",
+      "Facilitate meetings, track action items, and provide regular project status updates.",
+      "Ensure project deliverables meet quality standards and business requirements.",
+      "Maintain project documentation and support continuous process improvement initiatives.",
+      "Support team collaboration, resource allocation, and issue resolution to drive project success and operational efficiency.",
+      "Manage stakeholder communication and expectations throughout the project lifecycle."
+    ],
+    "project": "Enterprise Agile Software Delivery & Governance Framework (SaaS Migration)",
+    "projectDesc": "Establish an end-to-end Agile project management framework for a core SaaS platform migration, including WBS, sprint schedules, risk registries, stakeholder communication plans, and budget tracking.",
+    "tools": "Jira / Trello, MS Project / Excel, Confluence, Miro, Google Slides, GitHub",
+    "weekTasks": [
+      "Develop comprehensive Project Charter outlining scope, objectives, success criteria, and stakeholder matrix.",
+      "Create Work Breakdown Structure (WBS) and map milestone dependencies across engineering and QA teams.",
+      "Establish Agile sprint cadence: define sprint planning, daily stand-up, review, and retrospective rituals.",
+      "Build dynamic Project Schedule and Gantt chart tracking critical path activities and resource allocation.",
+      "Create Risk, Assumptions, Issues, and Dependencies (RAID) log with quantitative mitigation strategies.",
+      "Implement project budget tracker monitoring planned vs. actual labor hours and software licensing costs.",
+      "Design executive weekly status report template highlighting milestone velocity, burn-down, and key blockers.",
+      "Facilitate cross-functional backlog refinement sessions, ensuring high-quality user story definitions.",
+      "Establish quality governance gates and acceptance criteria checklist for milestone sign-offs.",
+      "Conduct mid-project retrospective and implement process improvements to optimize team velocity.",
+      "Prepare final Project Closeout Report, lessons learned repository, and benefits realization framework.",
+      "Package all project management artifacts, templates, schedules, and reports for GitHub handoff."
+    ]
+  },
+  {
+    "name": "Supreet Kaur",
+    "jobTitle": "Data Analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "supreet-kaur",
+    "responsibilities": [
+      "Collect, organize, and analyze large datasets to identify trends and business insights.",
+      "Develop and maintain dashboards, reports, and data visualizations using tools such as Excel, Power BI, or Tableau.",
+      "Interpret data findings and provide actionable recommendations to support business decisions.",
+      "Perform data cleaning, validation, and quality checks to ensure accuracy and consistency.",
+      "Write and optimize SQL queries to extract and manage data from databases.",
+      "Collaborate with cross",
+      "functional teams to understand reporting and analytical requirements.",
+      "Monitor key performance indicators (KPIs) and prepare regular performance reports.",
+      "Identify patterns, anomalies, and opportunities for process improvement through data analysis.",
+      "Assist in developing predictive models and analytical solutions to improve operational efficiency"
+    ],
+    "project": "Banking Fraud Detection & Transaction Risk Pattern Analytics",
+    "projectDesc": "Analyze high-volume financial transaction records to uncover fraudulent transaction patterns, anomaly clusters, and merchant risk profiles using SQL and Python.",
+    "tools": "SQL, Python (pandas, scikit-learn, seaborn), Power BI Desktop, Kaggle Credit Fraud Dataset, GitHub",
+    "weekTasks": [
+      "Acquire Kaggle credit card transaction dataset; analyze class imbalance and PCA feature transformations.",
+      "Clean data: scale transaction amounts and time offsets, and verify zero data leakage across partitions.",
+      "Conduct exploratory data analysis to profile fraudulent transaction amounts, geographic spikes, and times.",
+      "Write complex SQL queries to identify rapid-succession transactions and unusual velocity spikes.",
+      "Train anomaly detection and classification models (Isolation Forest, Logistic Regression, XGBoost).",
+      "Evaluate model performance using Precision-Recall curves, F1-scores, and cost-matrix optimization.",
+      "Design an interactive Power BI fraud risk dashboard with real-time alert filters and merchant risk rankings.",
+      "Perform root-cause analysis on false positives to establish rule-based decision thresholds for transaction holds.",
+      "Document fraud detection rules, data governance policies, and compliance procedures.",
+      "Validate dashboard data consistency against underlying SQL models and verify query performance.",
+      "Synthesize operational fraud findings and prevention strategies into an executive report.",
+      "Organize Python notebooks, SQL scripts, Power BI dashboard, and project README on GitHub."
+    ]
+  },
+  {
+    "name": "Sai Satya Pavan Kalepu",
+    "jobTitle": "Network Engineer",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "sai-satya-pavan-kalepu",
+    "responsibilities": [
+      "Configure and manage VPNs, network access, and remote connectivity solutions.",
+      ".Document network configurations, procedures, and technical changes",
+      "Provide technical support and guidance to users regarding network",
+      "related concerns.",
+      "Ensure compliance with company policies, security standards, and industry best practices.",
+      "Participate in disaster recovery and business continuity planning activities.",
+      "Perform other duties and responsibilities as assigned by management.",
+      "Perform routine maintenance, system upgrades, patches, and backups of network devices.",
+      "Monitor network performance and troubleshoot connectivity, hardware, and software issues to ensure reliable operations.",
+      "Implement and maintain network security measures, including access controls and security updates"
+    ],
+    "project": "Enterprise Multi-Site Network Architecture & VPN Security Hardening",
+    "projectDesc": "Design, configure, and simulate a resilient multi-branch corporate network featuring VLAN segmentation, OSPF routing, site-to-site IPsec VPN, and SNMP performance monitoring.",
+    "tools": "Cisco Packet Tracer / GNS3, Wireshark, Python (Netmiko / Scapy), Bash, GitHub",
+    "weekTasks": [
+      "Gather enterprise connectivity requirements and design network topology diagram (Core, Distribution, Access).",
+      "Design IPv4 and IPv6 subnetting schemes with VLAN segmentation for corporate, guest, and server tiers.",
+      "Configure Cisco router interfaces and implement dynamic routing protocols (OSPF Multi-Area).",
+      "Implement Access Control Lists (ACLs) and stateful firewall rules to enforce least-privilege traffic flow.",
+      "Configure site-to-site IPsec VPN tunnels between headquarters and remote branch offices with AES-256 encryption.",
+      "Set up remote access SSL-VPN with user authentication and role-based access restrictions.",
+      "Implement network services: DHCP snooping, Dynamic ARP Inspection (DAI), and Port Security on switches.",
+      "Simulate network performance stress tests and capture/analyze packet flows using Wireshark.",
+      "Configure SNMPv3 monitoring and Syslog forwarding to track device uptime, interface bandwidth, and errors.",
+      "Perform disaster recovery and failover testing (HSRP / VRRP) to verify zero-downtime redundant links.",
+      "Write comprehensive network documentation: topology diagrams, IP configuration audit, and security baseline SOP.",
+      "Package network simulation files (.pkt / .gns3), Python automation scripts, and runbook; push to GitHub."
+    ]
+  },
+  {
+    "name": "Sai Manohar Palevar",
+    "jobTitle": "Java Full Stack Developer",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "sai-manohar-palevar",
+    "responsibilities": [
+      "Design, develop, test and maintain scalable full",
+      "stack web applications using Java and modern front",
+      "end technologies.",
+      "Integrate frontend applications with backend services and third",
+      "party APIs.",
+      "Write clean, efficient, and maintainable code following coding standards and best practices.",
+      "Perform unit testing, debugging, troubleshooting, and application performance optimization.",
+      "Participate in code reviews and contribute to continuous improvement of development processes.",
+      "Work with relational and NoSQL databases to design, develop, and optimize data models and queries",
+      "Utilize version control systems such as Git and support CI/CD pipelines for application deployment.",
+      "Monitor application performance, resolve production issues, provide ongoing maintenance and support.",
+      "Stay up to date with emerging technologies and recommend improvements to existing applications."
+    ],
+    "project": "Enterprise Microservices Healthcare Patient Portal (Spring Boot + React)",
+    "projectDesc": "Build a secure full-stack web application for patient health records, appointment scheduling, and doctor consultations using Java Spring Boot, Hibernate, PostgreSQL, and React.",
+    "tools": "Java 17, Spring Boot, Spring Security, PostgreSQL, React, Docker, JUnit, GitHub",
+    "weekTasks": [
+      "Define application requirements, microservice boundaries, and REST API contracts using OpenAPI 3.0.",
+      "Set up Spring Boot project with Maven, Spring Data JPA, and PostgreSQL database migrations (Flyway).",
+      "Design database relational entities (Patient, Doctor, Appointment, MedicalRecord) with relational constraints.",
+      "Implement Spring Security with JWT authentication, password hashing, and role-based access control.",
+      "Build RESTful APIs for appointment booking, doctor availability scheduling, and medical history lookup.",
+      "Develop responsive frontend single-page application using React, Axios, and modern CSS components.",
+      "Implement global exception handling, custom response wrappers, and request validation in Spring Boot.",
+      "Write unit and integration tests using JUnit 5, Mockito, and SpringBootTest with >80% code coverage.",
+      "Containerize backend and frontend applications using multi-stage Dockerfiles and Docker Compose.",
+      "Perform performance optimization: database query indexing, Hibernate connection tuning, and caching.",
+      "Conduct end-to-end user acceptance testing across appointment creation and cancellation workflows.",
+      "Publish complete application code, API documentation, Swagger UI, and setup instructions to GitHub."
+    ]
+  },
+  {
+    "name": "Shraddha Chandrakant Jathar",
+    "jobTitle": "Data Scientist",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "shraddha-chandrakant-jathar",
+    "responsibilities": [
+      "Collect, clean, and analyze large datasets to identify trends, patterns, and business insights.",
+      "Develop, test and deploy statistical models, machine learning algorithms and predictive analytics solutions",
+      "Design and maintain data pipelines, dashboards and reporting tools to support decision",
+      "Perform exploratory data analysis and present findings to stakeholders in a clear and actionable manner.",
+      "Validate model performance and continuously optimize algorithms for accuracy and efficiency.",
+      "Utilize programming languages such as Python, R, SQL and relevant data science tools and frameworks.",
+      "Support data governance, quality assurance, and compliance with organizational data policies.",
+      "Stay current with emerging technologies, industry trends, and best practices in data science and artificial intelligence.",
+      "Identify opportunities for process automation and operational efficiency through data",
+      "driven solutions."
+    ],
+    "project": "Predictive Customer Lifetime Value & Dynamic Churn Risk Modeling",
+    "projectDesc": "Develop and deploy an end-to-end machine learning pipeline to predict customer churn probability, forecast lifetime value, and explain model decisions using SHAP in a Streamlit web application.",
+    "tools": "Python (pandas, scikit-learn, XGBoost, SHAP, Streamlit), Docker, MLflow, GitHub",
+    "weekTasks": [
+      "Define project objectives, acquire customer behavioral dataset, and establish validation benchmarks.",
+      "Perform extensive exploratory data analysis (EDA), evaluating correlation structures and distribution skews.",
+      "Execute feature engineering: customer tenure recency, interaction frequency, and rolling spend velocity.",
+      "Build baseline statistical and machine learning models (Logistic Regression, Random Forest, XGBoost, LightGBM).",
+      "Tune hyperparameters using Optuna / GridSearchCV and perform cross-validation with stratified splits.",
+      "Evaluate model performance metrics: ROC-AUC, Precision-Recall AUC, Brier score, and expected monetary value.",
+      "Implement model explainability using SHAP and LIME to generate global and individual prediction insights.",
+      "Develop interactive Streamlit web application enabling business users to test predictions interactively.",
+      "Containerize the data science application with Docker and write unit tests for feature transformation pipelines.",
+      "Perform model fairness, bias audits, and stability tests across diverse demographic subgroups.",
+      "Draft comprehensive technical documentation, model governance card, and executive presentation deck.",
+      "Package Python notebooks, Streamlit app, Dockerfile, and project README for GitHub repository release."
+    ]
+  },
+  {
+    "name": "Adarsh Mohanty",
+    "jobTitle": "Business System Analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "adarsh-mohanty",
+    "responsibilities": [
+      "Gather, analyze and document business requirements by collaborating with stakeholders and end users.",
+      "Translate business needs into functional and technical specifications for development teams.",
+      "Act as a liaison between business stakeholders, development teams, QA, and project managers to ensure successful project delivery.",
+      "Support system design, testing, user acceptance testing (UAT), and implementation activities.",
+      "Analyze data and system performance to identify trends, issues, opportunities for process optimization.",
+      "Participate in project planning, change management, and continuous improvement initiatives.",
+      "Assist with system integrations, data migration activities and implementation of enterprise applications.",
+      "Support Agile, Scrum, or Waterfall projects by participating in sprint planning, backlog refinement.",
+      "Stay updated on business analysis practices and emerging technologies to recommend solutions"
+    ],
+    "project": "Core Banking Loan Origination & Approval System Modernization (BRD + UAT)",
+    "projectDesc": "Lead business systems analysis for modernizing a digital loan origination platform, producing comprehensive BRD/FRD documentation, automated workflow diagrams, and end-to-end UAT test suites.",
+    "tools": "Jira, Confluence, Lucidchart, Excel, Postman, Google Slides, GitHub",
+    "weekTasks": [
+      "Conduct stakeholder discovery workshops to document current loan intake, credit assessment, and approval workflows.",
+      "Perform gap analysis and design future-state process workflows in Lucidchart with BPMN 2.0 notation.",
+      "Author comprehensive Business Requirements Document (BRD) and Functional Requirements Document (FRD).",
+      "Create user stories with detailed acceptance criteria (Given-When-Then format) and story point estimations.",
+      "Map data flow integrations between front-end loan application portal, credit bureau APIs, and core banking database.",
+      "Develop comprehensive User Acceptance Testing (UAT) test plans, traceability matrix, and scenario test cases.",
+      "Execute API integration verification tests using Postman to validate credit check request/response schemas.",
+      "Facilitate sprint planning, backlog grooming, and defect triage meetings with engineering and QA teams.",
+      "Conduct UAT execution sessions with business underwriters and capture feedback for system enhancements.",
+      "Draft end-user training materials, standard operating procedures (SOP), and system admin guide.",
+      "Prepare executive implementation readiness report highlighting risk assessments and rollout milestones.",
+      "Consolidate all BRDs, process flows, test matrices, and training decks into a GitHub repository."
+    ]
   }
-};
-
-const WEEK_DEFS = [
-  { week: 1, project: "june", phase: 1, dateRange: "Jun 1–Jun 7, 2026" },
-  { week: 2, project: "june", phase: 2, dateRange: "Jun 8–Jun 14, 2026" },
-  { week: 3, project: "june", phase: 3, dateRange: "Jun 15–Jun 21, 2026" },
-  { week: 4, project: "june", phase: 4, dateRange: "Jun 22–Jun 30, 2026" },
-  { week: 5, project: "july", phase: 1, dateRange: "Jul 1–Jul 7, 2026" },
-  { week: 6, project: "july", phase: 2, dateRange: "Jul 8–Jul 14, 2026" },
-  { week: 7, project: "july", phase: 3, dateRange: "Jul 15–Jul 21, 2026" },
-  { week: 8, project: "july", phase: 4, dateRange: "Jul 22–Jul 31, 2026" },
-  { week: 9, project: "aug", phase: 1, dateRange: "Aug 1–Aug 7, 2026" },
-  { week: 10, project: "aug", phase: 2, dateRange: "Aug 8–Aug 14, 2026" },
-  { week: 11, project: "aug", phase: 3, dateRange: "Aug 15–Aug 21, 2026" },
-  { week: 12, project: "aug", phase: 4, dateRange: "Aug 22–Aug 31, 2026" }
 ];
-
-const ASSIGNMENTS = {
-  june: {
-    1: ["Deepinder Singh", "Kanishka Singh", "Heny Patel", "Harshitha Kakumanu", "Bhoomika Reddy Muralidhar", "Venkata Ratna Kumar Mandalapu", "Alma Babydasan"],
-    2: ["Harshitha Kakumanu", "Bhoomika Reddy Muralidhar", "Praveen Kumar Borra", "Sri Ram Varma Budhraju", "Karthik Kalyan Kakumanu", "Venkata Ratna Kumar Mandalapu", "Disha Revandkar", "Shashank Dubey", "Rutujeet Falmare"],
-    3: ["Disha Revandkar", "Shashank Dubey", "Alma Babydasan", "Rutujeet Falmare", "Chidi Okeke", "Shrey Sandeep Jain"],
-    4: ["Deepinder Singh", "Princy Palli", "Uday Kiran Peddineni", "Yash Sodvadiya", "Kanishka Singh", "Heny Patel"]
-  },
-  july: {
-    1: ["Deepinder Singh", "Kanishka Singh", "Heny Patel", "Saboura Salari Rad", "Ashish Kasam", "Aadharsh Jaya Bharath"],
-    2: ["Durga Phani Vikas Telu", "Shrey Sandeep Jain", "Chidi Okeke", "Prince Paneliya", "Haindavi Krishna Kothireddy", "Gouthami Gowni", "Akhila Jangam", "Anvitha Gaddam", "Sai Anuhya Bandi"],
-    3: ["Durga Phani Vikas Telu", "Shrey Sandeep Jain", "Chidi Okeke", "Akhila Jangam", "Anvitha Gaddam", "Saboura Salari Rad"],
-    4: ["Deepinder Singh", "Kanishka Singh", "Heny Patel", "Saboura Salari Rad", "Shrey Sandeep Jain"]
-  },
-  aug: {
-    1: ["Deepinder Singh", "Kanishka Singh", "Princy Palli", "Uday Kiran Peddineni", "Yash Sodvadiya", "Pooja Nigam", "Mihir Pandya"],
-    2: ["Alma Babydasan", "Rutujeet Falmare", "Venkata Ratna Kumar Mandalapu", "Disha Revandkar", "Shashank Dubey", "Sri Ram Varma Budhraju", "Karthik Kalyan Kakumanu"],
-    3: ["Princy Palli", "Uday Kiran Peddineni", "Yash Sodvadiya", "Alma Babydasan", "Rutujeet Falmare"],
-    4: ["Deepinder Singh", "Kanishka Singh", "Suman Chandra Musthyala", "Hemanth Ranga Tummala", "Pooja Nigam", "Mihir Pandya"]
-  }
-};
-
-// ── NEW BRIDGEPOINT DATA ──────────────────────────────────────────────────────
-const CSV_PEOPLE_DATA = [
-  {
-    name: "Anil Budhathoki",
-    jobTitle: "Data Analyst",
-    company: "New Bridgepoint Careers LLC",
-    project: "Retail Customer Behavior Analysis",
-    projectDesc: "Analyze a retail customer transaction dataset from Kaggle to uncover buying patterns, customer segments, basket size trends, and predictive insights using Python and Power BI.",
-    tools: "Python (pandas, seaborn, scikit-learn), Power BI Desktop (free), Kaggle retail dataset, VS Code",
-    weekTasks: [
-      "Download Kaggle retail transaction dataset, explore schema and variable types",
-      "Clean data — handle nulls, remove duplicates, standardize date formats",
-      "Perform EDA — purchase frequency, average order value, top products",
-      "Build customer segmentation using RFM (Recency, Frequency, Monetary) analysis",
-      "Visualize segment distributions with seaborn and matplotlib",
-      "Analyze seasonal trends and peak purchase periods",
-      "Build Power BI dashboard with customer KPIs and segment breakdown",
-      "Run SQL queries for ad-hoc analysis (top 10 customers, low-revenue segments)",
-      "Build predictive model to forecast customer churn (Logistic Regression)",
-      "Evaluate model — accuracy, precision, recall, ROC-AUC",
-      "Write analytical report with actionable business recommendations",
-      "Finalize dashboard, upload Python notebook and report to GitHub"
-    ]
-  },
-  {
-    name: "Hrishikesh Hete",
-    jobTitle: "Data Analyst",
-    company: "New Bridgepoint Careers LLC",
-    project: "Flight Delay Analysis & Dashboard",
-    projectDesc: "Analyze the US Flight Delay public dataset (Bureau of Transportation Statistics) to identify delay patterns by airline, airport, and time using Python EDA and Tableau Public visualization.",
-    tools: "Python (pandas, matplotlib, seaborn), Tableau Public (free), BTS open data (free), SQL (SQLite)",
-    weekTasks: [
-      "Download US flight delay dataset from BTS/Kaggle, explore 20+ columns",
-      "Clean data — handle nulls in delay fields, filter relevant columns",
-      "Analyze delay causes — carrier, weather, NAS, security, late aircraft",
-      "Top 10 airlines by average delay time — bar and scatter charts",
-      "Airport-wise delay analysis using grouped aggregations",
-      "Time-series analysis — delays by month, weekday, and hour",
-      "Load cleaned data into SQLite, write analytical SQL queries",
-      "Build Tableau Public dashboard with delay KPIs and filters",
-      "Add choropleth map for delay hotspots by state",
-      "Run regression model to predict delay duration (sklearn)",
-      "Write findings report with airline and route recommendations",
-      "Publish Tableau dashboard, push Python notebook to GitHub"
-    ]
-  },
-  {
-    name: "Shravani Kurlapkar",
-    jobTitle: "Data Analyst",
-    company: "New Bridgepoint Careers LLC",
-    project: "Amazon Product Reviews Sentiment Dashboard",
-    projectDesc: "Analyze Amazon product review data (Kaggle) to extract sentiment trends, rating distributions, and helpful review patterns using Python NLP (TextBlob/VADER) and Power BI.",
-    tools: "Python (pandas, TextBlob, VADER, matplotlib), Power BI Desktop (free), Kaggle Amazon reviews dataset",
-    weekTasks: [
-      "Download Amazon reviews dataset from Kaggle, explore rating and review fields",
-      "Clean text data — remove HTML, stopwords, punctuation",
-      "Apply VADER sentiment analysis, label reviews as Positive/Neutral/Negative",
-      "Analyze sentiment distribution across product categories",
-      "Compare sentiment score vs star rating — correlation analysis",
-      "Identify top keywords in positive and negative reviews (word frequency)",
-      "Build word cloud visualizations for each sentiment category",
-      "Load processed data into Power BI, build sentiment KPI dashboard",
-      "Add trend analysis — sentiment over time by product category",
-      "Perform data validation and quality checks on processed output",
-      "Write report with product improvement insights from review patterns",
-      "Publish Power BI report, upload Python notebook to GitHub"
-    ]
-  },
-  {
-    name: "Vivek Kathrotiya",
-    jobTitle: "Product Manager - Growth & AI",
-    company: "New Bridgepoint Careers LLC",
-    project: "A/B Test Analysis & Product Growth Simulator",
-    projectDesc: "Design and analyze a simulated A/B testing framework for a product feature using Python statistical testing and build a product growth experiment tracker in Google Sheets/Notion.",
-    tools: "Python (scipy, pandas, matplotlib), Google Sheets (free), Notion (free), Statsig blog resources (free)",
-    weekTasks: [
-      "Define experiment hypothesis, control vs variant, and success metrics",
-      "Generate synthetic A/B test data (sample size, CTR, conversion rate)",
-      "Run z-test and chi-square test for statistical significance (scipy)",
-      "Calculate p-value, confidence interval, and effect size",
-      "Visualize A/B results — conversion funnel and uplift charts",
-      "Build product experiment tracker in Google Sheets (hypothesis, status, results)",
-      "Simulate a second experiment — pricing page optimization",
-      "Analyze user retention metrics (D1, D7, D30) from mock data",
-      "Build AI feature impact scorecard based on experiment outcomes",
-      "Create product roadmap prioritization framework using RICE scoring",
-      "Write product growth report with data-backed feature recommendations",
-      "Package deliverables — GitHub repo with notebooks, roadmap, and dashboard"
-    ]
-  },
-  {
-    name: "Nethra Renjarla",
-    jobTitle: "Data Analyst",
-    company: "New Bridgepoint Careers LLC",
-    project: "Bank Marketing Campaign Analysis",
-    projectDesc: "Analyze the UCI Bank Marketing dataset to identify factors driving term deposit subscriptions, perform EDA, build classification models, and visualize insights in Tableau Public.",
-    tools: "Python (pandas, scikit-learn, seaborn), Tableau Public (free), UCI ML Repository (free)",
-    weekTasks: [
-      "Download UCI Bank Marketing dataset, understand 20 features and target variable",
-      "Clean data — handle 'unknown' values, encode categoricals",
-      "EDA — subscription rate by age, job, marital status, education",
-      "Analyze campaign contact patterns — call duration, number of contacts",
-      "Handle class imbalance with SMOTE (imbalanced-learn)",
-      "Build Decision Tree classifier to predict subscription",
-      "Build Random Forest model and compare performance",
-      "Evaluate models — F1, ROC-AUC, confusion matrix",
-      "Build Tableau dashboard showing customer profile and KPIs",
-      "Add SQL ad-hoc queries for segment-level analysis (SQLite)",
-      "Write business report with campaign targeting recommendations",
-      "Publish dashboard, push notebook to GitHub/Kaggle"
-    ]
-  },
-  {
-    name: "Snehal Ashok Gulve",
-    jobTitle: "Project Manager",
-    company: "New Bridgepoint Careers LLC",
-    project: "End-to-End Agile Project Delivery Simulation",
-    projectDesc: "Simulate managing a 3-month software delivery project from scratch — defining scope, building a WBS, running 3 Agile sprints, managing risk, tracking budget, and producing a project closure report.",
-    tools: "Jira (free tier), Confluence (free tier), Google Sheets, Miro (free), GanttProject (free)",
-    weekTasks: [
-      "Define project charter — objective, scope, stakeholders, constraints",
-      "Build Work Breakdown Structure (WBS) in GanttProject or Google Sheets",
-      "Create project timeline with milestones, dependencies, and critical path",
-      "Set up Jira project, create Sprint 1 backlog with user stories",
-      "Track Sprint 1 — update task status, generate burndown chart",
-      "Conduct Sprint 1 retrospective, refine Sprint 2 backlog",
-      "Build risk register with probability, impact, and mitigation plans",
-      "Track Sprint 2 — monitor progress, handle scope change request",
-      "Prepare mid-project stakeholder status report with KPIs",
-      "Plan and execute Sprint 3, finalize deliverables",
-      "Write project closure report — lessons learned, KPIs achieved",
-      "Package all PM artifacts in Confluence, submit full portfolio"
-    ]
-  },
-  {
-    name: "Supreet Kaur",
-    jobTitle: "Data Analyst",
-    company: "New Bridgepoint Careers LLC",
-    project: "World Happiness Report Analysis",
-    projectDesc: "Analyze the World Happiness Report open dataset (2015–2023) to identify trends in global happiness, economic and social drivers, and regional comparisons using Python and Tableau Public.",
-    tools: "Python (pandas, plotly, seaborn), Tableau Public (free), World Happiness Report dataset (Kaggle free)",
-    weekTasks: [
-      "Download World Happiness Report dataset from Kaggle, understand features",
-      "Merge multi-year datasets, standardize column names, handle nulls",
-      "EDA — happiness score distributions by year and region",
-      "Analyze top 10 and bottom 10 happiest countries over time",
-      "Correlation analysis — GDP, social support, life expectancy vs happiness",
-      "Build interactive Plotly charts — happiness trends line charts",
-      "Create choropleth world map for happiness scores by country",
-      "Build Tableau Public dashboard with regional KPIs",
-      "Write SQL queries in SQLite for ad-hoc regional comparisons",
-      "Automate yearly comparison report using Python script",
-      "Validate data quality — consistency checks across years",
-      "Publish Tableau dashboard, push notebook to GitHub"
-    ]
-  },
-  {
-    name: "Sai Satya Pavan Kalepu",
-    jobTitle: "Network Engineer",
-    company: "New Bridgepoint Careers LLC",
-    project: "Network Monitoring & Security Simulation Lab",
-    projectDesc: "Set up a virtual network lab using free tools (GNS3/Cisco Packet Tracer) to configure VPNs, simulate network monitoring, document configurations, and test security measures including access control and intrusion detection.",
-    tools: "Cisco Packet Tracer (free with NetAcad), GNS3 (free), Wireshark (free), draw.io (free), GitHub",
-    weekTasks: [
-      "Install Cisco Packet Tracer and GNS3, design network topology diagram in draw.io",
-      "Configure routers and switches — VLANs, inter-VLAN routing",
-      "Set up DHCP server and DNS configuration in Packet Tracer",
-      "Configure site-to-site VPN between two routers",
-      "Implement access control lists (ACLs) for traffic filtering",
-      "Capture and analyze packets with Wireshark — identify protocols",
-      "Simulate network performance issues and troubleshoot connectivity",
-      "Configure network monitoring using SNMP in GNS3",
-      "Implement network security hardening — disable unused ports, strong passwords",
-      "Set up backup and recovery plan for network configurations",
-      "Document all configurations, procedures, and network diagrams",
-      "Write network security audit report, push all docs to GitHub"
-    ]
-  }
-];
-
-const NEW_WEEK_DATES = [
-  { week: 1, dateRange: "Jun 29–Jul 5, 2026" },
-  { week: 2, dateRange: "Jul 6–Jul 12, 2026" },
-  { week: 3, dateRange: "Jul 13–Jul 19, 2026" },
-  { week: 4, dateRange: "Jul 20–Jul 26, 2026" },
-  { week: 5, dateRange: "Jul 27–Aug 2, 2026" },
-  { week: 6, dateRange: "Aug 3–Aug 9, 2026" },
-  { week: 7, dateRange: "Aug 10–Aug 16, 2026" },
-  { week: 8, dateRange: "Aug 17–Aug 23, 2026" },
-  { week: 9, dateRange: "Aug 24–Aug 30, 2026" },
-  { week: 10, dateRange: "Aug 31–Sep 6, 2026" },
-  { week: 11, dateRange: "Sep 7–Sep 13, 2026" },
-  { week: 12, dateRange: "Sep 14–Sep 20, 2026" }
-];
-
-// ── HELPERS ───────────────────────────────────────────────────────────────────
-function slugify(value) {
-  return value.trim().toLowerCase().replace(/['']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/-{2,}/g, "-").replace(/^-|-$/g, "") || "profile";
-}
-
-function escapeHtml(value) {
-  return String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#039;");
-}
-
-function findPerson(name) {
-  return PEOPLE.find(p => p.name === name);
-}
-
-function roleCategory(jobTitle) {
-  const jt = (jobTitle || "").toLowerCase();
-  if (jt.includes("project manager")) return "pm";
-  if (jt.includes("business analyst")) return "ba";
-  if (jt.includes("system analyst")) return "bsa";
-  if (jt.includes("devops")) return "devops";
-  if (jt.includes("cloud")) return "cloud";
-  if (jt.includes("data engineer")) return "dataeng";
-  if (jt.includes("data")) return "data";
-  if (jt.includes("ai")) return "ai";
-  if (jt.includes("front end")) return "frontend";
-  if (jt.includes("full stack")) return "fullstack";
-  if (jt.includes("software")) return "software";
-  if (jt.includes("bim")) return "bim";
-  if (jt.includes("design engineer")) return "designeng";
-  if (jt.includes("supply chain")) return "supply";
-  if (jt.includes("network")) return "network";
-  return "other";
-}
-
-function weekFocusLabel(phase) {
-  if (phase === 1) return "Week 1 (Scope + requirements + plan)";
-  if (phase === 2) return "Week 2 (Build MVP)";
-  if (phase === 3) return "Week 3 (QA + validation + fixes)";
-  return "Week 4 (Release + reporting + handoff)";
-}
-
-// ── EXISTING RENDER ───────────────────────────────────────────────────────────
-function buildWeekTasksForPerson({ projectId, phase, person }) {
-  const cat = roleCategory(person.jobTitle);
-  const p = PROJECTS[projectId];
-  const base = [];
-
-  if (phase === 1) {
-    if (cat === "pm") base.push("Create the weekly plan, define owners, and confirm the scope guardrails for this project.");
-    if (cat === "ba" || cat === "bsa") base.push("Gather and document requirements; produce clear acceptance criteria for MVP scope.");
-    if (cat === "data" || cat === "dataeng" || cat === "supply") base.push("Define the data inputs/outputs needed for the week; identify quality risks and assumptions early.");
-    if (cat === "software" || cat === "fullstack" || cat === "frontend") base.push("Draft the architecture and implementation approach; identify key risks and define the MVP slice.");
-    if (cat === "devops" || cat === "cloud") base.push("Define the deployment/packaging approach using only free tools; list the release steps and expected outputs.");
-    if (cat === "ai" || cat === "designeng" || cat === "bim") base.push("Define the simplified approach that fits zero-cost tools and low complexity; clarify what is in/out of scope.");
-  }
-  if (phase === 2) {
-    if (cat === "software" || cat === "fullstack" || cat === "frontend") base.push("Implement the MVP features for this week and ensure they work end-to-end.");
-    if (cat === "data" || cat === "dataeng") base.push("Build the core dataset/pipeline and produce the first dashboard/report output for review.");
-    if (cat === "devops" || cat === "cloud") base.push("Set up the simplest reliable run/deploy workflow; ensure others can run it locally.");
-    if (cat === "pm" || cat === "ba" || cat === "bsa") base.push("Keep scope controlled; track decisions and clarify acceptance criteria for the MVP demonstration.");
-    if (cat === "ai") base.push("Implement a minimal AI/ML component only if required; otherwise provide evaluation criteria and lightweight checks.");
-  }
-  if (phase === 3) {
-    if (cat === "software" || cat === "fullstack" || cat === "frontend") base.push("Run testing, fix defects, and improve reliability and performance for the MVP.");
-    if (cat === "data" || cat === "dataeng" || cat === "supply") base.push("Validate data quality, investigate anomalies, and confirm KPIs/outputs match definitions.");
-    if (cat === "devops" || cat === "cloud") base.push("Add monitoring/logging outputs and harden the run steps so failures are obvious and recoverable.");
-    if (cat === "pm") base.push("Drive bug triage and release readiness; ensure blockers are resolved.");
-    if (cat === "ba" || cat === "bsa") base.push("Run UAT-style checks against requirements; document gaps and required fixes.");
-    if (cat === "ai" || cat === "designeng" || cat === "bim") base.push("Validate results against expected outputs; strengthen validation checks and error reporting.");
-  }
-  if (phase === 4) {
-    if (cat === "pm") base.push("Coordinate the final release, demo, and retrospective; ensure a clear handoff package exists.");
-    if (cat === "ba" || cat === "bsa") base.push("Finalize documentation and acceptance sign-off; ensure stakeholders can understand how to use the deliverable.");
-    if (cat === "software" || cat === "fullstack" || cat === "frontend") base.push("Finalize polish and documentation; ensure no broken flows and produce a clean demo path.");
-    if (cat === "data" || cat === "dataeng" || cat === "supply") base.push("Deliver final report/dashboard outputs and a repeatable refresh process; document assumptions and limitations.");
-    if (cat === "devops" || cat === "cloud") base.push("Ensure release steps are documented, repeatable, and safe; provide rollback/recovery notes where relevant.");
-    if (cat === "ai" || cat === "designeng" || cat === "bim") base.push("Provide final validation summary, constraints, and next steps; ensure outputs are reproducible.");
-  }
-
-  const extracted = person.responsibilitiesPreview || [];
-  const tasks = [];
-  tasks.push(...base.map(t => `Applied to ${p.name}: ${t}`));
-  if (extracted.length) {
-    tasks.push("Role responsibilities reference (from sheet):");
-    tasks.push(...extracted.map(r => `- ${r}`));
-    if (person.responsibilityCount && person.responsibilityCount > extracted.length) {
-      tasks.push(`(See full profile for all responsibilities: profiles/${slugify(person.name)}.html)`);
-    }
-  }
-  return tasks;
-}
-
-function renderRoles(companyFilter) {
-  const container = document.getElementById("rolesGrid");
-  const countEl = document.getElementById("peopleCount");
-  const labelEl = document.getElementById("rolesLabel");
-
-  const filtered = companyFilter ? PEOPLE.filter(p => p.company === companyFilter) : PEOPLE;
-  countEl.textContent = String(filtered.length);
-  if (labelEl) labelEl.textContent = companyFilter ? companyFilter : "Team";
-
-  const sorted = [...filtered].sort((a,b) => a.name.localeCompare(b.name));
-  container.innerHTML = sorted.map(p => {
-    const profileHref = `profiles/${slugify(p.name)}.html`;
-    const preview = (p.responsibilitiesPreview || []).map(item => `<li>${escapeHtml(item)}</li>`).join("");
-    const remaining = Math.max(0, (p.responsibilityCount || 0) - (p.responsibilitiesPreview || []).length);
-    const summary = remaining > 0 ? `View responsibilities (showing ${p.responsibilitiesPreview.length} of ${p.responsibilityCount})` : `View responsibilities (${p.responsibilitiesPreview.length})`;
-    return `
-      <article class="role-card">
-        <div class="role-head">
-          <div class="role-main">
-            <h3 class="role-name">${escapeHtml(p.name)}</h3>
-            <p class="role-title">${escapeHtml(p.jobTitle || "—")}</p>
-          </div>
-          <div class="role-side">
-            <div class="badge"><span class="dot"></span>${escapeHtml(p.company)}</div>
-            <a class="btn btn-outline role-link" href="${profileHref}">Open Profile</a>
-          </div>
-        </div>
-        <details class="role-details">
-          <summary class="role-summary">${escapeHtml(summary)}</summary>
-          <ul class="list">${preview}</ul>
-          ${remaining > 0 ? `<p class="role-more">More responsibilities available in the profile page.</p>` : ``}
-        </details>
-      </article>
-    `;
-  }).join("");
-}
-
-function renderWeeks() {
-  const container = document.getElementById("weekGrid");
-  container.innerHTML = WEEK_DEFS.map(w => {
-    const p = PROJECTS[w.project];
-    return `
-      <button class="week-btn" type="button" data-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
-        <div class="week-num">Week ${w.week}</div>
-        <div class="week-tag">${escapeHtml(p.monthLabel)} · ${escapeHtml(weekFocusLabel(w.phase))}</div>
-        <div class="week-sub">${escapeHtml(w.dateRange)}</div>
-        <div class="week-project">${escapeHtml(p.name)}</div>
-      </button>
-    `;
-  }).join("");
-}
-
-function buildModalContent(weekDef) {
-  const project = PROJECTS[weekDef.project];
-  const assignedNames = (ASSIGNMENTS[weekDef.project] && ASSIGNMENTS[weekDef.project][weekDef.phase]) ? ASSIGNMENTS[weekDef.project][weekDef.phase] : [];
-  const assignedPeople = assignedNames.map(n => findPerson(n)).filter(Boolean);
-
-  const peopleBlocks = assignedPeople.map(person => {
-    const tasks = buildWeekTasksForPerson({ projectId: weekDef.project, phase: weekDef.phase, person });
-    const taskHtml = tasks.map(t => t.startsWith("- ") ? `<li>${escapeHtml(t.slice(2))}</li>` : `<li>${escapeHtml(t)}</li>`).join("");
-    const profileHref = `profiles/${slugify(person.name)}.html`;
-    return `
-      <section class="modal-card">
-        <div class="modal-card-head">
-          <div>
-            <h3 class="modal-card-title">${escapeHtml(person.name)}</h3>
-            <p class="modal-card-sub">${escapeHtml(person.jobTitle || "—")} · ${escapeHtml(person.company)}</p>
-          </div>
-          <a class="btn btn-outline modal-card-link" href="${profileHref}">Open Profile</a>
-        </div>
-        <ul class="modal-list">${taskHtml}</ul>
-      </section>
-    `;
-  }).join("");
-
-  const deliverables = (project.deliverablesByPhase[weekDef.phase] || []).map(d => `<li>${escapeHtml(d)}</li>`).join("");
-  const success = (project.successByPhase[weekDef.phase] || []).map(s => `<li>${escapeHtml(s)}</li>`).join("");
-  const tools = project.freeTools.map(t => `<li>${escapeHtml(t)}</li>`).join("");
-  const guardrails = project.guardrails.map(g => `<li>${escapeHtml(g)}</li>`).join("");
-
-  return `
-    <section class="modal-section">
-      <p class="section-label">Project</p>
-      <h3 class="modal-h3">${escapeHtml(project.name)}</h3>
-      <p class="modal-p">${escapeHtml(project.goal)}</p>
-      <div class="modal-split">
-        <div><p class="modal-k">Zero-cost tools</p><ul class="modal-list">${tools}</ul></div>
-        <div><p class="modal-k">Uniqueness</p><p class="modal-p">${escapeHtml(project.uniqueness)}</p></div>
-      </div>
-    </section>
-    <section class="modal-section">
-      <p class="section-label">Focus</p>
-      <h3 class="modal-h3">${escapeHtml(weekFocusLabel(weekDef.phase))}</h3>
-      <div class="modal-split">
-        <div><p class="modal-k">Scope guardrails</p><ul class="modal-list">${guardrails}</ul></div>
-        <div><p class="modal-k">Assigned team members</p><ul class="modal-list">${assignedPeople.map(p => `<li>${escapeHtml(p.name)} — ${escapeHtml(p.jobTitle || "—")}</li>`).join("")}</ul></div>
-      </div>
-    </section>
-    <section class="modal-section">
-      <p class="section-label">Tasks</p>
-      ${peopleBlocks || `<p class="empty">No assignments configured for this week.</p>`}
-    </section>
-    <section class="modal-section">
-      <p class="section-label">Deliverables</p>
-      <ul class="modal-list">${deliverables}</ul>
-    </section>
-    <section class="modal-section">
-      <p class="section-label">Success Criteria</p>
-      <ul class="modal-list">${success}</ul>
-    </section>
-  `;
-}
-
-function buildEmailText(weekDef) {
-  const project = PROJECTS[weekDef.project];
-  const assignedNames = (ASSIGNMENTS[weekDef.project] && ASSIGNMENTS[weekDef.project][weekDef.phase]) ? ASSIGNMENTS[weekDef.project][weekDef.phase] : [];
-  const assignedPeople = assignedNames.map(n => findPerson(n)).filter(Boolean);
-  const lines = [];
-  lines.push(`Subject: Week ${weekDef.week} Tasks — ${project.name} (${weekDef.dateRange})`);
-  lines.push("");
-  lines.push(`Week ${weekDef.week}: ${weekDef.dateRange}`);
-  lines.push(`Project: ${project.name} (${project.monthLabel})`);
-  lines.push(`Focus: ${weekFocusLabel(weekDef.phase)}`);
-  lines.push(""); lines.push("Project goal:"); lines.push(`- ${project.goal}`);
-  lines.push(""); lines.push("Zero-cost tools:"); project.freeTools.forEach(t => lines.push(`- ${t}`));
-  lines.push(""); lines.push("Scope guardrails:"); project.guardrails.forEach(g => lines.push(`- ${g}`));
-  lines.push(""); lines.push("Assigned team members:"); assignedPeople.forEach(p => lines.push(`- ${p.name} — ${p.jobTitle || "—"} (${p.company})`));
-  lines.push(""); lines.push("Tasks (by team member):");
-  assignedPeople.forEach(p => {
-    lines.push(""); lines.push(`${p.name} — ${p.jobTitle || "—"}`);
-    const tasks = buildWeekTasksForPerson({ projectId: weekDef.project, phase: weekDef.phase, person: p });
-    tasks.forEach(t => { if (t.startsWith("- ")) lines.push(`  ${t}`); else lines.push(`- ${t}`); });
-  });
-  lines.push(""); lines.push("Deliverables:"); (project.deliverablesByPhase[weekDef.phase] || []).forEach(d => lines.push(`- ${d}`));
-  lines.push(""); lines.push("Success criteria:"); (project.successByPhase[weekDef.phase] || []).forEach(s => lines.push(`- ${s}`));
-  lines.push(""); lines.push("Signature:"); lines.push("- Rajeev Gupta"); lines.push("- Project Lead"); lines.push("- mohan.gupta@ipeople-career.com");
-  return lines.join("\n");
-}
-
-function buildEmailHtml(weekDef) {
-  const project = PROJECTS[weekDef.project];
-  const assignedNames = (ASSIGNMENTS[weekDef.project] && ASSIGNMENTS[weekDef.project][weekDef.phase]) ? ASSIGNMENTS[weekDef.project][weekDef.phase] : [];
-  const assignedPeople = assignedNames.map(n => findPerson(n)).filter(Boolean);
-  const subject = `Week ${weekDef.week} Tasks — ${project.name} (${weekDef.dateRange})`;
-
-  function bulletTable(items) {
-    if (!items || !items.length) return `<div style="font-size:13px;color:#64748b;margin-top:8px;">No items for this section.</div>`;
-    const rows = items.map(item => `<tr><td width="18" valign="top" style="padding:2px 0;color:#05ba46;font-weight:800;">•</td><td valign="top" style="padding:2px 0;color:#334155;font-size:14px;">${escapeHtml(item)}</td></tr>`).join("");
-    return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;">${rows}</table>`;
-  }
-  function section(title, bodyHtml) {
-    return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border:1px solid #d1d5db;margin-top:12px;"><tr><td width="6" style="background:#046bd2;font-size:0;line-height:0;">&nbsp;</td><td style="padding:12px 14px;"><div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#046bd2;font-weight:800;">${escapeHtml(title)}</div>${bodyHtml}</td></tr></table>`;
-  }
-
-  const assignees = assignedPeople.length ? assignedPeople.map(p => `${p.name} — ${p.jobTitle || "—"} (${p.company})`) : [];
-  const signature = { name: "Rajeev Gupta", title: "Project Lead", email: "mohan.gupta@ipeople-career.com" };
-  const summaryBlock = `<div style="font-size:14px;color:#334155;"><div><strong style="color:#111111;">Project:</strong> ${escapeHtml(project.name)}</div><div style="margin-top:6px;"><strong style="color:#111111;">Goal:</strong> ${escapeHtml(project.goal)}</div><div style="margin-top:6px;"><strong style="color:#111111;">Focus:</strong> ${escapeHtml(weekFocusLabel(weekDef.phase))}</div></div>`;
-  const signatureBlock = `<div style="margin-top:18px;"><div style="font-size:13px;color:#64748b;margin:0 0 8px;">Regards,</div><div style="font-size:14px;font-weight:800;color:#111111;margin:0;">${escapeHtml(signature.name)}</div><div style="font-size:13px;color:#64748b;margin-top:2px;">${escapeHtml(signature.title)}</div><div style="margin-top:6px;"><a href="mailto:${escapeHtml(signature.email)}" style="color:#046bd2;text-decoration:underline;font-size:13px;">${escapeHtml(signature.email)}</a></div></div>`;
-
-  return `<div style="font-family:Segoe UI,Arial,sans-serif;line-height:1.45;color:#111111;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f0f5fa;padding:18px;"><tr><td align="left"><table role="presentation" align="left" cellpadding="0" cellspacing="0" border="0" width="640" style="max-width:640px;width:100%;margin:0;background:#ffffff;border:1px solid #d1d5db;"><tr><td style="background:#046bd2;color:#ffffff;padding:18px 18px 16px;"><div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.92;">Project Plan</div><div style="font-size:22px;font-weight:800;margin-top:6px;">${escapeHtml(subject)}</div><div style="font-size:13px;opacity:.92;margin-top:8px;">${escapeHtml(project.monthLabel)} · ${escapeHtml(weekDef.dateRange)}</div></td></tr><tr><td style="padding:18px;">${summaryBlock}${section("Assigned Team Members", bulletTable(assignees))}${section("Zero-Cost Tools", bulletTable(project.freeTools))}${section("Scope Guardrails", bulletTable(project.guardrails))}${section("Deliverables", bulletTable(project.deliverablesByPhase[weekDef.phase] || []))}${section("Success Criteria", bulletTable(project.successByPhase[weekDef.phase] || []))}${signatureBlock}</td></tr></table></td></tr></table></div>`;
-}
-
-// ── NEW BRIDGEPOINT RENDER ────────────────────────────────────────────────────
-function renderNewBPRoles() {
-  const container = document.getElementById("rolesGridNewbp");
-  const countEl = document.getElementById("newbpPeopleCount");
-  countEl.textContent = String(CSV_PEOPLE_DATA.length);
-
-  const sorted = [...CSV_PEOPLE_DATA].sort((a,b) => a.name.localeCompare(b.name));
-  container.innerHTML = sorted.map(p => {
-    const profileHref = `profiles/${slugify(p.name)}.html`;
-    const preview = `<li><strong>Project:</strong> ${escapeHtml(p.project)}</li><li>${escapeHtml(p.projectDesc)}</li><li><strong>Tools:</strong> ${escapeHtml(p.tools)}</li>`;
-    return `
-      <article class="role-card">
-        <div class="role-head">
-          <div class="role-main">
-            <h3 class="role-name">${escapeHtml(p.name)}</h3>
-            <p class="role-title">${escapeHtml(p.jobTitle || "—")}</p>
-          </div>
-          <div class="role-side">
-            <div class="badge"><span class="dot"></span>${escapeHtml(p.company)}</div>
-            <a class="btn btn-outline role-link" href="${profileHref}">Open Profile</a>
-          </div>
-        </div>
-        <details class="role-details">
-          <summary class="role-summary">View project details</summary>
-          <ul class="list">${preview}</ul>
-        </details>
-      </article>
-    `;
-  }).join("");
-}
-
-function renderNewBPWeeks() {
-  const container = document.getElementById("weekGridNewbp");
-  container.innerHTML = NEW_WEEK_DATES.map(w => `
-    <button class="week-btn" type="button" data-newbp-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
-      <div class="week-num">Week ${w.week}</div>
-      <div class="week-tag">New Bridgepoint Careers LLC</div>
-      <div class="week-sub">${escapeHtml(w.dateRange)}</div>
-      <div class="week-project">Individual Project Plans</div>
-    </button>
-  `).join("");
-}
-
-function buildNewBPModalContent(weekNum) {
-  const weekInfo = NEW_WEEK_DATES.find(w => w.week === weekNum);
-  const peopleBlocks = CSV_PEOPLE_DATA.map(person => {
-    const task = person.weekTasks[weekNum - 1] || "No task defined for this week.";
-    return `
-      <section class="modal-card">
-        <div class="modal-card-head">
-          <div>
-            <h3 class="modal-card-title">${escapeHtml(person.name)}</h3>
-            <p class="modal-card-sub">${escapeHtml(person.jobTitle)} · ${escapeHtml(person.company)}</p>
-          </div>
-        </div>
-        <p class="modal-k" style="margin:0 0 6px;">Project</p>
-        <p class="modal-p" style="margin:0 0 14px;">${escapeHtml(person.project)}</p>
-        <p class="modal-k" style="margin:0 0 6px;">Week ${weekNum} Task</p>
-        <ul class="modal-list"><li>${escapeHtml(task)}</li></ul>
-      </section>
-    `;
-  }).join("");
-
-  return `
-    <section class="modal-section">
-      <p class="section-label">Cohort</p>
-      <h3 class="modal-h3">New Bridgepoint Careers LLC</h3>
-      <p class="modal-p">Individual 12-week project plans · Starting Jun 29, 2026</p>
-      <div class="modal-split">
-        <div><p class="modal-k">Date Range</p><p class="modal-p">${escapeHtml(weekInfo.dateRange)}</p></div>
-        <div><p class="modal-k">Team Members</p><p class="modal-p">${CSV_PEOPLE_DATA.length} members · individual projects</p></div>
-      </div>
-    </section>
-    <section class="modal-section">
-      <p class="section-label">Individual Tasks — Week ${weekNum}</p>
-      ${peopleBlocks}
-    </section>
-  `;
-}
-
-function buildNewBPEmailText(weekNum) {
-  const weekInfo = NEW_WEEK_DATES.find(w => w.week === weekNum);
-  const lines = [];
-  lines.push(`Subject: Week ${weekNum} Tasks — New Bridgepoint Careers LLC (${weekInfo.dateRange})`);
-  lines.push(""); lines.push(`Week ${weekNum}: ${weekInfo.dateRange}`);
-  lines.push("Cohort: New Bridgepoint Careers LLC");
-  lines.push(""); lines.push("Individual Tasks (by team member):");
-  CSV_PEOPLE_DATA.forEach(p => {
-    lines.push("");
-    lines.push(`${p.name} — ${p.jobTitle}`);
-    lines.push(`Project: ${p.project}`);
-    lines.push(`Task: ${p.weekTasks[weekNum - 1] || "No task defined."}`);
-  });
-  lines.push(""); lines.push("Signature:"); lines.push("- Rajeev Gupta"); lines.push("- Project Lead"); lines.push("- mohan.gupta@ipeople-career.com");
-  return lines.join("\n");
-}
-
-function buildNewBPEmailHtml(weekNum) {
-  const weekInfo = NEW_WEEK_DATES.find(w => w.week === weekNum);
-  const subject = `Week ${weekNum} Tasks — New Bridgepoint Careers LLC (${weekInfo.dateRange})`;
-  const signature = { name: "Rajeev Gupta", title: "Project Lead", email: "mohan.gupta@ipeople-career.com" };
-
-  const personRows = CSV_PEOPLE_DATA.map(p => {
-    const task = p.weekTasks[weekNum - 1] || "No task defined.";
-    return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border:1px solid #d1d5db;margin-top:10px;"><tr><td width="6" style="background:#046bd2;font-size:0;line-height:0;">&nbsp;</td><td style="padding:12px 14px;"><div style="font-size:15px;font-weight:800;color:#111111;">${escapeHtml(p.name)}</div><div style="font-size:13px;color:#64748b;margin-top:2px;">${escapeHtml(p.jobTitle)}</div><div style="font-size:13px;color:#046bd2;margin-top:4px;">${escapeHtml(p.project)}</div><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;"><tr><td width="18" valign="top" style="padding:2px 0;color:#05ba46;font-weight:800;">•</td><td valign="top" style="padding:2px 0;color:#334155;font-size:14px;">${escapeHtml(task)}</td></tr></table></td></tr></table>`;
-  }).join("");
-
-  const signatureBlock = `<div style="margin-top:18px;"><div style="font-size:13px;color:#64748b;margin:0 0 8px;">Regards,</div><div style="font-size:14px;font-weight:800;color:#111111;">${escapeHtml(signature.name)}</div><div style="font-size:13px;color:#64748b;margin-top:2px;">${escapeHtml(signature.title)}</div><div style="margin-top:6px;"><a href="mailto:${escapeHtml(signature.email)}" style="color:#046bd2;text-decoration:underline;font-size:13px;">${escapeHtml(signature.email)}</a></div></div>`;
-
-  return `<div style="font-family:Segoe UI,Arial,sans-serif;line-height:1.45;color:#111111;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f0f5fa;padding:18px;"><tr><td align="left"><table role="presentation" align="left" cellpadding="0" cellspacing="0" border="0" width="640" style="max-width:640px;width:100%;margin:0;background:#ffffff;border:1px solid #d1d5db;"><tr><td style="background:#046bd2;color:#ffffff;padding:18px 18px 16px;"><div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.92;">New Bridgepoint Careers LLC</div><div style="font-size:22px;font-weight:800;margin-top:6px;">${escapeHtml(subject)}</div><div style="font-size:13px;opacity:.92;margin-top:8px;">${escapeHtml(weekInfo.dateRange)} · Individual Project Plans</div></td></tr><tr><td style="padding:18px;"><div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#046bd2;font-weight:800;">Individual Tasks — Week ${weekNum}</div>${personRows}${signatureBlock}</td></tr></table></td></tr></table></div>`;
-}
-
-// ── TAB SYSTEM ────────────────────────────────────────────────────────────────
-let activeTab = null;
-
-function switchTab(tab) {
-  activeTab = tab;
-
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    const isActive = btn.dataset.tab === tab;
-    btn.classList.toggle('btn-primary', isActive);
-    btn.classList.toggle('btn-outline', !isActive);
-  });
-
-  const existingContent = document.getElementById('existing-content');
-  const newbpContent = document.getElementById('newbp-content');
-  const septnewContent = document.getElementById('septnew-content');
-
-  if (tab === 'newbp') {
-    existingContent.hidden = true;
-    newbpContent.hidden = false;
-    septnewContent.hidden = true;
-  } else if (tab === 'septnew') {
-    existingContent.hidden = true;
-    newbpContent.hidden = true;
-    septnewContent.hidden = false;
-    renderSeptNewRoles();
-  } else {
-    existingContent.hidden = false;
-    newbpContent.hidden = true;
-    septnewContent.hidden = true;
-    const filter = tab === 'ipeople' ? 'IPEOPLE CAREER LLC'
-                 : tab === 'bridgepoint' ? 'BRIDGEPOINT CAREERS LLC'
-                 : null;
-    renderRoles(filter);
-    renderWeeks();
-  }
-}
-
-// ── SEPT NEW RENDER ───────────────────────────────────────────────────────────
 const SEPT_NEW_PEOPLE = [
   {
-    name: "Sylvester Rodrigues",
-    jobTitle: "Senior Business Analyst",
-    slug: "sylvester-rodrigues",
-    responsibilities: [
+    "name": "Sylvester Rodrigues",
+    "jobTitle": "Senior Business Analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "sylvester-rodrigues",
+    "project": "E-Commerce Sales Performance & KPI Analysis",
+    "projectDesc": "Analyze a public Kaggle e-commerce dataset to identify sales trends, customer segments, and business improvement opportunities. Deliver a KPI dashboard, BRD, and stakeholder presentation.",
+    "tools": "Excel, Power BI Desktop, Python pandas, Kaggle dataset, GitHub",
+    "responsibilities": [
       "Gather, analyze, and interpret business data to identify trends and operational insights.",
       "Develop and maintain business dashboards, reports, and performance visualizations for stakeholders.",
       "Collect, clean, and validate business data for accuracy and consistency across systems.",
@@ -836,14 +1158,18 @@ const SEPT_NEW_PEOPLE = [
       "Conduct ad hoc analysis to address business challenges and support operational needs.",
       "Create and maintain documentation for business requirements, reports, and analytical processes.",
       "Ensure data integrity, governance, and compliance with organizational policies and standards.",
-      "Present business insights and recommendations to stakeholders in a clear and structured manner."
+      "Present business findings and actionable recommendations to management and key stakeholders."
     ]
   },
   {
-    name: "Niyazuddin Shaik",
-    jobTitle: "Cloud Security Engineer",
-    slug: "niyazuddin-shaik",
-    responsibilities: [
+    "name": "Niyazuddin Shaik",
+    "jobTitle": "Cloud Security Engineer",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "niyazuddin-shaik",
+    "project": "Multi-Cloud Security Architecture & Threat Detection",
+    "projectDesc": "Design and monitor secure cloud infrastructure across AWS/Azure, build IAM least-privilege policies, SIEM security monitoring, and DevSecOps automated compliance scanning.",
+    "tools": "AWS/Azure, Terraform, Docker, Python/Bash, SIEM/WAF, GitHub Actions",
+    "responsibilities": [
       "Design, implement, and manage cloud security architectures across AWS, Azure, or GCP environments.",
       "Monitor cloud environments for security threats, vulnerabilities, and compliance violations.",
       "Conduct cloud security assessments, risk analysis, and penetration testing to identify weaknesses.",
@@ -858,10 +1184,14 @@ const SEPT_NEW_PEOPLE = [
     ]
   },
   {
-    name: "Nevil Jack Denis",
-    jobTitle: "Product Manager",
-    slug: "nevil-jack-denis",
-    responsibilities: [
+    "name": "Nevil Jack Denis",
+    "jobTitle": "Product Manager",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "nevil-jack-denis",
+    "project": "AI-Driven Product Roadmap & Growth Optimization",
+    "projectDesc": "Define product vision, author detailed PRDs, design user journeys in Figma, and formulate A/B experimentation frameworks to maximize SaaS engagement and retention.",
+    "tools": "Figma, Jira, Notion, Amplitude/Mixpanel, Google Slides, GitHub",
+    "responsibilities": [
       "Define and communicate the product vision, strategy, and roadmap aligned with business goals.",
       "Gather and prioritize product requirements from customers, stakeholders, and market research.",
       "Collaborate with engineering, design, marketing, and sales teams to deliver product features.",
@@ -876,30 +1206,145 @@ const SEPT_NEW_PEOPLE = [
     ]
   }
 ];
+const WEEKS_12 = [
+  {
+    "week": 1,
+    "dateRange": "Sep 14\u2013Sep 20, 2026"
+  },
+  {
+    "week": 2,
+    "dateRange": "Sep 21\u2013Sep 27, 2026"
+  },
+  {
+    "week": 3,
+    "dateRange": "Sep 28\u2013Oct 4, 2026"
+  },
+  {
+    "week": 4,
+    "dateRange": "Oct 5\u2013Oct 11, 2026"
+  },
+  {
+    "week": 5,
+    "dateRange": "Oct 12\u2013Oct 18, 2026"
+  },
+  {
+    "week": 6,
+    "dateRange": "Oct 19\u2013Oct 25, 2026"
+  },
+  {
+    "week": 7,
+    "dateRange": "Oct 26\u2013Nov 1, 2026"
+  },
+  {
+    "week": 8,
+    "dateRange": "Nov 2\u2013Nov 8, 2026"
+  },
+  {
+    "week": 9,
+    "dateRange": "Nov 9\u2013Nov 15, 2026"
+  },
+  {
+    "week": 10,
+    "dateRange": "Nov 16\u2013Nov 22, 2026"
+  },
+  {
+    "week": 11,
+    "dateRange": "Nov 23\u2013Nov 29, 2026"
+  },
+  {
+    "week": 12,
+    "dateRange": "Nov 30\u2013Dec 6, 2026"
+  }
+];
+
+let currentCompanyFilter = 'all';
+let currentSearchQuery = '';
+let activeWeekNum = null;
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+}
+
+function renderProjects() {
+  const grid = document.getElementById('projectsGrid');
+  const countEl = document.getElementById('candidateCount');
+  
+  const filtered = CANDIDATES.filter(c => {
+    const matchesComp = currentCompanyFilter === 'all' || c.company === currentCompanyFilter;
+    const q = currentSearchQuery.toLowerCase().trim();
+    const matchesSearch = !q || c.name.toLowerCase().includes(q) || c.jobTitle.toLowerCase().includes(q) || c.project.toLowerCase().includes(q);
+    return matchesComp && matchesSearch;
+  });
+
+  countEl.textContent = String(filtered.length);
+
+  grid.innerHTML = filtered.map(c => `
+    <article class="role-card">
+      <div class="role-head">
+        <div class="role-main">
+          <div class="project-badge">${escapeHtml(c.company)}</div>
+          <h3 class="role-name">${escapeHtml(c.name)}</h3>
+          <p class="role-title">${escapeHtml(c.jobTitle)}</p>
+        </div>
+        <div class="role-side">
+          <a class="btn btn-primary role-link" href="profiles/${c.slug}.html" style="text-decoration:none;">Open Profile →</a>
+        </div>
+      </div>
+      <div style="margin: 12px 0 6px 0;">
+        <div style="font-size:13px;font-weight:700;color:#38bdf8;margin-bottom:4px;">${escapeHtml(c.project)}</div>
+        <p style="font-size:13px;color:#cbd5e1;line-height:1.5;margin:0 0 8px 0;">${escapeHtml(c.projectDesc)}</p>
+      </div>
+      <details class="role-details">
+        <summary class="role-summary">View Tech Stack &amp; Key Duties</summary>
+        <div style="font-size:12px;color:#94a3b8;margin:8px 0 10px 0;"><strong style="color:#e2e8f0;">Tools:</strong> ${escapeHtml(c.tools)}</div>
+        <ul class="list">
+          ${c.responsibilities.map(r => `<li>${escapeHtml(r)}</li>`).join('')}
+        </ul>
+      </details>
+    </article>
+  `).join('');
+}
+
+function renderWeeks() {
+  const grid = document.getElementById('weekGrid');
+  grid.innerHTML = WEEKS_12.map(w => `
+    <button class="week-btn" type="button" data-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
+      <div class="week-num">Week ${w.week}</div>
+      <div class="week-tag">Sep 14–Dec 6 Cohort</div>
+      <div class="week-sub">${escapeHtml(w.dateRange)}</div>
+      <div class="week-project">27 Individual Project Tasks</div>
+      <div class="week-cta">View All Member Assignments →</div>
+    </button>
+  `).join('');
+}
 
 function renderSeptNewRoles() {
   const grid = document.getElementById('rolesGridSeptNew');
-  grid.innerHTML = SEPT_NEW_PEOPLE.map(p => {
-    const items = p.responsibilities.map(r => `<li>${r}</li>`).join('');
-    return `
-      <div class="role-card">
-        <div class="role-card-header">
-          <div class="role-avatar">${p.name.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>
-          <div>
-            <div class="role-name">${p.name}</div>
-            <div class="role-title">${p.jobTitle}</div>
-            <div class="role-company" style="font-size:10px;opacity:.7;margin-top:2px;">Bridgepoint Careers LLC · Sept 2026</div>
-          </div>
+  grid.innerHTML = SEPT_NEW_PEOPLE.map(p => `
+    <div class="role-card">
+      <div class="role-card-header">
+        <div class="role-avatar">${p.name.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>
+        <div>
+          <div class="role-name">${escapeHtml(p.name)}</div>
+          <div class="role-title">${escapeHtml(p.jobTitle)}</div>
+          <div class="role-company" style="font-size:10px;opacity:.7;margin-top:2px;">Bridgepoint Careers LLC · Sept 2026</div>
         </div>
-        <ul class="role-list">${items}</ul>
-        <div class="role-footer">
-          <a class="btn btn-primary btn-sm" href="profiles/${p.slug}.html" style="text-decoration:none;display:inline-block;">Open Profile →</a>
-        </div>
-      </div>`;
-  }).join('');
+      </div>
+      <div style="margin: 12px 0 8px 0;">
+        <div style="font-size:13px;font-weight:700;color:#c084fc;">${escapeHtml(p.project)}</div>
+        <p style="font-size:12px;color:#cbd5e1;margin:4px 0 8px 0;">${escapeHtml(p.projectDesc)}</p>
+      </div>
+      <ul class="role-list">
+        ${p.responsibilities.map(r => `<li>${escapeHtml(r)}</li>`).join('')}
+      </ul>
+      <div class="role-footer" style="margin-top:14px;">
+        <a class="btn btn-primary btn-sm" href="profiles/${p.slug}.html" style="text-decoration:none;display:inline-block;">Open Profile →</a>
+      </div>
+    </div>
+  `).join('');
 }
 
-// ── MODAL ─────────────────────────────────────────────────────────────────────
+// ── MODAL LOGIC ─────────────────────────────────────────────────────────────
 const dialog = document.getElementById("weekDialog");
 const modalBody = document.getElementById("modalBody");
 const weekTitle = document.getElementById("weekTitle");
@@ -907,45 +1352,54 @@ const weekMeta = document.getElementById("weekMeta");
 const modalStatus = document.getElementById("modalStatus");
 const copyBtn = document.getElementById("copyBtn");
 const closeBtn = document.getElementById("closeBtn");
-let activeWeek = null;
-let activeNewBPWeek = null;
-let currentModalMode = 'existing';
 let closeTimer = null;
 
-function openWeek(weekNumber) {
-  currentModalMode = 'existing';
-  const weekDef = WEEK_DEFS.find(w => w.week === weekNumber);
-  if (!weekDef) return;
-  activeWeek = weekDef;
-  const project = PROJECTS[weekDef.project];
-  modalStatus.textContent = "";
-  weekMeta.textContent = `${project.monthLabel} · ${weekDef.dateRange}`;
-  weekTitle.textContent = `Week ${weekDef.week} Tasks`;
-  modalBody.innerHTML = buildModalContent(weekDef);
-  if (typeof dialog.showModal === "function") {
-    if (!dialog.open) dialog.showModal();
-    dialog.classList.remove("is-closing");
-    dialog.classList.add("is-open");
-    closeBtn.focus();
-  }
+function buildModalContent(weekNum) {
+  const wInfo = WEEKS_12.find(w => w.week === weekNum);
+  const peopleBlocks = CANDIDATES.map(c => {
+    const task = c.weekTasks[weekNum - 1] || "No task configured.";
+    return `
+      <section class="modal-card">
+        <div class="modal-card-head">
+          <div>
+            <h3 class="modal-card-title">${escapeHtml(c.name)}</h3>
+            <p class="modal-card-sub">${escapeHtml(c.jobTitle)} · ${escapeHtml(c.company)}</p>
+          </div>
+          <a class="btn btn-outline btn-sm" href="profiles/${c.slug}.html" style="font-size:11px;padding:4px 10px;text-decoration:none;">Profile →</a>
+        </div>
+        <p class="modal-k" style="margin:0 0 4px;">Project</p>
+        <p class="modal-p" style="margin:0 0 10px;font-weight:700;color:#0284c7;">${escapeHtml(c.project)}</p>
+        <p class="modal-k" style="margin:0 0 4px;">Week ${weekNum} Task</p>
+        <ul class="modal-list"><li>${escapeHtml(task)}</li></ul>
+      </section>
+    `;
+  }).join('');
+
+  return `
+    <section class="modal-section">
+      <p class="section-label">Cohort Schedule</p>
+      <h3 class="modal-h3">Week ${weekNum} Tasks · ${escapeHtml(wInfo.dateRange)}</h3>
+      <p class="modal-p">27 Individual Project Assignments (IPEOPLE CAREER LLC &amp; BRIDGEPOINT CAREERS LLC)</p>
+    </section>
+    <section class="modal-section">
+      <p class="section-label">Individual Assignments</p>
+      ${peopleBlocks}
+    </section>
+  `;
 }
 
-function openNewBPWeek(weekNumber) {
-  currentModalMode = 'newbp';
-  activeNewBPWeek = weekNumber;
-  const weekInfo = NEW_WEEK_DATES.find(w => w.week === weekNumber);
-  if (!weekInfo) return;
+function openWeek(weekNum) {
+  activeWeekNum = weekNum;
+  const wInfo = WEEKS_12.find(w => w.week === weekNum);
   modalStatus.textContent = "";
-  weekMeta.textContent = `New Bridgepoint Careers LLC · ${weekInfo.dateRange}`;
-  weekTitle.textContent = `Week ${weekNumber} Tasks`;
-  modalBody.innerHTML = buildNewBPModalContent(weekNumber);
+  weekMeta.textContent = `Cohort Plan · ${wInfo.dateRange}`;
+  weekTitle.textContent = `Week ${weekNum} Individual Tasks`;
+  modalBody.innerHTML = buildModalContent(weekNum);
   if (typeof dialog.showModal === "function") {
     if (!dialog.open) dialog.showModal();
     dialog.classList.remove("is-closing");
     dialog.classList.add("is-open");
     closeBtn.focus();
-  } else {
-    modalStatus.textContent = "Your browser does not support modals. Please use a modern browser.";
   }
 }
 
@@ -960,98 +1414,104 @@ function closeWeek() {
   }, 160);
 }
 
-document.getElementById("weekGrid").addEventListener("click", (e) => {
+document.getElementById("weekGrid").addEventListener("click", e => {
   const btn = e.target.closest("[data-week]");
   if (!btn) return;
   openWeek(Number(btn.getAttribute("data-week")));
 });
 
-document.getElementById("weekGridNewbp").addEventListener("click", (e) => {
-  const btn = e.target.closest("[data-newbp-week]");
-  if (!btn) return;
-  openNewBPWeek(Number(btn.getAttribute("data-newbp-week")));
-});
-
 closeBtn.addEventListener("click", closeWeek);
-dialog.addEventListener("cancel", (e) => { e.preventDefault(); closeWeek(); });
-dialog.addEventListener("click", (e) => {
-  const rect = dialog.getBoundingClientRect();
-  const inDialog = rect.top <= e.clientY && e.clientY <= rect.bottom && rect.left <= e.clientX && e.clientX <= rect.right;
-  if (!inDialog) closeWeek();
+dialog.addEventListener("cancel", e => { e.preventDefault(); closeWeek(); });
+dialog.addEventListener("click", e => {
+  const r = dialog.getBoundingClientRect();
+  const inside = r.top <= e.clientY && e.clientY <= r.bottom && r.left <= e.clientX && e.clientX <= r.right;
+  if (!inside) closeWeek();
 });
-
-async function copyRichToClipboard({ text, html }) {
-  const plain = String(text || "");
-  const rich = String(html || "");
-  if (navigator.clipboard && typeof navigator.clipboard.write === "function" && window.ClipboardItem && rich) {
-    const item = new ClipboardItem({
-      "text/plain": new Blob([plain], { type: "text/plain" }),
-      "text/html": new Blob([rich], { type: "text/html" })
-    });
-    await navigator.clipboard.write([item]);
-    return;
-  }
-  if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
-    await navigator.clipboard.writeText(plain);
-    return;
-  }
-  const textarea = document.createElement("textarea");
-  textarea.value = plain;
-  textarea.setAttribute("readonly", "");
-  textarea.style.cssText = "position:fixed;top:0;left:0;width:1px;height:1px;opacity:0";
-  document.body.appendChild(textarea);
-  textarea.focus(); textarea.select();
-  const ok = document.execCommand("copy");
-  document.body.removeChild(textarea);
-  if (!ok) throw new Error("Clipboard copy failed");
-}
 
 copyBtn.addEventListener("click", async () => {
+  if (!activeWeekNum) return;
+  const wInfo = WEEKS_12.find(w => w.week === activeWeekNum);
+  const lines = [];
+  lines.push(`Subject: Week ${activeWeekNum} Tasks — 12-Week Sample Projects (${wInfo.dateRange})`);
+  lines.push("");
+  lines.push(`Week ${activeWeekNum}: ${wInfo.dateRange}`);
+  lines.push("Cohort: IPEOPLE CAREER LLC & BRIDGEPOINT CAREERS LLC");
+  lines.push("");
+  lines.push("Individual Tasks (by team member):");
+  CANDIDATES.forEach(c => {
+    lines.push("");
+    lines.push(`${c.name} — ${c.jobTitle} (${c.company})`);
+    lines.push(`Project: ${c.project}`);
+    lines.push(`Task: ${c.weekTasks[activeWeekNum - 1] || "No task defined."}`);
+  });
+  lines.push("");
+  lines.push("Regards,");
+  lines.push("Project Lead");
+  lines.push("mohan.gupta@ipeople-career.com");
+
   try {
-    if (currentModalMode === 'newbp' && activeNewBPWeek !== null) {
-      await copyRichToClipboard({ text: buildNewBPEmailText(activeNewBPWeek), html: buildNewBPEmailHtml(activeNewBPWeek) });
-    } else if (currentModalMode === 'existing' && activeWeek) {
-      await copyRichToClipboard({ text: buildEmailText(activeWeek), html: buildEmailHtml(activeWeek) });
-    }
-    modalStatus.textContent = "Copied to clipboard.";
+    await navigator.clipboard.writeText(lines.join("\n"));
+    modalStatus.textContent = "Copied all assignments to clipboard!";
   } catch (err) {
-    modalStatus.textContent = "Copy failed. Try selecting the text and copying manually.";
+    modalStatus.textContent = "Copy failed. Please copy manually.";
   }
 });
 
-// ── TOPBAR BUTTONS ────────────────────────────────────────────────────────────
+// ── TAB SWITCHING ────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    const isActive = btn.dataset.tab === tab;
+    btn.classList.toggle('btn-primary', isActive);
+    btn.classList.toggle('btn-outline', !isActive);
+  });
+
+  const mainContent = document.getElementById('main-content');
+  const septnewContent = document.getElementById('septnew-content');
+
+  if (tab === 'septnew') {
+    mainContent.hidden = true;
+    septnewContent.hidden = false;
+    renderSeptNewRoles();
+  } else {
+    mainContent.hidden = false;
+    septnewContent.hidden = true;
+    if (tab === 'ipeople') {
+      currentCompanyFilter = 'IPEOPLE CAREER LLC';
+    } else if (tab === 'bridgepoint') {
+      currentCompanyFilter = 'BRIDGEPOINT CAREERS LLC';
+    } else {
+      currentCompanyFilter = 'all';
+    }
+    document.querySelectorAll('.filter-btn').forEach(fb => {
+      fb.classList.toggle('active', fb.dataset.filter === currentCompanyFilter);
+    });
+    renderProjects();
+    renderWeeks();
+  }
+}
+
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => switchTab(btn.dataset.tab));
 });
 
-const vRolesBtn = document.getElementById('viewRolesBtn');
-if (vRolesBtn) {
-  vRolesBtn.addEventListener('click', () => {
-    const el = document.getElementById('roles-septnew') || document.getElementById('roles');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentCompanyFilter = btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProjects();
   });
-}
+});
 
-const hWeeksBtn = document.getElementById('heroWeeksBtn');
-if (hWeeksBtn) {
-  hWeeksBtn.addEventListener('click', () => {
-    const id = activeTab === 'newbp' ? 'weeks-newbp' : 'weeks';
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  });
-}
+document.getElementById('searchInput').addEventListener('input', e => {
+  currentSearchQuery = e.target.value;
+  renderProjects();
+});
 
-const hRolesBtn = document.getElementById('heroRolesBtn');
-if (hRolesBtn) {
-  hRolesBtn.addEventListener('click', () => {
-    const el = document.getElementById('roles-septnew') || document.getElementById('roles');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  });
-}
-
-// ── INIT ──────────────────────────────────────────────────────────────────────
+// ── INITIALIZE ────────────────────────────────────────────────────────────────
+renderProjects();
+renderWeeks();
 renderSeptNewRoles();
-switchTab('septnew');
 </script>
 </body>
 </html>

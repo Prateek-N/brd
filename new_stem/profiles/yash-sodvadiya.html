@@ -22,14 +22,36 @@
 <p class="title">Cloud engineer</p>
 <div class="badge"><span class="dot"></span>BRIDGEPOINT CAREERS LLC</div>
 </section>
-<section class="content">
-<h2>Roles & Responsibilities</h2>
-<ul class="list"><li>Design, implement, and manage scalable cloud infrastructure solutions.•Deploy, configure, and maintain cloud services (compute, storage, networking).•Monitor system performance, availability, and security of cloud environments.•Automate infrastructure provisioning using Infrastructure as Code (IaC) tools.•Ensure data backup, disaster recovery, and business continuity strategies.•Optimize cloud resources to improve performance and reduce costs.•Implement and maintain security best practices and compliance standards.•Troubleshoot and resolve cloud-related issues and incidents.•Collaborate with development and operations teams to support application deployment.•Manage and monitor cloud access controls, IAM policies, and user permissions.•Integrate and maintain CI/CD pipelines for seamless application deployment.</li></ul>
+
+<section class="content" style="margin-bottom:24px;">
+<div style="background:linear-gradient(135deg,rgba(14,165,233,0.08),rgba(99,102,241,0.08));border:1px solid rgba(14,165,233,0.25);border-radius:12px;padding:20px;margin-bottom:20px;">
+  <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#0284c7;font-weight:800;margin-bottom:6px;">Sample 3-Month Project · Starting Sep 14, 2026</div>
+  <h2 style="font-size:20px;font-weight:800;color:#0f172a;margin:0 0 8px 0;">Automated Cloud Infrastructure Provisioning &amp; Security Baseline (Terraform + AWS/LocalStack)</h2>
+  <p style="font-size:14px;color:#334155;line-height:1.6;margin:0 0 12px 0;">Design and deploy scalable, secure cloud infrastructure using Infrastructure as Code (IaC), automated backup routines, monitoring alarms, and cost optimization policies.</p>
+  <div style="font-size:13px;color:#64748b;"><strong style="color:#0f172a;">Tech Stack &amp; Tools:</strong> Terraform, AWS / LocalStack, Docker, Bash / Python, GitHub Actions</div>
+</div>
+
+<h2>Roles &amp; Responsibilities</h2>
+<ul class="list">
+<li>Design, implement, and manage scalable cloud infrastructure solutions.</li>
+<li>Deploy, configure, and maintain cloud services (compute, storage, networking).</li>
+<li>Monitor system performance, availability, and security of cloud environments.</li>
+<li>Automate infrastructure provisioning using Infrastructure as Code (IaC) tools.</li>
+<li>Ensure data backup, disaster recovery, and business continuity strategies.</li>
+<li>Optimize cloud resources to improve performance and reduce costs.</li>
+<li>Implement and maintain security best practices and compliance standards.</li>
+<li>Troubleshoot and resolve cloud</li>
+<li>related issues and incidents.</li>
+<li>Collaborate with development and operations teams to support application deployment.</li>
+<li>Manage and monitor cloud access controls, IAM policies, and user permissions.</li>
+<li>Integrate and maintain CI/CD pipelines for seamless application deployment.</li>
+</ul>
 </section>
+
 <section class="section" id="weeks">
   <div class="section-head">
     <div>
-      <p class="section-label">Plan</p>
+      <p class="section-label">Plan · Sep 14–Dec 6, 2026</p>
       <h2 class="section-title">Week 1–Week 12 Tasks</h2>
     </div>
     <div class="section-meta">Click a week to view and copy your assignment</div>
@@ -55,448 +77,214 @@
 </dialog>
 
 <footer class="footer">Weekly Plan</footer>
+</div>
 
 <script>
-const PLAN = {"name": "Yash Sodvadiya", "jobTitle": "Cloud Engineer", "projectName": "Multi-Cloud Cost Optimization Tracker", "projectDescription": "Design a cloud cost optimization tracker for AWS Free Tier resources using Terraform, CloudWatch, and a Python script to generate cost reports and alerts with IAM best practices.", "tools": "AWS Free Tier, Terraform (free), Python (boto3), GitHub Actions (free), CloudWatch", "weeks": [{"week": 1, "raw": "W1 (Jun 1–7): Set up AWS Free Tier, learn Terraform basics, plan resource inventory"}, {"week": 2, "raw": "W2 (Jun 8–14): Write Terraform to provision EC2, S3, and Lambda resources"}, {"week": 3, "raw": "W3 (Jun 15–21): Configure CloudWatch billing alarms for cost thresholds"}, {"week": 4, "raw": "W4 (Jun 22–28): Write Python boto3 script to fetch and parse Cost Explorer data"}, {"week": 5, "raw": "W5 (Jun 29–Jul 5): Build cost report — service-wise and region-wise breakdown"}, {"week": 6, "raw": "W6 (Jul 6–12): Implement IAM least-privilege policies using Terraform"}, {"week": 7, "raw": "W7 (Jul 13–19): Set up automated monthly cost report via Lambda + SNS email"}, {"week": 8, "raw": "W8 (Jul 20–26): Implement auto-shutdown for unused EC2 instances (Lambda)"}, {"week": 9, "raw": "W9 (Jul 27–Aug 2): Configure S3 lifecycle rules to move old objects to Glacier"}, {"week": 10, "raw": "W10 (Aug 3–9): Build GitHub Actions pipeline to run Terraform plan on PR"}, {"week": 11, "raw": "W11 (Aug 10–16): Write cost optimization guide and best practices document"}, {"week": 12, "raw": "W12 (Aug 17–23): Final review, GitHub repo with Terraform code and README"}]};
+const PLAN = {
+  "name": "Yash Sodvadiya",
+  "jobTitle": "Cloud engineer",
+  "projectName": "Automated Cloud Infrastructure Provisioning & Security Baseline (Terraform + AWS/LocalStack)",
+  "projectDescription": "Design and deploy scalable, secure cloud infrastructure using Infrastructure as Code (IaC), automated backup routines, monitoring alarms, and cost optimization policies.",
+  "tools": "Terraform, AWS / LocalStack, Docker, Bash / Python, GitHub Actions",
+  "weeks": [
+    {
+      "week": 1,
+      "raw": "W1 (Sep 14\u2013Sep 20, 2026): Define cloud architecture requirements: multi-tier VPC, public/private subnets, and security groups."
+    },
+    {
+      "week": 2,
+      "raw": "W2 (Sep 21\u2013Sep 27, 2026): Set up LocalStack / AWS sandbox environment and configure Terraform state backend."
+    },
+    {
+      "week": 3,
+      "raw": "W3 (Sep 28\u2013Oct 4, 2026): Write modular Terraform code for VPC, Internet Gateway, route tables, and NAT Gateway configurations."
+    },
+    {
+      "week": 4,
+      "raw": "W4 (Oct 5\u2013Oct 11, 2026): Deploy auto-scaling compute instances (EC2/ECS) behind an Application Load Balancer (ALB)."
+    },
+    {
+      "week": 5,
+      "raw": "W5 (Oct 12\u2013Oct 18, 2026): Configure secure IAM policies, least-privilege roles, and enforced multi-factor authentication policies."
+    },
+    {
+      "week": 6,
+      "raw": "W6 (Oct 19\u2013Oct 25, 2026): Set up automated S3 storage buckets with lifecycle policies, server-side encryption, and versioning."
+    },
+    {
+      "week": 7,
+      "raw": "W7 (Oct 26\u2013Nov 1, 2026): Implement infrastructure monitoring using CloudWatch metrics, custom dashboards, and email alert alarms."
+    },
+    {
+      "week": 8,
+      "raw": "W8 (Nov 2\u2013Nov 8, 2026): Develop automated backup and disaster recovery scripts for databases and snapshot retention."
+    },
+    {
+      "week": 9,
+      "raw": "W9 (Nov 9\u2013Nov 15, 2026): Perform cloud security audit using tools like tfsec / Checkov and remediate misconfigurations."
+    },
+    {
+      "week": 10,
+      "raw": "W10 (Nov 16\u2013Nov 22, 2026): Implement cost optimization policies (resource tagging, auto-stop schedules for dev environments)."
+    },
+    {
+      "week": 11,
+      "raw": "W11 (Nov 23\u2013Nov 29, 2026): Write comprehensive cloud infrastructure runbook, architecture diagrams, and disaster recovery plan."
+    },
+    {
+      "week": 12,
+      "raw": "W12 (Nov 30\u2013Dec 6, 2026): Publish Terraform modules, CI validation workflows, and documentation to GitHub."
+    }
+  ]
+};
 
 function escapeHtml(value) {
-  return String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 }
 
 function splitSteps(taskText) {
   const txt = String(taskText || "").trim();
   const parts = txt.split(":");
-  const after = parts.length > 1 ? parts.slice(1).join(":").trim() : txt;
-  const steps = after.split(/\s*,\s*/).map(s => s.trim()).filter(Boolean);
-  return steps.length ? steps : [after].filter(Boolean);
+  const body = parts.length > 1 ? parts.slice(1).join(":").trim() : txt;
+  const rawSteps = body.split(/(?:;\s*|\.\s+)/).map(s => s.trim()).filter(Boolean);
+  if (!rawSteps.length) return [body];
+  return rawSteps.map(s => s.replace(/^[•\-–—\s]+/, "").trim()).filter(Boolean);
 }
 
-function buildAssignmentText(weekItem) {
-  const parts = parseWeekRaw(weekItem.raw, weekItem.week);
-  const steps = splitSteps(weekItem.raw);
-  const firstLine = steps[0] || parts.summary || '';
-  const deliverables = [
-    'A short weekly update (5–10 lines): what you completed, what you discovered, what you will do next',
-    'Work artifacts: links/files (repo, notebook, screenshots) and any data sources used',
-    'Risks/blockers: what is blocked and what support you need'
-  ];
-  const success = [
-    'Work is reproducible (clear steps so anyone can re-run)',
-    'Outputs align to the week objective and project goals',
-    'No critical issues left unexplained'
-  ];
-
-  const companyEl = document.querySelector('.badge');
-  const company = companyEl ? companyEl.textContent.trim() : 'iPeople Career';
-
-  const startDate = (() => {
-    const m = String(parts.prefix || '').match(/\(([^)]+)\)/);
-    if (!m) return '';
-    const range = m[1];
-    const first = range.split(/[–-]/)[0].trim();
-    const mm = first.match(/^([A-Za-z]{3,})\s+(\d{1,2})/);
-    if (!mm) return first ? (first + ', 2026') : '';
-    const monKey = mm[1].slice(0, 3).toLowerCase();
-    const monthMap = { jan: 'January', feb: 'February', mar: 'March', apr: 'April', may: 'May', jun: 'June', jul: 'July', aug: 'August', sep: 'September', oct: 'October', nov: 'November', dec: 'December' };
-    const monthName = monthMap[monKey] || mm[1];
-    return monthName + ' ' + mm[2] + ', 2026';
-  })();
-
-  const lines = [];
-  if (weekItem.week === 1) {
-    lines.push('Subject: Welcome — Kickoff Details & Monday Task Cadence — ' + PLAN.projectName);
-    lines.push('To: <candidate email>');
-    lines.push('');
-    lines.push('Hi ' + PLAN.name + ',');
-    lines.push('');
-    lines.push('Welcome aboard! We’re excited to have you join ' + company + ' as our ' + PLAN.jobTitle + ' on ' + PLAN.projectName + '.');
-    lines.push('');
-    if (startDate) {
-      lines.push('You’re starting on ' + startDate + ', marking the beginning of your first week focused on onboarding and setting up the foundational environment for the project.');
-      lines.push('');
-    }
-    lines.push('You will receive your weekly task list every Monday (IST). Please share your Week 1 deliverables by end of week.');
-    lines.push('');
-    lines.push('Week 1 kickoff priorities:');
-    for (const s of steps) lines.push('- ' + s);
-    lines.push('');
-    lines.push('Project context:');
-    lines.push('- Project: ' + PLAN.projectName);
-    lines.push('- Description: ' + PLAN.projectDescription);
-    lines.push('');
-    lines.push('Tools & resources (install / access):');
-    for (const t of String(PLAN.tools || '').split(/\s*,\s*/).filter(Boolean)) lines.push('- ' + t);
-    lines.push('');
-    lines.push('Week 1 deliverables:');
-    lines.push('- Confirm tooling setup is complete (short note + screenshot if applicable)');
-    lines.push('- Share your project workspace/repo link with initial structure and Week 1 notes');
-    lines.push('- Send a brief Week 1 update (5–8 lines): what you completed, what you learned, what’s next');
-    lines.push('');
-    lines.push('If anything blocks you, reply to this email with the blocker details so we can unblock you quickly.');
-    lines.push('');
-    lines.push('Signature:');
-    lines.push('- Rajeev Gupta');
-    lines.push('- Project Lead');
-    lines.push('- mohan.gupta@ipeople-career.com');
-    return lines.join('\n');
-  }
-
-  lines.push('Subject: [Onboarding] Week ' + weekItem.week + ' — ' + PLAN.projectName + ' — ' + PLAN.name);
-  lines.push('To: <candidate email>');
-  lines.push('');
-  lines.push('Hi ' + PLAN.name + ',');
-  lines.push('');
-  lines.push('Please complete the following onboarding assignment for this week and share your deliverables by end of week.');
-  lines.push('');
-  lines.push('Week plan:');
-  lines.push('- ' + parts.prefix + (parts.summary ? (': ' + parts.summary) : ''));
-  lines.push('');
-  lines.push('Project details:');
-  lines.push('- Project: ' + PLAN.projectName);
-  lines.push('- Description: ' + PLAN.projectDescription);
-  lines.push('');
-  lines.push('Your task (what to do):');
-  lines.push('- ' + firstLine);
-  if (steps.length > 1) {
-    lines.push('');
-    lines.push('Suggested steps:');
-    for (const s of steps) lines.push('- ' + s);
-  }
-  lines.push('');
-  lines.push('Tools & resources:');
-  for (const t of String(PLAN.tools || '').split(/\s*,\s*/).filter(Boolean)) lines.push('- ' + t);
-  lines.push('');
-  lines.push('Deliverables:');
-  for (const d of deliverables) lines.push('- ' + d);
-  lines.push('');
-  lines.push('Success criteria:');
-  for (const s of success) lines.push('- ' + s);
-  lines.push('');
-  lines.push('Signature:');
-  lines.push('- Rajeev Gupta');
-  lines.push('- Project Lead');
-  lines.push('- mohan.gupta@ipeople-career.com');
-
-  return lines.join('\n');
+function getWeekHeading(raw) {
+  const m = String(raw || "").match(/^W\d+\s*\(([^)]+)\)/);
+  return m ? m[1] : "";
 }
 
-function buildModalHtml(weekItem) {
-  const steps = splitSteps(weekItem.raw);
-  const stepsHtml = steps.map(s => "<li>" + escapeHtml(s) + "</li>").join("");
-  const tools = String(PLAN.tools || "").split(/\s*,\s*/).filter(Boolean);
-  const toolsHtml = tools.map(t => "<li>" + escapeHtml(t) + "</li>").join("");
-
-  return "\n    <div class=\"modal-split\">\n      <div>\n        <h3>Assignment</h3>\n        <p><strong>Candidate:</strong> " + escapeHtml(PLAN.name) + " — " + escapeHtml(PLAN.jobTitle) + "</p>\n        <p><strong>Project:</strong> " + escapeHtml(PLAN.projectName) + "</p>\n        <p class=\"muted\"><strong>Week plan (from CSV):</strong> " + escapeHtml(weekItem.raw) + "</p>\n        <h3>Steps</h3>\n        <ul class=\"list\">" + stepsHtml + "</ul>\n      </div>\n      <div>\n        <h3>Context</h3>\n        <p class=\"muted\">" + escapeHtml(PLAN.projectDescription) + "</p>\n        <h3>Tools & Resources</h3>\n        <ul class=\"list\">" + toolsHtml + "</ul>\n        <h3>Deliverables</h3>\n        <ul class=\"list\">\n          <li>Weekly status update (what you did, what you found, what’s next)</li>\n          <li>Work artifacts (files, links, screenshots)</li>\n          <li>Risks/blockers + requested support</li>\n        </ul>\n        <h3>Success Criteria</h3>\n        <ul class=\"list\">\n          <li>Work is reproducible and clearly documented</li>\n          <li>Outputs align to the week’s objective and project goals</li>\n          <li>No major issues are left unaddressed or unexplained</li>\n        </ul>\n      </div>\n    </div>\n  ";
+function cleanTaskBody(raw) {
+  const parts = String(raw || "").split(":");
+  return parts.length > 1 ? parts.slice(1).join(":").trim() : raw;
 }
 
-const weekGrid = document.getElementById('weekGrid');
-const dialog = document.getElementById('weekDialog');
-const weekTitle = document.getElementById('weekTitle');
-const weekMeta = document.getElementById('weekMeta');
-const modalBody = document.getElementById('modalBody');
-const copyBtn = document.getElementById('copyBtn');
-const closeBtn = document.getElementById('closeBtn');
-const statusEl = document.getElementById('modalStatus');
+const grid = document.getElementById("weekGrid");
+const dialog = document.getElementById("weekDialog");
+const modalBody = document.getElementById("modalBody");
+const weekTitle = document.getElementById("weekTitle");
+const weekMeta = document.getElementById("weekMeta");
+const modalStatus = document.getElementById("modalStatus");
+const copyBtn = document.getElementById("copyBtn");
+const closeBtn = document.getElementById("closeBtn");
 
 let activeWeek = null;
+let closeTimer = null;
 
-function setStatus(msg) {
-  statusEl.textContent = msg || '';
+grid.innerHTML = (PLAN.weeks || []).map(w => {
+  const dateRange = getWeekHeading(w.raw);
+  const taskBody = cleanTaskBody(w.raw);
+  return `
+    <button class="week-btn" type="button" data-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
+      <div class="week-num">Week ${w.week}</div>
+      <div class="week-sub">${escapeHtml(dateRange)}</div>
+      <div class="week-title">${escapeHtml(taskBody)}</div>
+      <div class="week-cta">Open Tasks →</div>
+    </button>
+  `;
+}).join("");
+
+function buildModal(w) {
+  const dateRange = getWeekHeading(w.raw);
+  const taskBody = cleanTaskBody(w.raw);
+  const steps = splitSteps(w.raw);
+  return `
+    <section class="modal-section">
+      <p class="section-label">Scope &amp; Tooling</p>
+      <h3 class="modal-h3">${escapeHtml(PLAN.projectName || "Project Plan")}</h3>
+      <p class="modal-p">${escapeHtml(PLAN.projectDescription || "")}</p>
+      <div class="modal-split">
+        <div>
+          <p class="modal-k">Assigned Member</p>
+          <p class="modal-p">${escapeHtml(PLAN.name)} — ${escapeHtml(PLAN.jobTitle)}</p>
+        </div>
+        <div>
+          <p class="modal-k">Tech Stack &amp; Tools</p>
+          <p class="modal-p">${escapeHtml(PLAN.tools || "—")}</p>
+        </div>
+      </div>
+    </section>
+    <section class="modal-section">
+      <p class="section-label">Week ${w.week} Focus</p>
+      <h3 class="modal-h3">${escapeHtml(taskBody)}</h3>
+      <ul class="modal-list">
+        ${steps.map(s => `<li>${escapeHtml(s)}</li>`).join("")}
+      </ul>
+    </section>
+  `;
 }
 
-function parseWeekRaw(raw, fallbackWeek) {
-  const txt = String(raw || '').trim();
-  if (!txt) {
-    return { prefix: 'Week ' + fallbackWeek, summary: '' };
+function openModal(weekNum) {
+  const w = (PLAN.weeks || []).find(x => x.week === weekNum);
+  if (!w) return;
+  activeWeek = w;
+  modalStatus.textContent = "";
+  weekMeta.textContent = `${escapeHtml(PLAN.name)} · Week ${w.week} (${getWeekHeading(w.raw)})`;
+  weekTitle.textContent = `Week ${w.week} Task Assignment`;
+  modalBody.innerHTML = buildModal(w);
+  if (typeof dialog.showModal === "function") {
+    if (!dialog.open) dialog.showModal();
+    dialog.classList.remove("is-closing");
+    dialog.classList.add("is-open");
+    closeBtn.focus();
   }
-  const idx = txt.indexOf(':');
-  if (idx === -1) {
-    return { prefix: 'Week ' + fallbackWeek, summary: txt };
-  }
-  return {
-    prefix: txt.slice(0, idx).trim(),
-    summary: txt.slice(idx + 1).trim()
-  };
 }
 
-function renderWeeks() {
-  const frag = document.createDocumentFragment();
-  for (const w of PLAN.weeks) {
-    const wrap = document.createElement('div');
-    wrap.className = 'week-card';
-
-    const openBtn = document.createElement('button');
-    openBtn.type = 'button';
-    openBtn.className = 'week-btn week-open';
-    openBtn.setAttribute('aria-label', 'Open Week ' + w.week + ' tasks');
-    openBtn.addEventListener('click', () => openWeek(w.week));
-
-    const meta = parseWeekRaw(w.raw, w.week);
-    const summary = meta.summary || 'Open details';
-
-    openBtn.innerHTML =
-      '<div class="week-num">Week ' + w.week + '</div>' +
-      '<div class="week-tag">' + escapeHtml(meta.prefix) + '</div>' +
-      '<div class="week-sub">' + escapeHtml(summary) + '</div>' +
-      '<div class="week-project">' + escapeHtml(PLAN.projectName) + '</div>';
-
-    const miniCopy = document.createElement('button');
-    miniCopy.type = 'button';
-    miniCopy.className = 'week-mini-copy';
-    miniCopy.setAttribute('aria-label', 'Copy Week ' + w.week + ' email template to clipboard');
-    miniCopy.textContent = 'Copy';
-    miniCopy.addEventListener('click', async (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      try {
-        await copyTextToClipboard(buildAssignmentText(w));
-        setStatus('Week ' + w.week + ' copied to clipboard.');
-      } catch (err) {
-        setStatus('Could not copy automatically. Please open the week and copy manually.');
-      }
-    });
-
-    wrap.appendChild(openBtn);
-    wrap.appendChild(miniCopy);
-    frag.appendChild(wrap);
-  }
-  weekGrid.textContent = '';
-  weekGrid.appendChild(frag);
-}
-
-function openWeek(weekNumber) {
-  const item = PLAN.weeks.find(x => x.week === weekNumber);
-  if (!item) return;
-  activeWeek = weekNumber;
-
-  weekMeta.textContent = item.raw && item.raw.indexOf(':') !== -1 ? item.raw.split(':')[0] : ('Week ' + item.week);
-  weekTitle.textContent = 'Week ' + item.week + ' — ' + PLAN.projectName;
-  modalBody.innerHTML = buildModalHtml(item);
-  setStatus('');
-
-  dialog.classList.remove('is-closing');
-  dialog.showModal();
-  requestAnimationFrame(() => dialog.classList.add('is-open'));
-  copyBtn.focus();
-}
-
-function closeWeek() {
+function closeModal() {
   if (!dialog.open) return;
-  dialog.classList.remove('is-open');
-  dialog.classList.add('is-closing');
-  window.setTimeout(() => {
+  dialog.classList.add("is-closing");
+  dialog.classList.remove("is-open");
+  if (closeTimer) window.clearTimeout(closeTimer);
+  closeTimer = window.setTimeout(() => {
     dialog.close();
-    dialog.classList.remove('is-closing');
-    activeWeek = null;
+    dialog.classList.remove("is-closing");
   }, 160);
 }
 
-async function copyTextToClipboard(text) {
-  const plain = String(text || "");
-  const rich = buildEmailHtmlFromText(plain);
+grid.addEventListener("click", e => {
+  const btn = e.target.closest("[data-week]");
+  if (!btn) return;
+  openModal(Number(btn.getAttribute("data-week")));
+});
 
-  if (navigator.clipboard && typeof navigator.clipboard.write === "function" && window.ClipboardItem) {
-    const item = new ClipboardItem({
-      "text/plain": new Blob([plain], { type: "text/plain" }),
-      "text/html": new Blob([rich], { type: "text/html" })
-    });
-    await navigator.clipboard.write([item]);
-    return;
-  }
+closeBtn.addEventListener("click", closeModal);
+dialog.addEventListener("cancel", e => { e.preventDefault(); closeModal(); });
+dialog.addEventListener("click", e => {
+  const r = dialog.getBoundingClientRect();
+  const inside = r.top <= e.clientY && e.clientY <= r.bottom && r.left <= e.clientX && e.clientX <= r.right;
+  if (!inside) closeModal();
+});
 
-  if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
-    await navigator.clipboard.writeText(plain);
-    return;
-  }
+copyBtn.addEventListener("click", async () => {
+  if (!activeWeek) return;
+  const w = activeWeek;
+  const dateRange = getWeekHeading(w.raw);
+  const taskBody = cleanTaskBody(w.raw);
+  const text = [
+    `Subject: Week ${w.week} Tasks — ${PLAN.name} (${dateRange})`,
+    "",
+    `Team Member: ${PLAN.name} (${PLAN.jobTitle})`,
+    `Project: ${PLAN.projectName}`,
+    `Week ${w.week}: ${dateRange}`,
+    `Tools: ${PLAN.tools}`,
+    "",
+    "Assignment Details:",
+    `- ${taskBody}`,
+    "",
+    "Regards,",
+    "Project Lead",
+    "mohan.gupta@ipeople-career.com"
+  ].join("\n");
 
-  const container = document.createElement("div");
-  container.setAttribute("contenteditable", "true");
-  container.style.position = "fixed";
-  container.style.left = "-9999px";
-  container.style.top = "0";
-  container.style.opacity = "0";
-  container.innerHTML = rich;
-  document.body.appendChild(container);
-
-  const range = document.createRange();
-  range.selectNodeContents(container);
-  const sel = window.getSelection();
-  sel.removeAllRanges();
-  sel.addRange(range);
-  const ok = document.execCommand("copy");
-  sel.removeAllRanges();
-  document.body.removeChild(container);
-  if (!ok) throw new Error("Copy failed");
-}
-
-function buildEmailHtmlFromText(text) {
-  const esc = (v) => String(v ?? "").replace(/[&<>\"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c]));
-  const lines = String(text || '').split(String.fromCharCode(10));
-
-  let subject = "";
-  let toLine = "";
-
-  for (const line of lines) {
-    if (line.startsWith("Subject:")) subject = line.slice("Subject:".length).trim();
-    if (line.startsWith("To:")) toLine = line.trim();
-  }
-
-  const blocks = [];
-  let current = { title: "", paras: [], items: [] };
-
-  const flush = () => {
-    const has = (current.title || "").trim() || current.paras.length || current.items.length;
-    if (has) blocks.push(current);
-    current = { title: "", paras: [], items: [] };
-  };
-
-  for (const rawLine of lines) {
-    const trimmed = String(rawLine || "").trim();
-    if (!trimmed) {
-      current.paras.push("");
-      continue;
-    }
-
-    if (trimmed.startsWith("Subject:")) continue;
-    if (trimmed.startsWith("To:")) continue;
-
-    const isHeading = trimmed.endsWith(":") && !trimmed.startsWith("http") && !trimmed.startsWith("https");
-    if (isHeading) {
-      flush();
-      current.title = trimmed.slice(0, -1);
-      continue;
-    }
-
-    if (trimmed.startsWith("- ")) {
-      current.items.push(trimmed.slice(2));
-      continue;
-    }
-
-    current.paras.push(trimmed);
-  }
-
-  flush();
-
-  const title = subject || "Onboarding Assignment";
-
-  const renderParas = (paras) => {
-    const parts = [];
-    let buffer = [];
-    for (const p of paras) {
-      if (!p) {
-        if (buffer.length) {
-          parts.push('<div style="margin:0 0 10px;font-size:14px;color:#334155;">' + esc(buffer.join(" ")) + "</div>");
-          buffer = [];
-        }
-        parts.push('<div style="height:6px;"></div>');
-      } else {
-        buffer.push(p);
-      }
-    }
-    if (buffer.length) parts.push('<div style="margin:0 0 10px;font-size:14px;color:#334155;">' + esc(buffer.join(" ")) + "</div>");
-    return parts.join("");
-  };
-
-  const bulletTable = (items) => {
-    if (!items || !items.length) return "";
-    const rows = items.map(item => (
-      "<tr>" +
-        '<td width="18" valign="top" style="padding:2px 0;color:#05ba46;font-weight:800;">•</td>' +
-        '<td valign="top" style="padding:2px 0;color:#334155;font-size:14px;">' + esc(item) + "</td>" +
-      "</tr>"
-    )).join("");
-    return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;">' + rows + "</table>";
-  };
-
-  const section = (label, innerHtml) => (
-    '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border:1px solid #d1d5db;margin-top:12px;">' +
-      "<tr>" +
-        '<td width="6" style="background:#046bd2;font-size:0;line-height:0;">&nbsp;</td>' +
-        '<td style="padding:12px 14px;">' +
-          '<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#046bd2;font-weight:800;">' + esc(label) + "</div>" +
-          innerHtml +
-        "</td>" +
-      "</tr>" +
-    "</table>"
-  );
-
-  const bodyParts = [];
-  if (toLine) {
-    bodyParts.push('<div style="font-size:12px;color:#64748b;">' + esc(toLine) + "</div>");
-    bodyParts.push('<div style="height:10px;"></div>');
-  }
-
-  const signatureBlock = (items) => {
-    const name = items && items.length ? (items[0] || "") : "";
-    const title = items && items.length > 1 ? (items[1] || "") : "";
-    const email = (items || []).find(x => String(x || "").includes("@")) || "";
-    const emailHtml = email
-      ? '<a href="mailto:' + esc(email) + '" style="color:#046bd2;text-decoration:underline;font-size:13px;">' + esc(email) + "</a>"
-      : "";
-    return (
-      '<div style="margin-top:18px;">' +
-        '<div style="font-size:13px;color:#64748b;margin:0 0 8px;">Regards,</div>' +
-        '<div style="font-size:14px;font-weight:800;color:#111111;margin:0;">' + esc(name) + "</div>" +
-        (title ? ('<div style="font-size:13px;color:#64748b;margin-top:2px;">' + esc(title) + "</div>") : "") +
-        (emailHtml ? ('<div style="margin-top:6px;">' + emailHtml + "</div>") : "") +
-      "</div>"
-    );
-  };
-
-  for (const b of blocks) {
-    const inner = renderParas(b.paras) + bulletTable(b.items);
-    if (b.title && String(b.title).toLowerCase() === "signature") bodyParts.push(signatureBlock(b.items));
-    else if (b.title) bodyParts.push(section(b.title, inner || '<div style="height:6px;"></div>'));
-    else bodyParts.push(inner);
-  }
-
-  return (
-    '<div style="font-family:Segoe UI,Arial,sans-serif;line-height:1.45;color:#111111;">' +
-      '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f0f5fa;padding:18px;">' +
-        '<tr><td align="left">' +
-          '<table role="presentation" align="left" cellpadding="0" cellspacing="0" border="0" width="640" style="max-width:640px;width:100%;margin:0;background:#ffffff;border:1px solid #d1d5db;">' +
-            '<tr><td style="background:#046bd2;color:#ffffff;padding:18px 18px 16px;">' +
-              '<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.92;">Email Template</div>' +
-              '<div style="font-size:22px;font-weight:800;margin-top:6px;">' + esc(title) + "</div>" +
-              '<div style="font-size:13px;opacity:.92;margin-top:8px;">Copy and paste into your email</div>' +
-            "</td></tr>" +
-            '<tr><td style="padding:18px;">' + bodyParts.join("") + "</td></tr>" +
-            '' +
-          "</table>" +
-        "</td></tr>" +
-      "</table>" +
-    "</div>"
-  );
-}
-
-copyBtn.addEventListener('click', async () => {
-  if (activeWeek == null) return;
-  const item = PLAN.weeks.find(x => x.week === activeWeek);
-  if (!item) return;
   try {
-    await copyTextToClipboard(buildAssignmentText(item));
-    setStatus('Copied to clipboard.');
-  } catch (e) {
-    setStatus('Could not copy automatically. Please select and copy manually.');
+    await navigator.clipboard.writeText(text);
+    modalStatus.textContent = "Copied to clipboard!";
+  } catch (err) {
+    modalStatus.textContent = "Copy failed. Please copy manually.";
   }
 });
-
-closeBtn.addEventListener('click', closeWeek);
-
-dialog.addEventListener('click', (e) => {
-  const rect = dialog.getBoundingClientRect();
-  const clickedOutside = e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom;
-  if (clickedOutside) closeWeek();
-});
-
-dialog.addEventListener('cancel', (e) => {
-  e.preventDefault();
-  closeWeek();
-});
-
-renderWeeks();
 </script>
-
-</div>
 </body>
 </html>
