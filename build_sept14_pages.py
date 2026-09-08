@@ -155,13 +155,15 @@ def generate_profile_html(c):
     plan_json = {
         "name": name,
         "jobTitle": title,
+        "company": company,
         "projectName": project,
         "projectDescription": project_desc,
         "tools": tools,
         "weeks": [
             {
                 "week": w["week"],
-                "raw": f"W{w['week']} ({w['dateRange']}): {week_tasks[w['week']-1]}"
+                "dateRange": w["dateRange"],
+                "task": week_tasks[w["week"]-1]
             }
             for w in WEEKS_12
         ]
@@ -174,6 +176,62 @@ def generate_profile_html(c):
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{escape_html(name)}</title>
 <link rel="stylesheet" href="../styles.css" />
+<style>
+.week-card-box {{
+  grid-column: span 3;
+  background: var(--canvas-elevated);
+  border: 1px solid var(--hairline);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  transition: transform 0.15s, border-color 0.15s;
+}}
+.week-card-box:hover {{
+  border-color: rgba(56,189,248,0.4);
+}}
+@media (max-width:1100px){{.week-card-box{{grid-column:span 4}}}}
+@media (max-width:800px){{.week-card-box{{grid-column:span 6}}}}
+@media (max-width:520px){{.week-card-box{{grid-column:span 12}}}}
+.btn-copy-direct {{
+  background: #0284c7;
+  color: #ffffff;
+  border: 1px solid #38bdf8;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 12px;
+  transition: all 0.2s;
+}}
+.btn-copy-direct:hover {{
+  background: #0369a1;
+}}
+.btn-view-details {{
+  background: transparent;
+  color: #94a3b8;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  padding: 6px 0 0 0;
+  text-align: center;
+  width: 100%;
+}}
+.btn-view-details:hover {{
+  color: #f8fafc;
+  text-decoration: underline;
+}}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -212,7 +270,7 @@ def generate_profile_html(c):
       <p class="section-label">Plan · Sep 14–Dec 6, 2026</p>
       <h2 class="section-title">Week 1–Week 12 Tasks</h2>
     </div>
-    <div class="section-meta">Click a week to view and copy your assignment</div>
+    <div class="section-meta">Click <strong>'📋 Copy Email'</strong> to copy any week's assignment to clipboard</div>
   </div>
   <div class="week-grid" id="weekGrid" aria-label="Weekly task navigation"></div>
 </section>
@@ -225,7 +283,7 @@ def generate_profile_html(c):
         <h2 class="modal-title" id="weekTitle"></h2>
       </div>
       <div class="modal-actions">
-        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">📋 Copy to Clipboard</button>
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">📋 Copy Email to Clipboard</button>
         <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
       </div>
     </div>
@@ -234,7 +292,7 @@ def generate_profile_html(c):
   </div>
 </dialog>
 
-<footer class="footer">Weekly Plan</footer>
+<footer class="footer">Weekly Plan · {escape_html(name)}</footer>
 </div>
 
 <script>
@@ -242,25 +300,6 @@ const PLAN = {json.dumps(plan_json, indent=2)};
 
 function escapeHtml(value) {{
   return String(value ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
-}}
-
-function splitSteps(taskText) {{
-  const txt = String(taskText || "").trim();
-  const parts = txt.split(":");
-  const body = parts.length > 1 ? parts.slice(1).join(":").trim() : txt;
-  const rawSteps = body.split(/(?:;\\s*|\\.\\s+)/).map(s => s.trim()).filter(Boolean);
-  if (!rawSteps.length) return [body];
-  return rawSteps.map(s => s.replace(/^[•\\-–—\\s]+/, "").trim()).filter(Boolean);
-}}
-
-function getWeekHeading(raw) {{
-  const m = String(raw || "").match(/^W\\d+\\s*\\(([^)]+)\\)/);
-  return m ? m[1] : "";
-}}
-
-function cleanTaskBody(raw) {{
-  const parts = String(raw || "").split(":");
-  return parts.length > 1 ? parts.slice(1).join(":").trim() : raw;
 }}
 
 const grid = document.getElementById("weekGrid");
@@ -275,23 +314,67 @@ const closeBtn = document.getElementById("closeBtn");
 let activeWeek = null;
 let closeTimer = null;
 
-grid.innerHTML = (PLAN.weeks || []).map(w => {{
-  const dateRange = getWeekHeading(w.raw);
-  const taskBody = cleanTaskBody(w.raw);
-  return `
-    <button class="week-btn" type="button" data-week="${{w.week}}" aria-haspopup="dialog" aria-controls="weekDialog">
-      <div class="week-num">Week ${{w.week}}</div>
-      <div class="week-sub">${{escapeHtml(dateRange)}}</div>
-      <div class="week-title">${{escapeHtml(taskBody)}}</div>
-      <div class="week-cta">Open Tasks &amp; Copy Email →</div>
-    </button>
-  `;
-}}).join("");
+grid.innerHTML = (PLAN.weeks || []).map(w => `
+  <div class="week-card-box">
+    <div>
+      <div class="week-num" style="color:#38bdf8;">Week ${{w.week}}</div>
+      <div class="week-sub" style="font-size:12px;color:#94a3b8;margin:4px 0 8px 0;">${{escapeHtml(w.dateRange)}}</div>
+      <div style="font-size:13px;color:#e2e8f0;line-height:1.4;">${{escapeHtml(w.task)}}</div>
+    </div>
+    <div>
+      <button class="btn-copy-direct" type="button" data-week-copy="${{w.week}}">
+        📋 Copy Week ${{w.week}} Email
+      </button>
+      <button class="btn-view-details" type="button" data-week-open="${{w.week}}">
+        View Details &amp; Scope →
+      </button>
+    </div>
+  </div>
+`).join("");
+
+async function copyEmailForWeek(weekNum, btnElement) {{
+  const w = (PLAN.weeks || []).find(x => x.week === weekNum);
+  if (!w) return;
+  const text = [
+    `Subject: Week ${{w.week}} Task Assignment — ${{PLAN.name}} (${{w.dateRange}})`,
+    "",
+    `Team Member: ${{PLAN.name}} (${{PLAN.jobTitle}})`,
+    `Company: ${{PLAN.company}}`,
+    `Project: ${{PLAN.projectName}}`,
+    `Schedule: Week ${{w.week}} (${{w.dateRange}})`,
+    `Tech Stack & Tools: ${{PLAN.tools}}`,
+    "",
+    "Assigned Task:",
+    `- ${{w.task}}`,
+    "",
+    "Project Context:",
+    `${{PLAN.projectDescription}}`,
+    "",
+    "Regards,",
+    "Project Lead",
+    "mohan.gupta@ipeople-career.com"
+  ].join("\\n");
+
+  try {{
+    await navigator.clipboard.writeText(text);
+    if (btnElement) {{
+      const originalText = btnElement.innerHTML;
+      btnElement.innerHTML = "✅ Copied to Clipboard!";
+      btnElement.style.background = "#059669";
+      btnElement.style.borderColor = "#10b981";
+      setTimeout(() => {{
+        btnElement.innerHTML = originalText;
+        btnElement.style.background = "";
+        btnElement.style.borderColor = "";
+      }}, 2000);
+    }}
+    if (modalStatus) modalStatus.textContent = `✅ Copied Week ${{w.week}} email to clipboard!`;
+  }} catch (err) {{
+    if (modalStatus) modalStatus.textContent = "Copy failed. Please copy manually.";
+  }}
+}}
 
 function buildModal(w) {{
-  const dateRange = getWeekHeading(w.raw);
-  const taskBody = cleanTaskBody(w.raw);
-  const steps = splitSteps(w.raw);
   return `
     <section class="modal-section">
       <p class="section-label">Scope &amp; Tooling</p>
@@ -309,11 +392,9 @@ function buildModal(w) {{
       </div>
     </section>
     <section class="modal-section">
-      <p class="section-label">Week ${{w.week}} Focus (${{escapeHtml(dateRange)}})</p>
-      <h3 class="modal-h3">${{escapeHtml(taskBody)}}</h3>
-      <ul class="modal-list">
-        ${{steps.map(s => `<li>${{escapeHtml(s)}}</li>`).join("")}}
-      </ul>
+      <p class="section-label">Week ${{w.week}} Focus (${{escapeHtml(w.dateRange)}})</p>
+      <h3 class="modal-h3">${{escapeHtml(w.task)}}</h3>
+      <p class="modal-p" style="margin-top:8px;">Click the top <strong>'📋 Copy Email to Clipboard'</strong> button to copy this week's email template.</p>
     </section>
   `;
 }}
@@ -323,7 +404,7 @@ function openModal(weekNum) {{
   if (!w) return;
   activeWeek = w;
   modalStatus.textContent = "";
-  weekMeta.textContent = `${{escapeHtml(PLAN.name)}} · Week ${{w.week}} (${{getWeekHeading(w.raw)}})`;
+  weekMeta.textContent = `${{escapeHtml(PLAN.name)}} · Week ${{w.week}} (${{escapeHtml(w.dateRange)}})`;
   weekTitle.textContent = `Week ${{w.week}} Task Assignment`;
   modalBody.innerHTML = buildModal(w);
   if (typeof dialog.showModal === "function") {{
@@ -346,9 +427,18 @@ function closeModal() {{
 }}
 
 grid.addEventListener("click", e => {{
-  const btn = e.target.closest("[data-week]");
-  if (!btn) return;
-  openModal(Number(btn.getAttribute("data-week")));
+  const copyBtnEl = e.target.closest("[data-week-copy]");
+  if (copyBtnEl) {{
+    const wNum = Number(copyBtnEl.getAttribute("data-week-copy"));
+    copyEmailForWeek(wNum, copyBtnEl);
+    return;
+  }}
+  const openBtnEl = e.target.closest("[data-week-open]");
+  if (openBtnEl) {{
+    const wNum = Number(openBtnEl.getAttribute("data-week-open"));
+    openModal(wNum);
+    return;
+  }}
 }});
 
 closeBtn.addEventListener("click", closeModal);
@@ -361,41 +451,13 @@ dialog.addEventListener("click", e => {{
 
 copyBtn.addEventListener("click", async () => {{
   if (!activeWeek) return;
-  const w = activeWeek;
-  const dateRange = getWeekHeading(w.raw);
-  const taskBody = cleanTaskBody(w.raw);
-  const text = [
-    `Subject: Week ${{w.week}} Tasks — ${{PLAN.name}} (${{dateRange}})`,
-    "",
-    `Team Member: ${{PLAN.name}} (${{PLAN.jobTitle}})`,
-    `Project: ${{PLAN.projectName}}`,
-    `Week ${{w.week}}: ${{dateRange}}`,
-    `Tech Stack & Tools: ${{PLAN.tools}}`,
-    "",
-    "Assignment Details:",
-    `- ${{taskBody}}`,
-    "",
-    "Project Context:",
-    `${{PLAN.projectDescription}}`,
-    "",
-    "Regards,",
-    "Project Lead",
-    "mohan.gupta@ipeople-career.com"
-  ].join("\\n");
-
-  try {{
-    await navigator.clipboard.writeText(text);
-    modalStatus.textContent = "✅ Copied email to clipboard!";
-  }} catch (err) {{
-    modalStatus.textContent = "Copy failed. Please copy manually.";
-  }}
+  await copyEmailForWeek(activeWeek.week, copyBtn);
 }});
 </script>
 </body>
 </html>
 """
 
-# Write all candidates including Sept New to both dirs
 all_to_generate = candidates + SEPT_NEW_PEOPLE
 dirs = [r"f:\New Stem\profiles", r"f:\New Stem\new_stem\profiles"]
 for d in dirs:
@@ -406,4 +468,4 @@ for d in dirs:
         with open(fpath, "w", encoding="utf-8") as out:
             out.write(content)
 
-print(f"Generated {len(all_to_generate)} profile pages in both profiles directories.")
+print(f"Generated {len(all_to_generate)} profile pages in both profiles directories with direct copy buttons.")

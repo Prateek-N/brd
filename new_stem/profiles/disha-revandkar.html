@@ -5,6 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Disha Revandkar</title>
 <link rel="stylesheet" href="../styles.css" />
+<style>
+.week-card-box {
+  grid-column: span 3;
+  background: var(--canvas-elevated);
+  border: 1px solid var(--hairline);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.week-card-box:hover {
+  border-color: rgba(56,189,248,0.4);
+}
+@media (max-width:1100px){.week-card-box{grid-column:span 4}}
+@media (max-width:800px){.week-card-box{grid-column:span 6}}
+@media (max-width:520px){.week-card-box{grid-column:span 12}}
+.btn-copy-direct {
+  background: #0284c7;
+  color: #ffffff;
+  border: 1px solid #38bdf8;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 12px;
+  transition: all 0.2s;
+}
+.btn-copy-direct:hover {
+  background: #0369a1;
+}
+.btn-view-details {
+  background: transparent;
+  color: #94a3b8;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  padding: 6px 0 0 0;
+  text-align: center;
+  width: 100%;
+}
+.btn-view-details:hover {
+  color: #f8fafc;
+  text-decoration: underline;
+}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -51,7 +107,7 @@
       <p class="section-label">Plan · Sep 14–Dec 6, 2026</p>
       <h2 class="section-title">Week 1–Week 12 Tasks</h2>
     </div>
-    <div class="section-meta">Click a week to view and copy your assignment</div>
+    <div class="section-meta">Click <strong>'📋 Copy Email'</strong> to copy any week's assignment to clipboard</div>
   </div>
   <div class="week-grid" id="weekGrid" aria-label="Weekly task navigation"></div>
 </section>
@@ -64,7 +120,7 @@
         <h2 class="modal-title" id="weekTitle"></h2>
       </div>
       <div class="modal-actions">
-        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">📋 Copy to Clipboard</button>
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">📋 Copy Email to Clipboard</button>
         <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
       </div>
     </div>
@@ -73,89 +129,83 @@
   </div>
 </dialog>
 
-<footer class="footer">Weekly Plan</footer>
+<footer class="footer">Weekly Plan · Disha Revandkar</footer>
 </div>
 
 <script>
 const PLAN = {
   "name": "Disha Revandkar",
   "jobTitle": "Software Engineer",
+  "company": "IPEOPLE CAREER LLC",
   "projectName": "Full-Stack Task & Project Milestone Management Application",
   "projectDescription": "Design, build, and test a responsive web application for managing agile sprints, task assignments, and progress tracking with role-based access control and RESTful APIs.",
   "tools": "Node.js / Express, React or Vanilla JS, SQLite / PostgreSQL, Jest, GitHub Actions",
   "weeks": [
     {
       "week": 1,
-      "raw": "W1 (Sep 14\u2013Sep 20, 2026): Define functional requirements, user stories, and system architecture for the sprint tracker application."
+      "dateRange": "Sep 14\u2013Sep 20, 2026",
+      "task": "Define functional requirements, user stories, and system architecture for the sprint tracker application."
     },
     {
       "week": 2,
-      "raw": "W2 (Sep 21\u2013Sep 27, 2026): Design database relational schema (users, projects, sprints, tasks, comments) with proper indexing."
+      "dateRange": "Sep 21\u2013Sep 27, 2026",
+      "task": "Design database relational schema (users, projects, sprints, tasks, comments) with proper indexing."
     },
     {
       "week": 3,
-      "raw": "W3 (Sep 28\u2013Oct 4, 2026): Build RESTful backend API endpoints for authentication, CRUD operations on tasks, and sprint status tracking."
+      "dateRange": "Sep 28\u2013Oct 4, 2026",
+      "task": "Build RESTful backend API endpoints for authentication, CRUD operations on tasks, and sprint status tracking."
     },
     {
       "week": 4,
-      "raw": "W4 (Oct 5\u2013Oct 11, 2026): Implement role-based authorization and input validation middleware to secure API endpoints."
+      "dateRange": "Oct 5\u2013Oct 11, 2026",
+      "task": "Implement role-based authorization and input validation middleware to secure API endpoints."
     },
     {
       "week": 5,
-      "raw": "W5 (Oct 12\u2013Oct 18, 2026): Develop responsive frontend interface featuring interactive Kanban boards and sprint burndown views."
+      "dateRange": "Oct 12\u2013Oct 18, 2026",
+      "task": "Develop responsive frontend interface featuring interactive Kanban boards and sprint burndown views."
     },
     {
       "week": 6,
-      "raw": "W6 (Oct 19\u2013Oct 25, 2026): Integrate front-end components with backend APIs using asynchronous fetch and state management."
+      "dateRange": "Oct 19\u2013Oct 25, 2026",
+      "task": "Integrate front-end components with backend APIs using asynchronous fetch and state management."
     },
     {
       "week": 7,
-      "raw": "W7 (Oct 26\u2013Nov 1, 2026): Write comprehensive unit and integration tests using Jest / Supertest covering core business logic."
+      "dateRange": "Oct 26\u2013Nov 1, 2026",
+      "task": "Write comprehensive unit and integration tests using Jest / Supertest covering core business logic."
     },
     {
       "week": 8,
-      "raw": "W8 (Nov 2\u2013Nov 8, 2026): Implement error-logging service, audit trails for task updates, and automated schema migrations."
+      "dateRange": "Nov 2\u2013Nov 8, 2026",
+      "task": "Implement error-logging service, audit trails for task updates, and automated schema migrations."
     },
     {
       "week": 9,
-      "raw": "W9 (Nov 9\u2013Nov 15, 2026): Perform cross-browser compatibility testing, responsive layout optimization, and accessibility pass."
+      "dateRange": "Nov 9\u2013Nov 15, 2026",
+      "task": "Perform cross-browser compatibility testing, responsive layout optimization, and accessibility pass."
     },
     {
       "week": 10,
-      "raw": "W10 (Nov 16\u2013Nov 22, 2026): Set up CI/CD pipeline using GitHub Actions to automate linting, testing, and build verification."
+      "dateRange": "Nov 16\u2013Nov 22, 2026",
+      "task": "Set up CI/CD pipeline using GitHub Actions to automate linting, testing, and build verification."
     },
     {
       "week": 11,
-      "raw": "W11 (Nov 23\u2013Nov 29, 2026): Conduct end-to-end user acceptance testing, fix identified edge-case bugs, and optimize load speed."
+      "dateRange": "Nov 23\u2013Nov 29, 2026",
+      "task": "Conduct end-to-end user acceptance testing, fix identified edge-case bugs, and optimize load speed."
     },
     {
       "week": 12,
-      "raw": "W12 (Nov 30\u2013Dec 6, 2026): Publish project documentation, API reference guide, and release package to GitHub."
+      "dateRange": "Nov 30\u2013Dec 6, 2026",
+      "task": "Publish project documentation, API reference guide, and release package to GitHub."
     }
   ]
 };
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-}
-
-function splitSteps(taskText) {
-  const txt = String(taskText || "").trim();
-  const parts = txt.split(":");
-  const body = parts.length > 1 ? parts.slice(1).join(":").trim() : txt;
-  const rawSteps = body.split(/(?:;\s*|\.\s+)/).map(s => s.trim()).filter(Boolean);
-  if (!rawSteps.length) return [body];
-  return rawSteps.map(s => s.replace(/^[•\-–—\s]+/, "").trim()).filter(Boolean);
-}
-
-function getWeekHeading(raw) {
-  const m = String(raw || "").match(/^W\d+\s*\(([^)]+)\)/);
-  return m ? m[1] : "";
-}
-
-function cleanTaskBody(raw) {
-  const parts = String(raw || "").split(":");
-  return parts.length > 1 ? parts.slice(1).join(":").trim() : raw;
 }
 
 const grid = document.getElementById("weekGrid");
@@ -170,23 +220,67 @@ const closeBtn = document.getElementById("closeBtn");
 let activeWeek = null;
 let closeTimer = null;
 
-grid.innerHTML = (PLAN.weeks || []).map(w => {
-  const dateRange = getWeekHeading(w.raw);
-  const taskBody = cleanTaskBody(w.raw);
-  return `
-    <button class="week-btn" type="button" data-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
-      <div class="week-num">Week ${w.week}</div>
-      <div class="week-sub">${escapeHtml(dateRange)}</div>
-      <div class="week-title">${escapeHtml(taskBody)}</div>
-      <div class="week-cta">Open Tasks &amp; Copy Email →</div>
-    </button>
-  `;
-}).join("");
+grid.innerHTML = (PLAN.weeks || []).map(w => `
+  <div class="week-card-box">
+    <div>
+      <div class="week-num" style="color:#38bdf8;">Week ${w.week}</div>
+      <div class="week-sub" style="font-size:12px;color:#94a3b8;margin:4px 0 8px 0;">${escapeHtml(w.dateRange)}</div>
+      <div style="font-size:13px;color:#e2e8f0;line-height:1.4;">${escapeHtml(w.task)}</div>
+    </div>
+    <div>
+      <button class="btn-copy-direct" type="button" data-week-copy="${w.week}">
+        📋 Copy Week ${w.week} Email
+      </button>
+      <button class="btn-view-details" type="button" data-week-open="${w.week}">
+        View Details &amp; Scope →
+      </button>
+    </div>
+  </div>
+`).join("");
+
+async function copyEmailForWeek(weekNum, btnElement) {
+  const w = (PLAN.weeks || []).find(x => x.week === weekNum);
+  if (!w) return;
+  const text = [
+    `Subject: Week ${w.week} Task Assignment — ${PLAN.name} (${w.dateRange})`,
+    "",
+    `Team Member: ${PLAN.name} (${PLAN.jobTitle})`,
+    `Company: ${PLAN.company}`,
+    `Project: ${PLAN.projectName}`,
+    `Schedule: Week ${w.week} (${w.dateRange})`,
+    `Tech Stack & Tools: ${PLAN.tools}`,
+    "",
+    "Assigned Task:",
+    `- ${w.task}`,
+    "",
+    "Project Context:",
+    `${PLAN.projectDescription}`,
+    "",
+    "Regards,",
+    "Project Lead",
+    "mohan.gupta@ipeople-career.com"
+  ].join("\n");
+
+  try {
+    await navigator.clipboard.writeText(text);
+    if (btnElement) {
+      const originalText = btnElement.innerHTML;
+      btnElement.innerHTML = "✅ Copied to Clipboard!";
+      btnElement.style.background = "#059669";
+      btnElement.style.borderColor = "#10b981";
+      setTimeout(() => {
+        btnElement.innerHTML = originalText;
+        btnElement.style.background = "";
+        btnElement.style.borderColor = "";
+      }, 2000);
+    }
+    if (modalStatus) modalStatus.textContent = `✅ Copied Week ${w.week} email to clipboard!`;
+  } catch (err) {
+    if (modalStatus) modalStatus.textContent = "Copy failed. Please copy manually.";
+  }
+}
 
 function buildModal(w) {
-  const dateRange = getWeekHeading(w.raw);
-  const taskBody = cleanTaskBody(w.raw);
-  const steps = splitSteps(w.raw);
   return `
     <section class="modal-section">
       <p class="section-label">Scope &amp; Tooling</p>
@@ -204,11 +298,9 @@ function buildModal(w) {
       </div>
     </section>
     <section class="modal-section">
-      <p class="section-label">Week ${w.week} Focus (${escapeHtml(dateRange)})</p>
-      <h3 class="modal-h3">${escapeHtml(taskBody)}</h3>
-      <ul class="modal-list">
-        ${steps.map(s => `<li>${escapeHtml(s)}</li>`).join("")}
-      </ul>
+      <p class="section-label">Week ${w.week} Focus (${escapeHtml(w.dateRange)})</p>
+      <h3 class="modal-h3">${escapeHtml(w.task)}</h3>
+      <p class="modal-p" style="margin-top:8px;">Click the top <strong>'📋 Copy Email to Clipboard'</strong> button to copy this week's email template.</p>
     </section>
   `;
 }
@@ -218,7 +310,7 @@ function openModal(weekNum) {
   if (!w) return;
   activeWeek = w;
   modalStatus.textContent = "";
-  weekMeta.textContent = `${escapeHtml(PLAN.name)} · Week ${w.week} (${getWeekHeading(w.raw)})`;
+  weekMeta.textContent = `${escapeHtml(PLAN.name)} · Week ${w.week} (${escapeHtml(w.dateRange)})`;
   weekTitle.textContent = `Week ${w.week} Task Assignment`;
   modalBody.innerHTML = buildModal(w);
   if (typeof dialog.showModal === "function") {
@@ -241,9 +333,18 @@ function closeModal() {
 }
 
 grid.addEventListener("click", e => {
-  const btn = e.target.closest("[data-week]");
-  if (!btn) return;
-  openModal(Number(btn.getAttribute("data-week")));
+  const copyBtnEl = e.target.closest("[data-week-copy]");
+  if (copyBtnEl) {
+    const wNum = Number(copyBtnEl.getAttribute("data-week-copy"));
+    copyEmailForWeek(wNum, copyBtnEl);
+    return;
+  }
+  const openBtnEl = e.target.closest("[data-week-open]");
+  if (openBtnEl) {
+    const wNum = Number(openBtnEl.getAttribute("data-week-open"));
+    openModal(wNum);
+    return;
+  }
 });
 
 closeBtn.addEventListener("click", closeModal);
@@ -256,34 +357,7 @@ dialog.addEventListener("click", e => {
 
 copyBtn.addEventListener("click", async () => {
   if (!activeWeek) return;
-  const w = activeWeek;
-  const dateRange = getWeekHeading(w.raw);
-  const taskBody = cleanTaskBody(w.raw);
-  const text = [
-    `Subject: Week ${w.week} Tasks — ${PLAN.name} (${dateRange})`,
-    "",
-    `Team Member: ${PLAN.name} (${PLAN.jobTitle})`,
-    `Project: ${PLAN.projectName}`,
-    `Week ${w.week}: ${dateRange}`,
-    `Tech Stack & Tools: ${PLAN.tools}`,
-    "",
-    "Assignment Details:",
-    `- ${taskBody}`,
-    "",
-    "Project Context:",
-    `${PLAN.projectDescription}`,
-    "",
-    "Regards,",
-    "Project Lead",
-    "mohan.gupta@ipeople-career.com"
-  ].join("\n");
-
-  try {
-    await navigator.clipboard.writeText(text);
-    modalStatus.textContent = "✅ Copied email to clipboard!";
-  } catch (err) {
-    modalStatus.textContent = "Copy failed. Please copy manually.";
-  }
+  await copyEmailForWeek(activeWeek.week, copyBtn);
 });
 </script>
 </body>
