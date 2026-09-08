@@ -69,6 +69,25 @@
   border: 1px solid rgba(56,189,248,0.3);
   margin-bottom: 8px;
 }
+.btn-copy-sm {
+  background: rgba(14,165,233,0.15);
+  border: 1px solid rgba(14,165,233,0.4);
+  color: #38bdf8;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.btn-copy-sm:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #38bdf8;
+}
 @media(max-width:1100px){.tab-row .btn{font-size:11px;padding:10px 14px;height:38px}}
 @media(max-width:700px){.tab-row .btn{font-size:10px;padding:6px 10px;height:34px}}
 </style>
@@ -91,12 +110,12 @@
 </div>
 
 <div class="wrap">
-<section class="hero">
-<h1>3-Month Sample Projects &amp; Weekly Plans</h1>
-<p>Individual 12-week project assignments starting <strong>September 14, 2026</strong>. Review project scopes, tools, weekly milestones, and email-ready task assignments for all team members.</p>
+<section class="hero" id="heroSection">
+<h1 id="heroTitle">3-Month Sample Projects &amp; Weekly Plans</h1>
+<p id="heroDesc">Individual 12-week project assignments starting <strong>September 14, 2026</strong>. Review project scopes, tools, weekly milestones, and email-ready task assignments for all team members.</p>
 <div class="cta-row">
-<a class="btn btn-primary" href="#projects-section" style="text-decoration:none;">Browse Projects</a>
-<a class="btn btn-outline" href="#weeks-section" style="text-decoration:none;">Weekly Schedule (W1–W12)</a>
+<a class="btn btn-primary" href="#projects-section" id="heroCta1" style="text-decoration:none;">Browse Projects</a>
+<a class="btn btn-outline" href="#weeks-section" id="heroCta2" style="text-decoration:none;">Weekly Schedule (W1–W12)</a>
 </div>
 </section>
 
@@ -129,7 +148,7 @@
         <p class="section-label">Schedule · 12-Week Milestones</p>
         <h2 class="section-title">Week 1–Week 12 Tasks</h2>
       </div>
-      <div class="section-meta">Click any week to open all individual assignments</div>
+      <div class="section-meta">Click any week to open all individual assignments &amp; copy emails</div>
     </div>
     <div class="week-grid" id="weekGrid" aria-label="Weekly tasks grid"></div>
   </section>
@@ -147,6 +166,17 @@
     </div>
     <div class="role-grid" id="rolesGridSeptNew" aria-label="September new starter team members"></div>
   </section>
+
+  <section class="section" id="weeks-septnew">
+    <div class="section-head">
+      <div>
+        <p class="section-label">Schedule · Sep 14–Dec 6, 2026</p>
+        <h2 class="section-title">Week 1–Week 12 Tasks for September Starters</h2>
+      </div>
+      <div class="section-meta">Click any week to view and copy individual assignments</div>
+    </div>
+    <div class="week-grid" id="weekGridSeptNew" aria-label="Sept New weekly tasks grid"></div>
+  </section>
 </div>
 
 <footer class="footer">Generated from the Stem Task Sheet. Plan duration: Sep 14, 2026 – Dec 6, 2026.</footer>
@@ -160,7 +190,7 @@
         <h2 class="modal-title" id="weekTitle"></h2>
       </div>
       <div class="modal-actions">
-        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">Copy to Clipboard</button>
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">📋 Copy All to Clipboard</button>
         <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
       </div>
     </div>
@@ -1159,6 +1189,20 @@ const SEPT_NEW_PEOPLE = [
       "Create and maintain documentation for business requirements, reports, and analytical processes.",
       "Ensure data integrity, governance, and compliance with organizational policies and standards.",
       "Present business findings and actionable recommendations to management and key stakeholders."
+    ],
+    "weekTasks": [
+      "Define project scope, download Kaggle e-commerce dataset, understand data schema and business context.",
+      "Clean and validate data \u2014 fix nulls, standardize product categories, remove duplicate records.",
+      "Perform exploratory data analysis \u2014 identify top products, sales by region, monthly revenue trends.",
+      "Build KPI dashboard in Excel or Power BI \u2014 revenue, order volume, average order value.",
+      "Conduct customer segmentation analysis \u2014 high-value vs. low-value customers by spend and frequency.",
+      "Analyze process gaps \u2014 identify bottlenecks in the sales pipeline and order fulfillment.",
+      "Build variance analysis report \u2014 actual vs. target performance with written commentary.",
+      "Write a business requirements document (BRD) for one proposed process improvement.",
+      "Create stakeholder presentation with charts and data-backed recommendations.",
+      "Validate all findings \u2014 run data quality checks across all reports and the dashboard.",
+      "Finalize dashboard, write analytical report with executive summary.",
+      "Package all deliverables, record a walkthrough video, upload everything to GitHub."
     ]
   },
   {
@@ -1181,6 +1225,20 @@ const SEPT_NEW_PEOPLE = [
       "Collaborate with DevOps, engineering, and IT teams to embed security into CI/CD pipelines (DevSecOps).",
       "Automate cloud security tasks using scripting languages such as Python, Bash, or Terraform.",
       "Stay current with emerging cloud security threats, vulnerabilities, and evolving industry standards."
+    ],
+    "weekTasks": [
+      "Define cloud security baseline, review AWS/Azure CIS benchmarks, map architecture.",
+      "Set up sandbox cloud environment with Terraform, configure least-privilege IAM policies.",
+      "Implement VPC network security groups, firewalls, and bastion host jump boxes.",
+      "Configure cloud logging and SIEM integration (CloudTrail, GuardDuty, CloudWatch).",
+      "Conduct vulnerability assessment and automated penetration test scans.",
+      "Deploy WAF rules and TLS/SSL certificate management to protect public endpoints.",
+      "Integrate DevSecOps security scanning (SonarQube, Trivy, tfsec) into CI/CD pipelines.",
+      "Build interactive Cloud Security KPI dashboard tracking open vulnerabilities and MTTR.",
+      "Author Cloud Incident Response Runbook and compliance policy documentation (SOC 2 / ISO 27001).",
+      "Conduct incident simulation drill: detect simulated unauthorized access and execute response SOP.",
+      "Perform end-to-end security compliance audit and compile remediation reports.",
+      "Finalize security architecture blueprints, publish Terraform modules and documentation to GitHub."
     ]
   },
   {
@@ -1203,6 +1261,20 @@ const SEPT_NEW_PEOPLE = [
       "Coordinate cross-functional sprint planning, stand-ups, and retrospectives in Agile environments.",
       "Develop go-to-market strategies and support product launches with clear positioning and messaging.",
       "Analyze product usage data and feedback to inform iteration and continuous improvement decisions."
+    ],
+    "weekTasks": [
+      "Define product vision, customer personas, strategic goals, and target OKRs.",
+      "Conduct competitor benchmarking and customer discovery interviews to identify feature gaps.",
+      "Author comprehensive Product Requirements Document (PRD) with user stories and acceptance criteria.",
+      "Design interactive user journey maps and UI wireframes in Figma.",
+      "Prioritize feature backlog using RICE scoring framework and align with engineering sprint capacity.",
+      "Formulate A/B testing growth experimentation plan for core onboarding funnel.",
+      "Define telemetry instrumentation specs and build product KPI dashboard (Mixpanel / Amplitude).",
+      "Facilitate cross-functional sprint planning and lead backlog refinement sessions.",
+      "Run user usability testing sessions on interactive prototypes, synthesize feedback.",
+      "Analyze A/B test results and calculate statistical significance and conversion impact.",
+      "Develop Go-To-Market (GTM) launch plan, release notes, and sales enablement documentation.",
+      "Finalize executive presentation deck, record product demo video, and publish artifacts to GitHub."
     ]
   }
 ];
@@ -1260,6 +1332,7 @@ const WEEKS_12 = [
 let currentCompanyFilter = 'all';
 let currentSearchQuery = '';
 let activeWeekNum = null;
+let activeModalCohort = 'main'; // 'main' or 'septnew'
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
@@ -1308,12 +1381,12 @@ function renderProjects() {
 function renderWeeks() {
   const grid = document.getElementById('weekGrid');
   grid.innerHTML = WEEKS_12.map(w => `
-    <button class="week-btn" type="button" data-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
+    <button class="week-btn" type="button" data-main-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
       <div class="week-num">Week ${w.week}</div>
       <div class="week-tag">Sep 14–Dec 6 Cohort</div>
       <div class="week-sub">${escapeHtml(w.dateRange)}</div>
       <div class="week-project">27 Individual Project Tasks</div>
-      <div class="week-cta">View All Member Assignments →</div>
+      <div class="week-cta">Open Tasks &amp; Copy Emails →</div>
     </button>
   `).join('');
 }
@@ -1342,6 +1415,17 @@ function renderSeptNewRoles() {
       </div>
     </div>
   `).join('');
+
+  const weekGrid = document.getElementById('weekGridSeptNew');
+  weekGrid.innerHTML = WEEKS_12.map(w => `
+    <button class="week-btn" type="button" data-septnew-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
+      <div class="week-num">Week ${w.week}</div>
+      <div class="week-tag" style="background:rgba(192,132,252,0.2);color:#c084fc;">Sept New Starters</div>
+      <div class="week-sub">${escapeHtml(w.dateRange)}</div>
+      <div class="week-project">3 Individual Project Tasks</div>
+      <div class="week-cta" style="color:#c084fc;">Open Tasks &amp; Copy Emails →</div>
+    </button>
+  `).join('');
 }
 
 // ── MODAL LOGIC ─────────────────────────────────────────────────────────────
@@ -1354,52 +1438,115 @@ const copyBtn = document.getElementById("copyBtn");
 const closeBtn = document.getElementById("closeBtn");
 let closeTimer = null;
 
-function buildModalContent(weekNum) {
+function buildModalContent(weekNum, cohort) {
   const wInfo = WEEKS_12.find(w => w.week === weekNum);
-  const peopleBlocks = CANDIDATES.map(c => {
+  const peopleList = cohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
+
+  const peopleBlocks = peopleList.map(c => {
     const task = c.weekTasks[weekNum - 1] || "No task configured.";
     return `
       <section class="modal-card">
-        <div class="modal-card-head">
+        <div class="modal-card-head" style="align-items:flex-start;">
           <div>
             <h3 class="modal-card-title">${escapeHtml(c.name)}</h3>
             <p class="modal-card-sub">${escapeHtml(c.jobTitle)} · ${escapeHtml(c.company)}</p>
           </div>
-          <a class="btn btn-outline btn-sm" href="profiles/${c.slug}.html" style="font-size:11px;padding:4px 10px;text-decoration:none;">Profile →</a>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <button class="btn-copy-sm copy-person-btn" type="button" data-name="${escapeHtml(c.name)}" data-slug="${c.slug}">
+              📋 Copy ${c.name.split(' ')[0]}'s Email
+            </button>
+            <a class="btn btn-outline btn-sm" href="profiles/${c.slug}.html" style="font-size:11px;padding:5px 10px;text-decoration:none;">Profile →</a>
+          </div>
         </div>
-        <p class="modal-k" style="margin:0 0 4px;">Project</p>
+        <p class="modal-k" style="margin:8px 0 4px;">Project</p>
         <p class="modal-p" style="margin:0 0 10px;font-weight:700;color:#0284c7;">${escapeHtml(c.project)}</p>
-        <p class="modal-k" style="margin:0 0 4px;">Week ${weekNum} Task</p>
+        <p class="modal-k" style="margin:0 0 4px;">Week ${weekNum} Task (${escapeHtml(wInfo.dateRange)})</p>
         <ul class="modal-list"><li>${escapeHtml(task)}</li></ul>
       </section>
     `;
   }).join('');
 
+  const cohortLabel = cohort === 'septnew' ? 'September 2026 Starters (3 Members)' : 'Sep 14 – Dec 6, 2026 Cohort (27 Members)';
+
   return `
     <section class="modal-section">
       <p class="section-label">Cohort Schedule</p>
       <h3 class="modal-h3">Week ${weekNum} Tasks · ${escapeHtml(wInfo.dateRange)}</h3>
-      <p class="modal-p">27 Individual Project Assignments (IPEOPLE CAREER LLC &amp; BRIDGEPOINT CAREERS LLC)</p>
+      <p class="modal-p">${cohortLabel}</p>
+      <p style="font-size:13px;color:#94a3b8;margin-top:4px;">💡 You can copy the full cohort email using the top button, or click <strong>'📋 Copy [Name]'s Email'</strong> on any person's card to copy just their individual email.</p>
     </section>
     <section class="modal-section">
-      <p class="section-label">Individual Assignments</p>
+      <p class="section-label">Individual Assignments &amp; Email Copy</p>
       ${peopleBlocks}
     </section>
   `;
 }
 
-function openWeek(weekNum) {
+function openWeek(weekNum, cohort = 'main') {
   activeWeekNum = weekNum;
+  activeModalCohort = cohort;
   const wInfo = WEEKS_12.find(w => w.week === weekNum);
   modalStatus.textContent = "";
-  weekMeta.textContent = `Cohort Plan · ${wInfo.dateRange}`;
+  weekMeta.textContent = `${cohort === 'septnew' ? 'Sept New Starters' : 'Main Cohort'} · ${wInfo.dateRange}`;
   weekTitle.textContent = `Week ${weekNum} Individual Tasks`;
-  modalBody.innerHTML = buildModalContent(weekNum);
+  modalBody.innerHTML = buildModalContent(weekNum, cohort);
+  
+  // Attach individual person copy listeners
+  modalBody.querySelectorAll('.copy-person-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const slug = btn.dataset.slug;
+      const list = activeModalCohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
+      const person = list.find(p => p.slug === slug);
+      if (!person) return;
+      await copySinglePersonEmail(person, activeWeekNum);
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '✅ Copied!';
+      btn.style.background = '#059669';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 2000);
+    });
+  });
+
   if (typeof dialog.showModal === "function") {
     if (!dialog.open) dialog.showModal();
     dialog.classList.remove("is-closing");
     dialog.classList.add("is-open");
     closeBtn.focus();
+  }
+}
+
+async function copySinglePersonEmail(p, weekNum) {
+  const wInfo = WEEKS_12.find(w => w.week === weekNum);
+  const task = p.weekTasks[weekNum - 1] || "No task defined.";
+  const text = [
+    `Subject: Week ${weekNum} Task Assignment — ${p.name} (${wInfo.dateRange})`,
+    "",
+    `Team Member: ${p.name}`,
+    `Role: ${p.jobTitle} (${p.company})`,
+    `Project: ${p.project}`,
+    `Schedule: Week ${weekNum} (${wInfo.dateRange})`,
+    `Tech Stack & Tools: ${p.tools || "Standard Project Tools"}`,
+    "",
+    "Assigned Task:",
+    `- ${task}`,
+    "",
+    "Project Context:",
+    `${p.projectDesc}`,
+    "",
+    "Regards,",
+    "Project Lead",
+    "mohan.gupta@ipeople-career.com"
+  ].join("\n");
+
+  try {
+    await navigator.clipboard.writeText(text);
+    modalStatus.textContent = `✅ Copied Week ${weekNum} email for ${p.name} to clipboard!`;
+  } catch (err) {
+    modalStatus.textContent = "Copy failed. Please copy manually.";
   }
 }
 
@@ -1415,9 +1562,15 @@ function closeWeek() {
 }
 
 document.getElementById("weekGrid").addEventListener("click", e => {
-  const btn = e.target.closest("[data-week]");
+  const btn = e.target.closest("[data-main-week]");
   if (!btn) return;
-  openWeek(Number(btn.getAttribute("data-week")));
+  openWeek(Number(btn.getAttribute("data-main-week")), 'main');
+});
+
+document.getElementById("weekGridSeptNew").addEventListener("click", e => {
+  const btn = e.target.closest("[data-septnew-week]");
+  if (!btn) return;
+  openWeek(Number(btn.getAttribute("data-septnew-week")), 'septnew');
 });
 
 closeBtn.addEventListener("click", closeWeek);
@@ -1431,14 +1584,15 @@ dialog.addEventListener("click", e => {
 copyBtn.addEventListener("click", async () => {
   if (!activeWeekNum) return;
   const wInfo = WEEKS_12.find(w => w.week === activeWeekNum);
+  const list = activeModalCohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
   const lines = [];
-  lines.push(`Subject: Week ${activeWeekNum} Tasks — 12-Week Sample Projects (${wInfo.dateRange})`);
+  lines.push(`Subject: Week ${activeWeekNum} Tasks — ${activeModalCohort === 'septnew' ? 'September Starters' : '12-Week Sample Projects'} (${wInfo.dateRange})`);
   lines.push("");
   lines.push(`Week ${activeWeekNum}: ${wInfo.dateRange}`);
-  lines.push("Cohort: IPEOPLE CAREER LLC & BRIDGEPOINT CAREERS LLC");
+  lines.push(`Cohort: ${activeModalCohort === 'septnew' ? 'September 2026 Starters' : 'IPEOPLE CAREER LLC & BRIDGEPOINT CAREERS LLC'}`);
   lines.push("");
   lines.push("Individual Tasks (by team member):");
-  CANDIDATES.forEach(c => {
+  list.forEach(c => {
     lines.push("");
     lines.push(`${c.name} — ${c.jobTitle} (${c.company})`);
     lines.push(`Project: ${c.project}`);
@@ -1451,7 +1605,7 @@ copyBtn.addEventListener("click", async () => {
 
   try {
     await navigator.clipboard.writeText(lines.join("\n"));
-    modalStatus.textContent = "Copied all assignments to clipboard!";
+    modalStatus.textContent = "✅ Copied all cohort assignments to clipboard!";
   } catch (err) {
     modalStatus.textContent = "Copy failed. Please copy manually.";
   }
@@ -1467,14 +1621,30 @@ function switchTab(tab) {
 
   const mainContent = document.getElementById('main-content');
   const septnewContent = document.getElementById('septnew-content');
+  const heroTitle = document.getElementById('heroTitle');
+  const heroDesc = document.getElementById('heroDesc');
+  const heroCta1 = document.getElementById('heroCta1');
+  const heroCta2 = document.getElementById('heroCta2');
 
   if (tab === 'septnew') {
     mainContent.hidden = true;
     septnewContent.hidden = false;
+    heroTitle.textContent = "September 2026 Starters";
+    heroDesc.innerHTML = "Bridgepoint Careers LLC — 12-week sample projects, roles, responsibilities, and weekly tasks for <strong>Sylvester Rodrigues</strong>, <strong>Niyazuddin Shaik</strong>, and <strong>Nevil Jack Denis</strong>.";
+    heroCta1.href = "#roles-septnew";
+    heroCta1.textContent = "View Roles";
+    heroCta2.href = "#weeks-septnew";
+    heroCta2.textContent = "Weekly Schedule (W1–W12)";
     renderSeptNewRoles();
   } else {
     mainContent.hidden = false;
     septnewContent.hidden = true;
+    heroTitle.textContent = "3-Month Sample Projects & Weekly Plans";
+    heroDesc.innerHTML = "Individual 12-week project assignments starting <strong>September 14, 2026</strong>. Review project scopes, tools, weekly milestones, and email-ready task assignments for all team members.";
+    heroCta1.href = "#projects-section";
+    heroCta1.textContent = "Browse Projects";
+    heroCta2.href = "#weeks-section";
+    heroCta2.textContent = "Weekly Schedule (W1–W12)";
     if (tab === 'ipeople') {
       currentCompanyFilter = 'IPEOPLE CAREER LLC';
     } else if (tab === 'bridgepoint') {

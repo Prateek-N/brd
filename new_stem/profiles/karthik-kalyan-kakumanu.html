@@ -67,7 +67,7 @@
         <h2 class="modal-title" id="weekTitle"></h2>
       </div>
       <div class="modal-actions">
-        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">Copy to Clipboard</button>
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">📋 Copy to Clipboard</button>
         <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
       </div>
     </div>
@@ -181,7 +181,7 @@ grid.innerHTML = (PLAN.weeks || []).map(w => {
       <div class="week-num">Week ${w.week}</div>
       <div class="week-sub">${escapeHtml(dateRange)}</div>
       <div class="week-title">${escapeHtml(taskBody)}</div>
-      <div class="week-cta">Open Tasks →</div>
+      <div class="week-cta">Open Tasks &amp; Copy Email →</div>
     </button>
   `;
 }).join("");
@@ -207,7 +207,7 @@ function buildModal(w) {
       </div>
     </section>
     <section class="modal-section">
-      <p class="section-label">Week ${w.week} Focus</p>
+      <p class="section-label">Week ${w.week} Focus (${escapeHtml(dateRange)})</p>
       <h3 class="modal-h3">${escapeHtml(taskBody)}</h3>
       <ul class="modal-list">
         ${steps.map(s => `<li>${escapeHtml(s)}</li>`).join("")}
@@ -268,10 +268,13 @@ copyBtn.addEventListener("click", async () => {
     `Team Member: ${PLAN.name} (${PLAN.jobTitle})`,
     `Project: ${PLAN.projectName}`,
     `Week ${w.week}: ${dateRange}`,
-    `Tools: ${PLAN.tools}`,
+    `Tech Stack & Tools: ${PLAN.tools}`,
     "",
     "Assignment Details:",
     `- ${taskBody}`,
+    "",
+    "Project Context:",
+    `${PLAN.projectDescription}`,
     "",
     "Regards,",
     "Project Lead",
@@ -280,7 +283,7 @@ copyBtn.addEventListener("click", async () => {
 
   try {
     await navigator.clipboard.writeText(text);
-    modalStatus.textContent = "Copied to clipboard!";
+    modalStatus.textContent = "✅ Copied email to clipboard!";
   } catch (err) {
     modalStatus.textContent = "Copy failed. Please copy manually.";
   }

@@ -1,9 +1,119 @@
 import json
 import os
-import re
 
 with open(r"f:\New Stem\sept14_candidates.json", "r", encoding="utf-8") as f:
     candidates = json.load(f)
+
+SEPT_NEW_PEOPLE = [
+  {
+    "name": "Sylvester Rodrigues",
+    "jobTitle": "Senior Business Analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "sylvester-rodrigues",
+    "project": "E-Commerce Sales Performance & KPI Analysis",
+    "projectDesc": "Analyze a public Kaggle e-commerce dataset to identify sales trends, customer segments, and business improvement opportunities. Deliver a KPI dashboard, BRD, and stakeholder presentation.",
+    "tools": "Excel, Power BI Desktop, Python pandas, Kaggle dataset, GitHub",
+    "responsibilities": [
+      "Gather, analyze, and interpret business data to identify trends and operational insights.",
+      "Develop and maintain business dashboards, reports, and performance visualizations for stakeholders.",
+      "Collect, clean, and validate business data for accuracy and consistency across systems.",
+      "Perform business analysis to support decision-making, risk assessment, and strategic planning.",
+      "Collaborate with cross-functional teams to understand business requirements and objectives.",
+      "Identify process improvement opportunities through data-driven analysis and actionable recommendations.",
+      "Monitor key business indicators (KPIs) and track operational performance metrics.",
+      "Conduct ad hoc analysis to address business challenges and support operational needs.",
+      "Create and maintain documentation for business requirements, reports, and analytical processes.",
+      "Ensure data integrity, governance, and compliance with organizational policies and standards.",
+      "Present business findings and actionable recommendations to management and key stakeholders."
+    ],
+    "weekTasks": [
+      "Define project scope, download Kaggle e-commerce dataset, understand data schema and business context.",
+      "Clean and validate data — fix nulls, standardize product categories, remove duplicate records.",
+      "Perform exploratory data analysis — identify top products, sales by region, monthly revenue trends.",
+      "Build KPI dashboard in Excel or Power BI — revenue, order volume, average order value.",
+      "Conduct customer segmentation analysis — high-value vs. low-value customers by spend and frequency.",
+      "Analyze process gaps — identify bottlenecks in the sales pipeline and order fulfillment.",
+      "Build variance analysis report — actual vs. target performance with written commentary.",
+      "Write a business requirements document (BRD) for one proposed process improvement.",
+      "Create stakeholder presentation with charts and data-backed recommendations.",
+      "Validate all findings — run data quality checks across all reports and the dashboard.",
+      "Finalize dashboard, write analytical report with executive summary.",
+      "Package all deliverables, record a walkthrough video, upload everything to GitHub."
+    ]
+  },
+  {
+    "name": "Niyazuddin Shaik",
+    "jobTitle": "Cloud Security Engineer",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "niyazuddin-shaik",
+    "project": "Multi-Cloud Security Architecture & Threat Detection",
+    "projectDesc": "Design and monitor secure cloud infrastructure across AWS/Azure, build IAM least-privilege policies, SIEM security monitoring, and DevSecOps automated compliance scanning.",
+    "tools": "AWS/Azure, Terraform, Docker, Python/Bash, SIEM/WAF, GitHub Actions",
+    "responsibilities": [
+      "Design, implement, and manage cloud security architectures across AWS, Azure, or GCP environments.",
+      "Monitor cloud environments for security threats, vulnerabilities, and compliance violations.",
+      "Conduct cloud security assessments, risk analysis, and penetration testing to identify weaknesses.",
+      "Implement and manage IAM policies, roles, and access controls to enforce least-privilege principles.",
+      "Configure and manage security tools such as SIEM, CSPM, WAF, and cloud-native security services.",
+      "Develop and enforce cloud security policies, standards, and best practices across the organization.",
+      "Respond to cloud security incidents, perform root cause analysis, and implement remediation actions.",
+      "Ensure compliance with regulatory frameworks such as GDPR, HIPAA, SOC 2, and ISO 27001.",
+      "Collaborate with DevOps, engineering, and IT teams to embed security into CI/CD pipelines (DevSecOps).",
+      "Automate cloud security tasks using scripting languages such as Python, Bash, or Terraform.",
+      "Stay current with emerging cloud security threats, vulnerabilities, and evolving industry standards."
+    ],
+    "weekTasks": [
+      "Define cloud security baseline, review AWS/Azure CIS benchmarks, map architecture.",
+      "Set up sandbox cloud environment with Terraform, configure least-privilege IAM policies.",
+      "Implement VPC network security groups, firewalls, and bastion host jump boxes.",
+      "Configure cloud logging and SIEM integration (CloudTrail, GuardDuty, CloudWatch).",
+      "Conduct vulnerability assessment and automated penetration test scans.",
+      "Deploy WAF rules and TLS/SSL certificate management to protect public endpoints.",
+      "Integrate DevSecOps security scanning (SonarQube, Trivy, tfsec) into CI/CD pipelines.",
+      "Build interactive Cloud Security KPI dashboard tracking open vulnerabilities and MTTR.",
+      "Author Cloud Incident Response Runbook and compliance policy documentation (SOC 2 / ISO 27001).",
+      "Conduct incident simulation drill: detect simulated unauthorized access and execute response SOP.",
+      "Perform end-to-end security compliance audit and compile remediation reports.",
+      "Finalize security architecture blueprints, publish Terraform modules and documentation to GitHub."
+    ]
+  },
+  {
+    "name": "Nevil Jack Denis",
+    "jobTitle": "Product Manager",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "nevil-jack-denis",
+    "project": "AI-Driven Product Roadmap & Growth Optimization",
+    "projectDesc": "Define product vision, author detailed PRDs, design user journeys in Figma, and formulate A/B experimentation frameworks to maximize SaaS engagement and retention.",
+    "tools": "Figma, Jira, Notion, Amplitude/Mixpanel, Google Slides, GitHub",
+    "responsibilities": [
+      "Define and communicate the product vision, strategy, and roadmap aligned with business goals.",
+      "Gather and prioritize product requirements from customers, stakeholders, and market research.",
+      "Collaborate with engineering, design, marketing, and sales teams to deliver product features.",
+      "Write clear and detailed product requirements documents (PRDs), user stories, and acceptance criteria.",
+      "Manage the product backlog and prioritize features using frameworks such as RICE or MoSCoW.",
+      "Define and track key product metrics, KPIs, and OKRs to measure product success.",
+      "Conduct competitive analysis and market research to identify opportunities and threats.",
+      "Lead product discovery sessions, user interviews, and usability testing to validate assumptions.",
+      "Coordinate cross-functional sprint planning, stand-ups, and retrospectives in Agile environments.",
+      "Develop go-to-market strategies and support product launches with clear positioning and messaging.",
+      "Analyze product usage data and feedback to inform iteration and continuous improvement decisions."
+    ],
+    "weekTasks": [
+      "Define product vision, customer personas, strategic goals, and target OKRs.",
+      "Conduct competitor benchmarking and customer discovery interviews to identify feature gaps.",
+      "Author comprehensive Product Requirements Document (PRD) with user stories and acceptance criteria.",
+      "Design interactive user journey maps and UI wireframes in Figma.",
+      "Prioritize feature backlog using RICE scoring framework and align with engineering sprint capacity.",
+      "Formulate A/B testing growth experimentation plan for core onboarding funnel.",
+      "Define telemetry instrumentation specs and build product KPI dashboard (Mixpanel / Amplitude).",
+      "Facilitate cross-functional sprint planning and lead backlog refinement sessions.",
+      "Run user usability testing sessions on interactive prototypes, synthesize feedback.",
+      "Analyze A/B test results and calculate statistical significance and conversion impact.",
+      "Develop Go-To-Market (GTM) launch plan, release notes, and sales enablement documentation.",
+      "Finalize executive presentation deck, record product demo video, and publish artifacts to GitHub."
+    ]
+  }
+]
 
 WEEKS_12 = [
     {"week": 1, "dateRange": "Sep 14–Sep 20, 2026"},
@@ -115,7 +225,7 @@ def generate_profile_html(c):
         <h2 class="modal-title" id="weekTitle"></h2>
       </div>
       <div class="modal-actions">
-        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">Copy to Clipboard</button>
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">📋 Copy to Clipboard</button>
         <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
       </div>
     </div>
@@ -173,7 +283,7 @@ grid.innerHTML = (PLAN.weeks || []).map(w => {{
       <div class="week-num">Week ${{w.week}}</div>
       <div class="week-sub">${{escapeHtml(dateRange)}}</div>
       <div class="week-title">${{escapeHtml(taskBody)}}</div>
-      <div class="week-cta">Open Tasks →</div>
+      <div class="week-cta">Open Tasks &amp; Copy Email →</div>
     </button>
   `;
 }}).join("");
@@ -199,7 +309,7 @@ function buildModal(w) {{
       </div>
     </section>
     <section class="modal-section">
-      <p class="section-label">Week ${{w.week}} Focus</p>
+      <p class="section-label">Week ${{w.week}} Focus (${{escapeHtml(dateRange)}})</p>
       <h3 class="modal-h3">${{escapeHtml(taskBody)}}</h3>
       <ul class="modal-list">
         ${{steps.map(s => `<li>${{escapeHtml(s)}}</li>`).join("")}}
@@ -260,10 +370,13 @@ copyBtn.addEventListener("click", async () => {{
     `Team Member: ${{PLAN.name}} (${{PLAN.jobTitle}})`,
     `Project: ${{PLAN.projectName}}`,
     `Week ${{w.week}}: ${{dateRange}}`,
-    `Tools: ${{PLAN.tools}}`,
+    `Tech Stack & Tools: ${{PLAN.tools}}`,
     "",
     "Assignment Details:",
     `- ${{taskBody}}`,
+    "",
+    "Project Context:",
+    `${{PLAN.projectDescription}}`,
     "",
     "Regards,",
     "Project Lead",
@@ -272,7 +385,7 @@ copyBtn.addEventListener("click", async () => {{
 
   try {{
     await navigator.clipboard.writeText(text);
-    modalStatus.textContent = "Copied to clipboard!";
+    modalStatus.textContent = "✅ Copied email to clipboard!";
   }} catch (err) {{
     modalStatus.textContent = "Copy failed. Please copy manually.";
   }}
@@ -282,14 +395,15 @@ copyBtn.addEventListener("click", async () => {{
 </html>
 """
 
-# Write profile files to both dirs
+# Write all candidates including Sept New to both dirs
+all_to_generate = candidates + SEPT_NEW_PEOPLE
 dirs = [r"f:\New Stem\profiles", r"f:\New Stem\new_stem\profiles"]
 for d in dirs:
     os.makedirs(d, exist_ok=True)
-    for c in candidates:
+    for c in all_to_generate:
         content = generate_profile_html(c)
         fpath = os.path.join(d, f"{c['slug']}.html")
         with open(fpath, "w", encoding="utf-8") as out:
             out.write(content)
 
-print(f"Generated {len(candidates)} profile pages in both profiles directories.")
+print(f"Generated {len(all_to_generate)} profile pages in both profiles directories.")
