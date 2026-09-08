@@ -17,30 +17,24 @@
 <div class="brand">
 <div class="brand-mark"></div>
 <div class="brand-title">Project Plan</div>
-<div class="brand-sub">Jun 2026–Sep 2026</div>
+<div class="brand-sub">September 2026</div>
 </div>
 <div class="tab-row" id="tabRow">
-  <button class="btn btn-outline" id="viewRolesBtn" type="button">View Roles</button>
-  <button class="tab-btn btn btn-outline" data-tab="ipeople" type="button">IPEOPLE CAREER LLC</button>
-  <button class="tab-btn btn btn-outline" data-tab="bridgepoint" type="button">BRIDGEPOINT CAREERS LLC</button>
-  <button class="tab-btn btn btn-outline" data-tab="newbp" type="button">NEW BRIDGEPOINT CAREERS LLC</button>
-  <button class="tab-btn btn btn-outline" data-tab="septnew" type="button" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;border-color:transparent;">🆕 SEPT NEW</button>
-  <a class="btn btn-primary" href="aug-bridgepoint.html" style="height:40px;padding:10px 18px;font-size:12px;letter-spacing:.8px;white-space:nowrap;">AUG 2026 BATCH</a>
+  <button class="tab-btn btn btn-primary" data-tab="septnew" type="button" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;border-color:transparent;">🆕 SEPT NEW</button>
 </div>
 </div>
 </div>
 <div class="wrap">
 <section class="hero">
-<h1>3-Month Sample Project Cycle</h1>
-<p>Use this page to review roles/responsibilities and send weekly task assignments by email. Click any week to open a detailed task modal and copy the content in an email-friendly format.</p>
+<h1>September 2026 Starters</h1>
+<p>Bridgepoint Careers LLC — Team roles, responsibilities, and profiles.</p>
 <div class="cta-row">
-<button class="btn btn-primary" type="button" id="heroWeeksBtn">Open Weekly Tasks</button>
-<button class="btn btn-outline" type="button" id="heroRolesBtn">View Roles</button>
+<a class="btn btn-primary" href="#roles-septnew" style="text-decoration:none;">View Roles</a>
 </div>
 </section>
 
 <!-- EXISTING CONTENT (IPEOPLE + BRIDGEPOINT tabs) -->
-<div id="existing-content">
+<div id="existing-content" hidden>
   <section class="section" id="roles">
     <div class="section-head">
       <div>
@@ -87,11 +81,8 @@
   </section>
 </div>
 
-<footer class="footer">Generated from the Stem Task Sheet.</footer>
-</div>
-
 <!-- SEPT NEW CONTENT -->
-<div id="septnew-content" hidden>
+<div id="septnew-content">
   <section class="section" id="roles-septnew">
     <div class="section-head">
       <div>
@@ -102,6 +93,9 @@
     </div>
     <div class="role-grid" id="rolesGridSeptNew" aria-label="September new starter team members"></div>
   </section>
+</div>
+
+<footer class="footer">Generated from the Stem Task Sheet.</footer>
 </div>
 
 
@@ -1030,33 +1024,34 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => switchTab(btn.dataset.tab));
 });
 
-document.getElementById('viewRolesBtn').addEventListener('click', () => {
-  if (activeTab === 'newbp') {
-    switchTab('ipeople');
-    setTimeout(() => { const el = document.getElementById('roles'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 60);
-  } else {
-    const id = activeTab === 'newbp' ? 'roles-newbp' : 'roles';
+const vRolesBtn = document.getElementById('viewRolesBtn');
+if (vRolesBtn) {
+  vRolesBtn.addEventListener('click', () => {
+    const el = document.getElementById('roles-septnew') || document.getElementById('roles');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  });
+}
+
+const hWeeksBtn = document.getElementById('heroWeeksBtn');
+if (hWeeksBtn) {
+  hWeeksBtn.addEventListener('click', () => {
+    const id = activeTab === 'newbp' ? 'weeks-newbp' : 'weeks';
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
-  }
-});
+  });
+}
 
-document.getElementById('heroWeeksBtn').addEventListener('click', () => {
-  const id = activeTab === 'newbp' ? 'weeks-newbp' : 'weeks';
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-});
-
-document.getElementById('heroRolesBtn').addEventListener('click', () => {
-  const id = activeTab === 'newbp' ? 'roles-newbp' : 'roles';
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-});
+const hRolesBtn = document.getElementById('heroRolesBtn');
+if (hRolesBtn) {
+  hRolesBtn.addEventListener('click', () => {
+    const el = document.getElementById('roles-septnew') || document.getElementById('roles');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  });
+}
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
-renderNewBPRoles();
-renderNewBPWeeks();
-switchTab('ipeople');
+renderSeptNewRoles();
+switchTab('septnew');
 </script>
 </body>
 </html>
