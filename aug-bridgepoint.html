@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bridgepoint Careers LLC - Aug 2026 Batch - 12-Week Project Plan</title>
+<meta name="description" content="12-week onboarding project plan for the Bridgepoint Careers LLC Aug 2026 batch. View team roles and weekly task assignments." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+.tab-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+@media(max-width:700px){.tab-row .btn{font-size:11px;padding:8px 12px;height:38px}}
+.modal-card-link{height:36px;padding:8px 14px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="brand-mark"></div>
+<div class="brand-title">Bridgepoint Careers LLC</div>
+<div class="brand-sub">Aug 2026 Batch</div>
+</div>
+<div class="tab-row">
+  <a class="btn btn-outline" href="home.html" style="height:40px;padding:10px 20px;font-size:13px;">Back to Home</a>
+</div>
+</div>
+</div>
+<div class="wrap">
+<section class="hero">
+<h1>Aug 2026 Batch - 12-Week Project Plan</h1>
+<p>Review team members roles, responsibilities, and individual project assignments. Click any week to open a detailed task modal and copy it as an email-ready assignment for each team member.</p>
+<div class="cta-row">
+<button class="btn btn-primary" type="button" id="heroWeeksBtn">Open Weekly Tasks</button>
+<button class="btn btn-outline" type="button" id="heroRolesBtn">View Roles</button>
+</div>
+</section>
+<section class="section" id="roles">
+  <div class="section-head">
+    <div>
+      <p class="section-label">Team - Bridgepoint Careers LLC</p>
+      <h2 class="section-title">Roles &amp; Responsibilities</h2>
+    </div>
+    <div class="section-meta"><span id="peopleCount">5</span> team members</div>
+  </div>
+  <div class="role-grid" id="rolesGrid" aria-label="Bridgepoint Aug 2026 team members"></div>
+</section>
+<section class="section" id="weeks">
+  <div class="section-head">
+    <div>
+      <p class="section-label">Schedule - Aug 10 to Nov 1, 2026</p>
+      <h2 class="section-title">Week 1 to Week 12</h2>
+    </div>
+    <div class="section-meta">Click a week to open individual tasks</div>
+  </div>
+  <div class="week-grid" id="weekGrid" aria-label="Bridgepoint Aug 2026 weekly tasks"></div>
+</section>
+<footer class="footer">Bridgepoint Careers LLC - Aug 2026 Batch - 12-Week Project Plan</footer>
+</div>
+<dialog class="modal" id="weekDialog" aria-labelledby="weekTitle" aria-describedby="weekMeta">
+  <div class="modal-inner">
+    <div class="modal-header">
+      <div class="modal-headings">
+        <p class="modal-label" id="weekMeta"></p>
+        <h2 class="modal-title" id="weekTitle"></h2>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">Copy to Clipboard</button>
+        <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-status" id="modalStatus" aria-live="polite"></div>
+  </div>
+</dialog>
+<script src="aug-bridgepoint-data.js"></script>
+<script src="aug-bridgepoint-render.js"></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanishka Singh - RequireMap | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">RequireMap</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">RequireMap</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Kanishka Singh</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Business Analyst (BA)</strong> on
+                <strong>RequireMap</strong>, a requirements traceability and project alignment platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the RequireMap project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>RequireMap in one line</h3>
+            <p>A <strong>requirements management platform</strong> that provides <strong>traceability</strong>,
+                <strong>change impact analysis</strong>, <strong>compliance mapping</strong>, and <strong>release
+                    planning</strong> for enterprise software delivery.
+            </p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>System Analysis & Requirements Audit</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Review existing requirements repository — 380 requirements across
+                                5 modules in Jira/Confluence</li>
+                            <li><strong>Mon:</strong> Audit requirements quality — completeness, testability,
+                                consistency using <code>req_audit_template.xlsx</code></li>
+                            <li><strong>Tue:</strong> Identify orphan requirements — 45 requirements without linked test
+                                cases or user stories</li>
+                            <li><strong>Wed:</strong> Map requirements to business objectives — create
+                                <code>objective_mapping.xlsx</code> tracing to 12 OKRs
+                            </li>
+                            <li><strong>Thu:</strong> Analyze requirement dependencies — build dependency graph in
+                                Lucidchart showing 150+ connections</li>
+                            <li><strong>Fri:</strong> Present audit findings to Sarah (20 min) — highlight 15 critical
+                                gaps requiring remediation</li>
+                            <li><strong>Fri:</strong> Submit Week 1 status report in #requiremap Slack channel by 5 PM
+                                IST</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Traceability Matrix Development</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Design RTM structure — <code>rtm_template.xlsx</code> with
+                                Business Req → Functional → Technical → Test columns</li>
+                            <li><strong>Mon:</strong> Extract requirements from Jira — export 380 items with custom
+                                fields, status, priority</li>
+                            <li><strong>Tue:</strong> Link requirements to test cases — map to 520 test cases in
+                                TestRail, identify 80 untested requirements</li>
+                            <li><strong>Wed:</strong> Connect to deployment artifacts — trace requirements to 45 release
+                                notes, 12 change requests</li>
+                            <li><strong>Thu:</strong> Build <code>coverage_report.xlsx</code> — % coverage by module,
+                                gap analysis with remediation plan</li>
+                            <li><strong>Fri:</strong> Create automated RTM sync script — <code>rtm_sync.py</code>
+                                pulling from Jira, TestRail, GitHub</li>
+                            <li><strong>Fri:</strong> Review RTM with QA lead — validate test case mappings, document
+                                discrepancies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Change Impact Analysis Framework</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Design impact analysis process —
+                                <code>impact_analysis_sop.docx</code> with workflow, roles, templates
+                            </li>
+                            <li><strong>Mon:</strong> Create <code>impact_template.xlsx</code> — checklist for assessing
+                                change across 8 dimensions</li>
+                            <li><strong>Tue:</strong> Build dependency analyzer — <code>dep_analyzer.py</code>
+                                identifying affected requirements when one changes</li>
+                            <li><strong>Wed:</strong> Conduct sample impact analysis — analyze 3 pending change requests
+                                using new framework</li>
+                            <li><strong>Thu:</strong> Create <strong>Impact Dashboard</strong> in Power BI — pending
+                                CRs, affected requirements count, risk heatmap</li>
+                            <li><strong>Fri:</strong> Train change management team (1 hr) — walkthrough of impact
+                                analysis process</li>
+                            <li><strong>Fri:</strong> Document lessons from sample analyses in
+                                <code>impact_learnings.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Compliance & Regulatory Mapping</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Extract compliance requirements — 85 controls from SOC2, GDPR,
+                                HIPAA frameworks</li>
+                            <li><strong>Mon:</strong> Create <code>compliance_matrix.xlsx</code> — map controls to
+                                system requirements and evidence artifacts</li>
+                            <li><strong>Tue:</strong> Identify compliance gaps — 12 controls without corresponding
+                                requirements, 8 without test evidence</li>
+                            <li><strong>Wed:</strong> Build <strong>Compliance Dashboard</strong> — coverage by
+                                framework, gap trending, audit readiness score</li>
+                            <li><strong>Thu:</strong> Create compliance requirement templates —
+                                <code>gdpr_req_template.docx</code>, <code>soc2_req_template.docx</code>
+                            </li>
+                            <li><strong>Fri:</strong> Present compliance mapping to Emily (security review) — validate
+                                control interpretations</li>
+                            <li><strong>Fri:</strong> Generate audit-ready report —
+                                <code>compliance_evidence_pack.pdf</code> for external auditors
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Release Planning Support</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Create release requirements view —
+                                <code>release_v3.2_scope.xlsx</code> with 45 requirements planned
+                            </li>
+                            <li><strong>Mon:</strong> Build release readiness checklist —
+                                <code>release_checklist.xlsx</code> with 30 gates across dev, test, docs
+                            </li>
+                            <li><strong>Tue:</strong> Conduct scope validation workshop (1.5 hrs) — confirm requirement
+                                inclusion with product owner</li>
+                            <li><strong>Wed:</strong> Create <strong>Release Dashboard</strong> — requirement status,
+                                test progress, risk indicators</li>
+                            <li><strong>Thu:</strong> Generate release notes draft —
+                                <code>release_notes_v3.2_draft.docx</code> from requirement descriptions
+                            </li>
+                            <li><strong>Fri:</strong> Conduct release readiness review — present dashboard to Christopher, get
+                                go/no-go decision</li>
+                            <li><strong>Fri:</strong> Document release lessons in <code>release_retro_v3.2.md</code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete <code>requiremap_process_guide.docx</code> — end-to-end
+                                process documentation with templates</li>
+                            <li><strong>Mon:</strong> Create <code>ba_playbook.pdf</code> — best practices for
+                                requirements management at iPeople</li>
+                            <li><strong>Tue:</strong> Record training videos — RTM Usage (5 min), Impact Analysis (6
+                                min), Compliance Mapping (4 min)</li>
+                            <li><strong>Wed:</strong> Conduct training for BA team (6 attendees) — 1-hour session with
+                                hands-on exercises</li>
+                            <li><strong>Thu:</strong> Present final project to Christopher and PMO — 30 min demo with process
+                                improvement metrics</li>
+                            <li><strong>Thu:</strong> Create <code>maintenance_guide.md</code> — RTM refresh schedule,
+                                dashboard updates, escalation path</li>
+                            <li><strong>Fri:</strong> Complete knowledge transfer to Sarah — 1-hour deep dive on all
+                                deliverables</li>
+                            <li><strong>Fri:</strong> Submit final internship report and celebrate completion! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span> — <span class="contact-desc">RTM reviews, process design,
+                    daily standups</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span> — <span class="contact-desc">Jira/TestRail access,
+                    integration APIs</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span> — <span class="contact-desc">compliance frameworks,
+                    audit requirements</span></div>
+            <div class="contact-item"><span class="contact-name">Christopher Davis</span> — <span class="contact-role">Project
+                    Lead</span> — <span class="contact-desc">release decisions, stakeholder alignment</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your
+                <strong>Monday task list</strong> in your inbox/Slack at the start of each week (IST).
+            </p>
+            <div class="footer-signature">
+                <div class="name">Christopher Davis</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (503) 125-1912 · Slack: @christopher.davis</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Requirements traceability platform for enterprise software delivery
+                        </li>
+                        <li><strong>Problem:</strong> 380 requirements across 5 modules with gaps in tracing</li>
+                        <li><strong>Goal:</strong> 100% traced to tests, audit-ready compliance, 40% reduced release
+                            risk</li>
+                        <li><strong>Users:</strong> BA team, QA, PMO, compliance/audit team</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Audit requirements and build traceability matrix</li>
+                        <li>Create change impact analysis framework</li>
+                        <li>Map compliance controls to requirements</li>
+                        <li>Support release planning and readiness</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Jira · Confluence · TestRail · GitHub · Power BI</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>System analysis & requirements audit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Traceability matrix development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Change impact analysis framework</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Compliance & regulatory mapping</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Release planning support</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

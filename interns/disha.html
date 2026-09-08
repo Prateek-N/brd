@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disha Revandkar - TestSuite | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">TestSuite</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">TestSuite</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Disha Revandkar</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Software Engineer (SE)</strong> on
+                <strong>TestSuite</strong>, a test automation and quality engineering platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the TestSuite project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>TestSuite in one line</h3>
+            <p>A <strong>test automation platform</strong> for <strong>E2E testing</strong>, <strong>visual
+                    regression</strong>, and <strong>CI/CD integration</strong>.</p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & Framework Study</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Clone <code>github.com/ipeople/testsuite</code> — set up VS Code
+                                with Playwright extensions</li>
+                            <li><strong>Mon:</strong> Install Node.js 20, Playwright browsers, Docker for test execution
+                            </li>
+                            <li><strong>Tue:</strong> Study existing test framework — 450 E2E tests, POM structure,
+                                fixtures</li>
+                            <li><strong>Wed:</strong> Review parallel execution setup — Playwright sharding across 4
+                                workers</li>
+                            <li><strong>Thu:</strong> Bug #98: Fix flaky login test — analyze retry patterns, stabilize
+                                selectors</li>
+                            <li><strong>Fri:</strong> Write 3 additional tests for login flow edge cases</li>
+                            <li><strong>Fri:</strong> Submit PR with test improvements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Visual Regression Testing</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #56: Visual regression — implement screenshot comparison
+                                with Playwright</li>
+                            <li><strong>Tue:</strong> Set up baseline snapshots for 25 critical pages</li>
+                            <li><strong>Wed:</strong> Configure threshold tolerance — 0.1% pixel difference allowed</li>
+                            <li><strong>Thu:</strong> Build visual diff report — highlight changed regions, approval
+                                workflow</li>
+                            <li><strong>Fri:</strong> Integrate with CI pipeline — fail build on visual regression</li>
+                            <li><strong>Fri:</strong> Demo visual testing to Sarah</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>API Test Framework</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #62: API testing — create REST API test suite</li>
+                            <li><strong>Tue:</strong> Build request helpers — auth, headers, body builders</li>
+                            <li><strong>Wed:</strong> Create schema validation — JSON schema assertions for responses
+                            </li>
+                            <li><strong>Thu:</strong> Write 30 API tests for core endpoints</li>
+                            <li><strong>Fri:</strong> Add contract testing — OpenAPI spec validation</li>
+                            <li><strong>Fri:</strong> Generate API coverage report</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Test Data Management</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #68: Test data factories — dynamic data generation</li>
+                            <li><strong>Tue:</strong> Build user factory — generate realistic user profiles with Faker
+                            </li>
+                            <li><strong>Wed:</strong> Create order factory — complex order scenarios</li>
+                            <li><strong>Thu:</strong> Implement database seeding — test data setup/teardown</li>
+                            <li><strong>Fri:</strong> Add data isolation — each test gets fresh data</li>
+                            <li><strong>Fri:</strong> Present data strategy to Emily for data handling review</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Reporting & CI Integration</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Build HTML test report — pass/fail summary, screenshots, videos
+                            </li>
+                            <li><strong>Tue:</strong> Add Slack notifications — test results to #qa-alerts</li>
+                            <li><strong>Wed:</strong> Create test analytics dashboard — pass rate trends, flaky test
+                                tracking</li>
+                            <li><strong>Thu:</strong> UAT with QA team — validate reporting, CI integration</li>
+                            <li><strong>Fri:</strong> Fix P1 issues from UAT</li>
+                            <li><strong>Fri:</strong> Document CI setup in <code>ci_integration.md</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete framework documentation</li>
+                            <li><strong>Tue:</strong> Write test authoring guide for developers</li>
+                            <li><strong>Wed:</strong> Record training videos (12 min total)</li>
+                            <li><strong>Thu:</strong> Present final project to David (30 min)</li>
+                            <li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+                            <li><strong>Fri:</strong> Submit final report and celebrate! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span></div>
+            <div class="contact-item"><span class="contact-name">David Thompson</span> — <span class="contact-role">Project
+                    Lead</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+            <div class="footer-signature">
+                <div class="name">David Thompson</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (213) 674-9135 � Slack: @david.thompson</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Test automation platform for E2E, visual regression, and API testing
+                        </li>
+                        <li><strong>Problem:</strong> 450+ tests with flaky failures, no visual regression coverage</li>
+                        <li><strong>Goal:</strong> 450+ E2E tests passing, 25 pages visual coverage, <5% flaky rate</li>
+                        <li><strong>Users:</strong> QA team, developers, release managers</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Implement visual regression testing with screenshot comparison</li>
+                        <li>Build API test framework with schema validation</li>
+                        <li>Create test data factories with dynamic generation</li>
+                        <li>Build test reporting and CI integration</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Playwright · TypeScript · Docker · GitHub Actions · Faker.js · PostgreSQL</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup & framework study</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Visual regression testing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>API test framework</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Test data management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Reporting & CI integration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

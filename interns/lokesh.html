@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lokesh Kumar Rudhramurthi - MetricHub | iPeople Career</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="logo">Ipeople Career</div><div class="project-badge">MetricHub</div></header>
+<main class="container">
+<section class="welcome-card">
+<h1>Welcome to <span class="highlight">MetricHub</span> &#8212; kickoff details &amp; Monday task cadence</h1>
+<p class="greeting">Hi <span class="name">Lokesh Kumar Rudhramurthi</span>,</p>
+<p>Welcome aboard! We're excited to have you join as our <strong>Data Analyst</strong> on <strong>MetricHub</strong>, an operational metrics dashboard with alerts and trend analysis.</p>
+<p>You're starting on <strong>February 23, 2026</strong>, marking the beginning of your first week focused on onboarding and understanding the foundational setup for the MetricHub project. You'll receive your weekly task list every <strong>Monday (IST)</strong>.</p>
+<div class="btn-group"><button class="btn btn-primary" onclick="openModal()">Open BRD</button></div>
+</section>
+<section class="project-summary"><h3>MetricHub in one line</h3><p>An <strong>operations dashboard</strong> for <strong>tracking KPIs</strong>, <strong>setting alerts</strong>, and <strong>identifying performance trends</strong>.</p></section>
+<section class="week-section"><h2>Weekly Task Breakdown</h2><div class="accordion"><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 1</span><span>Setup & Metrics Data Model</span><span class="dates">(Feb 23 - Mar 1)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up Python + PostgreSQL environment</li>
+<li><strong>Mon:</strong> Identify 10 core operational metrics to track</li>
+<li><strong>Tue:</strong> Design database schema for metrics, thresholds, alerts</li>
+<li><strong>Wed:</strong> Write ETL scripts to extract data from 3 source systems</li>
+<li><strong>Thu:</strong> Bug #6: Fix timestamp alignment across data sources</li>
+<li><strong>Fri:</strong> Document metrics definitions and data sources</li>
+<li><strong>Fri:</strong> Submit ETL pipeline for review</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 2</span><span>Data Transformation & KPIs</span><span class="dates">(Mar 2 - Mar 8)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build data cleaning pipeline &mdash; nulls, outliers, duplicates</li>
+<li><strong>Tue:</strong> Calculate daily, weekly, monthly KPI aggregations</li>
+<li><strong>Wed:</strong> Add YoY and MoM comparison calculations</li>
+<li><strong>Thu:</strong> Build derived metrics &mdash; ratios, percentages, rates</li>
+<li><strong>Fri:</strong> Validate KPIs against source system reports</li>
+<li><strong>Fri:</strong> Demo KPI calculations to Sarah</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 3</span><span>Grafana Dashboard</span><span class="dates">(Mar 9 - Mar 15)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up Grafana with PostgreSQL data source</li>
+<li><strong>Tue:</strong> Build overview dashboard with 10 KPI panels</li>
+<li><strong>Wed:</strong> Add time-series trend charts with date range selector</li>
+<li><strong>Thu:</strong> Create department-level drill-down views</li>
+<li><strong>Fri:</strong> Write 4 data accuracy validation queries</li>
+<li><strong>Fri:</strong> Document dashboard layout</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 4</span><span>Alerting & Anomaly Detection</span><span class="dates">(Mar 16 - Mar 22)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Configure Grafana alerts for threshold breaches</li>
+<li><strong>Tue:</strong> Add email and Slack notification channels</li>
+<li><strong>Wed:</strong> Build simple anomaly detection using z-score method</li>
+<li><strong>Thu:</strong> Create alert history log with resolution tracking</li>
+<li><strong>Fri:</strong> Present alerting system to James</li>
+<li><strong>Fri:</strong> Document alert rules and escalation</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 5</span><span>Automation & Testing</span><span class="dates">(Mar 23 - Mar 29)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up Airflow DAG for scheduled ETL runs</li>
+<li><strong>Tue:</strong> Add automated data quality checks in pipeline</li>
+<li><strong>Wed:</strong> Build weekly performance summary email report</li>
+<li><strong>Thu:</strong> UAT with ops team &mdash; validate dashboard accuracy</li>
+<li><strong>Fri:</strong> Fix P1 issues from UAT</li>
+<li><strong>Fri:</strong> Document Airflow DAG configuration</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 6</span><span>Documentation & Handoff</span><span class="dates">(Mar 30 - Apr 5)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Complete ETL and metrics documentation</li>
+<li><strong>Tue:</strong> Write dashboard user guide</li>
+<li><strong>Wed:</strong> Record walkthrough video (10 min)</li>
+<li><strong>Thu:</strong> Present final project to James (30 min)</li>
+<li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+<li><strong>Fri:</strong> Submit final report and celebrate! &#127881;</li>
+</ul></div>
+</div></div></section>
+<section class="contacts-section">
+<h3>Points of contact</h3>
+<div class="contact-item"><span class="contact-name">Sarah Mitchell</span> &#8212; <span class="contact-role">Technical Lead</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Platform/SRE</span></div>
+<div class="contact-item"><span class="contact-name">Emily Carter</span> &#8212; <span class="contact-role">Security/Policy</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Project Lead</span></div>
+</section>
+<footer class="footer">
+<p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+<div class="footer-signature"><div class="name">James Anderson</div><div class="title">Project Lead &middot; Ipeople Career</div><div class="contact">+1 (469) 532-8174 &middot; Slack: @james.anderson</div></div>
+</footer>
+</main>
+<div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+<div class="modal">
+<div class="modal-header"><h2>&#128196; Business Requirements Document</h2><button class="modal-close" onclick="closeModal()">&times;</button></div>
+<div class="modal-body">
+<div class="brd-section"><h3>1. Project Overview</h3><ul>
+<li><strong>What:</strong> Operational metrics dashboard with alerting and automated ETL pipeline</li>
+<li><strong>Problem:</strong> KPIs tracked manually, no alerts for threshold breaches, data refresh is manual</li>
+<li><strong>Goal:</strong> Real-time KPI dashboard, automated ETL, instant alerts on anomalies</li>
+<li><strong>Users:</strong> Operations managers, department heads, executive team</li>
+</ul></div>
+<div class="brd-section"><h3>2. Your Role</h3><ul><li>Build ETL pipeline with Python and Airflow</li><li>Calculate and validate 10 core KPIs</li><li>Design Grafana dashboard with alerting</li><li>Implement anomaly detection and reporting</li></ul></div>
+<div class="brd-section"><h3>3. Tools</h3><ul><li>Python &middot; SQL &middot; Grafana &middot; PostgreSQL &middot; Pandas &middot; Airflow</li></ul></div>
+<div class="brd-section"><h3>4. Weekly Milestones</h3><table class="milestone-table"><tr><td><strong>W1</strong></td><td>Setup & Metrics Data Model</td></tr><tr><td><strong>W2</strong></td><td>Data Transformation & KPIs</td></tr><tr><td><strong>W3</strong></td><td>Grafana Dashboard</td></tr><tr><td><strong>W4</strong></td><td>Alerting & Anomaly Detection</td></tr><tr><td><strong>W5</strong></td><td>Automation & Testing</td></tr><tr><td><strong>W6</strong></td><td>Documentation & Handoff</td></tr></table></div>
+</div></div></div>
+<script>
+function openModal(){document.getElementById('brdModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('brdModal').classList.remove('active');document.body.style.overflow='auto';}
+function closeModalOutside(event){if(event.target.classList.contains('modal-overlay'))closeModal();}
+function toggleAccordion(header){const item=header.parentElement;const isActive=item.classList.contains('active');document.querySelectorAll('.accordion-item').forEach(acc=>acc.classList.remove('active'));if(!isActive)item.classList.add('active');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>

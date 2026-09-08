@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Borkar - InsightHub | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">InsightHub</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">InsightHub</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Sagar Borkar</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Business Analyst (BA)</strong> on
+                <strong>InsightHub</strong>, a stakeholder engagement and requirements management platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the InsightHub project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>InsightHub in one line</h3>
+            <p>A <strong>business intelligence engagement platform</strong> that provides <strong>stakeholder
+                    management</strong>, <strong>requirements gathering</strong>, <strong>process mapping</strong>, and
+                <strong>impact analysis</strong> for strategic initiatives.
+            </p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Stakeholder Mapping & Discovery</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Review project charter and previous documentation —
+                                <code>insighthub_charter_v2.pdf</code> in SharePoint
+                            </li>
+                            <li><strong>Mon:</strong> Create stakeholder registry — identify 25+ stakeholders across
+                                Finance, Operations, IT, Marketing</li>
+                            <li><strong>Tue:</strong> Build <code>stakeholder_matrix.xlsx</code> — Power/Interest grid,
+                                communication preferences, decision authority</li>
+                            <li><strong>Wed:</strong> Schedule discovery interviews — book 8 sessions with key
+                                stakeholders (30 min each) for Week 2</li>
+                            <li><strong>Thu:</strong> Prepare interview templates —
+                                <code>discovery_questions_v1.docx</code> with 15 structured questions per domain
+                            </li>
+                            <li><strong>Fri:</strong> Present stakeholder map to Sarah (20 min) — get alignment on
+                                prioritization and engagement approach</li>
+                            <li><strong>Fri:</strong> Submit Week 1 status report in #insighthub Slack channel by 5 PM
+                                IST</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Requirements Elicitation</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon-Wed:</strong> Conduct 8 stakeholder interviews — Finance (2), Ops (2), IT
+                                (2), Marketing (2) — record in Teams</li>
+                            <li><strong>Mon:</strong> Document interview notes in
+                                <code>interview_notes_week2.docx</code> — key pain points, feature requests, success
+                                criteria
+                            </li>
+                            <li><strong>Thu:</strong> Synthesize findings into <code>requirements_catalog.xlsx</code> —
+                                45+ requirements with priority (MoSCoW), source, category</li>
+                            <li><strong>Thu:</strong> Identify requirement conflicts — document 5 conflicting needs
+                                between stakeholder groups</li>
+                            <li><strong>Fri:</strong> Create <code>conflict_resolution_matrix.xlsx</code> — proposed
+                                resolutions with tradeoffs for Sarah's review</li>
+                            <li><strong>Fri:</strong> Prepare requirements prioritization workshop materials — voting
+                                cards, criteria definitions</li>
+                            <li><strong>Fri:</strong> Share interview summary with stakeholders — email recap with next
+                                steps</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Process Mapping & Analysis</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Conduct requirements prioritization workshop (2 hrs) — 12
+                                stakeholders, MoSCoW voting</li>
+                            <li><strong>Mon:</strong> Finalize priority list — document decisions in
+                                <code>requirements_prioritized_v1.xlsx</code>
+                            </li>
+                            <li><strong>Tue:</strong> Map current-state process —
+                                <code>as_is_process_order_mgmt.vsdx</code> in Visio (Order-to-Cash flow)
+                            </li>
+                            <li><strong>Wed:</strong> Identify process pain points — 12 bottlenecks, 8 manual handoffs,
+                                5 approval delays</li>
+                            <li><strong>Thu:</strong> Create future-state process —
+                                <code>to_be_process_order_mgmt.vsdx</code> with proposed improvements
+                            </li>
+                            <li><strong>Fri:</strong> Build gap analysis — <code>gap_analysis.xlsx</code> mapping
+                                current→future with effort estimates</li>
+                            <li><strong>Fri:</strong> Present process maps to Operations lead — gather feedback, revise
+                                by Monday</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>User Stories & Acceptance Criteria</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Convert top 20 requirements to user stories — format: "As a
+                                [role], I want [feature], so that [benefit]"</li>
+                            <li><strong>Mon:</strong> Write acceptance criteria for each story — 3-5 testable conditions
+                                using Given-When-Then format</li>
+                            <li><strong>Tue:</strong> Create <code>user_stories_sprint1.xlsx</code> — first 10 stories
+                                for Sprint 1 with story points estimates</li>
+                            <li><strong>Wed:</strong> Build <code>wireframe_order_dashboard.pdf</code> — low-fidelity
+                                mockups for 3 key screens in Figma</li>
+                            <li><strong>Thu:</strong> Conduct story walkthrough with Dev team (1 hr) — clarify
+                                requirements, refine acceptance criteria</li>
+                            <li><strong>Fri:</strong> Create traceability matrix — <code>rtm_insighthub.xlsx</code>
+                                linking requirements → stories → test cases</li>
+                            <li><strong>Fri:</strong> Present user stories to Sarah and Matthew — confirm sprint readiness
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Impact Analysis & Testing Support</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Create <code>impact_analysis.xlsx</code> — assess downstream
+                                effects on 5 connected systems</li>
+                            <li><strong>Mon:</strong> Document data migration requirements — 3 tables, 50K records,
+                                field mapping specifications</li>
+                            <li><strong>Tue:</strong> Write test scenarios — <code>test_scenarios_sprint1.xlsx</code>
+                                covering 10 user stories, 35 test cases</li>
+                            <li><strong>Wed:</strong> Support UAT planning — create <code>uat_test_plan.docx</code> with
+                                user participation schedule</li>
+                            <li><strong>Thu:</strong> Conduct UAT training for business users (1 hr) — walkthrough of
+                                test scenarios, defect logging</li>
+                            <li><strong>Fri:</strong> Triage UAT defects — categorize 15 issues as
+                                Bug/Enhancement/Question, assign to dev team</li>
+                            <li><strong>Fri:</strong> Create UAT status report — <code>uat_status_week5.pptx</code> for
+                                stakeholder update</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete <code>brd_insighthub_final.docx</code> — comprehensive
+                                BRD with all requirements, process maps, wireframes</li>
+                            <li><strong>Mon:</strong> Create <code>srs_insighthub_v1.docx</code> — Software Requirements
+                                Specification for development</li>
+                            <li><strong>Tue:</strong> Build training materials — <code>user_training_guide.pptx</code>
+                                (30 slides) for end-user rollout</li>
+                            <li><strong>Wed:</strong> Conduct stakeholder signoff meeting (1 hr) — present final
+                                deliverables, get formal approval</li>
+                            <li><strong>Thu:</strong> Present final project to Matthew and business sponsors — 30 min
+                                presentation with ROI summary</li>
+                            <li><strong>Thu:</strong> Create <code>lessons_learned.docx</code> — 10 key learnings,
+                                recommendations for future projects</li>
+                            <li><strong>Fri:</strong> Complete knowledge transfer to Sarah — 1-hour walkthrough of all
+                                artifacts and pending items</li>
+                            <li><strong>Fri:</strong> Submit final internship report and celebrate completion! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span> — <span class="contact-desc">requirements reviews,
+                    process mapping feedback, daily standups</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span> — <span class="contact-desc">system access, integration
+                    requirements, data migration</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span> — <span class="contact-desc">compliance requirements,
+                    data handling policies</span></div>
+            <div class="contact-item"><span class="contact-name">Matthew Taylor</span> — <span class="contact-role">Project
+                    Lead</span> — <span class="contact-desc">stakeholder escalation, executive alignment, final
+                    presentations</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your
+                <strong>Monday task list</strong> in your inbox/Slack at the start of each week (IST).
+            </p>
+            <div class="footer-signature">
+                <div class="name">Matthew Taylor</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (230) 580-7462 · Slack: @matthew.taylor</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Stakeholder engagement platform for requirements management</li>
+                        <li><strong>Problem:</strong> 25+ stakeholders across 4 domains with unclear requirements</li>
+                        <li><strong>Goal:</strong> 100% stakeholder participation, requirements traced to objectives
+                        </li>
+                        <li><strong>Users:</strong> Finance, Operations, IT, Marketing business users</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Map stakeholders and conduct discovery interviews</li>
+                        <li>Elicit and prioritize 45+ requirements</li>
+                        <li>Create process maps (As-Is and To-Be)</li>
+                        <li>Write user stories with acceptance criteria</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Excel · Jira · Confluence · Visio · Figma</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Stakeholder mapping & discovery</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Requirements elicitation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Process mapping & analysis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>User stories & acceptance criteria</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Impact analysis & testing support</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

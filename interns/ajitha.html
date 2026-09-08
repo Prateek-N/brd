@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajitha Gorrepati - CodeStream | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">CodeStream</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">CodeStream</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Ajitha Gorrepati</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Software Engineer (SE)</strong> on
+                <strong>CodeStream</strong>, a real-time code collaboration platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the CodeStream project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>CodeStream in one line</h3>
+            <p>A <strong>collaboration platform</strong> for <strong>real-time code editing</strong>, <strong>code
+                    review</strong>, and <strong>pair programming</strong>.</p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & WebSocket Architecture</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Clone <code>github.com/ipeople/codestream</code> — set up VS Code
+                                with React, TypeScript</li>
+                            <li><strong>Mon:</strong> Install Node.js 20, Redis, MongoDB for document storage</li>
+                            <li><strong>Tue:</strong> Study WebSocket architecture — Socket.IO rooms, event handling,
+                                reconnection</li>
+                            <li><strong>Wed:</strong> Review CRDT implementation — Yjs library for conflict-free
+                                collaboration</li>
+                            <li><strong>Thu:</strong> Bug #112: Fix cursor position sync on slow connections</li>
+                            <li><strong>Fri:</strong> Write 4 unit tests for cursor sync edge cases</li>
+                            <li><strong>Fri:</strong> Submit PR, respond to code review feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Multi-Cursor Presence Feature</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #67: Multi-cursor presence — show collaborator cursors
+                                with names</li>
+                            <li><strong>Tue:</strong> Design presence protocol — cursor position, selection range, user
+                                colors</li>
+                            <li><strong>Wed:</strong> Implement cursor rendering with smooth animations</li>
+                            <li><strong>Thu:</strong> Add selection highlighting with translucent overlay</li>
+                            <li><strong>Fri:</strong> Build presence sidebar — list collaborators with go-to-cursor</li>
+                            <li><strong>Fri:</strong> Write 6 integration tests for multi-user scenarios</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Inline Code Review System</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #72: Inline comments — threaded discussions on code lines
+                            </li>
+                            <li><strong>Tue:</strong> Design comment model — thread, replies, reactions, resolution</li>
+                            <li><strong>Wed:</strong> Build comment UI — gutter click to add, rich text editor</li>
+                            <li><strong>Thu:</strong> Implement reply threading with @mention support</li>
+                            <li><strong>Fri:</strong> Add comment resolution — resolve/reopen, filter by status</li>
+                            <li><strong>Fri:</strong> Demo review system to Sarah</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Pair Programming Mode</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Feature #78: Pair programming — driver/navigator with role
+                                switching</li>
+                            <li><strong>Tue:</strong> Design session protocol — invite, accept, role assignment</li>
+                            <li><strong>Wed:</strong> Implement driver mode with navigator read-only view</li>
+                            <li><strong>Thu:</strong> Add one-click role switch button</li>
+                            <li><strong>Fri:</strong> Build WebRTC voice chat integration</li>
+                            <li><strong>Fri:</strong> Present pairing mode to Emily for privacy review</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Performance & Scalability</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Profile WebSocket performance — identify bottlenecks</li>
+                            <li><strong>Tue:</strong> Optimize CRDT sync — batch updates, reduce payload</li>
+                            <li><strong>Wed:</strong> Implement Redis pub/sub for horizontal scaling</li>
+                            <li><strong>Thu:</strong> Add lazy loading for large files, virtual scrolling</li>
+                            <li><strong>Fri:</strong> UAT with dev teams — test 10+ concurrent collaborators</li>
+                            <li><strong>Fri:</strong> Fix P1 issues — target 20+ users smoothly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete API docs — WebSocket events, REST endpoints</li>
+                            <li><strong>Tue:</strong> Update architecture docs with new components</li>
+                            <li><strong>Wed:</strong> Write <code>docs/user_guide.md</code> for collaboration</li>
+                            <li><strong>Thu:</strong> Present final project to Sarah (30 min demo)</li>
+                            <li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+                            <li><strong>Fri:</strong> Submit final report and celebrate! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span></div>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span class="contact-role">Project
+                    Lead</span></div>
+        </section>
+
+        <footer class="footer">
+            <p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+            <div class="footer-signature">
+                <div class="name">Sarah Mitchell</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (312) 847-6293 � Slack: @sarah.mitchell</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> Real-time code collaboration platform for pair programming</li>
+                        <li><strong>Problem:</strong> 200+ developers with no unified collab or code review tool</li>
+                        <li><strong>Goal:</strong> Sub-50ms cursor sync, 20+ concurrent users, 80% team adoption</li>
+                        <li><strong>Users:</strong> Developers, engineering teams, code reviewers</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Build multi-cursor presence with user colors</li>
+                        <li>Implement inline code review with threading</li>
+                        <li>Create pair programming driver/navigator mode</li>
+                        <li>Optimize WebSocket performance for scale</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>React · TypeScript · Monaco Editor · Socket.IO · Yjs (CRDT) · MongoDB · Redis · WebRTC</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup & WebSocket architecture</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Multi-cursor presence feature</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Inline code review system</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Pair programming mode</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Performance & scalability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

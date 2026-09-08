@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preethi Doki - BuildFlow | iPeople Career</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Ipeople Career</div>
+        <div class="project-badge">BuildFlow</div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-card">
+            <h1>Welcome to <span class="highlight">BuildFlow</span> — kickoff details & Monday task cadence</h1>
+            <p class="greeting">Hi <span class="name">Preethi Doki</span>,</p>
+            <p>Welcome aboard! We're excited to have you join as our <strong>Software Engineer (SE)</strong> on
+                <strong>BuildFlow</strong>, a CI/CD pipeline automation and DevOps orchestration platform.
+            </p>
+            <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+                onboarding and understanding the foundational setup for the BuildFlow project. You'll receive your
+                weekly
+                task list every <strong>Monday (IST)</strong>.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+            </div>
+        </section>
+
+        <section class="project-summary">
+            <h3>BuildFlow in one line</h3>
+            <p>A <strong>DevOps platform</strong> that provides <strong>pipeline automation</strong>, <strong>deployment
+                    orchestration</strong>, <strong>environment management</strong>, and <strong>release
+                    tracking</strong> for continuous delivery.</p>
+        </section>
+
+        <section class="week-section">
+            <h2>Weekly Task Breakdown</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 1</span>
+                            <span>Environment Setup & Pipeline Exploration</span>
+                            <span class="dates">(Feb 9 - Feb 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Clone repo <code>github.com/ipeople/buildflow</code> — set up VS
+                                Code with Python/TypeScript extensions</li>
+                            <li><strong>Mon:</strong> Install Docker, kubectl, ArgoCD CLI — configure local dev
+                                environment</li>
+                            <li><strong>Tue:</strong> Review existing pipeline configs — 35 pipelines in
+                                <code>.github/workflows/</code> and <code>pipelines/</code>
+                            </li>
+                            <li><strong>Wed:</strong> Trace deployment flow — from PR merge → build → test → staging →
+                                production</li>
+                            <li><strong>Thu:</strong> Complete first bug fix — Issue #156: Fix parallel step execution
+                                race condition</li>
+                            <li><strong>Fri:</strong> Write unit tests for bug fix — 4 test cases with mock step
+                                executors</li>
+                            <li><strong>Fri:</strong> Submit PR, respond to code review — target merge by EOD</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 2</span>
+                            <span>Pipeline Builder Feature</span>
+                            <span class="dates">(Feb 16 - Feb 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #45: Visual pipeline builder — React component for
+                                drag-drop pipeline design</li>
+                            <li><strong>Mon:</strong> Design component architecture — <code>PipelineCanvas</code>,
+                                <code>StepNode</code>, <code>ConnectionLine</code>
+                            </li>
+                            <li><strong>Tue:</strong> Implement drag-drop functionality — use <code>react-dnd</code> for
+                                step placement and reordering</li>
+                            <li><strong>Wed:</strong> Build step configuration panel — form inputs for step parameters,
+                                environment variables</li>
+                            <li><strong>Thu:</strong> Add pipeline validation — check for cycles, missing dependencies,
+                                invalid configurations</li>
+                            <li><strong>Fri:</strong> Export to YAML — generate valid pipeline config from visual
+                                builder</li>
+                            <li><strong>Fri:</strong> Submit PR with component tests — 12 test cases for builder
+                                interactions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 3</span>
+                            <span>Deployment Rollback System</span>
+                            <span class="dates">(Feb 23 - Mar 1)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #52: One-click rollback — implement deployment
+                                version tracking</li>
+                            <li><strong>Mon:</strong> Design rollback API — <code>POST /deployments/{id}/rollback</code>
+                                with target version</li>
+                            <li><strong>Tue:</strong> Build version history service — track last 10 deployments per
+                                environment</li>
+                            <li><strong>Wed:</strong> Implement Kubernetes rollback — <code>kubectl rollout undo</code>
+                                wrapper with ArgoCD sync</li>
+                            <li><strong>Thu:</strong> Add rollback UI — deployment history table with rollback buttons,
+                                confirmation modal</li>
+                            <li><strong>Fri:</strong> Write integration tests — test rollback flow with mock K8s cluster
+                            </li>
+                            <li><strong>Fri:</strong> Demo rollback feature to Sarah — show full rollback workflow</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 4</span>
+                            <span>Environment Management</span>
+                            <span class="dates">(Mar 2 - Mar 8)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Start Feature #58: Environment provisioning — Terraform module for
+                                on-demand environments</li>
+                            <li><strong>Mon:</strong> Design environment config schema — <code>environments/</code>
+                                folder structure with overrides</li>
+                            <li><strong>Tue:</strong> Build environment API — CRUD endpoints for environment lifecycle
+                                management</li>
+                            <li><strong>Wed:</strong> Implement PR preview environments — auto-create ephemeral env on
+                                PR open, destroy on merge</li>
+                            <li><strong>Thu:</strong> Add environment dashboard — list all environments with status,
+                                resource usage, expiry</li>
+                            <li><strong>Fri:</strong> Write cleanup job — <code>env_cleanup_cron.py</code> to remove
+                                stale preview environments</li>
+                            <li><strong>Fri:</strong> Present environment feature to Emily — review security of ephemeral
+                                env access</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 5</span>
+                            <span>Pipeline Analytics & Monitoring</span>
+                            <span class="dates">(Mar 9 - Mar 15)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Build pipeline metrics collector — track build time, success rate,
+                                queue wait time</li>
+                            <li><strong>Mon:</strong> Create analytics API — <code>GET /analytics/pipelines</code> with
+                                time range filters</li>
+                            <li><strong>Tue:</strong> Build analytics dashboard — charts for build trends, failure
+                                patterns, slow steps</li>
+                            <li><strong>Wed:</strong> Implement failure notifications — Slack/email alerts on pipeline
+                                failure with context</li>
+                            <li><strong>Thu:</strong> Conduct UAT with DevOps team — test pipeline builder, rollback,
+                                analytics</li>
+                            <li><strong>Fri:</strong> Fix P1 issues from UAT — target: all critical bugs resolved by EOD
+                            </li>
+                            <li><strong>Fri:</strong> Document monitoring setup in <code>monitoring_guide.md</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="week-title">
+                            <span class="week-badge">Week 6</span>
+                            <span>Documentation & Handoff</span>
+                            <span class="dates">(Mar 16 - Mar 22)</span>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="task-list">
+                            <li><strong>Mon:</strong> Complete API documentation — OpenAPI spec for all BuildFlow
+                                endpoints</li>
+                            <li><strong>Mon:</strong> Update architecture docs — add pipeline builder, rollback,
+                                environments to diagrams</li>
+                            <li><strong>Tue:</strong> Write user guide — <code>docs/user_guide.md</code> for pipeline
+                                creation, deployment workflows</li>
+                            <li><strong>Wed:</strong> Record demo videos — Pipeline Builder (5 min), Rollback (3 min),
+                                Environments (4 min)</li>
+                            <li><strong>Thu:</strong> Present final project to Rachel and Platform team — 30 min demo
+                                with adoption metrics</li>
+                            <li><strong>Thu:</strong> Create runbook — <code>docs/runbook.md</code> for operational
+                                procedures</li>
+                            <li><strong>Fri:</strong> Complete knowledge transfer to Sarah — review all features and
+                                pending items</li>
+                            <li><strong>Fri:</strong> Submit final internship report and celebrate completion! 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-section">
+            <h3>Points of contact</h3>
+            <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span
+                    class="contact-role">Technical Lead</span> — <span class="contact-desc">code reviews, architecture
+                    decisions, daily standups</span></div>
+            <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+                    class="contact-role">Platform/SRE</span> — <span class="contact-desc">Kubernetes, ArgoCD,
+                    infrastructure, CI/CD</span></div>
+            <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+                    class="contact-role">Security/Policy</span> — <span class="contact-desc">secrets management, access
+                    control, environment security</span></div>
+            <div class="contact-item"><span class="contact-name">Rachel Brown</span> — <span class="contact-role">Project
+                    Lead</span> — <span class="contact-desc">sprint planning, escalations, final presentations</span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your
+                <strong>Monday task list</strong> in your inbox/Slack at the start of each week (IST).
+            </p>
+            <div class="footer-signature">
+                <div class="name">Rachel Brown</div>
+                <div class="title">Project Lead · Ipeople Career</div>
+                <div class="contact">+1 (676) 545-4605 · Slack: @rachel.brown</div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>📄 Business Requirements Document</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="brd-section">
+                    <h3>1. Project Overview</h3>
+                    <ul>
+                        <li><strong>What:</strong> CI/CD pipeline automation and DevOps orchestration platform</li>
+                        <li><strong>Problem:</strong> 35 pipelines, 150 deployments/week with manual rollbacks</li>
+                        <li><strong>Goal:</strong> Visual builder adoption, <5 min rollbacks, PR preview envs</li>
+                        <li><strong>Users:</strong> 45 developers, DevOps team, release managers</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>2. Your Role</h3>
+                    <ul>
+                        <li>Build visual pipeline drag-drop builder</li>
+                        <li>Implement one-click deployment rollback</li>
+                        <li>Create PR preview environment provisioning</li>
+                        <li>Build pipeline analytics dashboard</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>3. Tools</h3>
+                    <ul>
+                        <li>Python (FastAPI) · React · TypeScript · Kubernetes · ArgoCD · Terraform</li>
+                    </ul>
+                </div>
+
+                <div class="brd-section">
+                    <h3>4. Weekly Milestones</h3>
+                    <table class="milestone-table">
+                        <tr>
+                            <td><strong>W1</strong></td>
+                            <td>Environment setup & pipeline exploration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W2</strong></td>
+                            <td>Pipeline builder feature</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W3</strong></td>
+                            <td>Deployment rollback system</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W4</strong></td>
+                            <td>Environment management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W5</strong></td>
+                            <td>Pipeline analytics & monitoring</td>
+                        </tr>
+                        <tr>
+                            <td><strong>W6</strong></td>
+                            <td>Documentation & handoff</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+        function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ashish Kasam</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="brand-mark"></div>
+<a class="brand-title" href="../home.html">Back to Home</a>
+</div>
+<a class="btn btn-outline" href="../home.html">Home</a>
+</div>
+</div>
+<div class="wrap">
+<section class="profile-hero">
+<h1>Ashish Kasam</h1>
+<p class="title">Supply Chain Specialist</p>
+<div class="badge"><span class="dot"></span>IPEOPLE CAREER LLC</div>
+</section>
+<section class="content">
+<h2>Roles & Responsibilities</h2>
+<ul class="list"><li>Plan, coordinate, and monitor end-to-end supply chain activities.</li><li>Manage procurement of materials, goods, and services from suppliers.</li><li>Ensure timely delivery of products while minimizing costs.</li><li>Monitor inventory levels and optimize stock management.</li><li>Analyze supply chain data to improve efficiency and performance.</li><li>Collaborate with vendors, logistics providers, and internal teams.</li><li>Identify and mitigate supply chain risks and disruptions.</li><li>Ensure compliance with company policies and regulatory requirements.</li><li>Support continuous improvement initiatives across the supply chain.</li><li>Forecast demand and plan supply to meet customer requirements.</li><li>Negotiate contracts and pricing with suppliers to achieve cost savings.</li><li>Resolve supply chain issues quickly and efficiently.</li></ul>
+</section>
+<section class="section" id="weeks">
+  <div class="section-head">
+    <div>
+      <p class="section-label">Plan</p>
+      <h2 class="section-title">Week 1–Week 12 Tasks</h2>
+    </div>
+    <div class="section-meta">Click a week to view and copy your assignment</div>
+  </div>
+  <div class="week-grid" id="weekGrid" aria-label="Weekly task navigation"></div>
+</section>
+
+<dialog class="modal" id="weekDialog" aria-labelledby="weekTitle" aria-describedby="weekMeta">
+  <div class="modal-inner">
+    <div class="modal-header">
+      <div class="modal-headings">
+        <p class="modal-label" id="weekMeta"></p>
+        <h2 class="modal-title" id="weekTitle"></h2>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">Copy to Clipboard</button>
+        <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-status" id="modalStatus" aria-live="polite"></div>
+  </div>
+</dialog>
+
+<footer class="footer">Weekly Plan</footer>
+
+<script>
+const PLAN = {"name": "Ashish Kasam", "jobTitle": "Supply Chain Specialist", "projectName": "Supplier Evaluation & Procurement Tracker", "projectDescription": "Build a supplier evaluation system in Excel/Google Sheets to track procurement, vendor performance, inventory planning, and cost savings using public supply chain data templates.", "tools": "Excel / Google Sheets (free), Kaggle supply chain data, Google Data Studio (free)", "weeks": [{"week": 1, "raw": "W1 (Jun 1–7): Define supplier evaluation criteria (quality, price, delivery time)"}, {"week": 2, "raw": "W2 (Jun 8–14): Download supply chain dataset, map supplier data fields"}, {"week": 3, "raw": "W3 (Jun 15–21): Build supplier scorecard template in Excel"}, {"week": 4, "raw": "W4 (Jun 22–28): Create procurement tracking sheet — PO status, lead times"}, {"week": 5, "raw": "W5 (Jun 29–Jul 5): Build inventory level monitoring sheet with reorder alerts"}, {"week": 6, "raw": "W6 (Jul 6–12): Analyze historical procurement data for cost savings opportunities"}, {"week": 7, "raw": "W7 (Jul 13–19): Build demand forecasting model using Excel trend analysis"}, {"week": 8, "raw": "W8 (Jul 20–26): Create vendor contract summary tracker"}, {"week": 9, "raw": "W9 (Jul 27–Aug 2): Develop risk log for supply chain disruptions"}, {"week": 10, "raw": "W10 (Aug 3–9): Build Google Data Studio dashboard for supply chain KPIs"}, {"week": 11, "raw": "W11 (Aug 10–16): Write supply chain improvement recommendations report"}, {"week": 12, "raw": "W12 (Aug 17–23): Final review and present Excel dashboard portfolio"}]};
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+}
+
+function splitSteps(taskText) {
+  const txt = String(taskText || "").trim();
+  const parts = txt.split(":");
+  const after = parts.length > 1 ? parts.slice(1).join(":").trim() : txt;
+  const steps = after.split(/\s*,\s*/).map(s => s.trim()).filter(Boolean);
+  return steps.length ? steps : [after].filter(Boolean);
+}
+
+function buildAssignmentText(weekItem) {
+  const parts = parseWeekRaw(weekItem.raw, weekItem.week);
+  const steps = splitSteps(weekItem.raw);
+  const firstLine = steps[0] || parts.summary || '';
+  const deliverables = [
+    'A short weekly update (5–10 lines): what you completed, what you discovered, what you will do next',
+    'Work artifacts: links/files (repo, notebook, screenshots) and any data sources used',
+    'Risks/blockers: what is blocked and what support you need'
+  ];
+  const success = [
+    'Work is reproducible (clear steps so anyone can re-run)',
+    'Outputs align to the week objective and project goals',
+    'No critical issues left unexplained'
+  ];
+
+  const companyEl = document.querySelector('.badge');
+  const company = companyEl ? companyEl.textContent.trim() : 'iPeople Career';
+
+  const startDate = (() => {
+    const m = String(parts.prefix || '').match(/\(([^)]+)\)/);
+    if (!m) return '';
+    const range = m[1];
+    const first = range.split(/[–-]/)[0].trim();
+    const mm = first.match(/^([A-Za-z]{3,})\s+(\d{1,2})/);
+    if (!mm) return first ? (first + ', 2026') : '';
+    const monKey = mm[1].slice(0, 3).toLowerCase();
+    const monthMap = { jan: 'January', feb: 'February', mar: 'March', apr: 'April', may: 'May', jun: 'June', jul: 'July', aug: 'August', sep: 'September', oct: 'October', nov: 'November', dec: 'December' };
+    const monthName = monthMap[monKey] || mm[1];
+    return monthName + ' ' + mm[2] + ', 2026';
+  })();
+
+  const lines = [];
+  if (weekItem.week === 1) {
+    lines.push('Subject: Welcome — Kickoff Details & Monday Task Cadence — ' + PLAN.projectName);
+    lines.push('To: <candidate email>');
+    lines.push('');
+    lines.push('Hi ' + PLAN.name + ',');
+    lines.push('');
+    lines.push('Welcome aboard! We’re excited to have you join ' + company + ' as our ' + PLAN.jobTitle + ' on ' + PLAN.projectName + '.');
+    lines.push('');
+    if (startDate) {
+      lines.push('You’re starting on ' + startDate + ', marking the beginning of your first week focused on onboarding and setting up the foundational environment for the project.');
+      lines.push('');
+    }
+    lines.push('You will receive your weekly task list every Monday (IST). Please share your Week 1 deliverables by end of week.');
+    lines.push('');
+    lines.push('Week 1 kickoff priorities:');
+    for (const s of steps) lines.push('- ' + s);
+    lines.push('');
+    lines.push('Project context:');
+    lines.push('- Project: ' + PLAN.projectName);
+    lines.push('- Description: ' + PLAN.projectDescription);
+    lines.push('');
+    lines.push('Tools & resources (install / access):');
+    for (const t of String(PLAN.tools || '').split(/\s*,\s*/).filter(Boolean)) lines.push('- ' + t);
+    lines.push('');
+    lines.push('Week 1 deliverables:');
+    lines.push('- Confirm tooling setup is complete (short note + screenshot if applicable)');
+    lines.push('- Share your project workspace/repo link with initial structure and Week 1 notes');
+    lines.push('- Send a brief Week 1 update (5–8 lines): what you completed, what you learned, what’s next');
+    lines.push('');
+    lines.push('If anything blocks you, reply to this email with the blocker details so we can unblock you quickly.');
+    lines.push('');
+    lines.push('Signature:');
+    lines.push('- Rajeev Gupta');
+    lines.push('- Project Lead');
+    lines.push('- mohan.gupta@ipeople-career.com');
+    return lines.join('\n');
+  }
+
+  lines.push('Subject: [Onboarding] Week ' + weekItem.week + ' — ' + PLAN.projectName + ' — ' + PLAN.name);
+  lines.push('To: <candidate email>');
+  lines.push('');
+  lines.push('Hi ' + PLAN.name + ',');
+  lines.push('');
+  lines.push('Please complete the following onboarding assignment for this week and share your deliverables by end of week.');
+  lines.push('');
+  lines.push('Week plan:');
+  lines.push('- ' + parts.prefix + (parts.summary ? (': ' + parts.summary) : ''));
+  lines.push('');
+  lines.push('Project details:');
+  lines.push('- Project: ' + PLAN.projectName);
+  lines.push('- Description: ' + PLAN.projectDescription);
+  lines.push('');
+  lines.push('Your task (what to do):');
+  lines.push('- ' + firstLine);
+  if (steps.length > 1) {
+    lines.push('');
+    lines.push('Suggested steps:');
+    for (const s of steps) lines.push('- ' + s);
+  }
+  lines.push('');
+  lines.push('Tools & resources:');
+  for (const t of String(PLAN.tools || '').split(/\s*,\s*/).filter(Boolean)) lines.push('- ' + t);
+  lines.push('');
+  lines.push('Deliverables:');
+  for (const d of deliverables) lines.push('- ' + d);
+  lines.push('');
+  lines.push('Success criteria:');
+  for (const s of success) lines.push('- ' + s);
+  lines.push('');
+  lines.push('Signature:');
+  lines.push('- Rajeev Gupta');
+  lines.push('- Project Lead');
+  lines.push('- mohan.gupta@ipeople-career.com');
+
+  return lines.join('\n');
+}
+
+function buildModalHtml(weekItem) {
+  const steps = splitSteps(weekItem.raw);
+  const stepsHtml = steps.map(s => "<li>" + escapeHtml(s) + "</li>").join("");
+  const tools = String(PLAN.tools || "").split(/\s*,\s*/).filter(Boolean);
+  const toolsHtml = tools.map(t => "<li>" + escapeHtml(t) + "</li>").join("");
+
+  return "\n    <div class=\"modal-split\">\n      <div>\n        <h3>Assignment</h3>\n        <p><strong>Candidate:</strong> " + escapeHtml(PLAN.name) + " — " + escapeHtml(PLAN.jobTitle) + "</p>\n        <p><strong>Project:</strong> " + escapeHtml(PLAN.projectName) + "</p>\n        <p class=\"muted\"><strong>Week plan (from CSV):</strong> " + escapeHtml(weekItem.raw) + "</p>\n        <h3>Steps</h3>\n        <ul class=\"list\">" + stepsHtml + "</ul>\n      </div>\n      <div>\n        <h3>Context</h3>\n        <p class=\"muted\">" + escapeHtml(PLAN.projectDescription) + "</p>\n        <h3>Tools & Resources</h3>\n        <ul class=\"list\">" + toolsHtml + "</ul>\n        <h3>Deliverables</h3>\n        <ul class=\"list\">\n          <li>Weekly status update (what you did, what you found, what’s next)</li>\n          <li>Work artifacts (files, links, screenshots)</li>\n          <li>Risks/blockers + requested support</li>\n        </ul>\n        <h3>Success Criteria</h3>\n        <ul class=\"list\">\n          <li>Work is reproducible and clearly documented</li>\n          <li>Outputs align to the week’s objective and project goals</li>\n          <li>No major issues are left unaddressed or unexplained</li>\n        </ul>\n      </div>\n    </div>\n  ";
+}
+
+const weekGrid = document.getElementById('weekGrid');
+const dialog = document.getElementById('weekDialog');
+const weekTitle = document.getElementById('weekTitle');
+const weekMeta = document.getElementById('weekMeta');
+const modalBody = document.getElementById('modalBody');
+const copyBtn = document.getElementById('copyBtn');
+const closeBtn = document.getElementById('closeBtn');
+const statusEl = document.getElementById('modalStatus');
+
+let activeWeek = null;
+
+function setStatus(msg) {
+  statusEl.textContent = msg || '';
+}
+
+function parseWeekRaw(raw, fallbackWeek) {
+  const txt = String(raw || '').trim();
+  if (!txt) {
+    return { prefix: 'Week ' + fallbackWeek, summary: '' };
+  }
+  const idx = txt.indexOf(':');
+  if (idx === -1) {
+    return { prefix: 'Week ' + fallbackWeek, summary: txt };
+  }
+  return {
+    prefix: txt.slice(0, idx).trim(),
+    summary: txt.slice(idx + 1).trim()
+  };
+}
+
+function renderWeeks() {
+  const frag = document.createDocumentFragment();
+  for (const w of PLAN.weeks) {
+    const wrap = document.createElement('div');
+    wrap.className = 'week-card';
+
+    const openBtn = document.createElement('button');
+    openBtn.type = 'button';
+    openBtn.className = 'week-btn week-open';
+    openBtn.setAttribute('aria-label', 'Open Week ' + w.week + ' tasks');
+    openBtn.addEventListener('click', () => openWeek(w.week));
+
+    const meta = parseWeekRaw(w.raw, w.week);
+    const summary = meta.summary || 'Open details';
+
+    openBtn.innerHTML =
+      '<div class="week-num">Week ' + w.week + '</div>' +
+      '<div class="week-tag">' + escapeHtml(meta.prefix) + '</div>' +
+      '<div class="week-sub">' + escapeHtml(summary) + '</div>' +
+      '<div class="week-project">' + escapeHtml(PLAN.projectName) + '</div>';
+
+    const miniCopy = document.createElement('button');
+    miniCopy.type = 'button';
+    miniCopy.className = 'week-mini-copy';
+    miniCopy.setAttribute('aria-label', 'Copy Week ' + w.week + ' email template to clipboard');
+    miniCopy.textContent = 'Copy';
+    miniCopy.addEventListener('click', async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      try {
+        await copyTextToClipboard(buildAssignmentText(w));
+        setStatus('Week ' + w.week + ' copied to clipboard.');
+      } catch (err) {
+        setStatus('Could not copy automatically. Please open the week and copy manually.');
+      }
+    });
+
+    wrap.appendChild(openBtn);
+    wrap.appendChild(miniCopy);
+    frag.appendChild(wrap);
+  }
+  weekGrid.textContent = '';
+  weekGrid.appendChild(frag);
+}
+
+function openWeek(weekNumber) {
+  const item = PLAN.weeks.find(x => x.week === weekNumber);
+  if (!item) return;
+  activeWeek = weekNumber;
+
+  weekMeta.textContent = item.raw && item.raw.indexOf(':') !== -1 ? item.raw.split(':')[0] : ('Week ' + item.week);
+  weekTitle.textContent = 'Week ' + item.week + ' — ' + PLAN.projectName;
+  modalBody.innerHTML = buildModalHtml(item);
+  setStatus('');
+
+  dialog.classList.remove('is-closing');
+  dialog.showModal();
+  requestAnimationFrame(() => dialog.classList.add('is-open'));
+  copyBtn.focus();
+}
+
+function closeWeek() {
+  if (!dialog.open) return;
+  dialog.classList.remove('is-open');
+  dialog.classList.add('is-closing');
+  window.setTimeout(() => {
+    dialog.close();
+    dialog.classList.remove('is-closing');
+    activeWeek = null;
+  }, 160);
+}
+
+async function copyTextToClipboard(text) {
+  const plain = String(text || "");
+  const rich = buildEmailHtmlFromText(plain);
+
+  if (navigator.clipboard && typeof navigator.clipboard.write === "function" && window.ClipboardItem) {
+    const item = new ClipboardItem({
+      "text/plain": new Blob([plain], { type: "text/plain" }),
+      "text/html": new Blob([rich], { type: "text/html" })
+    });
+    await navigator.clipboard.write([item]);
+    return;
+  }
+
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+    await navigator.clipboard.writeText(plain);
+    return;
+  }
+
+  const container = document.createElement("div");
+  container.setAttribute("contenteditable", "true");
+  container.style.position = "fixed";
+  container.style.left = "-9999px";
+  container.style.top = "0";
+  container.style.opacity = "0";
+  container.innerHTML = rich;
+  document.body.appendChild(container);
+
+  const range = document.createRange();
+  range.selectNodeContents(container);
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  const ok = document.execCommand("copy");
+  sel.removeAllRanges();
+  document.body.removeChild(container);
+  if (!ok) throw new Error("Copy failed");
+}
+
+function buildEmailHtmlFromText(text) {
+  const esc = (v) => String(v ?? "").replace(/[&<>\"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c]));
+  const lines = String(text || '').split(String.fromCharCode(10));
+
+  let subject = "";
+  let toLine = "";
+
+  for (const line of lines) {
+    if (line.startsWith("Subject:")) subject = line.slice("Subject:".length).trim();
+    if (line.startsWith("To:")) toLine = line.trim();
+  }
+
+  const blocks = [];
+  let current = { title: "", paras: [], items: [] };
+
+  const flush = () => {
+    const has = (current.title || "").trim() || current.paras.length || current.items.length;
+    if (has) blocks.push(current);
+    current = { title: "", paras: [], items: [] };
+  };
+
+  for (const rawLine of lines) {
+    const trimmed = String(rawLine || "").trim();
+    if (!trimmed) {
+      current.paras.push("");
+      continue;
+    }
+
+    if (trimmed.startsWith("Subject:")) continue;
+    if (trimmed.startsWith("To:")) continue;
+
+    const isHeading = trimmed.endsWith(":") && !trimmed.startsWith("http") && !trimmed.startsWith("https");
+    if (isHeading) {
+      flush();
+      current.title = trimmed.slice(0, -1);
+      continue;
+    }
+
+    if (trimmed.startsWith("- ")) {
+      current.items.push(trimmed.slice(2));
+      continue;
+    }
+
+    current.paras.push(trimmed);
+  }
+
+  flush();
+
+  const title = subject || "Onboarding Assignment";
+
+  const renderParas = (paras) => {
+    const parts = [];
+    let buffer = [];
+    for (const p of paras) {
+      if (!p) {
+        if (buffer.length) {
+          parts.push('<div style="margin:0 0 10px;font-size:14px;color:#334155;">' + esc(buffer.join(" ")) + "</div>");
+          buffer = [];
+        }
+        parts.push('<div style="height:6px;"></div>');
+      } else {
+        buffer.push(p);
+      }
+    }
+    if (buffer.length) parts.push('<div style="margin:0 0 10px;font-size:14px;color:#334155;">' + esc(buffer.join(" ")) + "</div>");
+    return parts.join("");
+  };
+
+  const bulletTable = (items) => {
+    if (!items || !items.length) return "";
+    const rows = items.map(item => (
+      "<tr>" +
+        '<td width="18" valign="top" style="padding:2px 0;color:#05ba46;font-weight:800;">•</td>' +
+        '<td valign="top" style="padding:2px 0;color:#334155;font-size:14px;">' + esc(item) + "</td>" +
+      "</tr>"
+    )).join("");
+    return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;">' + rows + "</table>";
+  };
+
+  const section = (label, innerHtml) => (
+    '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border:1px solid #d1d5db;margin-top:12px;">' +
+      "<tr>" +
+        '<td width="6" style="background:#046bd2;font-size:0;line-height:0;">&nbsp;</td>' +
+        '<td style="padding:12px 14px;">' +
+          '<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#046bd2;font-weight:800;">' + esc(label) + "</div>" +
+          innerHtml +
+        "</td>" +
+      "</tr>" +
+    "</table>"
+  );
+
+  const bodyParts = [];
+  if (toLine) {
+    bodyParts.push('<div style="font-size:12px;color:#64748b;">' + esc(toLine) + "</div>");
+    bodyParts.push('<div style="height:10px;"></div>');
+  }
+
+  const signatureBlock = (items) => {
+    const name = items && items.length ? (items[0] || "") : "";
+    const title = items && items.length > 1 ? (items[1] || "") : "";
+    const email = (items || []).find(x => String(x || "").includes("@")) || "";
+    const emailHtml = email
+      ? '<a href="mailto:' + esc(email) + '" style="color:#046bd2;text-decoration:underline;font-size:13px;">' + esc(email) + "</a>"
+      : "";
+    return (
+      '<div style="margin-top:18px;">' +
+        '<div style="font-size:13px;color:#64748b;margin:0 0 8px;">Regards,</div>' +
+        '<div style="font-size:14px;font-weight:800;color:#111111;margin:0;">' + esc(name) + "</div>" +
+        (title ? ('<div style="font-size:13px;color:#64748b;margin-top:2px;">' + esc(title) + "</div>") : "") +
+        (emailHtml ? ('<div style="margin-top:6px;">' + emailHtml + "</div>") : "") +
+      "</div>"
+    );
+  };
+
+  for (const b of blocks) {
+    const inner = renderParas(b.paras) + bulletTable(b.items);
+    if (b.title && String(b.title).toLowerCase() === "signature") bodyParts.push(signatureBlock(b.items));
+    else if (b.title) bodyParts.push(section(b.title, inner || '<div style="height:6px;"></div>'));
+    else bodyParts.push(inner);
+  }
+
+  return (
+    '<div style="font-family:Segoe UI,Arial,sans-serif;line-height:1.45;color:#111111;">' +
+      '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f0f5fa;padding:18px;">' +
+        '<tr><td align="left">' +
+          '<table role="presentation" align="left" cellpadding="0" cellspacing="0" border="0" width="640" style="max-width:640px;width:100%;margin:0;background:#ffffff;border:1px solid #d1d5db;">' +
+            '<tr><td style="background:#046bd2;color:#ffffff;padding:18px 18px 16px;">' +
+              '<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.92;">Email Template</div>' +
+              '<div style="font-size:22px;font-weight:800;margin-top:6px;">' + esc(title) + "</div>" +
+              '<div style="font-size:13px;opacity:.92;margin-top:8px;">Copy and paste into your email</div>' +
+            "</td></tr>" +
+            '<tr><td style="padding:18px;">' + bodyParts.join("") + "</td></tr>" +
+            '' +
+          "</table>" +
+        "</td></tr>" +
+      "</table>" +
+    "</div>"
+  );
+}
+
+copyBtn.addEventListener('click', async () => {
+  if (activeWeek == null) return;
+  const item = PLAN.weeks.find(x => x.week === activeWeek);
+  if (!item) return;
+  try {
+    await copyTextToClipboard(buildAssignmentText(item));
+    setStatus('Copied to clipboard.');
+  } catch (e) {
+    setStatus('Could not copy automatically. Please select and copy manually.');
+  }
+});
+
+closeBtn.addEventListener('click', closeWeek);
+
+dialog.addEventListener('click', (e) => {
+  const rect = dialog.getBoundingClientRect();
+  const clickedOutside = e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom;
+  if (clickedOutside) closeWeek();
+});
+
+dialog.addEventListener('cancel', (e) => {
+  e.preventDefault();
+  closeWeek();
+});
+
+renderWeeks();
+</script>
+
+</div>
+</body>
+</html>

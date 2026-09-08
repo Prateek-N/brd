@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashish Kasam - SupplyTrack | iPeople Career</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="logo">Ipeople Career</div><div class="project-badge">SupplyTrack</div></header>
+<main class="container">
+<section class="welcome-card">
+<h1>Welcome to <span class="highlight">SupplyTrack</span> &#8212; kickoff details &amp; Monday task cadence</h1>
+<p class="greeting">Hi <span class="name">Ashish Kasam</span>,</p>
+<p>Welcome aboard! We're excited to have you join as our <strong>Supply Chain Specialist</strong> on <strong>SupplyTrack</strong>, an inventory and supplier order management platform.</p>
+<p>You're starting on <strong>February 23, 2026</strong>, marking the beginning of your first week focused on onboarding and understanding the foundational setup for the SupplyTrack project. You'll receive your weekly task list every <strong>Monday (IST)</strong>.</p>
+<div class="btn-group"><button class="btn btn-primary" onclick="openModal()">Open BRD</button></div>
+</section>
+<section class="project-summary"><h3>SupplyTrack in one line</h3><p>A <strong>supply chain tool</strong> for <strong>tracking inventory</strong>, <strong>managing supplier orders</strong>, and <strong>forecasting demand</strong>.</p></section>
+<section class="week-section"><h2>Weekly Task Breakdown</h2><div class="accordion"><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 1</span><span>Setup & Inventory Data Model</span><span class="dates">(Feb 23 - Mar 1)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Clone repo, set up Node + React environment</li>
+<li><strong>Mon:</strong> Study existing inventory schema and supplier records</li>
+<li><strong>Tue:</strong> Design MongoDB schema for products, suppliers, orders</li>
+<li><strong>Wed:</strong> Build CRUD APIs for inventory items</li>
+<li><strong>Thu:</strong> Bug #8: Fix stock count sync error on order update</li>
+<li><strong>Fri:</strong> Write 4 tests for inventory CRUD</li>
+<li><strong>Fri:</strong> Submit PR with schema and APIs</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 2</span><span>Supplier Management Module</span><span class="dates">(Mar 2 - Mar 8)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build supplier profile pages with contact and lead time info</li>
+<li><strong>Tue:</strong> Build order placement form &mdash; quantity, delivery date, supplier</li>
+<li><strong>Wed:</strong> Add order status tracking &mdash; pending, shipped, received</li>
+<li><strong>Thu:</strong> Implement low-stock alerts via email notification</li>
+<li><strong>Fri:</strong> Write 6 tests for supplier and order modules</li>
+<li><strong>Fri:</strong> Demo supplier flow to Sarah</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 3</span><span>Demand Forecasting</span><span class="dates">(Mar 9 - Mar 15)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Analyze 3 months of past order data to find trends</li>
+<li><strong>Tue:</strong> Build simple moving-average demand forecast model</li>
+<li><strong>Wed:</strong> Display forecast vs actual chart using Chart.js</li>
+<li><strong>Thu:</strong> Add seasonal adjustment inputs for peak periods</li>
+<li><strong>Fri:</strong> Write 5 tests for forecast calculations</li>
+<li><strong>Fri:</strong> Document forecasting methodology</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 4</span><span>Risk & Disruption Alerts</span><span class="dates">(Mar 16 - Mar 22)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Flag suppliers with late delivery history</li>
+<li><strong>Tue:</strong> Add risk score card per supplier based on performance</li>
+<li><strong>Wed:</strong> Build disruption log &mdash; track supply incidents</li>
+<li><strong>Thu:</strong> Implement substitute supplier suggestion on stockout</li>
+<li><strong>Fri:</strong> Present risk module to James</li>
+<li><strong>Fri:</strong> Document alerting setup</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 5</span><span>Reporting & Export</span><span class="dates">(Mar 23 - Mar 29)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build purchase order summary report (PDF + Excel)</li>
+<li><strong>Tue:</strong> Add KPI dashboard &mdash; fill rate, lead time, accuracy</li>
+<li><strong>Wed:</strong> Create monthly spend report by supplier category</li>
+<li><strong>Thu:</strong> UAT with Emily &mdash; test data accuracy and exports</li>
+<li><strong>Fri:</strong> Fix P1 issues from UAT</li>
+<li><strong>Fri:</strong> Document report generation steps</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 6</span><span>Documentation & Handoff</span><span class="dates">(Mar 30 - Apr 5)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Complete API documentation</li>
+<li><strong>Tue:</strong> Write end-user guide for supply team</li>
+<li><strong>Wed:</strong> Record demo video (10 min)</li>
+<li><strong>Thu:</strong> Present final tool to James (30 min)</li>
+<li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+<li><strong>Fri:</strong> Submit final report and celebrate! &#127881;</li>
+</ul></div>
+</div></div></section>
+<section class="contacts-section">
+<h3>Points of contact</h3>
+<div class="contact-item"><span class="contact-name">Sarah Mitchell</span> &#8212; <span class="contact-role">Technical Lead</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Platform/SRE</span></div>
+<div class="contact-item"><span class="contact-name">Emily Carter</span> &#8212; <span class="contact-role">Security/Policy</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Project Lead</span></div>
+</section>
+<footer class="footer">
+<p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+<div class="footer-signature"><div class="name">James Anderson</div><div class="title">Project Lead &middot; Ipeople Career</div><div class="contact">+1 (469) 532-8174 &middot; Slack: @james.anderson</div></div>
+</footer>
+</main>
+<div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+<div class="modal">
+<div class="modal-header"><h2>&#128196; Business Requirements Document</h2><button class="modal-close" onclick="closeModal()">&times;</button></div>
+<div class="modal-body">
+<div class="brd-section"><h3>1. Project Overview</h3><ul>
+<li><strong>What:</strong> Inventory and supplier order management platform with demand forecasting</li>
+<li><strong>Problem:</strong> Stock tracked in spreadsheets, no supplier risk visibility, manual reordering</li>
+<li><strong>Goal:</strong> Centralize inventory, automate reorder alerts, forecast demand at 85%+ accuracy</li>
+<li><strong>Users:</strong> Supply chain team, procurement managers, warehouse staff</li>
+</ul></div>
+<div class="brd-section"><h3>2. Your Role</h3><ul><li>Design MongoDB schema for inventory and orders</li><li>Build supplier management and order tracking</li><li>Implement demand forecasting with Chart.js</li><li>Create PDF/Excel reporting and KPI dashboard</li></ul></div>
+<div class="brd-section"><h3>3. Tools</h3><ul><li>Node.js &middot; Express &middot; MongoDB &middot; React &middot; Chart.js &middot; Excel.js</li></ul></div>
+<div class="brd-section"><h3>4. Weekly Milestones</h3><table class="milestone-table"><tr><td><strong>W1</strong></td><td>Setup & Inventory Data Model</td></tr><tr><td><strong>W2</strong></td><td>Supplier Management Module</td></tr><tr><td><strong>W3</strong></td><td>Demand Forecasting</td></tr><tr><td><strong>W4</strong></td><td>Risk & Disruption Alerts</td></tr><tr><td><strong>W5</strong></td><td>Reporting & Export</td></tr><tr><td><strong>W6</strong></td><td>Documentation & Handoff</td></tr></table></div>
+</div></div></div>
+<script>
+function openModal(){document.getElementById('brdModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('brdModal').classList.remove('active');document.body.style.overflow='auto';}
+function closeModalOutside(event){if(event.target.classList.contains('modal-overlay'))closeModal();}
+function toggleAccordion(header){const item=header.parentElement;const isActive=item.classList.contains('active');document.querySelectorAll('.accordion-item').forEach(acc=>acc.classList.remove('active'));if(!isActive)item.classList.add('active');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>

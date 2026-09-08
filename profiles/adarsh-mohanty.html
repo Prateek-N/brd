@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Adarsh Mohanty</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="brand-mark"></div>
+<a class="brand-title" href="../aug-bridgepoint.html">Bridgepoint Aug 2026</a>
+</div>
+<div style="display:flex;gap:8px">
+<a class="btn btn-outline" href="../home.html" style="height:40px;padding:10px 18px;font-size:13px;">Home</a>
+<a class="btn btn-outline" href="../aug-bridgepoint.html" style="height:40px;padding:10px 18px;font-size:13px;">Batch Page</a>
+</div>
+</div>
+</div>
+<div class="wrap">
+<section class="profile-hero">
+<h1>Adarsh Mohanty</h1>
+<p class="title">Business System Analyst</p>
+<div class="badge"><span class="dot"></span>BRIDGEPOINT CAREERS LLC</div>
+</section>
+<section class="content">
+<h2>Roles &amp; Responsibilities</h2>
+<ul class="list"><li>Gather, analyze and document business requirements by collaborating with stakeholders and end users.</li><li>Translate business needs into functional and technical specifications for development teams.</li><li>Act as a liaison between business stakeholders, development teams, QA, and project managers to ensure successful project delivery.</li><li>Support system design, testing, user acceptance testing (UAT), and implementation activities.</li><li>Analyze data and system performance to identify trends, issues, opportunities for process optimization.</li><li>Participate in project planning, change management, and continuous improvement initiatives.</li><li>Assist with system integrations, data migration activities and implementation of enterprise applications.</li><li>Support Agile, Scrum, or Waterfall projects by participating in sprint planning, backlog refinement.</li><li>Stay updated on business analysis practices and emerging technologies to recommend solutions.</li></ul>
+</section>
+<section class="section" id="weeks">
+  <div class="section-head">
+    <div>
+      <p class="section-label">Plan</p>
+      <h2 class="section-title">Week 1 to Week 12 Tasks</h2>
+    </div>
+    <div class="section-meta">Click a week to view and copy your assignment</div>
+  </div>
+  <div class="week-grid" id="weekGrid" aria-label="Weekly task navigation"></div>
+</section>
+
+<dialog class="modal" id="weekDialog" aria-labelledby="weekTitle" aria-describedby="weekMeta">
+  <div class="modal-inner">
+    <div class="modal-header">
+      <div class="modal-headings">
+        <p class="modal-label" id="weekMeta"></p>
+        <h2 class="modal-title" id="weekTitle"></h2>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary modal-copy" type="button" id="copyBtn" aria-label="Copy week tasks to clipboard">Copy to Clipboard</button>
+        <button class="btn btn-outline modal-close" type="button" id="closeBtn" aria-label="Close modal">Close</button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-status" id="modalStatus" aria-live="polite"></div>
+  </div>
+</dialog>
+
+<footer class="footer">Weekly Plan &mdash; CRM System Requirements and Process Documentation</footer>
+
+<script>
+const PLAN = {"name": "Adarsh Mohanty", "jobTitle": "Business System Analyst", "projectName": "CRM System Requirements and Process Documentation", "projectDescription": "Simulate a complete BA engagement for TechRetail Inc. adopting a new CRM system. Deliverables: project charter, stakeholder analysis, AS-IS and TO-BE process flows, user stories with acceptance criteria, gap analysis matrix, UAT test cases, data migration plan, and a full Business Requirements Document (BRD).", "tools": "draw.io at app.diagrams.net (free), Google Docs, Google Sheets, Google Slides, Notion (free), Jira free tier, Confluence free tier", "weeks": [{"week": 1, "raw": "W1 (Aug 10-16): Create Google Doc titled 'CRM Project Charter - TechRetail Inc' with 7 sections: (1) Project Objective (one paragraph on why TechRetail needs CRM), (2) In-Scope (5 CRM modules as bullets), (3) Out-of-Scope (3 excluded items), (4) Key Stakeholders (table with Name, Role, Responsibility for 4 stakeholders), (5) Timeline (12-week phase summary), (6) Constraints (3 bullets), (7) Success Criteria (3 measurable statements)"}, {"week": 2, "raw": "W2 (Aug 17-23): Add Stakeholder Analysis section: for each of 4 roles (Sales Manager, IT Lead, Customer Service Rep, Finance Director) write 5 interview questions and answer from that stakeholder's perspective - compile summary table with columns: Stakeholder Name, Role, Interest Level (H/M/L), Influence Level (H/M/L), Current Pain Points (3 bullets), Key CRM Needs (3 bullets)"}, {"week": 3, "raw": "W3 (Aug 24-30): Open draw.io at app.diagrams.net, create AS-IS swimlane diagram with 3 lanes (Sales Rep, Sales Manager, Customer) showing: Lead Capture, Lead Qualification, Proposal Creation, Manager Approval, Negotiation, Deal Close, Manual spreadsheet entry, Customer Onboarding - use standard shapes, annotate each manual or error-prone step with red callout box naming the pain point - export as PNG and embed in Google Doc with caption"}, {"week": 4, "raw": "W4 (Aug 31-Sep 6): Add Functional Requirements section: write 15+ user stories as 'As a [role] I want to [action] so that [benefit]' - add 3-5 acceptance criteria per story in Given/When/Then format - organize under 4 module headings: Lead Management (4+ stories), Contact Management (3+), Reporting and Dashboard (4+), System Integration (4+)"}, {"week": 5, "raw": "W5 (Sep 7-13): Create TO-BE swimlane diagram in draw.io: same 3 lanes as AS-IS, highlight automated steps with green fill and label them 'Automated', grey out and strikethrough eliminated manual steps, use blue fill for new system-driven handoffs - add yellow callout annotations estimating efficiency gains - export as PNG and embed in Google Doc with caption"}, {"week": 6, "raw": "W6 (Sep 14-20): Create Google Sheet 'Gap Analysis Matrix' with 8 columns: Req ID, User Story Summary, Current State, Desired State, Gap Type (None/Partial/Full), Priority (H/M/L), Effort (S/M/L), Recommended Solution - complete one row per user story from Week 4 - apply red fill for Full gap with High priority, yellow for Partial, no fill for None"}, {"week": 7, "raw": "W7 (Sep 21-27): Add Non-Functional Requirements section in Google Doc with 5 subsections each with a testable acceptance criterion: Performance (pages load under 2 seconds for 100 concurrent users), Security (3 roles with defined permissions, TLS and AES-256 encryption), Scalability (support growth from 50 to 200 users without architecture changes), Availability (99.5% uptime SLA), Compliance (GDPR right to erasure within 30 days, EU data residency)"}, {"week": 8, "raw": "W8 (Sep 28-Oct 4): Write 5 detailed Use Cases with structure: UC-ID and Title, Primary Actor, Preconditions (2-3), Main Success Flow (8+ numbered steps), Alternative Flow (labeled Alt-1 with steps), Exception Flow (labeled Exc-1), Postconditions - the 5 use cases: UC-01 Create New Lead, UC-02 Convert Lead to Customer, UC-03 Log Customer Interaction, UC-04 Generate Weekly Sales Report, UC-05 Admin Manage User Roles"}, {"week": 9, "raw": "W9 (Oct 5-11): Create Google Sheet 'UAT Test Case Matrix' with columns: Test Case ID (TC-001 format), Module, Scenario Title, Preconditions, Numbered Test Steps, Test Data (specific values), Expected Result, Actual Result (blank), Status (blank) - write minimum 15 test cases covering at least 3 happy-path and 2 edge/error scenarios per module"}, {"week": 10, "raw": "W10 (Oct 12-18): Create Google Doc 'Data Migration Requirements' with sections: (1) Scope listing 5 data objects to migrate with estimated row counts, (2) Field Mapping Tables per object with Source Field, Source Type, Target Field, Target Type, Transformation Rule for every field, (3) Data Quality Rules (5 validation rules), (4) Migration Validation Criteria (row count match, zero nulls in required fields, spot-check of 50 random records)"}, {"week": 11, "raw": "W11 (Oct 19-25): Compile full BRD in Google Docs: add cover page, auto-generated Table of Contents, then paste all deliverables in order: Executive Summary (new half-page), Project Scope, Stakeholder Analysis, AS-IS diagram, Functional Requirements, TO-BE diagram, Non-Functional Requirements, Use Cases, Gap Analysis, UAT Plan, Data Migration Plan - apply Heading 1/2/3 styles consistently and number all sections"}, {"week": 12, "raw": "W12 (Oct 26-Nov 1): Create 10-slide Google Slides presentation: Slide 1 title with project name and date, Slide 2 business problem and background, Slide 3 objectives and scope, Slide 4 stakeholder 2x2 influence/interest map, Slide 5 AS-IS vs TO-BE side-by-side, Slide 6 top 5 priority requirements table, Slide 7 gap analysis bar chart (Full/Partial/None counts by module), Slide 8 UAT approach summary, Slide 9 risk register (top 3 risks with Likelihood/Impact/Mitigation), Slide 10 next steps with owner and timeline - prepare 5-minute stakeholder walkthrough"}]};
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function splitSteps(taskText) {
+  const txt = String(taskText || "").trim();
+  const parts = txt.split(":");
+  const after = parts.length > 1 ? parts.slice(1).join(":").trim() : txt;
+  const steps = after.split(/\s*,\s*/).map(s => s.trim()).filter(Boolean);
+  return steps.length ? steps : [after].filter(Boolean);
+}
+
+function parseWeekRaw(raw, fallbackWeek) {
+  const txt = String(raw || "").trim();
+  if (!txt) return { prefix: "Week " + fallbackWeek, summary: "" };
+  const idx = txt.indexOf(":");
+  if (idx === -1) return { prefix: "Week " + fallbackWeek, summary: txt };
+  return { prefix: txt.slice(0, idx).trim(), summary: txt.slice(idx + 1).trim() };
+}
+
+function buildAssignmentText(weekItem) {
+  const parts = parseWeekRaw(weekItem.raw, weekItem.week);
+  const steps = splitSteps(weekItem.raw);
+  const firstLine = steps[0] || parts.summary || "";
+  const deliverables = [
+    "A short weekly update (5-10 lines): what you completed, what you discovered, what you will do next",
+    "Work artifacts: links/files (repo, notebook, screenshots) and any data sources used",
+    "Risks/blockers: what is blocked and what support you need"
+  ];
+  const success = [
+    "Work is reproducible (clear steps so anyone can re-run)",
+    "Outputs align to the week objective and project goals",
+    "No critical issues left unexplained"
+  ];
+
+  const companyEl = document.querySelector(".badge");
+  const company = companyEl ? companyEl.textContent.trim() : "Bridgepoint Careers LLC";
+
+  const startDate = (() => {
+    const m = String(parts.prefix || "").match(/\(([^)]+)\)/);
+    if (!m) return "";
+    const range = m[1];
+    const first = range.split(/[-]|\u2013/)[0].trim();
+    const mm = first.match(/^([A-Za-z]{3,})\s+(\d{1,2})/);
+    if (!mm) return first ? first + ", 2026" : "";
+    const monKey = mm[1].slice(0, 3).toLowerCase();
+    const monthMap = { jan:"January", feb:"February", mar:"March", apr:"April", may:"May", jun:"June", jul:"July", aug:"August", sep:"September", oct:"October", nov:"November", dec:"December" };
+    const monthName = monthMap[monKey] || mm[1];
+    return monthName + " " + mm[2] + ", 2026";
+  })();
+
+  const lines = [];
+  if (weekItem.week === 1) {
+    lines.push("Subject: Welcome - Kickoff Details & Week 1 Task - " + PLAN.projectName);
+    lines.push("To: <candidate email>");
+    lines.push("");
+    lines.push("Hi " + PLAN.name + ",");
+    lines.push("");
+    lines.push("Welcome aboard! We are excited to have you join " + company + " as our " + PLAN.jobTitle + " on " + PLAN.projectName + ".");
+    lines.push("");
+    if (startDate) { lines.push("You are starting on " + startDate + ", marking the beginning of your first week focused on onboarding and setting up the foundational environment for the project."); lines.push(""); }
+    lines.push("You will receive your weekly task list every Monday (IST). Please share your Week 1 deliverables by end of week.");
+    lines.push("");
+    lines.push("Week 1 kickoff priorities:");
+    for (const s of steps) lines.push("- " + s);
+    lines.push("");
+    lines.push("Project context:");
+    lines.push("- Project: " + PLAN.projectName);
+    lines.push("- Description: " + PLAN.projectDescription);
+    lines.push("");
+    lines.push("Tools & resources (install / access):");
+    for (const t of String(PLAN.tools || "").split(/\s*,\s*/).filter(Boolean)) lines.push("- " + t);
+    lines.push("");
+    lines.push("Week 1 deliverables:");
+    lines.push("- Confirm tooling setup is complete (short note and screenshot if applicable)");
+    lines.push("- Share your project workspace/repo link with initial structure and Week 1 notes");
+    lines.push("- Send a brief Week 1 update (5-8 lines): what you completed, what you learned, what is next");
+    lines.push("");
+    lines.push("If anything blocks you, reply to this email with the blocker details so we can unblock you quickly.");
+    lines.push("");
+    lines.push("Signature:");
+    lines.push("- Rajeev Gupta");
+    lines.push("- Project Lead");
+    lines.push("- rajeev.gupta@bridgepointcareers.com");
+    return lines.join("\n");
+  }
+
+  lines.push("Subject: [Onboarding] Week " + weekItem.week + " - " + PLAN.projectName + " - " + PLAN.name);
+  lines.push("To: <candidate email>");
+  lines.push("");
+  lines.push("Hi " + PLAN.name + ",");
+  lines.push("");
+  lines.push("Please complete the following onboarding assignment for this week and share your deliverables by end of week.");
+  lines.push("");
+  lines.push("Week plan:");
+  lines.push("- " + parts.prefix + (parts.summary ? ": " + parts.summary : ""));
+  lines.push("");
+  lines.push("Project details:");
+  lines.push("- Project: " + PLAN.projectName);
+  lines.push("- Description: " + PLAN.projectDescription);
+  lines.push("");
+  lines.push("Your task (what to do):");
+  lines.push("- " + firstLine);
+  if (steps.length > 1) { lines.push(""); lines.push("Suggested steps:"); for (const s of steps) lines.push("- " + s); }
+  lines.push("");
+  lines.push("Tools & resources:");
+  for (const t of String(PLAN.tools || "").split(/\s*,\s*/).filter(Boolean)) lines.push("- " + t);
+  lines.push("");
+  lines.push("Deliverables:");
+  for (const d of deliverables) lines.push("- " + d);
+  lines.push("");
+  lines.push("Success criteria:");
+  for (const s of success) lines.push("- " + s);
+  lines.push("");
+  lines.push("Signature:");
+  lines.push("- Rajeev Gupta");
+  lines.push("- Project Lead");
+  lines.push("- rajeev.gupta@bridgepointcareers.com");
+  return lines.join("\n");
+}
+
+function buildModalHtml(weekItem) {
+  const steps = splitSteps(weekItem.raw);
+  const stepsHtml = steps.map(s => "<li>" + escapeHtml(s) + "</li>").join("");
+  const tools = String(PLAN.tools || "").split(/\s*,\s*/).filter(Boolean);
+  const toolsHtml = tools.map(t => "<li>" + escapeHtml(t) + "</li>").join("");
+  return `
+    <div class="modal-split">
+      <div>
+        <h3>Assignment</h3>
+        <p><strong>Candidate:</strong> ${escapeHtml(PLAN.name)} &mdash; ${escapeHtml(PLAN.jobTitle)}</p>
+        <p><strong>Project:</strong> ${escapeHtml(PLAN.projectName)}</p>
+        <p class="muted"><strong>Week plan (raw):</strong> ${escapeHtml(weekItem.raw)}</p>
+        <h3>Steps</h3>
+        <ul class="list">${stepsHtml}</ul>
+      </div>
+      <div>
+        <h3>Context</h3>
+        <p class="muted">${escapeHtml(PLAN.projectDescription)}</p>
+        <h3>Tools &amp; Resources</h3>
+        <ul class="list">${toolsHtml}</ul>
+        <h3>Deliverables</h3>
+        <ul class="list">
+          <li>Weekly status update (what you did, what you found, what is next)</li>
+          <li>Work artifacts (files, links, screenshots)</li>
+          <li>Risks/blockers and requested support</li>
+        </ul>
+        <h3>Success Criteria</h3>
+        <ul class="list">
+          <li>Work is reproducible and clearly documented</li>
+          <li>Outputs align to the week objective and project goals</li>
+          <li>No major issues are left unaddressed or unexplained</li>
+        </ul>
+      </div>
+    </div>
+  `;
+}
+
+function buildEmailHtmlFromText(text) {
+  const esc2 = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const lines = String(text || "").split("\n");
+  let subject = "", toLine = "";
+  for (const line of lines) {
+    if (line.startsWith("Subject:")) subject = line.slice(8).trim();
+    if (line.startsWith("To:")) toLine = line.trim();
+  }
+  const blocks = [];
+  let current = { title: "", paras: [], items: [] };
+  const flush = () => { const has = (current.title||"").trim() || current.paras.length || current.items.length; if (has) blocks.push(current); current = { title:"", paras:[], items:[] }; };
+  for (const rawLine of lines) {
+    const trimmed = String(rawLine || "").trim();
+    if (!trimmed) { current.paras.push(""); continue; }
+    if (trimmed.startsWith("Subject:") || trimmed.startsWith("To:")) continue;
+    const isHeading = trimmed.endsWith(":") && !trimmed.startsWith("http");
+    if (isHeading) { flush(); current.title = trimmed.slice(0,-1); continue; }
+    if (trimmed.startsWith("- ")) { current.items.push(trimmed.slice(2)); continue; }
+    current.paras.push(trimmed);
+  }
+  flush();
+  const title = subject || "Onboarding Assignment";
+  const renderParas = (paras) => { const parts=[]; let buf=[]; for (const p of paras) { if(!p) { if(buf.length) { parts.push('<div style="margin:0 0 10px;font-size:14px;color:#334155;">'+esc2(buf.join(" "))+"</div>"); buf=[]; } parts.push('<div style="height:6px;"></div>'); } else buf.push(p); } if(buf.length) parts.push('<div style="margin:0 0 10px;font-size:14px;color:#334155;">'+esc2(buf.join(" "))+"</div>"); return parts.join(""); };
+  const bulletTable = (items) => { if(!items||!items.length) return ""; const rows = items.map(item => "<tr><td width='18' valign='top' style='padding:2px 0;color:#05ba46;font-weight:800;'>&bull;</td><td valign='top' style='padding:2px 0;color:#334155;font-size:14px;'>"+esc2(item)+"</td></tr>").join(""); return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;">'+rows+"</table>"; };
+  const section = (label, innerHtml) => '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border:1px solid #d1d5db;margin-top:12px;"><tr><td width="6" style="background:#046bd2;font-size:0;line-height:0;">&nbsp;</td><td style="padding:12px 14px;"><div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#046bd2;font-weight:800;">'+esc2(label)+"</div>"+innerHtml+"</td></tr></table>";
+  const bodyParts = [];
+  if (toLine) { bodyParts.push('<div style="font-size:12px;color:#64748b;">'+esc2(toLine)+"</div>"); bodyParts.push('<div style="height:10px;"></div>'); }
+  const signatureBlock = (items) => { const name=items&&items.length?(items[0]||""):""; const tit=items&&items.length>1?(items[1]||""):""; const email=(items||[]).find(x=>String(x||"").includes("@"))||""; const emailHtml=email?'<a href="mailto:'+esc2(email)+'" style="color:#046bd2;text-decoration:underline;font-size:13px;">'+esc2(email)+"</a>":""; return '<div style="margin-top:18px;"><div style="font-size:13px;color:#64748b;margin:0 0 8px;">Regards,</div><div style="font-size:14px;font-weight:800;color:#111111;margin:0;">'+esc2(name)+"</div>"+(tit?'<div style="font-size:13px;color:#64748b;margin-top:2px;">'+esc2(tit)+"</div>":"")+(emailHtml?'<div style="margin-top:6px;">'+emailHtml+"</div>":"")+"</div>"; };
+  for (const b of blocks) {
+    const inner = renderParas(b.paras) + bulletTable(b.items);
+    if (b.title && String(b.title).toLowerCase() === "signature") bodyParts.push(signatureBlock(b.items));
+    else if (b.title) bodyParts.push(section(b.title, inner || '<div style="height:6px;"></div>'));
+    else bodyParts.push(inner);
+  }
+  return '<div style="font-family:Segoe UI,Arial,sans-serif;line-height:1.45;color:#111111;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f0f5fa;padding:18px;"><tr><td align="left"><table role="presentation" align="left" cellpadding="0" cellspacing="0" border="0" width="640" style="max-width:640px;width:100%;margin:0;background:#ffffff;border:1px solid #d1d5db;"><tr><td style="background:#046bd2;color:#ffffff;padding:18px 18px 16px;"><div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.92;">Email Template</div><div style="font-size:22px;font-weight:800;margin-top:6px;">'+esc2(title)+'</div><div style="font-size:13px;opacity:.92;margin-top:8px;">Copy and paste into your email</div></td></tr><tr><td style="padding:18px;">'+bodyParts.join("")+"</td></tr></table></td></tr></table></div>";
+}
+
+const weekGrid = document.getElementById("weekGrid");
+const dialog = document.getElementById("weekDialog");
+const weekTitle = document.getElementById("weekTitle");
+const weekMeta = document.getElementById("weekMeta");
+const modalBody = document.getElementById("modalBody");
+const copyBtn = document.getElementById("copyBtn");
+const closeBtn = document.getElementById("closeBtn");
+const statusEl = document.getElementById("modalStatus");
+let activeWeek = null;
+
+function setStatus(msg) { statusEl.textContent = msg || ""; }
+
+function renderWeeks() {
+  const frag = document.createDocumentFragment();
+  for (const w of PLAN.weeks) {
+    const wrap = document.createElement("div");
+    wrap.className = "week-card";
+    const openBtn = document.createElement("button");
+    openBtn.type = "button";
+    openBtn.className = "week-btn week-open";
+    openBtn.setAttribute("aria-label", "Open Week " + w.week + " tasks");
+    openBtn.addEventListener("click", () => openWeek(w.week));
+    const meta = parseWeekRaw(w.raw, w.week);
+    const summary = meta.summary || "Open details";
+    openBtn.innerHTML = '<div class="week-num">Week ' + w.week + '</div><div class="week-tag">' + escapeHtml(meta.prefix) + '</div><div class="week-sub">' + escapeHtml(summary.slice(0, 90)) + (summary.length > 90 ? '&hellip;' : '') + '</div><div class="week-project">' + escapeHtml(PLAN.projectName) + '</div>';
+    const miniCopy = document.createElement("button");
+    miniCopy.type = "button";
+    miniCopy.className = "week-mini-copy";
+    miniCopy.setAttribute("aria-label", "Copy Week " + w.week + " email template to clipboard");
+    miniCopy.textContent = "Copy";
+    miniCopy.addEventListener("click", async (e) => {
+      e.preventDefault(); e.stopPropagation();
+      try { await copyTextToClipboard(buildAssignmentText(w)); setStatus("Week " + w.week + " copied to clipboard."); }
+      catch (err) { setStatus("Could not copy automatically. Please open the week and copy manually."); }
+    });
+    wrap.appendChild(openBtn);
+    wrap.appendChild(miniCopy);
+    frag.appendChild(wrap);
+  }
+  weekGrid.textContent = "";
+  weekGrid.appendChild(frag);
+}
+
+function openWeek(weekNumber) {
+  const item = PLAN.weeks.find(x => x.week === weekNumber);
+  if (!item) return;
+  activeWeek = weekNumber;
+  weekMeta.textContent = item.raw && item.raw.indexOf(":") !== -1 ? item.raw.split(":")[0] : ("Week " + item.week);
+  weekTitle.textContent = "Week " + item.week + " - " + PLAN.projectName;
+  modalBody.innerHTML = buildModalHtml(item);
+  setStatus("");
+  dialog.classList.remove("is-closing");
+  dialog.showModal();
+  requestAnimationFrame(() => dialog.classList.add("is-open"));
+  copyBtn.focus();
+}
+
+function closeWeek() {
+  if (!dialog.open) return;
+  dialog.classList.remove("is-open");
+  dialog.classList.add("is-closing");
+  window.setTimeout(() => { dialog.close(); dialog.classList.remove("is-closing"); activeWeek = null; }, 160);
+}
+
+async function copyTextToClipboard(text) {
+  const plain = String(text || "");
+  const rich = buildEmailHtmlFromText(plain);
+  if (navigator.clipboard && typeof navigator.clipboard.write === "function" && window.ClipboardItem) {
+    const item = new ClipboardItem({"text/plain": new Blob([plain], {type:"text/plain"}), "text/html": new Blob([rich], {type:"text/html"})});
+    await navigator.clipboard.write([item]); return;
+  }
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") { await navigator.clipboard.writeText(plain); return; }
+  const ta = document.createElement("textarea");
+  ta.value = plain; ta.setAttribute("readonly",""); ta.style.cssText="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0";
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  const ok = document.execCommand("copy"); document.body.removeChild(ta);
+  if (!ok) throw new Error("Copy failed");
+}
+
+copyBtn.addEventListener("click", async () => {
+  if (activeWeek == null) return;
+  const item = PLAN.weeks.find(x => x.week === activeWeek);
+  if (!item) return;
+  try { await copyTextToClipboard(buildAssignmentText(item)); setStatus("Copied to clipboard."); }
+  catch (e) { setStatus("Could not copy automatically. Please select and copy manually."); }
+});
+
+closeBtn.addEventListener("click", closeWeek);
+dialog.addEventListener("click", (e) => { const rect = dialog.getBoundingClientRect(); const out = e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom; if (out) closeWeek(); });
+dialog.addEventListener("cancel", (e) => { e.preventDefault(); closeWeek(); });
+renderWeeks();
+</script>
+
+</div>
+</body>
+</html>

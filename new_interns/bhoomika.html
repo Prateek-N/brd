@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhoomika Reddy Muralidhar - DevConnect | iPeople Career</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="logo">Ipeople Career</div><div class="project-badge">DevConnect</div></header>
+<main class="container">
+<section class="welcome-card">
+<h1>Welcome to <span class="highlight">DevConnect</span> &#8212; kickoff details &amp; Monday task cadence</h1>
+<p class="greeting">Hi <span class="name">Bhoomika Reddy Muralidhar</span>,</p>
+<p>Welcome aboard! We're excited to have you join as our <strong>Full Stack Developer</strong> on <strong>DevConnect</strong>, a developer portfolio platform with project showcase.</p>
+<p>You're starting on <strong>February 23, 2026</strong>, marking the beginning of your first week focused on onboarding and understanding the foundational setup for the DevConnect project. You'll receive your weekly task list every <strong>Monday (IST)</strong>.</p>
+<div class="btn-group"><button class="btn btn-primary" onclick="openModal()">Open BRD</button></div>
+</section>
+<section class="project-summary"><h3>DevConnect in one line</h3><p>A <strong>developer portfolio platform</strong> for <strong>showcasing projects</strong>, <strong>writing blogs</strong>, and <strong>building professional profiles</strong>.</p></section>
+<section class="week-section"><h2>Weekly Task Breakdown</h2><div class="accordion"><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 1</span><span>Environment Setup & Profile Module</span><span class="dates">(Feb 23 - Mar 1)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Set up Next.js project with Tailwind CSS</li>
+<li><strong>Mon:</strong> Install dependencies &mdash; mongoose, cloudinary, next-auth</li>
+<li><strong>Tue:</strong> Design MongoDB schema for users, projects, blogs</li>
+<li><strong>Wed:</strong> Build user profile page &mdash; bio, skills, social links</li>
+<li><strong>Thu:</strong> Bug #6: Fix profile image upload failing on large files</li>
+<li><strong>Fri:</strong> Write 4 tests for profile CRUD</li>
+<li><strong>Fri:</strong> Submit PR with profile module</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 2</span><span>Project Showcase</span><span class="dates">(Mar 2 - Mar 8)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build project card component &mdash; image, title, tech stack, link</li>
+<li><strong>Tue:</strong> Add project detail page with description and screenshots</li>
+<li><strong>Wed:</strong> Implement image gallery with Cloudinary integration</li>
+<li><strong>Thu:</strong> Add project filtering by tech stack and category</li>
+<li><strong>Fri:</strong> Write 6 tests for project module</li>
+<li><strong>Fri:</strong> Demo project showcase to Sarah</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 3</span><span>Blog Engine</span><span class="dates">(Mar 9 - Mar 15)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Build markdown blog editor with live preview</li>
+<li><strong>Tue:</strong> Add blog listing page with pagination and search</li>
+<li><strong>Wed:</strong> Implement blog categories and tag system</li>
+<li><strong>Thu:</strong> Add reading time estimate and share buttons</li>
+<li><strong>Fri:</strong> Write 5 tests for blog CRUD and rendering</li>
+<li><strong>Fri:</strong> Document blog content guidelines</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 4</span><span>Authentication & Social Features</span><span class="dates">(Mar 16 - Mar 22)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Implement NextAuth &mdash; GitHub and Google OAuth</li>
+<li><strong>Tue:</strong> Add follow/unfollow system between developers</li>
+<li><strong>Wed:</strong> Build activity feed &mdash; new projects, blogs, follows</li>
+<li><strong>Thu:</strong> Add like and comment system on projects and blogs</li>
+<li><strong>Fri:</strong> Present social features to James</li>
+<li><strong>Fri:</strong> Document auth flow</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 5</span><span>SEO & Performance</span><span class="dates">(Mar 23 - Mar 29)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Add SEO meta tags and Open Graph for sharing</li>
+<li><strong>Tue:</strong> Implement lazy loading for images and infinite scroll</li>
+<li><strong>Wed:</strong> Add sitemap and robots.txt generation</li>
+<li><strong>Thu:</strong> UAT with team &mdash; test profile and project flows</li>
+<li><strong>Fri:</strong> Fix P1 issues from UAT</li>
+<li><strong>Fri:</strong> Document performance optimizations</li>
+</ul></div>
+</div><div class="accordion-item">
+<button class="accordion-header" onclick="toggleAccordion(this)">
+<div class="week-title"><span class="week-badge">Week 6</span><span>Documentation & Handoff</span><span class="dates">(Mar 30 - Apr 5)</span></div>
+<span class="chevron">&#9660;</span>
+</button>
+<div class="accordion-content"><ul class="task-list"><li><strong>Mon:</strong> Complete component documentation</li>
+<li><strong>Tue:</strong> Write platform user guide</li>
+<li><strong>Wed:</strong> Record walkthrough video (10 min)</li>
+<li><strong>Thu:</strong> Present final platform to James (30 min)</li>
+<li><strong>Fri:</strong> Knowledge transfer to Sarah</li>
+<li><strong>Fri:</strong> Submit final report and celebrate! &#127881;</li>
+</ul></div>
+</div></div></section>
+<section class="contacts-section">
+<h3>Points of contact</h3>
+<div class="contact-item"><span class="contact-name">Sarah Mitchell</span> &#8212; <span class="contact-role">Technical Lead</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Platform/SRE</span></div>
+<div class="contact-item"><span class="contact-name">Emily Carter</span> &#8212; <span class="contact-role">Security/Policy</span></div>
+<div class="contact-item"><span class="contact-name">James Anderson</span> &#8212; <span class="contact-role">Project Lead</span></div>
+</section>
+<footer class="footer">
+<p>Expect your <strong>Monday task list</strong> in Slack at the start of each week (IST).</p>
+<div class="footer-signature"><div class="name">James Anderson</div><div class="title">Project Lead &middot; Ipeople Career</div><div class="contact">+1 (469) 532-8174 &middot; Slack: @james.anderson</div></div>
+</footer>
+</main>
+<div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+<div class="modal">
+<div class="modal-header"><h2>&#128196; Business Requirements Document</h2><button class="modal-close" onclick="closeModal()">&times;</button></div>
+<div class="modal-body">
+<div class="brd-section"><h3>1. Project Overview</h3><ul>
+<li><strong>What:</strong> Developer portfolio platform with project showcase and blog engine</li>
+<li><strong>Problem:</strong> Developers lack a unified platform to showcase work and build online presence</li>
+<li><strong>Goal:</strong> Profile + project showcase + blog in one platform, GitHub OAuth, SEO optimized</li>
+<li><strong>Users:</strong> Software developers, hiring managers, tech recruiters</li>
+</ul></div>
+<div class="brd-section"><h3>2. Your Role</h3><ul><li>Build Next.js portfolio with Tailwind UI</li><li>Implement project showcase with Cloudinary</li><li>Create markdown blog engine with categories</li><li>Add NextAuth OAuth and social features</li></ul></div>
+<div class="brd-section"><h3>3. Tools</h3><ul><li>React &middot; Next.js &middot; Node.js &middot; MongoDB &middot; Tailwind CSS &middot; Cloudinary &middot; GitHub</li></ul></div>
+<div class="brd-section"><h3>4. Weekly Milestones</h3><table class="milestone-table"><tr><td><strong>W1</strong></td><td>Environment Setup & Profile Module</td></tr><tr><td><strong>W2</strong></td><td>Project Showcase</td></tr><tr><td><strong>W3</strong></td><td>Blog Engine</td></tr><tr><td><strong>W4</strong></td><td>Authentication & Social Features</td></tr><tr><td><strong>W5</strong></td><td>SEO & Performance</td></tr><tr><td><strong>W6</strong></td><td>Documentation & Handoff</td></tr></table></div>
+</div></div></div>
+<script>
+function openModal(){document.getElementById('brdModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('brdModal').classList.remove('active');document.body.style.overflow='auto';}
+function closeModalOutside(event){if(event.target.classList.contains('modal-overlay'))closeModal();}
+function toggleAccordion(header){const item=header.parentElement;const isActive=item.classList.contains('active');document.querySelectorAll('.accordion-item').forEach(acc=>acc.classList.remove('active'));if(!isActive)item.classList.add('active');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>

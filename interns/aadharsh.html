@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadharsh Jaya Bharath - SupplyPulse | iPeople Career</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">Ipeople Career</div>
+    <div class="project-badge">SupplyPulse</div>
+  </header>
+
+  <main class="container">
+    <section class="welcome-card">
+      <h1>Welcome to <span class="highlight">SupplyPulse</span> — kickoff details & Monday task cadence</h1>
+      <p class="greeting">Hi <span class="name">Aadharsh Jaya Bharath</span>,</p>
+      <p>Welcome aboard! We're excited to have you join as our <strong>Supply Chain Data Analyst (SCDA)</strong> on
+        <strong>SupplyPulse</strong>, a comprehensive supply chain analytics dashboard for real-time inventory
+        monitoring and demand forecasting.
+      </p>
+      <p>You're starting on <strong>February 9, 2026</strong>, marking the beginning of your first week focused on
+        onboarding and understanding the foundational setup for the SupplyPulse project. You'll receive your weekly
+        task list every <strong>Monday (IST)</strong>.</p>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="openModal()">Open BRD</button>
+      </div>
+    </section>
+
+    <section class="project-summary">
+      <h3>SupplyPulse in one line</h3>
+      <p>A <strong>supply chain analytics platform</strong> that provides real-time visibility into inventory levels,
+        shipment tracking, and demand forecasting with <strong>interactive dashboards</strong>, <strong>automated
+          alerts</strong>, and <strong>predictive analytics</strong>.</p>
+    </section>
+
+    <section class="week-section">
+      <h2>Weekly Task Breakdown</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="week-title">
+              <span class="week-badge">Week 1</span>
+              <span>Environment Setup & Data Discovery</span>
+              <span class="dates">(Feb 9 - Feb 15)</span>
+            </div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-content">
+            <ul class="task-list">
+              <li>Set up database tools and connect to warehouse</li>
+              <li>Review data dictionary and understand source tables</li>
+              <li>Profile inventory data and document findings</li>
+              <li>Map data lineage for order-to-delivery flow</li>
+              <li>Identify initial data quality issues</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="week-title">
+              <span class="week-badge">Week 2</span>
+              <span>Data Cleaning & Transformation</span>
+              <span class="dates">(Feb 16 - Feb 22)</span>
+            </div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-content">
+            <ul class="task-list">
+              <li>Create data cleaning scripts for inventory data</li>
+              <li>Build dimension and fact tables</li>
+              <li>Standardize status codes and SKU formats</li>
+              <li>Calculate fulfillment metrics per warehouse</li>
+              <li>Document ETL transformations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="week-title">
+              <span class="week-badge">Week 3</span>
+              <span>Dashboard Development</span>
+              <span class="dates">(Feb 23 - Mar 1)</span>
+            </div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-content">
+            <ul class="task-list">
+              <li>Set up Power BI workspace and data connection</li>
+              <li>Build Inventory Overview dashboard with KPIs</li>
+              <li>Create Stock Level Heatmap visualization</li>
+              <li>Build Shipment Tracker and Order Fulfillment pages</li>
+              <li>Implement filters and drill-down functionality</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="week-title">
+              <span class="week-badge">Week 4</span>
+              <span>Forecasting & Advanced Analytics</span>
+              <span class="dates">(Mar 2 - Mar 8)</span>
+            </div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-content">
+            <ul class="task-list">
+              <li>Extract historical demand data for analysis</li>
+              <li>Build demand forecasting model</li>
+              <li>Create forecast accuracy metrics</li>
+              <li>Build Demand Forecast dashboard page</li>
+              <li>Develop stockout risk analysis and reorder recommendations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="week-title">
+              <span class="week-badge">Week 5</span>
+              <span>Optimization & Automation</span>
+              <span class="dates">(Mar 9 - Mar 15)</span>
+            </div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-content">
+            <ul class="task-list">
+              <li>Optimize query performance and add indexes</li>
+              <li>Configure automated data refresh schedules</li>
+              <li>Set up automated alerts for critical metrics</li>
+              <li>Create data pipeline for nightly updates</li>
+              <li>Conduct UAT and fix priority issues</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="week-title">
+              <span class="week-badge">Week 6</span>
+              <span>Documentation & Handoff</span>
+              <span class="dates">(Mar 16 - Mar 22)</span>
+            </div>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-content">
+            <ul class="task-list">
+              <li>Complete technical documentation</li>
+              <li>Create user guide with screenshots</li>
+              <li>Record training videos</li>
+              <li>Conduct training session for end users</li>
+              <li>Present final project and complete knowledge transfer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts-section">
+      <h3>Points of contact</h3>
+      <div class="contact-item"><span class="contact-name">Sarah Mitchell</span> — <span class="contact-role">Technical
+          Lead</span> — <span class="contact-desc">dashboard reviews, SQL optimization, daily standups</span></div>
+      <div class="contact-item"><span class="contact-name">James Anderson</span> — <span
+          class="contact-role">Platform/SRE</span> — <span class="contact-desc">database access, Airflow setup,
+          infrastructure</span></div>
+      <div class="contact-item"><span class="contact-name">Emily Carter</span> — <span
+          class="contact-role">Security/Policy</span> — <span class="contact-desc">data access policies, RLS
+          configuration, PII handling</span></div>
+      <div class="contact-item"><span class="contact-name">Michael Reynolds</span> — <span class="contact-role">Project
+          Lead</span> — <span class="contact-desc">escalations, stakeholder alignment, final presentations</span></div>
+    </section>
+
+    <footer class="footer">
+      <p>We're thrilled to have you on the mission. If anything is blocked, ping me directly. Expect your <strong>Monday
+          task list</strong> in your inbox/Slack at the start of each week (IST).</p>
+      <div class="footer-signature">
+        <div class="name">Michael Reynolds</div>
+        <div class="title">Project Lead · Ipeople Career</div>
+        <div class="contact">+1 (751) 299-1715 · Slack: @michael.reynolds</div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="modal-overlay" id="brdModal" onclick="closeModalOutside(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>📄 Business Requirements Document</h2>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="brd-meta">
+          <div class="brd-meta-item">
+            <div class="label">Version</div>
+            <div class="value">1.0</div>
+          </div>
+          <div class="brd-meta-item">
+            <div class="label">Date</div>
+            <div class="value">Feb 9, 2026</div>
+          </div>
+          <div class="brd-meta-item">
+            <div class="label">Author</div>
+            <div class="value">iPeople Career</div>
+          </div>
+        </div>
+
+        <div class="brd-section">
+          <h3>1. Executive Summary</h3>
+          <p><strong>SupplyPulse</strong> is a supply chain analytics dashboard providing real-time visibility into
+            inventory, shipments, and demand forecasting for optimized logistics decisions.</p>
+        </div>
+
+        <div class="brd-section">
+          <h3>2. Data Architecture</h3>
+          <p><strong>Source Systems:</strong></p>
+          <ul>
+            <li><code>ERP_INVENTORY</code> — Daily inventory snapshots (15,000 SKUs × 12 warehouses)</li>
+            <li><code>OMS_ORDERS</code> — Real-time order stream (50K orders/day)</li>
+            <li><code>TMS_SHIPMENTS</code> — Carrier tracking data (8 carriers, 23 status codes)</li>
+            <div class="brd-section">
+              <h3>1. Project Overview</h3>
+              <ul>
+                <li><strong>What:</strong> Inventory analytics platform for supply chain optimization</li>
+                <li><strong>Problem:</strong> 15% stockouts, 20% overstocking across 12 warehouses</li>
+                <li><strong>Goal:</strong> Reduce stockouts by 40%, cut excess inventory by 25%</li>
+                <li><strong>Users:</strong> Supply chain managers, warehouse ops, procurement</li>
+              </ul>
+            </div>
+
+            <div class="brd-section">
+              <h3>2. Your Role</h3>
+              <ul>
+                <li>Build demand forecasting models</li>
+                <li>Create inventory dashboards</li>
+                <li>Identify data quality issues in supply chain data</li>
+                <li>Automate reorder point calculations</li>
+              </ul>
+            </div>
+
+            <div class="brd-section">
+              <h3>3. Tools</h3>
+              <ul>
+                <li>SQL (DBeaver) · Python (Jupyter) · Power BI · Lucidchart</li>
+              </ul>
+            </div>
+
+            <div class="brd-section">
+              <h3>4. Weekly Milestones</h3>
+              <table class="milestone-table">
+                <tr>
+                  <td><strong>W1</strong></td>
+                  <td>Environment setup, data profiling</td>
+                </tr>
+                <tr>
+                  <td><strong>W2</strong></td>
+                  <td>Demand forecasting model</td>
+                </tr>
+                <tr>
+                  <td><strong>W3</strong></td>
+                  <td>Inventory dashboards</td>
+                </tr>
+                <tr>
+                  <td><strong>W4</strong></td>
+                  <td>Reorder automation alerts</td>
+                </tr>
+                <tr>
+                  <td><strong>W5</strong></td>
+                  <td>UAT & optimization</td>
+                </tr>
+                <tr>
+                  <td><strong>W6</strong></td>
+                  <td>Documentation & handoff</td>
+                </tr>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal() { document.getElementById('brdModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+      function closeModal() { document.getElementById('brdModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+      function closeModalOutside(event) { if (event.target.classList.contains('modal-overlay')) closeModal(); }
+      function toggleAccordion(header) { const item = header.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active')); if (!isActive) item.classList.add('active'); }
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+
+</html>

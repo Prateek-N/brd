@@ -1,0 +1,6 @@
+.agent/
+.agents/
+node_modules/
+.gemini/
+__pycache__/
+*.log
