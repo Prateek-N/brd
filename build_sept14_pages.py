@@ -1,7 +1,8 @@
 import json
 import os
 
-with open(r"f:\New Stem\sept14_candidates.json", "r", encoding="utf-8") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+with open(os.path.join(BASE_DIR, "sept14_candidates.json"), "r", encoding="utf-8") as f:
     candidates = json.load(f)
 
 SEPT_NEW_PEOPLE = [
@@ -251,11 +252,16 @@ def generate_profile_html(c):
 </section>
 
 <section class="content" style="margin-bottom:24px;">
-<div style="background:linear-gradient(135deg,rgba(14,165,233,0.08),rgba(99,102,241,0.08));border:1px solid rgba(14,165,233,0.25);border-radius:12px;padding:20px;margin-bottom:20px;">
-  <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#0284c7;font-weight:800;margin-bottom:6px;">Sample 3-Month Project · Starting Sep 14, 2026</div>
-  <h2 style="font-size:20px;font-weight:800;color:#0f172a;margin:0 0 8px 0;">{escape_html(project)}</h2>
-  <p style="font-size:14px;color:#334155;line-height:1.6;margin:0 0 12px 0;">{escape_html(project_desc)}</p>
-  <div style="font-size:13px;color:#64748b;"><strong style="color:#0f172a;">Tech Stack &amp; Tools:</strong> {escape_html(tools)}</div>
+<div style="background:linear-gradient(135deg,rgba(14,165,233,0.12),rgba(99,102,241,0.10));border:1px solid rgba(56,189,248,0.35);border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:0 4px 20px rgba(0,0,0,0.35);">
+  <div style="font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#38bdf8;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+    <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#38bdf8;"></span>
+    Sample 3-Month Project · Starting Sep 14, 2026
+  </div>
+  <h2 style="font-size:22px;font-weight:700;color:#ffffff;margin:0 0 10px 0;line-height:1.3;">{escape_html(project)}</h2>
+  <p style="font-size:14px;color:#e2e8f0;line-height:1.6;margin:0 0 16px 0;">{escape_html(project_desc)}</p>
+  <div style="font-size:13px;color:#94a3b8;padding-top:14px;border-top:1px solid rgba(255,255,255,0.1);">
+    <strong style="color:#38bdf8;font-weight:700;">Tech Stack &amp; Tools:</strong> <span style="color:#f8fafc;font-weight:500;">{escape_html(tools)}</span>
+  </div>
 </div>
 
 <h2>Roles &amp; Responsibilities</h2>
@@ -459,7 +465,7 @@ copyBtn.addEventListener("click", async () => {{
 """
 
 all_to_generate = candidates + SEPT_NEW_PEOPLE
-dirs = [r"f:\New Stem\profiles", r"f:\New Stem\new_stem\profiles"]
+dirs = [os.path.join(BASE_DIR, "profiles"), os.path.join(BASE_DIR, "new_stem", "profiles")]
 for d in dirs:
     os.makedirs(d, exist_ok=True)
     for c in all_to_generate:

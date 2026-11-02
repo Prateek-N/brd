@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>3-Month Project Plans · Sep 14–Dec 6, 2026</title>
+<title>3-Month Project Plans · Candidate Task Management</title>
 <link rel="stylesheet" href="styles.css" />
 <style>
 .tab-row {
@@ -98,9 +98,10 @@
 <div class="brand">
 <div class="brand-mark"></div>
 <div class="brand-title">Project Plan</div>
-<div class="brand-sub">Sep 14, 2026 – Dec 6, 2026</div>
+<div class="brand-sub">Candidate Milestone Management</div>
 </div>
 <div class="tab-row" id="tabRow">
+  <button class="tab-btn btn btn-outline" data-tab="novstarters" type="button" style="background:linear-gradient(135deg,#059669,#10b981);color:#fff;border-color:transparent;font-weight:800;">🌟 NOV 2 STARTERS (5)</button>
   <button class="tab-btn btn btn-primary" data-tab="all" type="button">All Projects (27)</button>
   <button class="tab-btn btn btn-outline" data-tab="ipeople" type="button">IPEOPLE (13)</button>
   <button class="tab-btn btn btn-outline" data-tab="bridgepoint" type="button">BRIDGEPOINT (14)</button>
@@ -112,15 +113,40 @@
 <div class="wrap">
 <section class="hero" id="heroSection">
 <h1 id="heroTitle">3-Month Sample Projects &amp; Weekly Plans</h1>
-<p id="heroDesc">Individual 12-week project assignments starting <strong>September 14, 2026</strong>. Review project scopes, tools, weekly milestones, and email-ready task assignments for all team members.</p>
+<p id="heroDesc">Individual 12-week project assignments starting <strong>November 2, 2026</strong>. Review project scopes, tools, weekly milestones, and email-ready task assignments for all team members.</p>
 <div class="cta-row">
-<a class="btn btn-primary" href="#projects-section" id="heroCta1" style="text-decoration:none;">Browse Projects</a>
-<a class="btn btn-outline" href="#weeks-section" id="heroCta2" style="text-decoration:none;">Weekly Schedule (W1–W12)</a>
+<a class="btn btn-primary" href="#novstarters-content" id="heroCta1" style="text-decoration:none;">Browse Roles</a>
+<a class="btn btn-outline" href="#weeks-novstarters" id="heroCta2" style="text-decoration:none;">Weekly Schedule (W1–W12)</a>
 </div>
 </section>
 
+<!-- NOV 2 STARTERS SECTION -->
+<div id="novstarters-content">
+  <section class="section" id="roles-novstarters">
+    <div class="section-head">
+      <div>
+        <p class="section-label">Active Cohort · Starting Nov 2, 2026 – Jan 24, 2027</p>
+        <h2 class="section-title">November 2 Starters &amp; Projects</h2>
+      </div>
+      <div class="section-meta">5 team members · 12-Week Milestones</div>
+    </div>
+    <div class="role-grid" id="rolesGridNovStarters" aria-label="November 2 starter team members"></div>
+  </section>
+
+  <section class="section" id="weeks-novstarters">
+    <div class="section-head">
+      <div>
+        <p class="section-label">Schedule · Nov 2, 2026 – Jan 24, 2027</p>
+        <h2 class="section-title">Weekly Schedule (Week 1–Week 12)</h2>
+      </div>
+      <div class="section-meta">Click any week to view tasks and copy email templates</div>
+    </div>
+    <div class="week-grid" id="weekGridNovStarters" aria-label="Nov Starters weekly tasks grid"></div>
+  </section>
+</div>
+
 <!-- 27 CANDIDATES PROJECT SECTION -->
-<div id="main-content">
+<div id="main-content" hidden>
   <section class="section" id="projects-section">
     <div class="section-head">
       <div>
@@ -146,7 +172,7 @@
     <div class="section-head">
       <div>
         <p class="section-label">Schedule · 12-Week Milestones</p>
-        <h2 class="section-title">Week 1–Week 12 Tasks</h2>
+        <h2 class="section-title">Week 1–Week 12 Tasks (Sep 14–Dec 6)</h2>
       </div>
       <div class="section-meta">Click any week to open all individual assignments &amp; copy emails</div>
     </div>
@@ -179,7 +205,7 @@
   </section>
 </div>
 
-<footer class="footer">Generated from the Stem Task Sheet. Plan duration: Sep 14, 2026 – Dec 6, 2026.</footer>
+<footer class="footer">Project Task Management Portal · IPEOPLE CAREER LLC &amp; BRIDGEPOINT CAREERS LLC</footer>
 </div>
 
 <dialog class="modal" id="weekDialog" aria-labelledby="weekTitle" aria-describedby="weekMeta">
@@ -1278,6 +1304,185 @@ const SEPT_NEW_PEOPLE = [
     ]
   }
 ];
+const NOV_PEOPLE = [
+  {
+    "name": "Shrey Sandeep Jain",
+    "jobTitle": "Data Analyst",
+    "company": "IPEOPLE CAREER LLC",
+    "slug": "shrey-sandeep-jain",
+    "project": "Customer Churn & Retention Analytics Platform",
+    "projectDesc": "Analyze customer behavior and subscription churn datasets using Excel, SQL, and Power BI/Python to identify churn drivers, calculate customer lifetime value, and build an interactive retention monitoring dashboard.",
+    "tools": "Excel, SQL (PostgreSQL/SQLite), Power BI Desktop, Python (pandas, matplotlib), GitHub",
+    "responsibilities": [
+      "Collect and clean raw data from various sources.",
+      "Analyze datasets to identify trends, patterns, and insights.",
+      "Create reports and dashboards to visualize findings.",
+      "Interpret data to support business decisions.",
+      "Perform data validation to ensure accuracy and consistency.",
+      "Collaborate with cross-functional teams such as product managers and designers.",
+      "Use statistical techniques to solve business problems and forecast trends.",
+      "Build and maintain databases or data systems.",
+      "Present insights to stakeholders in a clear, actionable manner.",
+      "Develop and automate data pipelines for efficient processing.",
+      "Ensure data security and compliance with organizational policies."
+    ],
+    "weekTasks": [
+      "Project Kickoff & Data Exploration \u2014 Download a public telecom/SaaS customer churn dataset (CSV), review column descriptions in a data dictionary, and verify data types.",
+      "Data Cleaning & Formatting \u2014 Clean raw dataset in Excel or Python pandas: remove duplicate rows, fill missing values, and standardize payment methods and tenure fields.",
+      "Database Setup & SQL Queries \u2014 Import cleaned data into SQLite or PostgreSQL, write basic SQL queries to count total customers, active subscribers, and calculate overall churn rate.",
+      "Exploratory Data Analysis (EDA) \u2014 Run SQL aggregations and Python plots to find churn trends across contract types (month-to-month vs. annual), monthly charges, and internet services.",
+      "Key Retention Metrics \u2014 Compute core business metrics in Excel: Monthly Churn Rate, Retention Rate, Average Revenue Per User (ARPU), and Customer Lifetime Value (CLV).",
+      "Summary Charts & Visuals \u2014 Build standard visual charts: churn distribution pie chart, revenue comparison bar chart, and a customer tenure histogram.",
+      "Interactive Dashboard Build \u2014 Build an interactive Power BI dashboard featuring summary KPI cards and filter slicers for contract type, gender, and payment method.",
+      "Automated Data Pipeline Script \u2014 Write a simple Python script (churn_pipeline.py) that loads new customer records, cleans them, and flags high-risk churn accounts into an alert CSV file.",
+      "Data Validation & Quality Checks \u2014 Perform reconciliation checks ensuring dashboard totals match database SQL query results and raw source data with 100% accuracy.",
+      "Analytical Findings Report \u2014 Write a 2-page executive summary document detailing top churn risk factors and 3 actionable business retention recommendations.",
+      "Stakeholder Presentation Deck \u2014 Create an 8-slide presentation in Google Slides or PowerPoint with dashboard screenshots and data-backed business takeaways.",
+      "Final Packaging & GitHub Portfolio \u2014 Organize all SQL scripts, Python files, and dashboard exports; write a clear README.md file and upload the project to GitHub."
+    ]
+  },
+  {
+    "name": "Sana Samad",
+    "jobTitle": "Business Analyst",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "sana-samad",
+    "project": "Omnichannel Order Management & Fulfillment Process Optimization",
+    "projectDesc": "Conduct end-to-end business analysis for retail order fulfillment operations. Document AS-IS vs. TO-BE workflows, author user stories and a complete Business Requirements Document (BRD), and design an operational KPI dashboard.",
+    "tools": "draw.io, Google Docs / Word, Google Sheets / Excel, Jira / Trello, Power BI / Excel, GitHub",
+    "responsibilities": [
+      "Gather, analyze, and interpret business requirements to identify needs, trends, and opportunities.",
+      "Develop and maintain business requirements, process documents, and visualizations for stakeholders.",
+      "Collect, document, and validate requirements to ensure accuracy, clarity, and consistency.",
+      "Perform business analysis to support strategic planning and business decision-making.",
+      "Collaborate with cross-functional teams to understand business requirements and objectives.",
+      "Identify process improvement opportunities through business analysis and recommendations.",
+      "Monitor key performance indicators (KPIs) and track business performance and project metrics.",
+      "Conduct ad hoc analysis to address business challenges and support operational needs.",
+      "Create and maintain documentation for requirements, processes, workflows, and analytical activities.",
+      "Ensure requirements alignment, governance, and compliance with organizational standards.",
+      "Present analytical findings, business solutions, and actionable recommendations to management and stakeholders."
+    ],
+    "weekTasks": [
+      "Project Charter & Scope Definition \u2014 Draft project charter outlining business goals, project scope (in-scope vs. out-of-scope), and success criteria for improving order fulfillment.",
+      "Stakeholder Analysis Matrix \u2014 Create stakeholder register identifying key roles (Sales, Warehouse, Support, Customer), their primary pain points, and business requirements.",
+      "AS-IS Process Flow Mapping \u2014 Map the current manual order fulfillment workflow in draw.io using swimlane diagrams, highlighting delays and manual handoffs.",
+      "Gap & Root Cause Analysis \u2014 Document operational bottlenecks causing order delays and compare current process steps against industry standard fulfillment SLAs.",
+      "TO-BE Process Flow Design \u2014 Design the future-state automated order workflow in draw.io incorporating automated inventory reservation, dispatch notifications, and tracking.",
+      "User Stories & Acceptance Criteria \u2014 Write 12 clear Agile user stories formatted as 'As a [role], I want [action], so that [benefit]' with Given/When/Then acceptance criteria.",
+      "Backlog Management & MoSCoW Prioritization \u2014 Set up a free Jira or Trello project board, populate the backlog with epics and user stories, and prioritize them using MoSCoW (Must, Should, Could, Won't).",
+      "Operational KPI Definition \u2014 Define 6 essential fulfillment metrics in Excel: Order Lead Time, On-Time In-Full (OTIF) rate, Return Rate, Fulfillment Cost Per Order, and CSAT score.",
+      "Operational KPI Dashboard \u2014 Build a clean Excel or Power BI mockup dashboard displaying weekly order volume trends and fulfillment bottleneck alerts.",
+      "User Acceptance Testing (UAT) Plan \u2014 Draft a 10-scenario UAT test case matrix in Google Sheets covering order placement, payment verification, shipping updates, and customer returns.",
+      "Full Business Requirements Document (BRD) \u2014 Consolidate the project charter, process maps, user stories, KPI metrics, and UAT matrix into a formal, structured BRD document.",
+      "Stakeholder Walkthrough & GitHub Repository \u2014 Create a 10-slide executive summary presentation, record a 5-minute project overview video, and commit all project deliverables to GitHub."
+    ]
+  },
+  {
+    "name": "Anjali Majan",
+    "jobTitle": "Product Designer",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "anjali-majan",
+    "project": "Healthcare Patient Portal & Telehealth Mobile App UX Redesign",
+    "projectDesc": "Conduct UX research and design an intuitive, accessible patient portal mobile app. Create user personas, user journey maps, wireframes, an interactive Figma prototype, and a standardized design system component library.",
+    "tools": "Figma, FigJam / Miro, Google Docs / Notion, Google Slides, GitHub",
+    "responsibilities": [
+      "Analyze user needs, behaviors, and feedback to identify product and design opportunities.",
+      "Create user flows, wireframes, prototypes, design systems, and product visualizations.",
+      "Conduct user research and validate designs for usability, clarity, and consistency.",
+      "Perform UX analysis to support product development and design decisions.",
+      "Collaborate with product managers, developers, and cross-functional teams on requirements.",
+      "Identify UX improvement opportunities through research, testing, and design analysis.",
+      "Track product and UX metrics to monitor engagement, adoption, and performance.",
+      "Conduct ad hoc analysis to address product and user experience challenges.",
+      "Maintain documentation for requirements, workflows, prototypes, and research activities.",
+      "Ensure designs follow usability, accessibility, consistency, and design standards.",
+      "Present design concepts, findings, solutions, and recommendations to stakeholders."
+    ],
+    "weekTasks": [
+      "Competitive Analysis & UX Audit \u2014 Review 3 existing telehealth apps (e.g., Teladoc, MyChart, Zocdoc); document screen flows, navigation structures, and user friction points.",
+      "User Personas & Empathy Maps \u2014 Create 2 user personas (a busy working professional and a senior patient managing chronic medications) highlighting goals, frustrations, and device preferences.",
+      "User Journey & Task Flow Mapping \u2014 Map user flow in FigJam for two core tasks: booking a specialist appointment and reviewing lab test results.",
+      "Low-Fidelity Wireframes \u2014 Sketch low-fidelity wireframes in Figma for 5 key screens: Home Dashboard, Doctor Search, Appointment Booking, Prescription List, and Telehealth Video Call.",
+      "Design System Foundations \u2014 Build color styles (primary, neutral, semantic alerts), typography hierarchy, 8pt spacing grid, and standard icon set in Figma.",
+      "UI Component Library \u2014 Design reusable UI components in Figma with auto-layout: buttons, form inputs, doctor info cards, status badges, and bottom navigation.",
+      "High-Fidelity Screens: Booking Flow \u2014 Design polished high-fidelity mobile screens for selecting doctor specialties, available dates/times, and confirming appointments.",
+      "High-Fidelity Screens: Health Records & Consult \u2014 Design high-fidelity screens for lab results overview, medication refills, and doctor consultation notes.",
+      "Clickable Interactive Prototype \u2014 Connect Figma screens with interactive transitions and click triggers to create a smooth, testable mobile prototype.",
+      "Usability Testing & Feedback Synthesis \u2014 Conduct a usability walkthrough session with 3 peers, test the appointment booking flow, and log usability findings in a feedback matrix.",
+      "Accessibility Audit & Design Polish \u2014 Check contrast ratios against WCAG 2.1 AA accessibility standards, refine tap targets, and prepare developer handoff documentation with component tokens.",
+      "Design Portfolio Case Study & Demo \u2014 Create a 10-slide case study presentation deck, record a 5-minute interactive Figma walkthrough video, and publish documentation and exports to GitHub."
+    ]
+  },
+  {
+    "name": "Sandeep Kasiraju",
+    "jobTitle": "Data Scientist",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "sandeep-kasiraju",
+    "project": "Predictive Customer Purchase & Sales Revenue Forecasting Engine",
+    "projectDesc": "Develop a machine learning prediction pipeline using Python and scikit-learn. Perform EDA, feature engineering, train classification and regression models to predict customer purchase intent, and deploy an interactive Streamlit web app.",
+    "tools": "Python (pandas, scikit-learn, matplotlib, seaborn), Jupyter Notebook, Streamlit, GitHub",
+    "responsibilities": [
+      "Collect, clean, and analyze large datasets to identify trends, patterns, and business insights.",
+      "Develop, test and deploy statistical models, machine learning algorithms and predictive analytics solutions.",
+      "Design and maintain data pipelines, dashboards and reporting tools to support decision-making.",
+      "Perform exploratory data analysis and present findings to stakeholders in a clear and actionable manner.",
+      "Validate model performance and continuously optimize algorithms for accuracy and efficiency.",
+      "Utilize programming languages such as Python, R, SQL and relevant data science tools and frameworks.",
+      "Support data governance, quality assurance, and compliance with organizational data policies.",
+      "Stay current with emerging technologies, industry trends, and best practices in data science and artificial intelligence.",
+      "Identify opportunities for process automation and operational efficiency through data-driven solutions."
+    ],
+    "weekTasks": [
+      "Environment Setup & Data Acquisition \u2014 Set up Python virtual environment with Jupyter, pandas, and scikit-learn; download Kaggle Online Shoppers Purchasing Intention dataset and verify summary stats.",
+      "Data Cleaning & Preprocessing \u2014 Clean dataset: check for null values, encode categorical variables (Month, VisitorType, Weekend) using LabelEncoder/OneHotEncoder, and document schema.",
+      "Exploratory Data Analysis (EDA) \u2014 Create exploratory seaborn charts: correlation matrix heatmap, bounce rate vs. exit rate scatter plot, and purchase rate breakdown by visitor type.",
+      "Feature Engineering & Scaling \u2014 Create derived features (e.g., total session duration, page value ratios), split dataset into 80% train and 20% test sets, and scale numerical features with StandardScaler.",
+      "Baseline Model Training \u2014 Train a baseline Logistic Regression model to predict customer purchase intent (Revenue = True/False); calculate initial accuracy, precision, and confusion matrix.",
+      "Advanced Machine Learning Models \u2014 Train Random Forest and Gradient Boosting (or XGBoost) classifiers; evaluate precision, recall, F1-score, and ROC-AUC curve on the test dataset.",
+      "Hyperparameter Tuning \u2014 Run GridSearchCV or RandomizedSearchCV on the top-performing model to optimize hyperparameters (e.g., max_depth, n_estimators) for improved purchase prediction recall.",
+      "Feature Importance & Interpretability \u2014 Plot feature importance rankings to identify the top 5 factors influencing customer buying decisions (e.g., PageValues, ProductRelated duration).",
+      "Python Prediction Pipeline \u2014 Build an automated script (predict_pipeline.py) that loads the saved model using joblib and returns purchase probabilities on new batch CSV records.",
+      "Interactive Streamlit Web App \u2014 Build a simple Streamlit web interface (app.py) where business users can adjust session metric sliders and view real-time purchase predictions.",
+      "Model Evaluation & Business Insights Report \u2014 Write a 3-page report summarizing model benchmarks, key commercial drivers, and data governance practices implemented.",
+      "Code Quality & GitHub Portfolio \u2014 Clean Jupyter notebooks, add markdown explanations, freeze dependencies in requirements.txt, write a project README, commit to GitHub, and record a demo video."
+    ]
+  },
+  {
+    "name": "Surendar Mourougan",
+    "jobTitle": "Software Engineer",
+    "company": "BRIDGEPOINT CAREERS LLC",
+    "slug": "surendar-mourougan",
+    "project": "Cloud-Native Task & Team Collaboration REST API Service",
+    "projectDesc": "Build and deploy a secure, modular RESTful API service with Node.js/Express (or Python FastAPI), SQLite/PostgreSQL database, JWT authentication, and a clean web dashboard for team task management.",
+    "tools": "Node.js / Express (or Python FastAPI), SQLite / PostgreSQL, Postman, HTML/CSS/JavaScript, Git, GitHub",
+    "responsibilities": [
+      "Design, develop, test, and maintain software applications and systems.",
+      "Write clean, efficient, and scalable code following industry best practices.",
+      "Collaborate with cross-functional teams to gather and analyze business requirements.",
+      "Troubleshoot, debug, and resolve software defects and technical issues.",
+      "Participate in code reviews to ensure code quality and maintainability.",
+      "Develop and integrate APIs, databases, and third-party services as required.",
+      "Ensure application performance, security, and reliability standards are met.",
+      "Prepare and maintain technical documentation for developed applications and processes.",
+      "Stay updated with emerging technologies and contribute to continuous improvement initiatives.",
+      "Assist in software deployment, upgrades, and production support activities."
+    ],
+    "weekTasks": [
+      "Development Environment & Project Scaffold \u2014 Initialize Node.js/Express (or Python FastAPI) project, configure Git repository, set up .gitignore and package.json, and build a working GET /api/health endpoint.",
+      "Database Architecture & Schema \u2014 Design relational database schema for Users and Tasks (id, title, description, status, priority, dueDate, userId); initialize SQLite database and write migration scripts.",
+      "Basic CRUD API Endpoints \u2014 Build foundational endpoints: GET /api/tasks (fetch all tasks) and POST /api/tasks (create a new task); verify JSON responses in Postman.",
+      "Complete CRUD Functionality \u2014 Add GET /api/tasks/:id (fetch single task), PUT /api/tasks/:id (update status/details), and DELETE /api/tasks/:id (remove task); handle 404 not found errors.",
+      "User Authentication & Security \u2014 Implement POST /api/auth/register and POST /api/auth/login endpoints with password hashing (bcrypt) and JSON Web Token (JWT) issuance.",
+      "Protected Routes & Authorization Middleware \u2014 Create JWT verification middleware to restrict task endpoints so authenticated users can only view and manage their own tasks.",
+      "Input Validation & Error Handling \u2014 Add request payload validation middleware (validating required title, valid status values, date formats) and centralized error handling.",
+      "Search, Filter & Pagination \u2014 Enhance GET /api/tasks endpoint with query parameters for status filtering (?status=completed), search keywords, and pagination (?page=1&limit=10).",
+      "Automated Unit & Integration Testing \u2014 Write automated test suites using Jest (or Pytest) testing auth registration, login, and task CRUD endpoints; verify all tests pass.",
+      "Frontend Web Client \u2014 Build a lightweight HTML/CSS/JavaScript web dashboard that interacts with the API via fetch() to display tasks, filter by status, and toggle completions.",
+      "API Documentation \u2014 Create a comprehensive API documentation reference (using Swagger UI, Postman Collection export, or Markdown table) specifying all paths, headers, and payload schemas.",
+      "Containerization & GitHub Repository \u2014 Create a Dockerfile for containerized execution, write a detailed README.md with setup/run instructions, push to GitHub, and record a 5-minute demo video."
+    ]
+  }
+];
 const WEEKS_12 = [
   {
     "week": 1,
@@ -1328,16 +1533,107 @@ const WEEKS_12 = [
     "dateRange": "Nov 30\u2013Dec 6, 2026"
   }
 ];
+const WEEKS_12_NOV = [
+  {
+    "week": 1,
+    "dateRange": "Nov 2\u2013Nov 8, 2026"
+  },
+  {
+    "week": 2,
+    "dateRange": "Nov 9\u2013Nov 15, 2026"
+  },
+  {
+    "week": 3,
+    "dateRange": "Nov 16\u2013Nov 22, 2026"
+  },
+  {
+    "week": 4,
+    "dateRange": "Nov 23\u2013Nov 29, 2026"
+  },
+  {
+    "week": 5,
+    "dateRange": "Nov 30\u2013Dec 6, 2026"
+  },
+  {
+    "week": 6,
+    "dateRange": "Dec 7\u2013Dec 13, 2026"
+  },
+  {
+    "week": 7,
+    "dateRange": "Dec 14\u2013Dec 20, 2026"
+  },
+  {
+    "week": 8,
+    "dateRange": "Dec 21\u2013Dec 27, 2026"
+  },
+  {
+    "week": 9,
+    "dateRange": "Dec 28, 2026\u2013Jan 3, 2027"
+  },
+  {
+    "week": 10,
+    "dateRange": "Jan 4\u2013Jan 10, 2027"
+  },
+  {
+    "week": 11,
+    "dateRange": "Jan 11\u2013Jan 17, 2027"
+  },
+  {
+    "week": 12,
+    "dateRange": "Jan 18\u2013Jan 24, 2027"
+  }
+];
 
 let currentCompanyFilter = 'all';
 let currentSearchQuery = '';
 let activeWeekNum = null;
-let activeModalCohort = 'main'; // 'main' or 'septnew'
+let activeModalCohort = 'novstarters'; // 'novstarters', 'main', or 'septnew'
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 }
 
+// ── RENDER NOV STARTERS ──────────────────────────────────────────────────────
+function renderNovStartersRoles() {
+  const grid = document.getElementById('rolesGridNovStarters');
+  grid.innerHTML = NOV_PEOPLE.map(p => `
+    <div class="role-card" style="border-top:3px solid #10b981;">
+      <div class="role-card-header">
+        <div class="role-avatar" style="background:#059669;color:#fff;">${p.name.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>
+        <div>
+          <div class="role-name">${escapeHtml(p.name)}</div>
+          <div class="role-title">${escapeHtml(p.jobTitle)}</div>
+          <div class="role-company" style="font-size:11px;color:#10b981;font-weight:700;margin-top:2px;">${escapeHtml(p.company)} · Nov 2, 2026 Starter</div>
+        </div>
+      </div>
+      <div style="margin: 12px 0 8px 0;">
+        <div style="font-size:14px;font-weight:700;color:#38bdf8;">${escapeHtml(p.project)}</div>
+        <p style="font-size:12px;color:#cbd5e1;margin:4px 0 8px 0;line-height:1.5;">${escapeHtml(p.projectDesc)}</p>
+        <div style="font-size:11px;color:#94a3b8;"><strong>Tools:</strong> ${escapeHtml(p.tools)}</div>
+      </div>
+      <ul class="role-list">
+        ${p.responsibilities.slice(0, 4).map(r => `<li>${escapeHtml(r)}</li>`).join('')}
+        <li style="color:#94a3b8;font-style:italic;">...and ${p.responsibilities.length - 4} more responsibilities</li>
+      </ul>
+      <div class="role-footer" style="margin-top:14px;">
+        <a class="btn btn-primary btn-sm" href="profiles/${p.slug}.html" style="text-decoration:none;display:inline-block;background:#059669;border-color:#10b981;">Open Profile &amp; Weekly Tasks →</a>
+      </div>
+    </div>
+  `).join('');
+
+  const weekGrid = document.getElementById('weekGridNovStarters');
+  weekGrid.innerHTML = WEEKS_12_NOV.map(w => `
+    <button class="week-btn" type="button" data-nov-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog" style="border-left:3px solid #10b981;">
+      <div class="week-num" style="color:#10b981;">Week ${w.week}</div>
+      <div class="week-tag" style="background:rgba(16,185,129,0.2);color:#34d399;">Nov 2 Starters</div>
+      <div class="week-sub">${escapeHtml(w.dateRange)}</div>
+      <div class="week-project">5 Individual Project Tasks</div>
+      <div class="week-cta" style="color:#34d399;">Open Tasks &amp; Copy Emails →</div>
+    </button>
+  `).join('');
+}
+
+// ── RENDER 27 PROJECTS ───────────────────────────────────────────────────────
 function renderProjects() {
   const grid = document.getElementById('projectsGrid');
   const countEl = document.getElementById('candidateCount');
@@ -1352,29 +1648,25 @@ function renderProjects() {
   countEl.textContent = String(filtered.length);
 
   grid.innerHTML = filtered.map(c => `
-    <article class="role-card">
-      <div class="role-head">
-        <div class="role-main">
-          <div class="project-badge">${escapeHtml(c.company)}</div>
-          <h3 class="role-name">${escapeHtml(c.name)}</h3>
-          <p class="role-title">${escapeHtml(c.jobTitle)}</p>
-        </div>
-        <div class="role-side">
-          <a class="btn btn-primary role-link" href="profiles/${c.slug}.html" style="text-decoration:none;">Open Profile →</a>
+    <div class="role-card">
+      <div class="role-card-header">
+        <div class="role-avatar">${c.name.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>
+        <div>
+          <div class="role-name">${escapeHtml(c.name)}</div>
+          <div class="role-title">${escapeHtml(c.jobTitle)}</div>
+          <div class="role-company" style="font-size:10px;opacity:.7;margin-top:2px;">${escapeHtml(c.company)}</div>
         </div>
       </div>
-      <div style="margin: 12px 0 6px 0;">
-        <div style="font-size:13px;font-weight:700;color:#38bdf8;margin-bottom:4px;">${escapeHtml(c.project)}</div>
-        <p style="font-size:13px;color:#cbd5e1;line-height:1.5;margin:0 0 8px 0;">${escapeHtml(c.projectDesc)}</p>
+      <div style="margin: 12px 0 8px 0;">
+        <span class="project-badge">Project</span>
+        <div style="font-size:14px;font-weight:700;color:#38bdf8;">${escapeHtml(c.project)}</div>
+        <p style="font-size:12px;color:#cbd5e1;margin:4px 0 8px 0;line-height:1.4;">${escapeHtml(c.projectDesc)}</p>
+        <div style="font-size:11px;color:#94a3b8;margin-top:4px;"><strong>Tools:</strong> ${escapeHtml(c.tools)}</div>
       </div>
-      <details class="role-details">
-        <summary class="role-summary">View Tech Stack &amp; Key Duties</summary>
-        <div style="font-size:12px;color:#94a3b8;margin:8px 0 10px 0;"><strong style="color:#e2e8f0;">Tools:</strong> ${escapeHtml(c.tools)}</div>
-        <ul class="list">
-          ${c.responsibilities.map(r => `<li>${escapeHtml(r)}</li>`).join('')}
-        </ul>
-      </details>
-    </article>
+      <div class="role-footer" style="margin-top:14px;">
+        <a class="btn btn-primary btn-sm" href="profiles/${c.slug}.html" style="text-decoration:none;display:inline-block;">Open Profile &amp; Tasks →</a>
+      </div>
+    </div>
   `).join('');
 }
 
@@ -1383,7 +1675,7 @@ function renderWeeks() {
   grid.innerHTML = WEEKS_12.map(w => `
     <button class="week-btn" type="button" data-main-week="${w.week}" aria-haspopup="dialog" aria-controls="weekDialog">
       <div class="week-num">Week ${w.week}</div>
-      <div class="week-tag">Sep 14–Dec 6 Cohort</div>
+      <div class="week-tag">Main Cohort</div>
       <div class="week-sub">${escapeHtml(w.dateRange)}</div>
       <div class="week-project">27 Individual Project Tasks</div>
       <div class="week-cta">Open Tasks &amp; Copy Emails →</div>
@@ -1408,7 +1700,7 @@ function renderSeptNewRoles() {
         <p style="font-size:12px;color:#cbd5e1;margin:4px 0 8px 0;">${escapeHtml(p.projectDesc)}</p>
       </div>
       <ul class="role-list">
-        ${p.responsibilities.map(r => `<li>${escapeHtml(r)}</li>`).join('')}
+        ${p.responsibilities.slice(0, 4).map(r => `<li>${escapeHtml(r)}</li>`).join('')}
       </ul>
       <div class="role-footer" style="margin-top:14px;">
         <a class="btn btn-primary btn-sm" href="profiles/${p.slug}.html" style="text-decoration:none;display:inline-block;">Open Profile →</a>
@@ -1439,8 +1731,20 @@ const closeBtn = document.getElementById("closeBtn");
 let closeTimer = null;
 
 function buildModalContent(weekNum, cohort) {
-  const wInfo = WEEKS_12.find(w => w.week === weekNum);
-  const peopleList = cohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
+  let wInfo, peopleList, cohortLabel;
+  if (cohort === 'novstarters') {
+    wInfo = WEEKS_12_NOV.find(w => w.week === weekNum);
+    peopleList = NOV_PEOPLE;
+    cohortLabel = 'November 2, 2026 Starters (5 Members)';
+  } else if (cohort === 'septnew') {
+    wInfo = WEEKS_12.find(w => w.week === weekNum);
+    peopleList = SEPT_NEW_PEOPLE;
+    cohortLabel = 'September 2026 Starters (3 Members)';
+  } else {
+    wInfo = WEEKS_12.find(w => w.week === weekNum);
+    peopleList = CANDIDATES;
+    cohortLabel = 'Sep 14 – Dec 6, 2026 Cohort (27 Members)';
+  }
 
   const peopleBlocks = peopleList.map(c => {
     const task = c.weekTasks[weekNum - 1] || "No task configured.";
@@ -1460,18 +1764,16 @@ function buildModalContent(weekNum, cohort) {
         </div>
         <p class="modal-k" style="margin:8px 0 4px;">Project</p>
         <p class="modal-p" style="margin:0 0 10px;font-weight:700;color:#0284c7;">${escapeHtml(c.project)}</p>
-        <p class="modal-k" style="margin:0 0 4px;">Week ${weekNum} Task (${escapeHtml(wInfo.dateRange)})</p>
+        <p class="modal-k" style="margin:0 0 4px;">Week ${weekNum} Task (${escapeHtml(wInfo ? wInfo.dateRange : "")})</p>
         <ul class="modal-list"><li>${escapeHtml(task)}</li></ul>
       </section>
     `;
   }).join('');
 
-  const cohortLabel = cohort === 'septnew' ? 'September 2026 Starters (3 Members)' : 'Sep 14 – Dec 6, 2026 Cohort (27 Members)';
-
   return `
     <section class="modal-section">
       <p class="section-label">Cohort Schedule</p>
-      <h3 class="modal-h3">Week ${weekNum} Tasks · ${escapeHtml(wInfo.dateRange)}</h3>
+      <h3 class="modal-h3">Week ${weekNum} Tasks · ${escapeHtml(wInfo ? wInfo.dateRange : "")}</h3>
       <p class="modal-p">${cohortLabel}</p>
       <p style="font-size:13px;color:#94a3b8;margin-top:4px;">💡 You can copy the full cohort email using the top button, or click <strong>'📋 Copy [Name]'s Email'</strong> on any person's card to copy just their individual email.</p>
     </section>
@@ -1482,12 +1784,12 @@ function buildModalContent(weekNum, cohort) {
   `;
 }
 
-function openWeek(weekNum, cohort = 'main') {
+function openWeek(weekNum, cohort = 'novstarters') {
   activeWeekNum = weekNum;
   activeModalCohort = cohort;
-  const wInfo = WEEKS_12.find(w => w.week === weekNum);
+  const wInfo = cohort === 'novstarters' ? WEEKS_12_NOV.find(w => w.week === weekNum) : WEEKS_12.find(w => w.week === weekNum);
   modalStatus.textContent = "";
-  weekMeta.textContent = `${cohort === 'septnew' ? 'Sept New Starters' : 'Main Cohort'} · ${wInfo.dateRange}`;
+  weekMeta.textContent = `${cohort === 'novstarters' ? 'Nov 2 Starters' : cohort === 'septnew' ? 'Sept New Starters' : 'Main Cohort'} · ${wInfo ? wInfo.dateRange : ""}`;
   weekTitle.textContent = `Week ${weekNum} Individual Tasks`;
   modalBody.innerHTML = buildModalContent(weekNum, cohort);
   
@@ -1495,10 +1797,13 @@ function openWeek(weekNum, cohort = 'main') {
   modalBody.querySelectorAll('.copy-person-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
       const slug = btn.dataset.slug;
-      const list = activeModalCohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
+      let list = CANDIDATES;
+      if (activeModalCohort === 'novstarters') list = NOV_PEOPLE;
+      else if (activeModalCohort === 'septnew') list = SEPT_NEW_PEOPLE;
+      
       const person = list.find(p => p.slug === slug);
       if (!person) return;
-      await copySinglePersonEmail(person, activeWeekNum);
+      await copySinglePersonEmail(person, activeWeekNum, activeModalCohort);
       const originalText = btn.innerHTML;
       btn.innerHTML = '✅ Copied!';
       btn.style.background = '#059669';
@@ -1519,8 +1824,8 @@ function openWeek(weekNum, cohort = 'main') {
   }
 }
 
-async function copySinglePersonEmail(p, weekNum) {
-  const wInfo = WEEKS_12.find(w => w.week === weekNum);
+async function copySinglePersonEmail(p, weekNum, cohort) {
+  const wInfo = cohort === 'novstarters' ? WEEKS_12_NOV.find(w => w.week === weekNum) : WEEKS_12.find(w => w.week === weekNum);
   const task = p.weekTasks[weekNum - 1] || "No task defined.";
   const text = [
     `Subject: Week ${weekNum} Task Assignment — ${p.name} (${wInfo.dateRange})`,
@@ -1561,6 +1866,12 @@ function closeWeek() {
   }, 160);
 }
 
+document.getElementById("weekGridNovStarters").addEventListener("click", e => {
+  const btn = e.target.closest("[data-nov-week]");
+  if (!btn) return;
+  openWeek(Number(btn.getAttribute("data-nov-week")), 'novstarters');
+});
+
 document.getElementById("weekGrid").addEventListener("click", e => {
   const btn = e.target.closest("[data-main-week]");
   if (!btn) return;
@@ -1583,13 +1894,26 @@ dialog.addEventListener("click", e => {
 
 copyBtn.addEventListener("click", async () => {
   if (!activeWeekNum) return;
-  const wInfo = WEEKS_12.find(w => w.week === activeWeekNum);
-  const list = activeModalCohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
+  let wInfo, list, cohortTitle;
+  if (activeModalCohort === 'novstarters') {
+    wInfo = WEEKS_12_NOV.find(w => w.week === activeWeekNum);
+    list = NOV_PEOPLE;
+    cohortTitle = 'November 2026 Starters (Nov 2, 2026 – Jan 24, 2027)';
+  } else if (activeModalCohort === 'septnew') {
+    wInfo = WEEKS_12.find(w => w.week === activeWeekNum);
+    list = SEPT_NEW_PEOPLE;
+    cohortTitle = 'September 2026 Starters';
+  } else {
+    wInfo = WEEKS_12.find(w => w.week === activeWeekNum);
+    list = CANDIDATES;
+    cohortTitle = 'IPEOPLE CAREER LLC & BRIDGEPOINT CAREERS LLC (Sep 14 – Dec 6, 2026)';
+  }
+
   const lines = [];
-  lines.push(`Subject: Week ${activeWeekNum} Tasks — ${activeModalCohort === 'septnew' ? 'September Starters' : '12-Week Sample Projects'} (${wInfo.dateRange})`);
+  lines.push(`Subject: Week ${activeWeekNum} Tasks — ${cohortTitle} (${wInfo.dateRange})`);
   lines.push("");
   lines.push(`Week ${activeWeekNum}: ${wInfo.dateRange}`);
-  lines.push(`Cohort: ${activeModalCohort === 'septnew' ? 'September 2026 Starters' : 'IPEOPLE CAREER LLC & BRIDGEPOINT CAREERS LLC'}`);
+  lines.push(`Cohort: ${cohortTitle}`);
   lines.push("");
   lines.push("Individual Tasks (by team member):");
   list.forEach(c => {
@@ -1619,6 +1943,7 @@ function switchTab(tab) {
     btn.classList.toggle('btn-outline', !isActive);
   });
 
+  const novContent = document.getElementById('novstarters-content');
   const mainContent = document.getElementById('main-content');
   const septnewContent = document.getElementById('septnew-content');
   const heroTitle = document.getElementById('heroTitle');
@@ -1626,7 +1951,19 @@ function switchTab(tab) {
   const heroCta1 = document.getElementById('heroCta1');
   const heroCta2 = document.getElementById('heroCta2');
 
-  if (tab === 'septnew') {
+  if (tab === 'novstarters') {
+    novContent.hidden = false;
+    mainContent.hidden = true;
+    septnewContent.hidden = true;
+    heroTitle.textContent = "November 2, 2026 Starters";
+    heroDesc.innerHTML = "3-Month sample projects starting <strong>today, Nov 2, 2026</strong> through <strong>Jan 24, 2027</strong>. 12-week progressive milestones with 1-click email templates for each team member.";
+    heroCta1.href = "#roles-novstarters";
+    heroCta1.textContent = "View Nov Roles";
+    heroCta2.href = "#weeks-novstarters";
+    heroCta2.textContent = "Weekly Schedule (W1–W12)";
+    renderNovStartersRoles();
+  } else if (tab === 'septnew') {
+    novContent.hidden = true;
     mainContent.hidden = true;
     septnewContent.hidden = false;
     heroTitle.textContent = "September 2026 Starters";
@@ -1637,6 +1974,7 @@ function switchTab(tab) {
     heroCta2.textContent = "Weekly Schedule (W1–W12)";
     renderSeptNewRoles();
   } else {
+    novContent.hidden = true;
     mainContent.hidden = false;
     septnewContent.hidden = true;
     heroTitle.textContent = "3-Month Sample Projects & Weekly Plans";
@@ -1679,9 +2017,11 @@ document.getElementById('searchInput').addEventListener('input', e => {
 });
 
 // ── INITIALIZE ────────────────────────────────────────────────────────────────
+renderNovStartersRoles();
 renderProjects();
 renderWeeks();
 renderSeptNewRoles();
+switchTab('novstarters');
 </script>
 </body>
 </html>

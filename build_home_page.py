@@ -1,8 +1,13 @@
 import json
 import os
 
-with open(r"f:\New Stem\sept14_candidates.json", "r", encoding="utf-8") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+with open(os.path.join(BASE_DIR, "sept14_candidates.json"), "r", encoding="utf-8") as f:
     candidates = json.load(f)
+
+with open(os.path.join(BASE_DIR, "nov2_candidates.json"), "r", encoding="utf-8") as f:
+    nov_candidates = json.load(f)
 
 SEPT_NEW_PEOPLE = [
   {
@@ -115,7 +120,7 @@ SEPT_NEW_PEOPLE = [
   }
 ]
 
-WEEKS_12 = [
+WEEKS_12_SEPT = [
     {"week": 1, "dateRange": "Sep 14–Sep 20, 2026"},
     {"week": 2, "dateRange": "Sep 21–Sep 27, 2026"},
     {"week": 3, "dateRange": "Sep 28–Oct 4, 2026"},
@@ -128,6 +133,21 @@ WEEKS_12 = [
     {"week": 10, "dateRange": "Nov 16–Nov 22, 2026"},
     {"week": 11, "dateRange": "Nov 23–Nov 29, 2026"},
     {"week": 12, "dateRange": "Nov 30–Dec 6, 2026"},
+]
+
+WEEKS_12_NOV = [
+    {"week": 1, "dateRange": "Nov 2–Nov 8, 2026"},
+    {"week": 2, "dateRange": "Nov 9–Nov 15, 2026"},
+    {"week": 3, "dateRange": "Nov 16–Nov 22, 2026"},
+    {"week": 4, "dateRange": "Nov 23–Nov 29, 2026"},
+    {"week": 5, "dateRange": "Nov 30–Dec 6, 2026"},
+    {"week": 6, "dateRange": "Dec 7–Dec 13, 2026"},
+    {"week": 7, "dateRange": "Dec 14–Dec 20, 2026"},
+    {"week": 8, "dateRange": "Dec 21–Dec 27, 2026"},
+    {"week": 9, "dateRange": "Dec 28, 2026–Jan 3, 2027"},
+    {"week": 10, "dateRange": "Jan 4–Jan 10, 2027"},
+    {"week": 11, "dateRange": "Jan 11–Jan 17, 2027"},
+    {"week": 12, "dateRange": "Jan 18–Jan 24, 2027"},
 ]
 
 def escape_html(val):
@@ -145,7 +165,7 @@ html_template = f"""<!doctype html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>3-Month Project Plans · Sep 14–Dec 6, 2026</title>
+<title>3-Month Project Plans · Candidate Task Management</title>
 <link rel="stylesheet" href="styles.css" />
 <style>
 .tab-row {{
@@ -240,9 +260,10 @@ html_template = f"""<!doctype html>
 <div class="brand">
 <div class="brand-mark"></div>
 <div class="brand-title">Project Plan</div>
-<div class="brand-sub">Sep 14, 2026 – Dec 6, 2026</div>
+<div class="brand-sub">Candidate Milestone Management</div>
 </div>
 <div class="tab-row" id="tabRow">
+  <button class="tab-btn btn btn-outline" data-tab="novstarters" type="button" style="background:linear-gradient(135deg,#059669,#10b981);color:#fff;border-color:transparent;font-weight:800;">🌟 NOV 2 STARTERS (5)</button>
   <button class="tab-btn btn btn-primary" data-tab="all" type="button">All Projects (27)</button>
   <button class="tab-btn btn btn-outline" data-tab="ipeople" type="button">IPEOPLE (13)</button>
   <button class="tab-btn btn btn-outline" data-tab="bridgepoint" type="button">BRIDGEPOINT (14)</button>
@@ -254,15 +275,40 @@ html_template = f"""<!doctype html>
 <div class="wrap">
 <section class="hero" id="heroSection">
 <h1 id="heroTitle">3-Month Sample Projects &amp; Weekly Plans</h1>
-<p id="heroDesc">Individual 12-week project assignments starting <strong>September 14, 2026</strong>. Review project scopes, tools, weekly milestones, and email-ready task assignments for all team members.</p>
+<p id="heroDesc">Individual 12-week project assignments starting <strong>November 2, 2026</strong>. Review project scopes, tools, weekly milestones, and email-ready task assignments for all team members.</p>
 <div class="cta-row">
-<a class="btn btn-primary" href="#projects-section" id="heroCta1" style="text-decoration:none;">Browse Projects</a>
-<a class="btn btn-outline" href="#weeks-section" id="heroCta2" style="text-decoration:none;">Weekly Schedule (W1–W12)</a>
+<a class="btn btn-primary" href="#novstarters-content" id="heroCta1" style="text-decoration:none;">Browse Roles</a>
+<a class="btn btn-outline" href="#weeks-novstarters" id="heroCta2" style="text-decoration:none;">Weekly Schedule (W1–W12)</a>
 </div>
 </section>
 
+<!-- NOV 2 STARTERS SECTION -->
+<div id="novstarters-content">
+  <section class="section" id="roles-novstarters">
+    <div class="section-head">
+      <div>
+        <p class="section-label">Active Cohort · Starting Nov 2, 2026 – Jan 24, 2027</p>
+        <h2 class="section-title">November 2 Starters &amp; Projects</h2>
+      </div>
+      <div class="section-meta">5 team members · 12-Week Milestones</div>
+    </div>
+    <div class="role-grid" id="rolesGridNovStarters" aria-label="November 2 starter team members"></div>
+  </section>
+
+  <section class="section" id="weeks-novstarters">
+    <div class="section-head">
+      <div>
+        <p class="section-label">Schedule · Nov 2, 2026 – Jan 24, 2027</p>
+        <h2 class="section-title">Weekly Schedule (Week 1–Week 12)</h2>
+      </div>
+      <div class="section-meta">Click any week to view tasks and copy email templates</div>
+    </div>
+    <div class="week-grid" id="weekGridNovStarters" aria-label="Nov Starters weekly tasks grid"></div>
+  </section>
+</div>
+
 <!-- 27 CANDIDATES PROJECT SECTION -->
-<div id="main-content">
+<div id="main-content" hidden>
   <section class="section" id="projects-section">
     <div class="section-head">
       <div>
@@ -288,7 +334,7 @@ html_template = f"""<!doctype html>
     <div class="section-head">
       <div>
         <p class="section-label">Schedule · 12-Week Milestones</p>
-        <h2 class="section-title">Week 1–Week 12 Tasks</h2>
+        <h2 class="section-title">Week 1–Week 12 Tasks (Sep 14–Dec 6)</h2>
       </div>
       <div class="section-meta">Click any week to open all individual assignments &amp; copy emails</div>
     </div>
@@ -321,7 +367,7 @@ html_template = f"""<!doctype html>
   </section>
 </div>
 
-<footer class="footer">Generated from the Stem Task Sheet. Plan duration: Sep 14, 2026 – Dec 6, 2026.</footer>
+<footer class="footer">Project Task Management Portal · IPEOPLE CAREER LLC &amp; BRIDGEPOINT CAREERS LLC</footer>
 </div>
 
 <dialog class="modal" id="weekDialog" aria-labelledby="weekTitle" aria-describedby="weekMeta">
@@ -344,17 +390,60 @@ html_template = f"""<!doctype html>
 <script>
 const CANDIDATES = {json.dumps(candidates, indent=2)};
 const SEPT_NEW_PEOPLE = {json.dumps(SEPT_NEW_PEOPLE, indent=2)};
-const WEEKS_12 = {json.dumps(WEEKS_12, indent=2)};
+const NOV_PEOPLE = {json.dumps(nov_candidates, indent=2)};
+const WEEKS_12 = {json.dumps(WEEKS_12_SEPT, indent=2)};
+const WEEKS_12_NOV = {json.dumps(WEEKS_12_NOV, indent=2)};
 
 let currentCompanyFilter = 'all';
 let currentSearchQuery = '';
 let activeWeekNum = null;
-let activeModalCohort = 'main'; // 'main' or 'septnew'
+let activeModalCohort = 'novstarters'; // 'novstarters', 'main', or 'septnew'
 
 function escapeHtml(value) {{
   return String(value ?? "").replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}}[c]));
 }}
 
+// ── RENDER NOV STARTERS ──────────────────────────────────────────────────────
+function renderNovStartersRoles() {{
+  const grid = document.getElementById('rolesGridNovStarters');
+  grid.innerHTML = NOV_PEOPLE.map(p => `
+    <div class="role-card" style="border-top:3px solid #10b981;">
+      <div class="role-card-header">
+        <div class="role-avatar" style="background:#059669;color:#fff;">${{p.name.split(' ').map(w=>w[0]).join('').slice(0,2)}}</div>
+        <div>
+          <div class="role-name">${{escapeHtml(p.name)}}</div>
+          <div class="role-title">${{escapeHtml(p.jobTitle)}}</div>
+          <div class="role-company" style="font-size:11px;color:#10b981;font-weight:700;margin-top:2px;">${{escapeHtml(p.company)}} · Nov 2, 2026 Starter</div>
+        </div>
+      </div>
+      <div style="margin: 12px 0 8px 0;">
+        <div style="font-size:14px;font-weight:700;color:#38bdf8;">${{escapeHtml(p.project)}}</div>
+        <p style="font-size:12px;color:#cbd5e1;margin:4px 0 8px 0;line-height:1.5;">${{escapeHtml(p.projectDesc)}}</p>
+        <div style="font-size:11px;color:#94a3b8;"><strong>Tools:</strong> ${{escapeHtml(p.tools)}}</div>
+      </div>
+      <ul class="role-list">
+        ${{p.responsibilities.slice(0, 4).map(r => `<li>${{escapeHtml(r)}}</li>`).join('')}}
+        <li style="color:#94a3b8;font-style:italic;">...and ${{p.responsibilities.length - 4}} more responsibilities</li>
+      </ul>
+      <div class="role-footer" style="margin-top:14px;">
+        <a class="btn btn-primary btn-sm" href="profiles/${{p.slug}}.html" style="text-decoration:none;display:inline-block;background:#059669;border-color:#10b981;">Open Profile &amp; Weekly Tasks →</a>
+      </div>
+    </div>
+  `).join('');
+
+  const weekGrid = document.getElementById('weekGridNovStarters');
+  weekGrid.innerHTML = WEEKS_12_NOV.map(w => `
+    <button class="week-btn" type="button" data-nov-week="${{w.week}}" aria-haspopup="dialog" aria-controls="weekDialog" style="border-left:3px solid #10b981;">
+      <div class="week-num" style="color:#10b981;">Week ${{w.week}}</div>
+      <div class="week-tag" style="background:rgba(16,185,129,0.2);color:#34d399;">Nov 2 Starters</div>
+      <div class="week-sub">${{escapeHtml(w.dateRange)}}</div>
+      <div class="week-project">5 Individual Project Tasks</div>
+      <div class="week-cta" style="color:#34d399;">Open Tasks &amp; Copy Emails →</div>
+    </button>
+  `).join('');
+}}
+
+// ── RENDER 27 PROJECTS ───────────────────────────────────────────────────────
 function renderProjects() {{
   const grid = document.getElementById('projectsGrid');
   const countEl = document.getElementById('candidateCount');
@@ -369,29 +458,25 @@ function renderProjects() {{
   countEl.textContent = String(filtered.length);
 
   grid.innerHTML = filtered.map(c => `
-    <article class="role-card">
-      <div class="role-head">
-        <div class="role-main">
-          <div class="project-badge">${{escapeHtml(c.company)}}</div>
-          <h3 class="role-name">${{escapeHtml(c.name)}}</h3>
-          <p class="role-title">${{escapeHtml(c.jobTitle)}}</p>
-        </div>
-        <div class="role-side">
-          <a class="btn btn-primary role-link" href="profiles/${{c.slug}}.html" style="text-decoration:none;">Open Profile →</a>
+    <div class="role-card">
+      <div class="role-card-header">
+        <div class="role-avatar">${{c.name.split(' ').map(w=>w[0]).join('').slice(0,2)}}</div>
+        <div>
+          <div class="role-name">${{escapeHtml(c.name)}}</div>
+          <div class="role-title">${{escapeHtml(c.jobTitle)}}</div>
+          <div class="role-company" style="font-size:10px;opacity:.7;margin-top:2px;">${{escapeHtml(c.company)}}</div>
         </div>
       </div>
-      <div style="margin: 12px 0 6px 0;">
-        <div style="font-size:13px;font-weight:700;color:#38bdf8;margin-bottom:4px;">${{escapeHtml(c.project)}}</div>
-        <p style="font-size:13px;color:#cbd5e1;line-height:1.5;margin:0 0 8px 0;">${{escapeHtml(c.projectDesc)}}</p>
+      <div style="margin: 12px 0 8px 0;">
+        <span class="project-badge">Project</span>
+        <div style="font-size:14px;font-weight:700;color:#38bdf8;">${{escapeHtml(c.project)}}</div>
+        <p style="font-size:12px;color:#cbd5e1;margin:4px 0 8px 0;line-height:1.4;">${{escapeHtml(c.projectDesc)}}</p>
+        <div style="font-size:11px;color:#94a3b8;margin-top:4px;"><strong>Tools:</strong> ${{escapeHtml(c.tools)}}</div>
       </div>
-      <details class="role-details">
-        <summary class="role-summary">View Tech Stack &amp; Key Duties</summary>
-        <div style="font-size:12px;color:#94a3b8;margin:8px 0 10px 0;"><strong style="color:#e2e8f0;">Tools:</strong> ${{escapeHtml(c.tools)}}</div>
-        <ul class="list">
-          ${{c.responsibilities.map(r => `<li>${{escapeHtml(r)}}</li>`).join('')}}
-        </ul>
-      </details>
-    </article>
+      <div class="role-footer" style="margin-top:14px;">
+        <a class="btn btn-primary btn-sm" href="profiles/${{c.slug}}.html" style="text-decoration:none;display:inline-block;">Open Profile &amp; Tasks →</a>
+      </div>
+    </div>
   `).join('');
 }}
 
@@ -400,7 +485,7 @@ function renderWeeks() {{
   grid.innerHTML = WEEKS_12.map(w => `
     <button class="week-btn" type="button" data-main-week="${{w.week}}" aria-haspopup="dialog" aria-controls="weekDialog">
       <div class="week-num">Week ${{w.week}}</div>
-      <div class="week-tag">Sep 14–Dec 6 Cohort</div>
+      <div class="week-tag">Main Cohort</div>
       <div class="week-sub">${{escapeHtml(w.dateRange)}}</div>
       <div class="week-project">27 Individual Project Tasks</div>
       <div class="week-cta">Open Tasks &amp; Copy Emails →</div>
@@ -425,7 +510,7 @@ function renderSeptNewRoles() {{
         <p style="font-size:12px;color:#cbd5e1;margin:4px 0 8px 0;">${{escapeHtml(p.projectDesc)}}</p>
       </div>
       <ul class="role-list">
-        ${{p.responsibilities.map(r => `<li>${{escapeHtml(r)}}</li>`).join('')}}
+        ${{p.responsibilities.slice(0, 4).map(r => `<li>${{escapeHtml(r)}}</li>`).join('')}}
       </ul>
       <div class="role-footer" style="margin-top:14px;">
         <a class="btn btn-primary btn-sm" href="profiles/${{p.slug}}.html" style="text-decoration:none;display:inline-block;">Open Profile →</a>
@@ -456,8 +541,20 @@ const closeBtn = document.getElementById("closeBtn");
 let closeTimer = null;
 
 function buildModalContent(weekNum, cohort) {{
-  const wInfo = WEEKS_12.find(w => w.week === weekNum);
-  const peopleList = cohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
+  let wInfo, peopleList, cohortLabel;
+  if (cohort === 'novstarters') {{
+    wInfo = WEEKS_12_NOV.find(w => w.week === weekNum);
+    peopleList = NOV_PEOPLE;
+    cohortLabel = 'November 2, 2026 Starters (5 Members)';
+  }} else if (cohort === 'septnew') {{
+    wInfo = WEEKS_12.find(w => w.week === weekNum);
+    peopleList = SEPT_NEW_PEOPLE;
+    cohortLabel = 'September 2026 Starters (3 Members)';
+  }} else {{
+    wInfo = WEEKS_12.find(w => w.week === weekNum);
+    peopleList = CANDIDATES;
+    cohortLabel = 'Sep 14 – Dec 6, 2026 Cohort (27 Members)';
+  }}
 
   const peopleBlocks = peopleList.map(c => {{
     const task = c.weekTasks[weekNum - 1] || "No task configured.";
@@ -477,18 +574,16 @@ function buildModalContent(weekNum, cohort) {{
         </div>
         <p class="modal-k" style="margin:8px 0 4px;">Project</p>
         <p class="modal-p" style="margin:0 0 10px;font-weight:700;color:#0284c7;">${{escapeHtml(c.project)}}</p>
-        <p class="modal-k" style="margin:0 0 4px;">Week ${{weekNum}} Task (${{escapeHtml(wInfo.dateRange)}})</p>
+        <p class="modal-k" style="margin:0 0 4px;">Week ${{weekNum}} Task (${{escapeHtml(wInfo ? wInfo.dateRange : "")}})</p>
         <ul class="modal-list"><li>${{escapeHtml(task)}}</li></ul>
       </section>
     `;
   }}).join('');
 
-  const cohortLabel = cohort === 'septnew' ? 'September 2026 Starters (3 Members)' : 'Sep 14 – Dec 6, 2026 Cohort (27 Members)';
-
   return `
     <section class="modal-section">
       <p class="section-label">Cohort Schedule</p>
-      <h3 class="modal-h3">Week ${{weekNum}} Tasks · ${{escapeHtml(wInfo.dateRange)}}</h3>
+      <h3 class="modal-h3">Week ${{weekNum}} Tasks · ${{escapeHtml(wInfo ? wInfo.dateRange : "")}}</h3>
       <p class="modal-p">${{cohortLabel}}</p>
       <p style="font-size:13px;color:#94a3b8;margin-top:4px;">💡 You can copy the full cohort email using the top button, or click <strong>'📋 Copy [Name]'s Email'</strong> on any person's card to copy just their individual email.</p>
     </section>
@@ -499,12 +594,12 @@ function buildModalContent(weekNum, cohort) {{
   `;
 }}
 
-function openWeek(weekNum, cohort = 'main') {{
+function openWeek(weekNum, cohort = 'novstarters') {{
   activeWeekNum = weekNum;
   activeModalCohort = cohort;
-  const wInfo = WEEKS_12.find(w => w.week === weekNum);
+  const wInfo = cohort === 'novstarters' ? WEEKS_12_NOV.find(w => w.week === weekNum) : WEEKS_12.find(w => w.week === weekNum);
   modalStatus.textContent = "";
-  weekMeta.textContent = `${{cohort === 'septnew' ? 'Sept New Starters' : 'Main Cohort'}} · ${{wInfo.dateRange}}`;
+  weekMeta.textContent = `${{cohort === 'novstarters' ? 'Nov 2 Starters' : cohort === 'septnew' ? 'Sept New Starters' : 'Main Cohort'}} · ${{wInfo ? wInfo.dateRange : ""}}`;
   weekTitle.textContent = `Week ${{weekNum}} Individual Tasks`;
   modalBody.innerHTML = buildModalContent(weekNum, cohort);
   
@@ -512,10 +607,13 @@ function openWeek(weekNum, cohort = 'main') {{
   modalBody.querySelectorAll('.copy-person-btn').forEach(btn => {{
     btn.addEventListener('click', async () => {{
       const slug = btn.dataset.slug;
-      const list = activeModalCohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
+      let list = CANDIDATES;
+      if (activeModalCohort === 'novstarters') list = NOV_PEOPLE;
+      else if (activeModalCohort === 'septnew') list = SEPT_NEW_PEOPLE;
+      
       const person = list.find(p => p.slug === slug);
       if (!person) return;
-      await copySinglePersonEmail(person, activeWeekNum);
+      await copySinglePersonEmail(person, activeWeekNum, activeModalCohort);
       const originalText = btn.innerHTML;
       btn.innerHTML = '✅ Copied!';
       btn.style.background = '#059669';
@@ -536,8 +634,8 @@ function openWeek(weekNum, cohort = 'main') {{
   }}
 }}
 
-async function copySinglePersonEmail(p, weekNum) {{
-  const wInfo = WEEKS_12.find(w => w.week === weekNum);
+async function copySinglePersonEmail(p, weekNum, cohort) {{
+  const wInfo = cohort === 'novstarters' ? WEEKS_12_NOV.find(w => w.week === weekNum) : WEEKS_12.find(w => w.week === weekNum);
   const task = p.weekTasks[weekNum - 1] || "No task defined.";
   const text = [
     `Subject: Week ${{weekNum}} Task Assignment — ${{p.name}} (${{wInfo.dateRange}})`,
@@ -578,6 +676,12 @@ function closeWeek() {{
   }}, 160);
 }}
 
+document.getElementById("weekGridNovStarters").addEventListener("click", e => {{
+  const btn = e.target.closest("[data-nov-week]");
+  if (!btn) return;
+  openWeek(Number(btn.getAttribute("data-nov-week")), 'novstarters');
+}});
+
 document.getElementById("weekGrid").addEventListener("click", e => {{
   const btn = e.target.closest("[data-main-week]");
   if (!btn) return;
@@ -600,13 +704,26 @@ dialog.addEventListener("click", e => {{
 
 copyBtn.addEventListener("click", async () => {{
   if (!activeWeekNum) return;
-  const wInfo = WEEKS_12.find(w => w.week === activeWeekNum);
-  const list = activeModalCohort === 'septnew' ? SEPT_NEW_PEOPLE : CANDIDATES;
+  let wInfo, list, cohortTitle;
+  if (activeModalCohort === 'novstarters') {{
+    wInfo = WEEKS_12_NOV.find(w => w.week === activeWeekNum);
+    list = NOV_PEOPLE;
+    cohortTitle = 'November 2026 Starters (Nov 2, 2026 – Jan 24, 2027)';
+  }} else if (activeModalCohort === 'septnew') {{
+    wInfo = WEEKS_12.find(w => w.week === activeWeekNum);
+    list = SEPT_NEW_PEOPLE;
+    cohortTitle = 'September 2026 Starters';
+  }} else {{
+    wInfo = WEEKS_12.find(w => w.week === activeWeekNum);
+    list = CANDIDATES;
+    cohortTitle = 'IPEOPLE CAREER LLC & BRIDGEPOINT CAREERS LLC (Sep 14 – Dec 6, 2026)';
+  }}
+
   const lines = [];
-  lines.push(`Subject: Week ${{activeWeekNum}} Tasks — ${{activeModalCohort === 'septnew' ? 'September Starters' : '12-Week Sample Projects'}} (${{wInfo.dateRange}})`);
+  lines.push(`Subject: Week ${{activeWeekNum}} Tasks — ${{cohortTitle}} (${{wInfo.dateRange}})`);
   lines.push("");
   lines.push(`Week ${{activeWeekNum}}: ${{wInfo.dateRange}}`);
-  lines.push(`Cohort: ${{activeModalCohort === 'septnew' ? 'September 2026 Starters' : 'IPEOPLE CAREER LLC & BRIDGEPOINT CAREERS LLC'}}`);
+  lines.push(`Cohort: ${{cohortTitle}}`);
   lines.push("");
   lines.push("Individual Tasks (by team member):");
   list.forEach(c => {{
@@ -636,6 +753,7 @@ function switchTab(tab) {{
     btn.classList.toggle('btn-outline', !isActive);
   }});
 
+  const novContent = document.getElementById('novstarters-content');
   const mainContent = document.getElementById('main-content');
   const septnewContent = document.getElementById('septnew-content');
   const heroTitle = document.getElementById('heroTitle');
@@ -643,7 +761,19 @@ function switchTab(tab) {{
   const heroCta1 = document.getElementById('heroCta1');
   const heroCta2 = document.getElementById('heroCta2');
 
-  if (tab === 'septnew') {{
+  if (tab === 'novstarters') {{
+    novContent.hidden = false;
+    mainContent.hidden = true;
+    septnewContent.hidden = true;
+    heroTitle.textContent = "November 2, 2026 Starters";
+    heroDesc.innerHTML = "3-Month sample projects starting <strong>today, Nov 2, 2026</strong> through <strong>Jan 24, 2027</strong>. 12-week progressive milestones with 1-click email templates for each team member.";
+    heroCta1.href = "#roles-novstarters";
+    heroCta1.textContent = "View Nov Roles";
+    heroCta2.href = "#weeks-novstarters";
+    heroCta2.textContent = "Weekly Schedule (W1–W12)";
+    renderNovStartersRoles();
+  }} else if (tab === 'septnew') {{
+    novContent.hidden = true;
     mainContent.hidden = true;
     septnewContent.hidden = false;
     heroTitle.textContent = "September 2026 Starters";
@@ -654,6 +784,7 @@ function switchTab(tab) {{
     heroCta2.textContent = "Weekly Schedule (W1–W12)";
     renderSeptNewRoles();
   }} else {{
+    novContent.hidden = true;
     mainContent.hidden = false;
     septnewContent.hidden = true;
     heroTitle.textContent = "3-Month Sample Projects & Weekly Plans";
@@ -696,19 +827,21 @@ document.getElementById('searchInput').addEventListener('input', e => {{
 }});
 
 // ── INITIALIZE ────────────────────────────────────────────────────────────────
+renderNovStartersRoles();
 renderProjects();
 renderWeeks();
 renderSeptNewRoles();
+switchTab('novstarters');
 </script>
 </body>
 </html>
 """
 
 # Write to both home.html and new_stem/home.html
-with open(r"f:\New Stem\home.html", "w", encoding="utf-8") as f:
+with open(os.path.join(BASE_DIR, "home.html"), "w", encoding="utf-8") as f:
     f.write(html_template)
 
-with open(r"f:\New Stem\new_stem\home.html", "w", encoding="utf-8") as f:
+with open(os.path.join(BASE_DIR, "new_stem", "home.html"), "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print("Updated home.html and new_stem/home.html with individual and cohort copy buttons.")
+print("Updated home.html and new_stem/home.html with Nov 2 Starters tab and all features.")
